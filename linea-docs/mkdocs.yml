@@ -1,0 +1,12 @@
+site_name: LIneA Documentation
+
+nav:
+    - Home: index.md
+    # - LSST IDAC: idac.md 
+    # - LSP: lsp.md 
+    # - Science Portals: sci_portals.md  
+    # - HPC: hpc.md
+    # - For developers: dev.md 
+    # - Help: help.md
+
+theme: readthedocs
