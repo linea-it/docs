@@ -1,0 +1,94 @@
+nav:
+  #  - Home: 'index.md'
+  #- Clusteres: 'clusteres.md'
+  #- Como acessar: 'comoacessar.md'
+  #- Condor: 'htcondor.md'
+  #- Eups: 'eups.md'
+  #- Lustre: 'lustre.md'
+  - Mkdocs Exemplos: 'exemplos/exemplos.md'
+  - Home: 'home.md'
+  - Tutoriais: 'tutoriais.md'
+  - Acesso: 'acesso.md'
+  - Políticas: 'politicas.md'
+  - Jupyter: 'jupyter.md'
+  - LIneA Science Platform: 'lsp.md'
+  - Photoz Server: 'photozserver.md'
+  - Armazenamento: 'armazenamento.md'
+  - Monitoramento: 'monitoramento.md'
+  - Acrônimos: 'acronimos.md'
+  - Suporte: 'suporte.md'
+  
+
+  # - Data:
+  #   - Access: 'data/datasets.md'
+
+
+# Site information
+site_name: LIneA Docs (beta)
+site_author: LIneA
+site_url: "http://docs.linea.org.br"
+repo_name: linea-it/docs
+repo_url: https://github.com/linea-it/docs
+edit_uri: 'edit/main/'
+copyright: 'Copyright &copy; 2006 - 2022 LIneA'
+# cosmo, material-components, cerulean, journal, slate, readthedocs, readable, spacelab, united, bootstrap, simplex, flatly, yeti, psinder, amelia, cyborg, unidata, mkdocs
+
+
+# Configuration
+theme:
+  name: material
+  custom_dir: linea-theme
+  logo: 'images/linea.png'
+  favicon: 'images/favicon.png'
+  features:
+    - navigation.indexes
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  palette:
+    primary: 'grey'
+    accent: 'light blue'
+  social:
+    - icon: material/home-circle
+      link: https://www.linea.org.br
+    - icon: fontawesome/brands/github
+      link: https://github.com/linea-it
+    - icon: material/twitter
+      link: https://twitter.com/linea_org
+    - icon: material/instagram
+      link: https://instagram.com/linea_org
+    - icon: material/facebook
+      link: https://facebook.com/linea.org
+    - icon: material/youtube
+      link: https://youtube.com/user/lineamcti
+
+# Extensions
+markdown_extensions:
+  - meta
+  - footnotes
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols:
+      fractions: false
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.snippets
