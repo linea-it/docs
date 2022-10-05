@@ -1,15 +1,33 @@
-# Index
+<font color=red> PÁGINA EM CONSTRUÇÃO </font>
 
-Bem-vindo a documentação de usuários do Centro de Acesso e Processamento de Dados Astronômicos (CAPDA), apoiado pelo Laboratório Interinstitucional de e-Astronomia (LIneA), para mais informações visite o [site do laboratório](http://www.linea.gov.br). 
+Bem-vindo(a) à página de _Documentação para Usuários_ do LIneA. Este é o local central para encontrar guias de usuário e documentação de alto nível sobre todos os serviços e ferramentas fornecidos pelo LIneA para a comunidade astronômica e público em geral. Você também encontrará links para documentação externa relevante. 
 
+O LIneA - Laboratório Interinstitucional de e-Astronomia - é um laboratório multiusuário operado por uma organização sem fins lucrativos (Associação LIneA) com apoio financeiro predominantemente proveniente do Ministério da Ciência, Tecnologia e Inovação do Brasil. Nossa missão é trabalhar em parceria com o [INCT do e-Universo](https://linea.org.br/010-ciencia/3-inct-do-e-universo-2/) para apoiar a comunidade astronômica brasileira com infraestrutura computacional e expertise em análise de big data para fornecer condições técnicas para participação em grandes levantamentos astronômicos, como SDSS, DES e LSST.
+
+Para saber mais detalhes, confira o vídeo ["Conheça o LIneA"](https://youtu.be/jC-k85tfd0Y) no nosso [canal no YouTube](https://www.youtube.com/user/lineamcti) ou navegue no nosso [Website institucional](https://linea.org.br/).    
+
+
+<!-- **[EN]**
+
+Welcome to LIneA's _Documentation for Users_ page. This is the central place to find user-guides and high-level documentation about all services and tools provided by LIneA to the astronomical community and general public. You will also find links to relevant external documentation.    -->
+
+	
 !!! note
-	O LIneA - Laboratório Interinstitucional de e-Astronomia - foi concebido para desenvolver uma infraestrutura de hardware e software para dar apoio a participação de equipes brasileiras,  compostas de pesquisadores de diferentes instituições espalhadas geograficamente, em projetos geradores de grandes volumes de dados.
+	Comentários, dúvidas, sugestões? Se você encontrar algo faltando nesta documentação, fique à vontade para abrir um _issue_  no [repositório de documentação do LIneA no GitHub](https://github.com/linea-it/docs).
 
-Links rápidos / FAQ
+
+<!-- **[EN]**
+
+LIneA is a multi-user laboratory operated by a non-profit organization with financial support from the Brazilian Ministry of Science, Technology, and Innovation. Our mission is to work with the [INCT do e-Universo](https://linea.org.br/010-ciencia/3-inct-do-e-universo-2/) to support the Brazilian astronomical community with computing infrastructure and big data analysis expertise to provide technical conditions for participation in large astronomical surveys, such as SDSS, DES, and LSST.   
+
+If you are a Portuguese speaker, please find more about LIneA on our [YouTube Channel](https://youtu.be/jC-k85tfd0Y) and [Website](http://linea.org.br).  -->
+
+
+<!-- Links rápidos / FAQ
 
  1. Obtendo uma conta
  2. Compilando software
  3. [Executando 'jobs' no cluster](htcondor.md)
  4. Copiando dados
  5. Recuperando sua senha no LDAP
- 6. [Clusteres](clusteres.md)
+ 6. [Clusteres](clusteres.md) -->

@@ -1,8 +1,0 @@
-site_name: LIneA 
-
-nav:
-    - Documentation: index.md
-    - LSST IDAC: idac.md 
-    - Help: help.md
-
-theme: readthedocs

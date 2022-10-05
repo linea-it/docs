@@ -1,31 +1,32 @@
 nav:
-  #  - Home: 'index.md'
-  #- Clusteres: 'clusteres.md'
-  #- Como acessar: 'comoacessar.md'
-  #- Condor: 'htcondor.md'
-  #- Eups: 'eups.md'
-  #- Lustre: 'lustre.md'
-  - Mkdocs Exemplos: 'exemplos/exemplos.md'
-  - Home: 'home.md'
-  - Tutoriais: 'tutoriais.md'
-  - Acesso: 'acesso.md'
+  - Home: home.md
+  - Primeiros passos: primeiros_passos.md 
+      #- Registro: primeiros_passos/registro.md 
+  - LIneA Science Platform: 
+      #- lsp/index.md #intro e landing page
+      - JupyterHub: lsp/jupyter.md
+      - Science Server: lsp/sci_server.md
+      - User Query: lsp/usr_query.md
+  - Portais Científicos:
+      - DES Science Portal: portals/des.md
+      - TNO Portal: portals/tno.md
+      - MaNGA Portal: portals/manga.md 
+  - High-Performance Computing:
+      - Apolo (LIneA): hpc/apolo.md
+      - Santos Dumont (LNCC): hpc/sdu.md
   - Políticas: 'politicas.md'
-  - Jupyter: 'jupyter.md'
-  - LIneA Science Platform: 'lsp.md'
-  - Photoz Server: 'photozserver.md'
-  - Armazenamento: 'armazenamento.md'
-  - Monitoramento: 'monitoramento.md'
+  #- Photoz Server: 'photozserver.md'
+  #- Armazenamento: 'armazenamento.md'
+  #- Monitoramento: 'monitoramento.md'
   - Acrônimos: 'acronimos.md'
   - Suporte: 'suporte.md'
+  - Mkdocs Exemplos: 'exemplos/exemplos.md' #provisorio
   
-
-  # - Data:
-  #   - Access: 'data/datasets.md'
 
 
 # Site information
 site_name: LIneA Docs (beta)
-site_author: LIneA
+site_author: LIneA team 
 site_url: "http://docs.linea.org.br"
 repo_name: linea-it/docs
 repo_url: https://github.com/linea-it/docs
@@ -38,7 +39,7 @@ copyright: 'Copyright &copy; 2006 - 2022 LIneA'
 theme:
   name: material
   custom_dir: linea-theme
-  logo: 'images/linea.png'
+  logo: 'images/logo_fundo_preto.png' #provisório, substituir por logo fundo transparente
   favicon: 'images/favicon.png'
   features:
     - navigation.indexes
