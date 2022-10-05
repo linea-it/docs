@@ -12,8 +12,9 @@ Para saber mais detalhes, confira o vídeo ["Conheça o LIneA"](https://youtu.be
 Welcome to LIneA's _Documentation for Users_ page. This is the central place to find user-guides and high-level documentation about all services and tools provided by LIneA to the astronomical community and general public. You will also find links to relevant external documentation.    -->
 
 	
-!!! note
-	Comentários, dúvidas, sugestões? Se você encontrar algo faltando nesta documentação, fique à vontade para abrir um _issue_  no [repositório de documentação do LIneA no GitHub](https://github.com/linea-it/docs).
+!!! note "Comentários, dúvidas, sugestões?"
+	 Se você encontrar algo faltando nesta documentação, fique à vontade para abrir um _issue_  no [repositório de documentação do LIneA no GitHub](https://github.com/linea-it/docs).
+
 
 
 <!-- **[EN]**
