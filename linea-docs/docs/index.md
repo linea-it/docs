@@ -30,7 +30,7 @@ Bem-vindo(a) à página de _Documentação para Usuários_ do LIneA. Este é o l
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; [MAnGA Portal](portals/manga.md)
 
-## [High Performance Computing](hpc/hpc.md)
+## [High-Performance Computing](hpc/hpc.md)
 
 ### &nbsp;&nbsp;&nbsp;&nbsp; [Apolo Computer Cluster (LIneA)](hpc/apolo.md)
 
