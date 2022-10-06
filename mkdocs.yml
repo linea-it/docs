@@ -1,5 +1,5 @@
 nav:
-  - Home: home.md
+  - Home: index.md
   - Primeiros passos: primeiros_passos.md 
       #- Registro: primeiros_passos/registro.md 
   - LIneA Science Platform: 
@@ -31,6 +31,7 @@ site_url: "http://docs.linea.org.br"
 repo_name: linea-it/docs
 repo_url: https://github.com/linea-it/docs
 edit_uri: 'edit/main/'
+use_directory_urls: false
 copyright: 'Copyright &copy; 2006 - 2022 LIneA'
 # cosmo, material-components, cerulean, journal, slate, readthedocs, readable, spacelab, united, bootstrap, simplex, flatly, yeti, psinder, amelia, cyborg, unidata, mkdocs
 
