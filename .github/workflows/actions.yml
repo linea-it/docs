@@ -33,7 +33,7 @@ jobs:
             cd /var/www/html/docs/docs
             git checkout master
             git pull
-            source /var/www/html/docs/.bashrc
+            source /var/www/html/docs/docs/.bashrc
             conda activate mkdocs
             mkdocs build -c -d /var/www/html/docs/site
             
