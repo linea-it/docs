@@ -18,7 +18,7 @@ jobs:
       - name: Adding Known Hosts
         run: ssh-keyscan -p ${{ secrets.SSH_PORT}} -H ${{ secrets.SSH_HOST }}  >> ~/.ssh/known_hosts
 
-      - name: Build Documentation with mkdocs
+      - name: Build Documentation using mkdocs
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
