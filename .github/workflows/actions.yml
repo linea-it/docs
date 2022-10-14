@@ -16,7 +16,7 @@ jobs:
           known_hosts: unnecessary
 
       - name: Adding Known Hosts
-        run: ssh-keyscan -p ${{ secrets.SSH_PORT}} -H ${{ secrets.SSH_HOST }}  >> ~/.ssh/known_hosts
+        run: ssh-keyscan -p ${{ secrets.PROXY_PORT}} -H ${{ secrets.PROXY_HOST }}  >> ~/.ssh/known_hosts
 
       - name: Build Documentation using mkdocs
         uses: appleboy/ssh-action@master
@@ -25,6 +25,10 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
+          proxy_host: ${{ secrets.PROXY_HOST }}
+          proxy_username: ${{ secrets.PROXY_USERNAME }}
+          proxy_key: ${{ secrets.PROXY_KEY }}
+          proxy_port: ${{ secrets.PROXY_PORT }}
           script: |
             cd /var/www/html/docs/docs
             git checkout master
