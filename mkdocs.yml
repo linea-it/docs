@@ -3,7 +3,7 @@ nav:
   - Primeiros passos: primeiros_passos.md 
       #- Registro: primeiros_passos/registro.md 
   - LIneA Science Platform: 
-      #- lsp/index.md #intro e landing page
+      - lsp/index.md #intro e landing page
       - JupyterHub: lsp/jupyter.md
       - Science Server: lsp/sci_server.md
       - User Query: lsp/usr_query.md
