@@ -81,7 +81,7 @@ O Condor possui diferentes universos cada qual para execução de aplicações e
 
 #### Acesse o nó de submissão
 
-O acesso ao host de submissão é feito por chave `ssh` e é necessário que você possua uma conta válida (mais informações podem ser encontradas [aqui](../accounts/account.md)). Caso não possua uma conta, leia a nossa política de acesso e preencha o formulário de registro em [http://www.linea.gov.br > Serviços > Registro de Participantes](http://www.linea.gov.br)
+O acesso ao host de submissão é feito por chave `ssh` e é necessário que você possua uma conta válida (mais informações podem ser encontradas [aqui](../accounts/account.md)). Caso não possua uma conta, leia a nossa política de acesso e preencha o formulário de registro em [http://www.linea.org.br > Serviços > Registro de Participantes](http://www.linea.org.br)
 
 #### Configure as dependências
 
@@ -234,7 +234,7 @@ Uma vez submetido o trabalho (job) para acompanhar sua execução utilize o coma
 ```bash
 $ condor_q
 
--- Schedd: loginicx.ib0.cm.linea.gov.br : <10.148.0.7:9618?... @ 04/09/19 20:26:15
+-- Schedd: hostname.local : <10.148.0.7:9618?... @ 04/09/19 20:26:15
 OWNER       BATCH_NAME    SUBMITTED   DONE   RUN    IDLE  TOTAL JOB_IDS
 carlosadean ID: 6339     4/9  20:26      _      1      _      1 6339.0
 
@@ -332,4 +332,4 @@ A execução da sua aplicação pelo condor pode ser monitorada com o comando `c
 
 #### Troubleshooting
 
-Em desenvolvimento
+Em breve
