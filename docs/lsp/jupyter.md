@@ -15,6 +15,6 @@ No notebook jupyterhub-tutorial.ipynb você encontrará instruções para utiliz
 git clone https://github.com/linea-it/jupyterhub-tutorial.git
 ```
 
-
+Para ter acesso a tutoriais em vídeo, visite a [página de tutoriais do LIneA Science Platform](https://lsp.linea.org.br/tutorials).  
  
  
