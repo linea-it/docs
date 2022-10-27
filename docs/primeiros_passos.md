@@ -32,11 +32,16 @@ Caso você trabalhe diretamente com alguma dessas colaborações, então indicam
 Agora que você já sabe qual é o seu perfil, o próximo passo é o registro!
 
 **Como devo proceder?**
+
 O processo de registro para os perfis deve ser feito via Comunidade Acadêmica Federada (CAFe) ou conta Google (disponível apenas para o perfil bronze) - link disponível na página do LIneA.
 
 Ao clicar em "registre-se (CAFe)", você será redirecionado para a página da CAFe e deve selecionar qual é sua instituição de origem na busca. 
+
 Se cadastre (caso não tenha conta) ou faça o login (caso já tenha conta na CAFe) utilizando seu **e-mail institucional**. 
+
 O registro com conta Google é bem similar, no caso, selecione o seu e-mail (opte pelo institucional, caso o tenha) e prossiga com o cadastro para criar sua conta.
+
 Nossa equipe de TI vai receber a notificação do novo registro e, em até dois dias úteis, irá liberar seu acesso caso tudo esteja certo. 
+
 Lembrando que qualquer problema deve ser reportado ao helpdesk@linea.org.br 
 
