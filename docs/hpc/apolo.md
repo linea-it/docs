@@ -6,7 +6,7 @@
 
 ### HPE Apollo 2000
 
-O cluster HPE Apollo 2000 possui 16 nós computacionais com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz` e provê cerca de 15 Tflops de capacidade computacional. Todo o conjunto de máquinas Apollo 2000 oferece 544 cores e 2TB de memória RAM. Cada nó possui 56 cores e 125GB de RAM.
+O cluster HPE Apollo 2000 possui 16 nós computacionais com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz` e provê cerca de 15 Tflops de capacidade computacional. Todo o conjunto de máquinas Apollo 2000 oferece 448 cores e 2TB de memória RAM. Cada nó possui 56 cores e 125GB de RAM.
 
 
 | # Nodes | # Cores | Total de ram | Tflops | Instalado em |
