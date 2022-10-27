@@ -25,7 +25,7 @@ Sendo assim, para proporcionar a melhor experiência e atendimento ao usuário, 
 
 **Prata** - Destinado para pesquisadores, pós-doutorandos e estudantes de pós-graduação. Com esse perfil você terá acesso ao JupyterHub e aos dados públicos do Dark Energy Survey (DES). 
 
-**Bronze** - Destinado para estudantes de graduação e ensino médio. Com esse perfil você terá acesso ao JupyterHub e aos dados públicos do Sloan Digital Sky Survey (SDSS 17) e Dark Energy Survey (DES - DR 2).
+**Bronze** - Destinado para estudantes de graduação e ensino médio. Com esse perfil você terá acesso ao JupyterHub e aos dados públicos do Sloan Digital Sky Survey (SDSS - DR17) e Dark Energy Survey (DES - DR2).
 
 **3. Para membros de colaboração:**
 
