@@ -32,9 +32,11 @@ Sendo assim, para proporcionar a melhor experiência e atendimento ao usuário, 
 Definimos como membros de colaborações usuários que são associados a alguma colaboração científica apoiada pelo LIneA (DESI, DES, LSST, SDSS, TON). 
 Caso você trabalhe diretamente com alguma dessas colaborações, então indicamos que esse é o seu perfil!
 
+
 Agora que você já sabe qual é o seu perfil, o próximo passo é o registro!
 
 **Como devo proceder?**
+
 O processo de registro para os perfis deve ser feito via Comunidade Acadêmica Federada (CAFe) ou conta Google (disponível apenas para o perfil bronze) - link disponível na página do LIneA.
 
 Ao clicar em "registre-se (CAFe)", você será redirecionado para a página da CAFe e deve selecionar qual é sua instituição de origem na busca. 
