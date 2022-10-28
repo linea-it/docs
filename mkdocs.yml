@@ -8,6 +8,7 @@ nav:
       - Science Server: lsp/sci_server.md
       - User Query: lsp/usr_query.md
   - Portais Científicos:
+      - Portais Científicos: portals/index.md 
       - DES Science Portal: portals/des.md
       - TNO Portal: portals/tno.md
       - MaNGA Portal: portals/manga.md 

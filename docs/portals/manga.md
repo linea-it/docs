@@ -1,0 +1,3 @@
+This portal was developed to meet the immediate needs of members of the Brazilian Participation Group participating in the MaNGA survey of the Sloan Digital Sky Survey under LIneA’s auspices. The system was designed to enable the team to visualize not only the reduced IFU data but the results of the analysis of the data showing maps of various physical quantities derived from the spectra.
+
+For more information see the tutorials.
