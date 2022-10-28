@@ -1,3 +1,4 @@
-This portal was developed to meet the immediate needs of members of the Brazilian Participation Group participating in the MaNGA survey of the Sloan Digital Sky Survey under LIneA’s auspices. The system was designed to enable the team to visualize not only the reduced IFU data but the results of the analysis of the data showing maps of various physical quantities derived from the spectra.
 
-For more information see the tutorials.
+O portal MaNGA ([https://manga.linea.org.br/](https://manga.linea.org.br/)) foi desenvolvido para atender às necessidades dos membros do Brazilian Participation Group do levantamento MaNGA do Sloan Digital Sky Survey. O sistema foi projetado para permitir que a equipe visualize, não apenas os cubos de dados de espectroscopia IFU (Integral Field Units) reduzidos, mas os resultados da análise dos dados mostrando mapas de várias quantidades físicas derivadas dos espectros. 
+
+Para mais informações consulte os [tutoriais](https://manga.linea.org.br/tutorials) no site do portal MaNGA.
