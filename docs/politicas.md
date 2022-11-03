@@ -6,7 +6,7 @@ Ela foi elaborada pelo Comitê Gestor de Segurança da Informação (CGSI/LIneA)
 
 Para acessar a PSI clique [aqui](https://docs.google.com/document/d/1guNonR3KK8u016o5_DVXsYQqrZdKLOIkASiOkPqBgOE/edit?usp=sharing)
 
-## Incidentes de Securança
+## Incidentes de Segurança
 
 Se você desconfia que ocorreu algum incidente de segurança com sua conta, serviço ou aplicação que você esteja utilizando você deve contatar o LIneA imediatamente em helpdesk@linea.org.br.
 
