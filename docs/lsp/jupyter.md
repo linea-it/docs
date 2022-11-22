@@ -8,10 +8,9 @@ Ao clicar no _card_ "JupyterHub" dentro do LIneA Science Platform, você será d
 
 A instalação padrão do JupyterHub utiliza a nova interface [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) e é baseada na imagem [datascience-notebook](https://github.com/jupyter/docker-stacks). Isto significa que uma série de bibliotecas _Python_ de grande popularidade como [Numpy](https://numpy.org/) e [Matplotlib](https://matplotlib.org/) estarão automaticamente disponíveis.
 
+No repositório [jupyterhub-tutorial](https://github.com/linea-it/jupyterhub-tutorial) você encontrará uma série de _notebooks_ com instruções para utilizar a plataforma, instalar bibliotecas adicionais, acessar o banco de dados, visualizar os dados de catálogos e utilizar a integração com o LIneA Science Server para a visualização das imagens astronômicas. Para acessar os _notebooks_, basta abrir um Terminal no JupyterLab clicando no botão "+" na barra superior e em seguida no ícone "Terminal" da seção "Other" na aba "Launcher", e inserir o comando:
 
-No notebook jupyterhub-tutorial.ipynb você encontrará instruções para utilizar a plataforma, instalar bibliotecas adicionais, acessar o banco de dados, visualizar os dados de catálogos e utilizar a integração com o LIneA Science Server para a visualização das imagens astronômicas. Para acessar o notebook, basta abrir um Terminal no JupyterLab clicando no botão "+" na barra superior e em seguida no ícone "Terminal" da seção "Other" na aba "Launcher", e inserir o comando:
-
-```shell
+```
 git clone https://github.com/linea-it/jupyterhub-tutorial.git
 ```
 
