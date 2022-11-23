@@ -20,6 +20,7 @@ nav:
   #- Monitoramento: 'monitoramento.md'
   - Acrônimos: 'acronimos.md'
   - Suporte: 'suporte.md'
+      - FAQ: 'faq.md'
   - Mkdocs Exemplos: 'exemplos/exemplos.md' #provisorio
   
 
