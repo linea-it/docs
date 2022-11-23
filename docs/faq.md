@@ -1,9 +1,5 @@
 PERGUNTAS FREQUENTES
 
-Como gerar chave ssh para acessar o cluster Linea ?
+Como gerar chave ssh para acessar o LIneA ?
 
-1- Após acessar https://jupyter.linea.org.br
-
-2- Clique em terminal
-
-3- Execute o comando "ssh-keygen -t rsa -b 4096".
+Execute no terminal o comando "ssh-keygen -t rsa -b 4096".
