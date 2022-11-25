@@ -1,7 +1,8 @@
 nav:
   - Home: index.md
   - Primeiros passos: primeiros_passos.md 
-      #- Registro: primeiros_passos/registro.md 
+      #- Registro: primeiros_passos/registro.md
+  - Como se registrar: como_se_registrar.md
   - LIneA Science Platform: 
       - LIneA Science Platform: lsp/index.md #intro e landing page
       - JupyterHub: lsp/jupyter.md
