@@ -17,5 +17,5 @@ Oferece a visualização das imagens do DES com exibição baseada nas _Tiles_, 
 O _site_ do **LIneA Science Server** possui uma página de tutoriais em vídeos, com narração em inglês, com exemplos de uso das ferramentas. Acesse os vídeos em: https://scienceserver.linea.org.br/tutorials
 
 
-### Minicursos
-Como parte das atividades do programa de Iniciação Científica (IC), em 2022 o LIneA ofereceu uma série de minicursos para os estudantes e demais interessados. O minicurso **LIneA Science Server** foi composto de três aulas remotas com atividades práticas propostas. Os vídeos das aulas estão disponíveis na página de [IC do LIneA no Google Classroom](https://classroom.google.com/c/NDkzMTA0MzEyODA1/m/NDcyNjUxMDQxNTAw/details).  
+### Minicurso
+Como parte das atividades do programa de Iniciação Científica (IC), em 2022 o LIneA ofereceu uma série de minicursos para os estudantes e demais interessados com aulas remotas e atividades práticas propostas. Os vídeos das aulas estão disponíveis na página do [Minicurso LIneA Science Server](https://classroom.google.com/c/NDkzMTA0MzEyODA1/m/NDcyNjUxMDQxNTAw/details) no Google Classroom.  
