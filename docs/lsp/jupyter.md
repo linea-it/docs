@@ -14,11 +14,24 @@ A instalação padrão do JupyterHub utiliza a nova interface [JupyterLab](https
 
 ### Tutoriais em Jupyter Notebooks
 
-No repositório [jupyterhub-tutorial](https://github.com/linea-it/jupyterhub-tutorial) você encontrará uma série de _notebooks_ com instruções para utilizar a plataforma, instalar bibliotecas adicionais, acessar o banco de dados, visualizar os dados de catálogos e utilizar a integração com o **LIneA Science Server** para a visualização das imagens astronômicas (_em breve_). Para acessar os _notebooks_, basta abrir um Terminal no JupyterLab clicando no botão "+" na barra superior e em seguida no ícone "Terminal" da seção "Other" na aba "Launcher", e inserir o comando:
+No repositório [jupyterhub-tutorial](https://github.com/linea-it/jupyterhub-tutorial) você encontrará os tutoriais em formato _notebook_:
+
+
+#### 1-primeiros-passos.ipynb 
+Instruções gerais de uso da plataforma JupyterLab, dicas e atalhos na escrita de notebooks para diferentes tipos de células. 
+#### 2-acesso-a-dados.ipynb
+Instruções para uso da biblioteca dblinea para leitura de dados a partir do banco de dados diretamente de dentro de uma célula no notebook com exemplo de uso (construção de um diagrama cor-magnitude simples para uma amostra de estrelas). 
+#### 3-conda-env.ipynb
+Instruções para criação de ambientes no conda para gerenciamento de bibliotecas que sejam persistentes e sobrevivam a destruição e recriação dos containers para que os usuários possam retornar em uma nova sessão e encontrar o mesmo ambiente da sessão anterior (não disponível para usuários de perfil público bronze).  
+
+***  
+
+Para acessar os _notebooks_, basta abrir um Terminal no JupyterLab clicando no botão "+" na barra superior e em seguida no ícone "Terminal" da seção "Other" na aba "Launcher", e inserir o comando:
 
 ```
 git clone https://github.com/linea-it/jupyterhub-tutorial.git
 ```
+
 
 ### Tutoriais em vídeo
 
