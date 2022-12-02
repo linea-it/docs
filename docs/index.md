@@ -1,5 +1,3 @@
-<font color=red> PÁGINA EM CONSTRUÇÃO </font>
-
 Bem-vindo(a) à página de _Documentação para Usuários_ do LIneA. Este é o local central para encontrar guias de usuário e documentação de alto nível sobre todos os serviços e ferramentas fornecidos pelo LIneA para a comunidade astronômica e público em geral. Você também encontrará links para documentação externa relevante. 
 
 O LIneA - Laboratório Interinstitucional de e-Astronomia - é um laboratório multiusuário operado por uma organização sem fins lucrativos (Associação LIneA) com apoio financeiro predominantemente proveniente do Ministério da Ciência, Tecnologia e Inovação do Brasil. Nossa missão é trabalhar em parceria com o [INCT do e-Universo](https://linea.org.br/010-ciencia/3-inct-do-e-universo-2/) para apoiar a comunidade astronômica brasileira com infraestrutura computacional e expertise em análise de big data para fornecer condições técnicas para participação em grandes levantamentos astronômicos, como SDSS, DES e LSST.
