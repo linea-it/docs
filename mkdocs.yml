@@ -22,13 +22,13 @@ nav:
   #- Monitoramento: 'monitoramento.md'
   - Acrônimos: 'acronimos.md'
   - Suporte: 'suporte.md'
-      - FAQ: 'faq.md'
+  - FAQ: 'faq.md'
   - Mkdocs Exemplos: 'exemplos/exemplos.md' #provisorio
   
 
 
 # Site information
-site_name: LIneA Docs (beta)
+site_name:  Documentação para o usuário
 site_author: LIneA team 
 site_url: "http://docs.linea.org.br"
 repo_name: linea-it/docs
@@ -43,18 +43,34 @@ copyright: 'Copyright &copy; 2006 - 2022 LIneA'
 theme:
   name: material
   custom_dir: linea-theme
-  logo: 'images/logo_fundo_preto.png' #provisório, substituir por logo fundo transparente
-  favicon: 'images/favicon.png'
+  logo: 'images/linea.png'
+  favicon: 'images/linea_favicon.png'
+  font:
+    text: Roboto, Arial
   features:
     - navigation.indexes
+
+  palette:
+      # Palette toggle for light mode
+  - scheme: default
+    toggle:
+      icon: material/lightbulb
+      name: Switch to dark mode
+    primary: 'blue'
+    accent: 'deep orange'
+
+  # Palette toggle for dark mode
+  - scheme: slate
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to light mode
+    primary: 'grey'
+    accent: 'deep orange'
 
 extra_css:
   - stylesheets/extra.css
 
 extra:
-  palette:
-    primary: 'grey'
-    accent: 'light blue'
   social:
     - icon: material/home-circle
       link: https://www.linea.org.br
