@@ -1,6 +1,6 @@
-1 - Acesse o site do LIneA www.linea.org.br e clique no menu Serviços > <font color=\"#172b4d\">**_Registro_**</font>.
+1 - Acesse o [site do LIneA](www.linea.org.br) e clique no menu <font color=\"#172b4d\">**_Serviços_**</font> > <font color=\"#172b4d\">**_Registro_**</font>.
 
-2 -  Após abrir a página escolha o tipo de perfil (Bronze, Prata ou Ouro) ou colaboração (DESI, DES, LSST, SDSS, e TON) e clique em Registre-se (CAFe).
+2 -  Após abrir a página, escolha o tipo de perfil (Bronze, Prata ou Ouro) ou colaboração (DESI, DES, LSST, SDSS, e TON) em que você se encaixa. Em seguida, clique em Registre-se (CAFe) ou via Google (apenas para o perfil Bronze).
 
 ![Image](../images/perfil_de_usuarios.png)
 
@@ -16,31 +16,22 @@ OBS: Caso a opção EPPN esteja em branco preencha com o seu email institucional
 
 **Name:** *Fulano*
 
-**Family Name:** *de Souza da Silva*
-
 **Full Name:** *Fulano de Souza da Silva*
-
-**BirthDate:** *< clique escolha sua data de nascimento >*
-
-**Address:** *Rua das Couves, 40, Centro*
-
-**Phone:** *21 11111-1111*
-
-**Nationality:** *< preencha conforme a sua nacionalidade >*
 
 **Email:** *fulano@instituicao.br*
 
-**Organization:** *< preencha com o nome da sua instituição, e.x.: UFRGS >*
+**Phone:** *21 11111-1111*
 
-**Affiliation:** *< escolha a opção adequada, e.g: >*
+**Collaborations:** *< preencha com o nome da colaboração, e.x.: LSST >*
 
-**Title:** *< escolha a opção adequada >*
+**Affiliation:** *< preencha com o nome da instituição, e.x: UFRGS >*
 
-**Eppn:** *fulano@instituicao.br*
+**Supervisor:** *< nome do orientador >*
 
-Aceite os termos e clique em OK.
 
-Para finalizar clique no botão SUBMIT.
+Leia, aceite os termos e clique em OK.
+
+Para finalizar, clique no botão SUBMIT.
 
 5 - Após a submissão do formulário a equipe do LIneA irá receber a solicitação e prosseguir com o provisionamento da sua conta.
 
