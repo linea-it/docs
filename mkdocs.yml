@@ -8,7 +8,7 @@ nav:
       - LIneA Science Platform: lsp/index.md #intro e landing page
       - JupyterHub: lsp/jupyter.md
       - Science Server: lsp/sci_server.md
-      - User Query: lsp/usr_query.md
+      - User Query: lsp/user_query.md
   - Portais Científicos:
       - Portais Científicos: portals/index.md 
       - DES Science Portal: portals/des.md
