@@ -1,13 +1,15 @@
 nav:
   - Home: index.md
   - Primeiros passos: primeiros_passos.md 
-      #- Registro: primeiros_passos/registro.md 
+      #- Registro: primeiros_passos/registro.md
+  - Como se registrar: como_se_registrar.md
   - LIneA Science Platform: 
-      #- lsp/index.md #intro e landing page
+      - LIneA Science Platform: lsp/index.md #intro e landing page
       - JupyterHub: lsp/jupyter.md
       - Science Server: lsp/sci_server.md
       - User Query: lsp/usr_query.md
   - Portais Científicos:
+      - Portais Científicos: portals/index.md 
       - DES Science Portal: portals/des.md
       - TNO Portal: portals/tno.md
       - MaNGA Portal: portals/manga.md 
@@ -20,6 +22,7 @@ nav:
   #- Monitoramento: 'monitoramento.md'
   - Acrônimos: 'acronimos.md'
   - Suporte: 'suporte.md'
+      - FAQ: 'faq.md'
   - Mkdocs Exemplos: 'exemplos/exemplos.md' #provisorio
   
 
