@@ -1,8 +1,9 @@
-Antes de iniciar seu trabalho e explorar as diversas ferramentas oferecidas pelo LIneA, é importante que você tenha o conhecimento dos perfis de usuários e entenda em qual deles você se encaixa melhor para fazer o seu registro. Vamos lá?
+Antes de iniciar seu trabalho e explorar as diversas ferramentas oferecidas pelo LIneA, é importante que você tenha o conhecimento dos perfis de usuários e entenda em qual deles você melhor se encaixa para fazer o seu registro. Vamos lá?
 
 Os perfis de usuários estão disponiveís em nosso site na aba de "Serviços" e "Registro" ou você pode acessar entrando [diretamente nesse link](https://docs.linea.org.br/primeiros_passos/como_se_registrar.html).
 
 Na página estão listadas três informações importantes, que são:
+
 1. Veja o Manual de "boas-vindas"
 2. Para o público.
 3. Para membros de colaboração.
@@ -11,8 +12,10 @@ O que cada um desses itens significam?
 
 **1. Manual de boas-vindas:**
 
-O manual é um compilado de informações importantes sobre o LIneA para aqueles que estão conhecendo o laboratório pela primeira vez. Nele podemos encontrar a missão, objetivos, as ferramentas para usuários, os serviços de e-ciências oferecidos, descrição dos perfis de usuários, onde buscar ajuda, os representantes das colaborações científicas apoiadas pelo LIneA, maneiras de se comunicar internamente, as redes sociais do LIneA, reuniões regulares, glossário, a política de segurança da informação seguida pelo LIneA, os diferentes tipos de apoio ao usuário disponiveís e, por fim, quem é nossa equipe! 
-O manual pode ser acessado por quem desejar e pode ser [encontrado nesta página](https://linea.org.br/o-que-e-linea/manual-de-boas-vindas/).
+O manual é um compilado de informações importantes sobre o LIneA para aqueles que estão conhecendo o laboratório pela primeira vez. Nele podemos encontrar a missão, objetivos, as ferramentas para usuários, os serviços de e-ciências oferecidos, descrição dos perfis de usuários, onde buscar ajuda, os representantes das colaborações científicas apoiadas pelo LIneA, maneiras de se comunicar internamente, as redes sociais do LIneA, reuniões regulares, glossário, a política de segurança da informação seguida pelo laboratório, os diferentes tipos de apoio ao usuário disponiveís e, por fim, quem é nossa equipe! 
+O manual pode ser acessado por quem desejar [entrando nessa página](https://linea.org.br/o-que-e-linea/manual-de-boas-vindas/).
+
+Vale dizer que muitas das coisas que estão detalhadas no manual de boas vindas você também encontra aqui nesta página de documentação, porém de forma resumida.
 
 **2. Para o público:**
 
@@ -30,7 +33,7 @@ Sendo assim, para proporcionar a melhor experiência e atendimento ao usuário, 
 **3. Para membros de colaboração:**
 
 Definimos como membros de colaborações usuários que são associados a alguma colaboração científica apoiada pelo LIneA (DESI, DES, LSST, SDSS, TON). 
-Caso você trabalhe diretamente com alguma dessas colaborações, então indicamos que esse é o seu perfil!
+Caso você trabalhe diretamente com alguma dessas colaborações, então indicamos que esse é o seu perfil.
 
 
 Agora que você já sabe qual é o seu perfil, o próximo passo é o registro!
