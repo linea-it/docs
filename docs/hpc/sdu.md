@@ -16,17 +16,17 @@ Se você participa de um desses subprojetos, siga as instruções a seguir e ace
 
 ### Registro de usuários junto ao LNCC
 
-Faça o download do formulário de registro [neste link](http://sdumont.lncc.br/formularios/formulario_sdumont_usuario.docx). Os formulários podem ser escaneados e enviados por email para helpdesk-sdumont@lncc.br, com cópia para sdumont@lncc.br. Após o recebimento dos formulários, a equipe técnica do LNCC responsável pela operação do SDumont entrará em contato para fornecimento das credenciais de acesso.
+Faça o download do formulário de registro <a href="http://sdumont.lncc.br/formularios/formulario_sdumont_usuario.docx" target="_blank">nesse link</a>. O formulário deve ser escaneado e enviado por email para helpdesk-sdumont@lncc.br, com cópia para helpdesk@linea.org.br. Após o recebimento do formulário, a equipe técnica do LNCC responsável pela operação do SDumont entrará em contato para fornecimento das credenciais de acesso.
 
 ### Acesso ao supercomputador
 
 Após a obtenção das suas credenciais o acesso deverá ser feito em duas etapas:
 
-   1. Conectar-se ao serviço de VPN do SDumont (Manuais em PDF: [MAC](/docs/hpc/How%20To%20VPN%20SDUMONT%20-%20MAC.pdf), [Linux](/docs/hpc/How%20To%20VPN%20SDUMONT%20%20LINUX%20.pdf), [Windows](/docs/hpc/HowTo-VPN-client-Sdumont-Windows.pdf))
+   1. Conectar-se ao serviço de VPN do SDumont (Manuais em PDF: [MAC](/hpc/How%20To%20VPN%20SDUMONT%20-%20MAC.pdf), [Linux](/hpc/How%20To%20VPN%20SDUMONT%20%20LINUX%20.pdf), [Windows](/hpc/HowTo-VPN-client-Sdumont-Windows.pdf))
    2. Conectar-se, via SSH, ao host login.sdumont.lncc.br.
 
 
 A submissão dos jobs será feita através do gerenciador de recursos e filas Slurm.
 
-O manual de utilização do usuário está disponível no endereço: [https://sdumont.lncc.br](https://sdumont.lncc.br/) 
+O manual de utilização do usuário está disponível no endereço: <a href="http://sdumont.lncc.br" target="_blank">http://sdumont.lncc.br</a>
 
