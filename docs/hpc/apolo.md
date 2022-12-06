@@ -1,5 +1,6 @@
 # HPE Apollo 2000
 
+
 ## Características gerais
 
 O cluster HPE Apollo 2000 possui 16 nós computacionais com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz`. Com o sistema de _hyperthreading_ ativado, o conjunto de máquinas Apollo 2000 oferece 448 cores e e provê cerca de 16 Tflops de capacidade computacional. 
