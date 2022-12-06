@@ -21,7 +21,7 @@ Entendemos que para esse perfil se encaixam os estudantes e pesquisadores em ger
 
 * **Bronze** - Recomendado para entusiastas da astronomia, estudantes de graduação e ensino médio. Com esse perfil você terá acesso ao JupyterHub e aos dados públicos do Sloan Digital Sky Survey (SDSS - DR17) e Dark Energy Survey (DES - DR2), com recursos computacionais limitados.
 * **Prata** - Recomendado para pesquisadores, pós-doutorandos e estudantes de pós-graduação (requer e-mail institucional para o registro). Com esse perfil você terá acesso aos mesmos recursos do perfil bronze, com mais poder computacional e persistência de arquivos entre sessões. 
-* **Ouro** - É indicado para casos/projetos específicos e que necessitam de recursos computacionais que vão além dos recursos pré-definidos para os perfis Bronze e Prata. Se esse é o seu caso, envie email para o _Service Desk_ em [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) informando a sua necessidade. Usuários do perfil Prata podem solicitar "_upgrade_" para o perfil ouro a qualquer momento, caso tenha necessidade justificada. 
+* **Ouro** - É indicado para casos/projetos específicos e que necessitam de recursos computacionais que vão além dos recursos pré-definidos para os perfis Bronze e Prata. Se esse é o seu caso, você poderá submeter um projeto informando a sua necessidade para a aprovação pelo Comitê de Usuários do LIneA. Caso ainda não tenha um projeto bem definido, sugerimos que inicie o registro com perfil Prata. Usuários do perfil Prata podem solicitar "_upgrade_" para o perfil ouro a qualquer momento, caso tenha necessidade justificada. 
 
 
 ### Perfis para membros de colaboração
@@ -47,22 +47,9 @@ Agora que você já sabe qual é o seu perfil, o próximo passo é o registro!
 
 Após efetuar o login, você será redirecionado de volta para o nosso formulário de registro.
 
-4 - Preencha todos os campos do formulário com suas informações, segue um exemplo abaixo:
+4 - Preencha todos os campos do formulário com suas informações.
 
-> **Full Name:** *Fulano de Souza da Silva*
-
-> **Email:** *fulano@instituicao.br*
-
-> **Phone:** *21 11111-1111*
-
-> **Collaborations:** *< preencha com o nome da colaboração, e.x.: LSST >*
-
-> **Affiliation:** *< preencha com o nome da instituição, e.x: UFRGS >*
-
-> **Supervisor:** *< nome do orientador >*
-
-
-Leia, aceite os termos e clique em OK.
+Leia, aceite os termos e clique em "I Agree". 
 
 Para finalizar, clique no botão SUBMIT.
 
@@ -71,3 +58,5 @@ Para finalizar, clique no botão SUBMIT.
 <font color=\"#172b4d\">**Aguarde o email de confirmação**</font>.
 
 
+Para maiores informações, entre em contato com o _Service Desk_ em [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). 
+ 
