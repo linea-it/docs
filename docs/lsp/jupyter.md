@@ -28,10 +28,7 @@ Instruções para criação de ambientes no conda para gerenciamento de bibliote
 
 Para acessar os _notebooks_, basta abrir um Terminal no JupyterLab clicando no botão "+" na barra superior e em seguida no ícone "Terminal" da seção "Other" na aba "Launcher", e inserir o comando:
 
-```
-git clone https://github.com/linea-it/jupyterhub-tutorial.git
-```
-
+    git clone https://github.com/linea-it/jupyterhub-tutorial.git
 
 ### Tutoriais em vídeo
 

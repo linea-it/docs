@@ -6,13 +6,14 @@ O LIneA possui um projeto "guarda-chuva" aprovado no [LNCC](https://lncc.br/) qu
 4. Estruturas de Larga Escala
 5. Redshifts Fotométricos (programa de contribuições in-kind LSST) 
 
-Se você participa de um desses subprojetos, siga as instruções a seguir e acesse a documentação oficial do supercomputador no site do LNCC (links abaixo).  
-
 
 !!! info 
-    Caso seu projeto tenha demandas de HPC e caso ainda não faça parte do escopo do projeto EUDB-LINEA, entre em contato conosco através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações. 
+    Caso seu projeto tenha demandas de HPC e ainda não faça parte do escopo do projeto EUDB-LINEA, entre em contato conosco através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações. 
 
 ---
+
+Se você já participa de um desses subprojetos, siga as instruções a seguir e acesse a documentação oficial do supercomputador no site do LNCC (links abaixo).  
+
 
 ### Registro de usuários junto ao LNCC
 
