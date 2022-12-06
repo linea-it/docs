@@ -1,6 +1,6 @@
 Antes de iniciar seu trabalho e explorar as diversas ferramentas oferecidas pelo LIneA, é importante que você tenha o conhecimento dos perfis de usuários e entenda em qual deles você melhor se encaixa para fazer o seu registro. Vamos lá?
 
-Os perfis de usuários estão disponiveís em nosso site na aba de "Serviços" e "Registro" ou você pode acessar entrando [diretamente nesse link](https://linea.org.br/servicos/9-registro-de-participantes/).
+Os perfis de usuários estão disponiveís em nosso site na aba de "Serviços" e "Registro" ou você pode acessar entrando [diretamente nesse link](https://docs.linea.org.br/primeiros_passos/como_se_registrar.html).
 
 Na página estão listadas três informações importantes, que são:
 
@@ -24,7 +24,7 @@ Entendemos que para esse perfil se encaixam os estudantes e pesquisadores em ger
 
 Sendo assim, para proporcionar a melhor experiência e atendimento ao usuário, foram criados três tipos de perfis: 
 
-**Ouro** - É indicado para casos/projetos específicos, envolvendo o alto uso da infraestrutura e processamento de nossas máquinas. Se esse é o seu caso, basta preencher o [formulário diponível aqui](https://docs.google.com/forms/d/e/1FAIpQLSc_SMMt2EebQd5TWywn9hzkZoUkazmU6w36Uj845UzqLoUorA/viewform) que nossa equipe de TI e a comissão de usuários irá avaliar sua solicitação e informar sobre a decisão do pedido. 
+**Ouro** - É indicado para casos/projetos específicos e que necessitam de recursos computacionais que vão além dos recursos pré-definidos para os perfis Bronze e Prata. Se esse é o seu caso, envie email para o Service Desk em helpdesk@linea.org.br informando a sua necessidade. 
 
 **Prata** - Destinado para pesquisadores, pós-doutorandos e estudantes de pós-graduação. Com esse perfil você terá acesso ao JupyterHub e aos dados públicos do Dark Energy Survey (DES). 
 

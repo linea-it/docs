@@ -1,4 +1,10 @@
-# 1. Características
+# Sistemas
+
+![Image](../images/icex.jpg)
+
+## HPE ICEX + Apollo 2000
+
+O cluster SGI ICE X 4 blades foi adquirido pelo LIneA em março de 2017 e possui pico de performance em torno de 3.379 # 1. Características
 ## Informações de hardware
 
 ![Image](../images/icex.jpg)
@@ -6,7 +12,7 @@
 
 ### HPE Apollo 2000
 
-O cluster HPE Apollo 2000 possui 16 nós computacionais com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz` e provê cerca de 15 Tflops de capacidade computacional. Todo o conjunto de máquinas Apollo 2000 oferece 448 cores e 2TB de memória RAM. Cada nó possui 56 cores e 125GB de RAM.
+O cluster HPE Apollo 2000 possui 16 nós computacionais com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz` e provê cerca de 15 Tflops de capacidade computacional. Todo o conjunto de máquinas Apollo 2000 oferece 448 cores e 2Tflops. Com processadores `Intel Xeon Haswell E5-2650V4 12-Core 2.2GHz`, é composto de 4 nós de computação interligados por conexão Infiniband F de memória RAM. Cada nó possui 56 cores e 125GB de RAM.
 
 
 | # Nodes | # Cores | Total de ram | Tflops | Instalado em |
@@ -14,7 +20,22 @@ O cluster HPE Apollo 2000 possui 16 nós computacionais com processadores `Intel
 | 16      | 448   | 2TB          | 15.769 |  Abr-2019  |
 
 ## Filesystem e Armazenamento
-- O ambiente conta com sistema de arquivos de altaperformance Lustre. Este possui dois níveis (tiers) de armazenamento, sendo o primeiro T0 em SSD com 70TB e o segundo T1 em HDD com 500TB;
+- O ambiente conta com sistema de arquivos de altaperformance Lustre. Este possui dois níveis (tiers) de armazenamento, sendo o primeiro T0 em SSDR de 56Gbits num total de 96 cores e 512GB de memória RAM. Cada nó do ICE X possui 24 cores (hyperthreading desativado) e 125GB de RAM.
+
+OBS: Em abril de 2019 o ICE X foi expandido para 19.148 Tflops com chegada das novas máquinas HPE Apollo 2000. Nessa expansão toda a infraestrutura do ICE X foi aproveitada.
+
+## HPE Apollo 2000
+
+O cluster HPE ICEX-Apollo 2000 possui 20 nós computacionais com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz` e provê cerca de 20 Tflops de capacidade computacional. Todo o conjunto de máquinas ICEX-Apollo 2000 oferece 544 cores e 2TB de memória RAM. Cada nó possui 56 cores e 125GB de RAM.
+
+
+cluster              | # nós | # cores | total de ram | Tflops | Instalado em |
+-------------------- | ------- | ------| ------------ | ------ | -----------| 
+SGI Altix XE1300     | 42      | 504   | 4TB          |  4.838 |  Ago-2012  |
+SGI ICE X            | 4       | 96    | 512GB        |  3.379 |  Abr-2017  |
+HPE Apollo 2000      | 16      | 448   | 2TB          | 15.769 |  Abr-2019  |
+           **Total** |**62**   |**1048** |**6.5TB**   |**23.986**|**Abr-2019**|
+ com 70TB e o segundo T1 em HDD com 500TB;
 - O HOME do usuário é fornecido através de NFS;
 - Essas áreas de armazenamento são acessíveis tanto no host de submissão quanto nos nodes do cluster;
 
@@ -92,6 +113,7 @@ Caso sua aplicação possua dependências você pode configurá-las em seu ambie
 source /mnt/eups/linea_eups_setup.sh 
 setup pyfits 3.4+0                   
              
+
 ```
 
 Mais instruções sobre o eups neste [link](#3-módulos-de-ambiente-eups)
