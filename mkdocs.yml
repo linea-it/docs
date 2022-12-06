@@ -9,7 +9,7 @@ nav:
   - Portais Científicos:
       - Portais Científicos: portals/index.md 
       - DES Science Portal: portals/des.md
-      - TNO Portal: portals/tno.md
+      - Solar System Portal: portals/tno.md
       - MaNGA Portal: portals/manga.md 
   - High-Performance Computing:
       - Apolo (LIneA): hpc/apolo.md
