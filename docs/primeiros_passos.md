@@ -35,7 +35,7 @@ Agora que você já sabe qual é o seu perfil, o próximo passo é o registro!
 ### Como se registrar 
 
 
-1 - Acesse o [site do LIneA](www.linea.org.br) e clique no menu <font color=\"#172b4d\">**_Serviços_**</font> > <font color=\"#172b4d\">**_Registro_**</font>.
+1 - Acesse o site do LIneA em [**linea.org.br**](https://linea.org.br/) e clique no menu <font color=\"#172b4d\">**_Serviços_**</font> > <font color=\"#172b4d\">**_Registro_**</font>.
 
 2 -  Após abrir a página, escolha o tipo de perfil (Bronze, Prata ou Ouro) ou colaboração (DESI, DES, LSST, SDSS, e TON) em que você se encaixa. Em seguida, clique em Registre-se via CAFe (Comunidade Acadêmica Federada) ou via Google (apenas para o perfil Bronze). 
 
