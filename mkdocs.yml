@@ -11,7 +11,8 @@ nav:
       - DES Science Portal: portals/des.md
       - Solar System Portal: portals/tno.md
       - MaNGA Portal: portals/manga.md 
-  - High-Performance Computing:
+  - Computação de Alto Desempenho:
+      - Computação de Alto Desempenho: hpc/index.md
       - Apolo (LIneA): hpc/apolo.md
       - Santos Dumont (LNCC): hpc/sdu.md
   - Políticas: 'politicas.md'
