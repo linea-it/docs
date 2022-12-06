@@ -1,5 +1,5 @@
 
-<font color=red> Serviço em desenvolvimento.  </font>
+<font color=red> Em breve! (serviço em desenvolvimento)  </font>
 
 O **User Query** é uma interface amigável para consultas ao banco de dados que vai possibilitar a criação de tabelas temporárias com resultados imediatamente disponíveis para visualização no [Target Viewer](/docs/lsp/sci_server.md). 
 
