@@ -13,7 +13,7 @@ nav:
       - MaNGA Portal: portals/manga.md 
   - Computação de Alto Desempenho:
       - Computação de Alto Desempenho: hpc/index.md
-      - Apolo (LIneA): hpc/apolo.md
+      - Cluster Apollo (LIneA): hpc/apolo.md
       - Santos Dumont (LNCC): hpc/sdu.md
   - Políticas: 'politicas.md'
   #- Photoz Server: 'photozserver.md'
