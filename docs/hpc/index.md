@@ -1,5 +1,4 @@
 
-## Computação de Alto Desempenho
 
 O LIneA oferece acesso recursos computacionais de alto desempenho a usuários membros de colaborações científicas e com projetos apoiados pelo laboratório em dois ambientes:  
 
