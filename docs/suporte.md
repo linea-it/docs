@@ -2,9 +2,7 @@
 
 
 
-Para suporte técnico, contate-nos em [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br).
-
-Se precisar falar com nossos especialistas, fique à vontade para reservar uma vaga no serviço _Office Hours_ enviando um e-mail para nossa equipe de comunicação em [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br).
+Para suporte técnico, entre em contato com o nosso _Service Desk_ (suporte via e-mail) ou reserve uma vaga no serviço _Office Hours_ (atendimento por vídeo-chamada) através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). 
 
 Se você quiser fazer parte da comunidade LIneA e conversar com outros usuários, clique [aqui](https://join.slack.com/t/lineauusers/shared_invite/zt-1h9nxy1du-iuHtVycWNJGDgDw8SaSmtQ) para receber um convite para o _Workspace_ _LIneA Users_ no Slack.
 
