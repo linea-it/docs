@@ -39,11 +39,11 @@ Agora que você já sabe qual é o seu perfil, o próximo passo é o registro!
 
 2 -  Após abrir a página, escolha o tipo de perfil (Bronze, Prata ou Ouro) ou colaboração (DESI, DES, LSST, SDSS, e TON) em que você se encaixa. Em seguida, clique em Registre-se via CAFe (Comunidade Acadêmica Federada) ou via Google (apenas para o perfil Bronze). 
 
-![Image](../images/perfil_de_usuarios.png)
+![Image](images/perfil_de_usuarios.png)
 
 3 - Você será redirecionado para efetuar login. Efetue o login com a sua credencial institucional (perfis prata, ouro ou colaborações) ou Google (perfil bronze), informando o nome de usuário e a senha. 
 
-![Image](../images/tela_de_login_cafe.png)
+![Image](images/tela_de_login_cafe.png)
 
 Após efetuar o login, você será redirecionado de volta para o nosso formulário de registro.
 

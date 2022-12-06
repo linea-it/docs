@@ -141,7 +141,7 @@ Dentro do diretório `Example1` você encontrará os seguintes conteúdo:
 
 - **count_objects_into_fits.py** -> script python que efetua a contagem de linhas(objetos) em arquivos .fits
 - **example1.sub** -> arquivo de submissão de trabalhos para o Condor.
-- [**setup.sh**]() -> arquivo com os comandos utilizados para carregar o [eups](eups.md) e configurar a dependência `pyfits 3.4+0`.
+- [**setup.sh**]() -> arquivo com os comandos utilizados para carregar o EUPS e configurar a dependência `pyfits 3.4+0`.
 
 **data** -> contém 2 arquivos .fits de exemplo.
 
