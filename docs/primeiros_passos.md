@@ -21,7 +21,7 @@ Entendemos que para esse perfil se encaixam os estudantes e pesquisadores em ger
 
 * **Bronze** - Recomendado para entusiastas da astronomia, estudantes de graduação e ensino médio. Com esse perfil você terá acesso ao JupyterHub e aos dados públicos do Sloan Digital Sky Survey (SDSS - DR17) e Dark Energy Survey (DES - DR2), com recursos computacionais limitados.
 * **Prata** - Recomendado para pesquisadores, pós-doutorandos e estudantes de pós-graduação (requer e-mail institucional para o registro). Com esse perfil você terá acesso aos mesmos recursos do perfil bronze, com mais poder computacional e persistência de arquivos entre sessões. 
-* **Ouro** - É indicado para casos/projetos específicos e que necessitam de recursos computacionais que vão além dos recursos pré-definidos para os perfis Bronze e Prata. Se esse é o seu caso, você poderá submeter um projeto informando a sua necessidade para a aprovação pelo Comitê de Usuários do LIneA. Caso ainda não tenha um projeto bem definido, sugerimos que inicie o registro com perfil Prata. Usuários do perfil Prata podem solicitar "_upgrade_" para o perfil ouro a qualquer momento, caso tenha necessidade justificada. 
+* **Ouro** - É indicado para casos/projetos específicos e que necessitam de recursos computacionais que vão além dos recursos pré-definidos para os perfis Bronze e Prata. Se esse é o seu caso, você poderá submeter um projeto informando a sua necessidade para a aprovação pelo Comitê de Usuários do LIneA. Caso ainda não tenha um projeto bem definido, sugerimos que inicie o registro com perfil Prata. Usuários do perfil Prata podem solicitar "_upgrade_" para o perfil ouro a qualquer momento, caso tenham necessidade justificada. 
 
 
 ### Perfis para membros de colaboração
