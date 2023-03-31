@@ -1,4 +1,4 @@
-O LIneA possui um projeto "guarda-chuva" aprovado no [LNCC](https://lncc.br/) que garante o direito à utilização de 2 milhões de horas de CPU do [supercomputador Santos Dumont](https://sdumont.lncc.br/) para apoiar alguns subprojetos que dependem de _High-Performance Computing_ (HPC) nas seguintes áreas:
+O LIneA possui um projeto "guarda-chuva" aprovado no [LNCC](https://lncc.br/) chamado "_Explorando o Universo via big data: do sistema solar à energia escura_" (sigla EUBD) que garante o direito à utilização de 2 milhões de horas de CPU do [supercomputador Santos Dumont](https://sdumont.lncc.br/) para apoiar alguns subprojetos que dependem de _High-Performance Computing_ (HPC) nas seguintes áreas:
 
 1. Sistema Solar
 2. Via-Láctea/Volume Local
@@ -8,7 +8,7 @@ O LIneA possui um projeto "guarda-chuva" aprovado no [LNCC](https://lncc.br/) qu
 
 
 !!! info 
-    Caso seu projeto tenha demandas de HPC e ainda não faça parte do escopo do projeto EUDB-LINEA, entre em contato conosco através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações. 
+    Caso seu projeto tenha demandas de HPC e ainda não faça parte do escopo do projeto EUBD, entre em contato conosco através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações. 
 
 ---
 
@@ -24,10 +24,8 @@ Faça o download do formulário de registro <a href="http://sdumont.lncc.br/form
 Após a obtenção das suas credenciais o acesso deverá ser feito em duas etapas:
 
    1. Conectar-se ao serviço de VPN do SDumont (Manuais em PDF: [MAC](/hpc/How%20To%20VPN%20SDUMONT%20-%20MAC.pdf), [Linux](/hpc/How%20To%20VPN%20SDUMONT%20%20LINUX%20.pdf), [Windows](/hpc/HowTo-VPN-client-Sdumont-Windows.pdf))
-   2. Conectar-se, via SSH, ao host login.sdumont.lncc.br.
+   2. Conectar-se, via SSH, ao host login.sdumont.lncc.br (`$ ssh <seu.nome.de.usuario>@login.sdumont.lncc.br`) 
 
 
-A submissão dos jobs será feita através do gerenciador de recursos e filas Slurm.
-
-O manual de utilização do usuário está disponível no endereço: <a href="http://sdumont.lncc.br" target="_blank">http://sdumont.lncc.br</a>
+A submissão dos jobs será feita através do gerenciador de recursos e filas Slurm. O manual de utilização do usuário está disponível na [página do Santos Dumont no site do LNCC](https://sdumont.lncc.br/support_manual.php). 
 
