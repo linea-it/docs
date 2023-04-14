@@ -13,56 +13,16 @@ Características atuais (2022-2023):
 | ------- | ------| ------------ | ------ | -----------| 
 | 16      | 448   | 2TB          | 15.769 |  Abr-2019  |
 
+
 ## Armazenamento (Lustre FS)
 
 O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [Lustre](https://www.lustre.org/) com dois níveis (_tiers_) de armazenamento, um em SSD com ~70 TB (_T0_) e outro em HDD com ~500 TB (_T1_), ambos conectados a uma rede infiniband EDR de 100 Gb/s. Os dois níveis de armazenamento estão disponíveis em `/lustre/t0` e `/lustre/t1`. 
 
-Os usuários poderão acessar seu diretório de scratch através das variáveis de ambiente `$SCRATCH0` e `$SCRATCH1`, respectivamente, ou acessando o diretório localizado em `/lustre/t0/scratch/users/<username>`  ou `/lustre/t1/scratch/users/<username>`. Por exemplo, se seu username é _fulano_ seu diretório será `/lustre/t1/scratch/users/fulano`.
+Os usuários poderão acessar seu diretório de scratch através da variável de ambiente `$SCRATCH`, ou acessando o diretório localizado em `/lustre/t0/scratch/users/<username>`. 
 
 !!! note
-    A variável de ambiente `$SCRATCH` acessa o mesmo caminho disponível em `$SCRATCH0`.
-
-### Política de quotas e de armazenamento
-
-As seguintes políticas serão aplicadas por _usuário_:
-
-#### Quotas:
-
-| area    | TB    | blocks (soft) | blocks (hard) | grace period | | inodes (soft) | inodes (hard) | grace period |
-| ------- | ------| ------------- | ------------- | ------------ |-| ------------- | ------------- | ------------ |
-| T0      | ~70   |    400 GB     |    500 GB     |   7 days     | |   5000 files  |   5500 files  |   7 days     |
-| T1      | ~500  |      1 TB     |    1.2 TB     |   7 days     | |  10000 files  |  11000 files  |   7 days     |
-
-
-#### Armazenamento nas áreas de scratch
-
-    T0: serão removidos os arquivos presentes automaticamente após 30 dias desde que foram criados.
-    T1: serão removidos os arquivos presentes automaticamente após 60 dias sem terem sido modificados. 
-
-!!! warning
-    Essas áreas NÃO sofrerão backups e também NÃO será enviado aviso de remoção de arquivos!
-    O script de limpeza é executado uma vez por semana, aos fins de semana.  
-
-
-#### Comandos úteis do Lustre FS
-
-a) Como connsultar a quota disponível?
-
-    lfs quota -u $USER /lustre/t0
-
-b) Como acessar a minha área de scratch?
-   
-    cd $SCRATCH0 
+    Por exemplo, se seu username é _fulano_ seu diretórios será /lustre/t0/scratch/users/fulano.
     
-c) Como consultar os meus arquivos criados há mais de 30 dias? _(Para buscar os seus arquivos em T1 basta alterar pela variável $SCRATCH1)_
-
-    lfs find $SCRATCH0 --uid $UID -mtime +30 --print
-
-
-!!! tip
-    Você pode alterar a variável para $SCRATCH1 para consular as informações sobre a área de T1
-    
-
 #### Características de um sistema de arquivos Lustre
 
 Os sistemas de arquivos Lustre têm um desempenho bastante diferente dos discos locais comuns em outras máquinas. O Lustre foi desenvolvido para fornecer acesso rápido a grandes arquivos de dados necessários para aplicações paralelas. Ele é particularmente ineficiente em lidar com arquivos pequenos e em fazer muitas pequenas operações nesses arquivos. _**Esses casos devem ser evitados tanto quanto possível**_.
@@ -80,6 +40,66 @@ Como o Lustre foi projetado para ler rapidamente um pequeno número de arquivos 
  3. Procurando dentro de um arquivo para ler um pequeno pedaço de dados
 
 Essas práticas são muito comuns em aplicativos que foram projetados para serem executados em sistemas onde cada nó possui seu próprio disco de trabalho local. Em outras palavras, comandos como `ls -l` ou `stat`devem ser evitados sempre que possível.
+
+### Política de quotas e de armazenamento
+
+As seguintes políticas serão aplicadas por _usuário_:
+
+#### Quotas:
+
+|area|TB  |blocks (soft)|blocks (hard)|grace period|inodes (soft)|inodes (hard)|grace period|
+|----|----|-------------|-------------|------------|-------------|-------------|------------|
+|T0  |500 |     1 TB    |   1.25 TB   |  7 days    | 10000 files |11000 files  |  7 days    |
+
+
+#### Armazenamento nas áreas de scratch
+
+Os arquivos que não foram modificados nos último 60 dias serão automaticamente removidos.
+
+!!! warning
+    Essa área NÃO sofrerá backup e também NÃO será enviado aviso de remoção de arquivos!
+
+!!! warning
+    O script de limpeza é executado uma vez por semana, aos fins de semana.  
+
+
+#### Comandos úteis do Lustre FS
+
+a) Como acessar a minha área de scratch?
+   
+    cd $SCRATCH 
+    
+b) Como consultar a minha quota disponível?
+
+    lfs quota -u $USER /lustre/t0
+    
+c) Como consultar os meus arquivos criados há _mais_ de 60 dias? 
+
+    lfs find $SCRATCH --uid $UID -mtime +60 --print
+
+c) Como consultar os meus arquivos criados há _menos_ de 60 dias? 
+
+    lfs find $SCRATCH --uid $UID -mtime -60 --print
+    
+d) Como listar os OSTs do Lustre?
+
+    lfs osts /lustre/t0
+
+e) Como listar os arquivos armazenados há mais de 60 dias em um determinado OST do Lustre?
+
+    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
+    
+f) Como configurar o striping em diretório de modo a "quebrar" os arquivos e distribuir esses "pedaços" em 10 OSTs?
+
+    lfs setstripe -c 10 $SCRATCH/meus_arquivos_grandes
+    
+g) Como consultar o striping de arquivos/diretórios?
+
+    lfs setstripe -c $SCRATCH/meus_arquivos_grandes
+
+
+!!! tip
+    O Lustre do LIneA foi projetado para trabalhar a 100Gbps, para alcançar o máximo de performance faça uso do striping e sempre com arquivos grandes (+100MB).    
 
 
 ## Submissão Jobs
