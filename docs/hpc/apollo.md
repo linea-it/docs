@@ -21,7 +21,7 @@ O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [
 Os usuários poderão acessar seu diretório de scratch através da variável de ambiente `$SCRATCH`, ou acessando o diretório localizado em `/lustre/t0/scratch/users/<username>`. 
 
 !!! note
-    Por exemplo, se seu username é _fulano_ seu diretórios será /lustre/t0/scratch/users/fulano.
+    Por exemplo, se seu username é _fulano_ seu diretório será /lustre/t0/scratch/users/fulano.
     
 #### Características de um sistema de arquivos Lustre
 
@@ -45,14 +45,14 @@ Essas práticas são muito comuns em aplicativos que foram projetados para serem
 
 As seguintes políticas serão aplicadas por _usuário_:
 
-#### Quotas:
+#### Quotas
 
 |area|TB  |blocks (soft)|blocks (hard)|grace period|inodes (soft)|inodes (hard)|grace period|
 |----|----|-------------|-------------|------------|-------------|-------------|------------|
 |T0  |500 |     1 TB    |   1.25 TB   |  7 days    | 10000 files |11000 files  |  7 days    |
 
 
-#### Armazenamento nas áreas de scratch
+#### Armazenamento na área de scratch
 
 Os arquivos que não foram modificados nos último 60 dias serão automaticamente removidos.
 
