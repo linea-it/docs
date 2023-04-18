@@ -49,7 +49,7 @@ As seguintes políticas serão aplicadas por _usuário_:
 
 |area|TB  |blocks (soft)|blocks (hard)|grace period|inodes (soft)|inodes (hard)|grace period|
 |----|----|-------------|-------------|------------|-------------|-------------|------------|
-|T0  |500 |     1 TB    |   1.25 TB   |  7 days    | 10000 files |11000 files  |  7 days    |
+|T0  | 70 |     1 TB    |   1.25 TB   |  7 days    | 10000 files |11000 files  |  7 days    |
 
 
 #### Armazenamento na área de scratch
