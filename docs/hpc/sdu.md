@@ -19,8 +19,8 @@ Se você já participa de um desses subprojetos, siga as instruções a seguir e
 
 
 1. Envie um e-mail, seguindo o modelo abaixo para helpdesk.linea.org.br:
-### No campo assunto escreva: Acesso ao supercomputador Santos Dumont - Projeto EUBD
-### No corpo do email:
+# No campo assunto escreva: Acesso ao supercomputador Santos Dumont - Projeto EUBD
+# No corpo do email:
 Seu nome completo:
 Nome da instituição (acrônimo):
 Nome do orientador (se houver):
