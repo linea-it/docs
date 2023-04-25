@@ -15,9 +15,30 @@ O LIneA possui um projeto "guarda-chuva" aprovado no [LNCC](https://lncc.br/) ch
 Se você já participa de um desses subprojetos, siga as instruções a seguir e acesse a documentação oficial do supercomputador no site do LNCC (links abaixo).  
 
 
-### Registro de usuários junto ao LNCC
+### Registro de usuários para o acesso ao Super Computador - Projeto EUBD
 
-Faça o download do formulário de registro <a href="http://sdumont.lncc.br/formularios/formulario_sdumont_usuario.docx" target="_blank">nesse link</a>. O formulário deve ser escaneado e enviado por email para helpdesk-sdumont@lncc.br, com cópia para helpdesk@linea.org.br. Após o recebimento do formulário, a equipe técnica do LNCC responsável pela operação do SDumont entrará em contato para fornecimento das credenciais de acesso.
+
+1. Envie um e-mail, seguindo o modelo abaixo para helpdesk.linea.org.br:
+#### No campo assunto escreva: Acesso ao supercomputador Santos Dumont - Projeto EUBD
+#### No corpo do email:
+Seu nome completo:
+Nome da instituição (acrônimo):
+Nome do orientador (se houver):
+e-mail do orientador (se houver):
+Justificativa de uso:
+Escreva em no máximo 5 linhas qual é o objetivo e a importância de uso desses recursos computacionais.
+Se possível, informe quantas CPU/horas pretende utilizar e também qual o volume de dados de entrada e de saída da sua aplicação.
+Utilize KiloBytes(KB), MegaBytes(MB) ou GigaBytes(GB) para representar o volume de seus dados.
+
+
+2. A solicitação será encaminhada para avaliação
+
+3. Se a aprovada, o solicitante receberá um link para realizar o download do formulário   de acesso, o qual deverá ser preenchido, escaneado e enviado para o helpdesk@linea.org.br com cópia para helpdesk-sdumont@lncc.br.
+
+4. Após recebimento da cópia do e-mail de abertura do chamado junto ao LNCC, aguardaremos um prazo de 7 dias para confirmação da criação da conta. Depois desse prazo e da confirmação encerraremos o chamado no nosso sistema.
+
+5. No caso de negação informaremos no próprio chamado que a solicitação foi negada
+
 
 ### Acesso ao supercomputador
 

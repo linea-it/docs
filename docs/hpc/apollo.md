@@ -101,21 +101,21 @@ g) Como consultar o striping de arquivos/diretórios?
 !!! tip
     O Lustre do LIneA foi projetado para trabalhar a 100Gbps, para alcançar o máximo de performance faça uso do striping e sempre com arquivos grandes (+100MB).    
 
-## Como criar chaves SSH
+## Como criar par de chaves SSH
 
 Para acessar nosso ambiente via ssh é preciso gerar um par de chaves seguindo os passos abaixos:
 
-1. Gerar par de chave no sistema operacional Linux.
+1. Gerar par de chaves no sistema operacional Linux.
 
 a) Para gerar o par de chaves utilize o comando abaixo em seu terminal.
 
     ssh-keygen -t rsa -b 4096
     
     Generating public/private rsa key pair.
-    Enter file in which to save the key (/root/.ssh/id_rsa):  [Digite um nome para o arquivo e para confirmar pressione ENTER]
+    Enter file in which to save the key (/root/.ssh/id_rsa):  [pressione ENTER]
     Created directory '/root/.ssh'.
-    Enter passphrase (empty for no passphrase): [Digite uma senha e para confirmar pressione ENTER]
-    Enter same passphrase again: [Digite novamente a senha e para confirmar pressione ENTER]
+    Enter passphrase (empty for no passphrase): [digite uma senha e para confirmar pressione ENTER]
+    Enter same passphrase again: [repita a senha e pressione ENTER]
 
 ![Image](../images/retorno_da_criacao_de_chave_ssh.png)
 
@@ -156,7 +156,7 @@ c) Clicar em Generate (o tipo de chave mantém como **RSA**).
 
 ![Image](../images/carregamento_da_criacao_da_chave.png)
 
-d) Chave geradas com sucesso.
+d) Par de chaves geradas com sucesso.
  
  - Copiar a chave publicar para ser salva no servidor (detalhe na imagem em amarelo);
  - Colocar uma senha na chave pública (detalhe na imagem em azul).
