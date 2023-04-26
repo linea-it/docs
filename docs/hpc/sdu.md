@@ -12,29 +12,29 @@ O LIneA possui um projeto "guarda-chuva" aprovado no [LNCC](https://lncc.br/) ch
 
 ---
 
-Se você já participa de um desses subprojetos, siga as instruções a seguir e acesse a documentação oficial do supercomputador no site do LNCC (links abaixo).  
-
-
 ### Registro de usuários para o acesso ao Super Computador - Projeto EUBD
 
-
-1. Envie um e-mail, seguindo o modelo abaixo para helpdesk.linea.org.br:
-#### No campo assunto escreva: Acesso ao supercomputador Santos Dumont - Projeto EUBD
-#### No corpo do email:
+Envie um e-mail, seguindo o modelo abaixo para helpdesk@linea.org.br e aguarde o nosso retorno (no máximo em até 72hs).:
 
 
- - *Seu nome completo:*
- - *Nome da instituição (acrônimo):*
- -  *Nome do orientador (se houver):* 
- - *e-mail do orientador (se houver):*
- - *Justificativa de uso:*
-		
-	 - *Escreva em no máximo 5 linhas qual é o objetivo e a importância de
-   uso desses recursos computacionais.*
-	 - *Se possível, informe quantas CPU/horas pretende utilizar e também
-	   qual o volume de dados de entrada e de saída da sua aplicação.*
-	 - *Utilize KiloBytes(KB), MegaBytes(MB) ou GigaBytes(GB) para
-	   representar o volume de seus dados.*
+a.) No campo assunto escreva: 
+
+    Acesso ao supercomputador Santos Dumont - Projeto EUBD
+
+b.) No corpo do email:
+
+     1. Seu nome completo:
+     2. Nome da instituição (acrônimo):
+     3. Nome do orientador (se houver): 
+     4. E-mail do orientador (se houver):
+     5. Justificativa de uso:
+    		
+    	 - Escreva em no máximo 5 linhas qual é o objetivo e a importância de
+       uso desses recursos computacionais.
+    	 - Se possível, informe quantas CPU/horas pretende utilizar e também
+    	   qual o volume de dados de entrada e de saída da sua aplicação.
+    	 - Utilize KiloBytes(KB), MegaBytes(MB) ou GigaBytes(GB) para
+    	   representar o volume de seus dados.
 
 ### Acesso ao supercomputador
 
