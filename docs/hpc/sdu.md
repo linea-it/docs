@@ -26,7 +26,7 @@ b.) No corpo do email:
      1. Seu nome completo:
      2. Nome da instituição (acrônimo):
      3. Nome do orientador (se houver): 
-     4. E-mail do orientador (se houver):
+     4. E-mail do orientador/supervisor (se houver):
      5. Justificativa de uso:
     		
     	 - Escreva em no máximo 5 linhas qual é o objetivo e a importância de
