@@ -54,7 +54,7 @@ As seguintes políticas serão aplicadas por _usuário_:
 
 #### Armazenamento na área de scratch
 
-Os arquivos que não foram modificados nos último 60 dias serão automaticamente removidos.
+Os arquivos que não foram modificados nos últimos 60 dias serão automaticamente removidos.
 
 !!! warning
     Essa área NÃO sofrerá backup e também NÃO será enviado aviso de remoção de arquivos!
