@@ -15,6 +15,10 @@ nav:
       - Computação de Alto Desempenho: hpc/index.md
       - Cluster Apollo (LIneA): hpc/apollo.md
       - Santos Dumont (LNCC): hpc/sdu.md
+  - Data:
+      - Data: data/index.md
+      - DES: data/des.md
+      - LSST: data/des.md      
   - Políticas: 'politicas.md'
   #- Photoz Server: 'photozserver.md'
   #- Armazenamento: 'armazenamento.md'
