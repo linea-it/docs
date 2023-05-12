@@ -18,7 +18,7 @@ nav:
   - Data:
       - Data: data/index.md
       - DES: data/des.md
-      - LSST: data/des.md      
+      - LSST: data/lsst.md      
   - Políticas: 'politicas.md'
   #- Photoz Server: 'photozserver.md'
   #- Armazenamento: 'armazenamento.md'
