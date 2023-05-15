@@ -24,3 +24,13 @@
   * 2MASS
  * PZ Server
    * tbd
+
+
+* What information?
+  * File or table
+    * Number of files
+    * Internal path or table name (include environment name: e.g: dev or prod)
+  * Volume total (File or table)
+  * Description (Summary)
+  * Source URL
+  * Download date?
