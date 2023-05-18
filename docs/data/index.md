@@ -1,6 +1,6 @@
 # Datasets
 
- * DES
+ * [DES](des.md)
    * DR2 <<<
    * Y6A1_COADD <<<   
    * Y6A2_COADD <<<
@@ -11,7 +11,7 @@
      * Buzzard
      * Aadvark
   * MICE
- * LSST
+ * [LSST](lsst.md)
    * DP0  
    * DC2
  * SDSS
