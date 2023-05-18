@@ -2,6 +2,7 @@
 
  * DES
    * DR2 <<<
+   * Y6A1_COADD <<<   
    * Y6A2_COADD <<<
    * Y6A2_GOLD <<<
      * cats
@@ -25,12 +26,14 @@
  * PZ Server
    * tbd
 
+----
 
-* What information?
-  * File or table
-    * Number of files
-    * Internal path or table name (include environment name: e.g: dev or prod)
-  * Volume total (File or table)
-  * Description (Summary)
-  * Source URL
-  * Download date?
+**What information?**
+
+1. File or table
+   1. Number of files
+   1. Internal path or table name (include environment name: e.g: dev or prod)
+2. Volume total (File or table)
+3. Description (Summary)
+4. Source URL
+5. Download date?
