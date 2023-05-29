@@ -1,7 +1,7 @@
 # LSST
 
 !!! warning
-    This page is under construction
+    Esta página está incompleta, pois está sendo construída
 
 LSST datasets available at LIneA
 
