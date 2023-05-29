@@ -1,7 +1,7 @@
-# Datasets (under construction)
+# Datasets
 
 !!! warning
-    This page is under construction
+    Esta página está incompleta, pois está sendo construída
 
  * [DES](des.md)
    * DR2 <<<
