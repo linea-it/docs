@@ -11,8 +11,8 @@ nav:
       - DES Science Portal: portals/des.md
       - Solar System Portal: portals/tno.md
       - MaNGA Portal: portals/manga.md 
-  - Processamento (HPC):
-      - Processamento (HPC): processamento/index.md
+  - Processamento:
+      - Processamento: processamento/index.md
       - Cluster Apollo (LIneA): processamento/apollo.md
       - Santos Dumont (LNCC): processamento/sdu.md
   - Armazenamento:
