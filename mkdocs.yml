@@ -1,6 +1,6 @@
 nav:
   - Home: index.md
-  - Primeiros passos: primeiros_passos.md 
+  - Registro de Usuários: registro.md 
   - Plataformas Científicas: 
       - Plataformas Científicas: sci-platforms/index.md #intro e LSP landing page
       - JupyterHub: sci-platforms/jupyter.md
