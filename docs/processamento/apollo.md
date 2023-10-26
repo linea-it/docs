@@ -34,6 +34,22 @@ Slurm é um sistema de gerenciamento de cluster e agendamento de tarefas de cód
 
 O acesso ao host de submissão é feito por chave `ssh` e é necessário que você possua uma conta válida no LIneA. Depois de se registrar como usuário do LIneA ([detalhes aqui](https://docs.linea.org.br/primeiros_passos.html#registro-de-usuarios)) e receber o e-mail de confirmação, entre em contato com o Service Desk através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações de como acessar o nó de submissão.
 
+
+### Filesystem
+O **Cluster Apollo** conta com um Filesystem Lustre, utilizado como "Scratch".
+O "Home" dos usuários (acessível apenas no nó de login), é fornecido através de NFS.
+
+Essas áreas de armazenamento devem ser utilizadas da seguinte forma:
+
+Scratch : Estrutura montada a partir do diretório /lustre/t0/scratch/users/<username>. Utilizado para armazenar todos os arquivos que serão utilizados durante a execução de um job (scripts de submissão, executáveis, dados de entrada, dados de saída etc).
+
+Home : Estrutura montada a partir do diretório /home/<username>. Utilizado para armazenar especialmente os resultados que se queira manter durante toda a vigência do projeto.
+
+[Clique aqui para mais detalhes](https://docs.linea.org.br/armazenamento/)
+
+!!! attention
+    Não esqueça de copiar os arquivos necessários (executável, bibliotecas, dados de entrada) para dentro da área de SCRATCH, pois a área de HOMEDIR não é acessível pelos nós computacionais.
+
 ### Informações sobre partições disponíveis
 
 |PARTITION |AVAIL  |TIMELIMIT  |NODES  |STATE |NODELIST|
