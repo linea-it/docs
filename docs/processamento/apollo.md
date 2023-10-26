@@ -1,20 +1,25 @@
 # HPE Apollo 2000
 
 
-## Características gerais
-
-O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 cores**. Seus nós são equipados com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz` (apl01-14) e `Intel(R) Xeon(R) Gold 5320 CPU @ 2.20GHz` (apl15-26) com o sistema de _hyperthreading_ ativado. O conjunto de máquinas provê cerca de 80 Tflops de capacidade computacional. 
+O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 cores** físicos. Seus nós são equipados com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz` (apl01-14) e `Intel(R) Xeon(R) Gold 5320 CPU @ 2.20GHz` (apl15-26) com o sistema de _hyperthreading_ ativado. O conjunto de máquinas provê cerca de 80 Tflops de capacidade computacional. 
 
 !!! note
     Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n.
+    
+
+!!! attention
+    Atualmente o número de cores disponíveis é de 2144 devido o _hyper-threading_ estar ativo nos nós de computação.
+
 
 Características atuais: 
 
 | # Nodes | # Cores | Total de ram | Instalado em |
 | ------- | ------| ------------ | -----------| 
-| 16      | 448   | 2TB          |  Abr-2019  |
+| 16<sup>[1]</sup>      | 448   | 2TB          |  Abr-2019  |
 | 12      | 624   | 3TB          |  Jul-2023  |
 
+
+<sup>[1]</sup> _atualmente 2 nós estão sendo usados como máquinas de serviço do cluster_.
 
 ## Submissão Jobs
 
