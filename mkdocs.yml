@@ -11,10 +11,14 @@ nav:
       - DES Science Portal: portals/des.md
       - Solar System Portal: portals/tno.md
       - MaNGA Portal: portals/manga.md 
-  - Computação de Alto Desempenho:
-      - Computação de Alto Desempenho: hpc/index.md
+  - Processamento (HPC):
+      - Processamento (HPC): hpc/index.md
       - Cluster Apollo (LIneA): hpc/apollo.md
       - Santos Dumont (LNCC): hpc/sdu.md
+  - Armazenamento:
+      - Armazenamento: armazenamento/index.md
+      - LustreFS (HPC): armazenamento/lustrefs.md
+#      - NAS: armazenamento/nas.md
   - Dados:
       - Dados: data/index.md
       - DES: data/des.md
