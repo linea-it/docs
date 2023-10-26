@@ -10,12 +10,12 @@ nav:
       - Solar System Portal: sci-platforms/tno.md
       - MaNGA Portal: sci-platforms/manga.md 
   - Processamento:
-      - Processamento: hpc/index.md
-      - Cluster Apollo (LIneA): hpc/apollo.md
-      - Santos Dumont (LNCC): hpc/sdu.md
+      - Processamento: processamento/index.md
+      - Cluster Apollo (LIneA): processamento/apollo.md
+      - Santos Dumont (LNCC): processamento/sdu.md
   - Armazenamento: 
-      - Armazenamento: storage/index.md
-      - Lustre: storage/lustre.md   
+      - Armazenamento: armazenamento/index.md
+ #     - Lustre: armazenamento/lustre.md   
   - Dados:
       - Dados: data/index.md
       - DES: data/des.md
