@@ -4,8 +4,6 @@ O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [
 
 Os usuários poderão acessar seu diretório de scratch através da variável de ambiente `$SCRATCH`, ou acessando o diretório localizado em `/lustre/t0/scratch/users/<username>`. 
 
-!!! note
-    Por exemplo, se seu username é _fulano_ seu diretório será /lustre/t0/scratch/users/fulano.
     
 ### Características
 
@@ -33,7 +31,7 @@ Essas práticas são muito comuns em aplicativos que foram projetados para serem
 |T0 (scratch)  | 70 |     1 TB    |   1.25 TB   |  7 days    | 10000 files |11000 files  |  7 days    |
 
 
-### Armazenamento (scratch)
+### Área de scratch
 
 Os arquivos que não foram modificados nos últimos 60 dias serão automaticamente removidos.
 
@@ -84,3 +82,40 @@ g) Como consultar o striping de arquivos/diretórios?
 
 
 ## NAS (NFS)
+
+Os sistemas de armazenamento NAS são utilizados para armazenamento de longo prazo e não estão acessíveis através dos nós de processamento (HPC).
+
+Características atuais: 
+
+| Fabricante | Modelo | Capacidade | Instalado em |
+| ------- | ------ | ------------ | -----------| 
+| SGI<sup>[1]</sup>     | IS5500 | 540TB        |  Dez-2011  |
+| SGI     | IS5600 | 240TB        |  Jul-2014  |
+
+
+<sup>[1]</sup> _este equipamento foi desativado devido a problemas físicos em Jun/2023._
+
+
+### /home
+
+O diretório `home` é uma área para os usuários armazenarem seus arquivos pessoais e é acessível nos nós de login e também no 
+
+### /archive
+
+Área de armazenamento de dados brutos de catálogos astronômicos transferidos a partir de outros centros de dados ou produzidos internamente pelas diversas plataformas desenvolvidas pelo LIneA.
+
+### /process
+
+Área de armazenamento de dados provenientes do processamento de dados do DES realizados pelo [Portal do DES](https://des-portal.linea.org.br).
+
+
+## Backup
+
+| áreas | frequência | tipo | retenção |
+| ----- | ---------- | ---- | ---------------- |
+| /home | diário | incremental | 90 dias |
+| /home | mensal | completo | 90 dias |
+| /archive | - | - | - |
+| /process | - | - | - |
+| /scratch | - | - | - |
+
