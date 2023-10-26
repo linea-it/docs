@@ -1,3 +1,6 @@
+
+## LIneA Science Platform (LSP)
+
 O LIneA Science Platform, ou LSP ([lsp.linea.org.br](https://lsp.linea.org.br/)), é uma plataforma online que agrega um conjunto de serviços e ferramentas oferecidas para facilitar o acesso e a análise dos dados astronômicos hospedados no LIneA. Clique [aqui](https://lsp.linea.org.br/about) para saber mais sobre o LSP.   
 
 
@@ -7,10 +10,17 @@ Nos anos que antecedem a operação do LSST, o LSP (que ainda está em fase de d
 
 Para dados embargados, o acesso depende de credenciais específicas. Para saber como criar uma conta no LIneA e ter acesso aos dados, leia a seção [Primeiros Passos](https://docs.linea.org.br/primeiros_passos.html). 
 
-
 ### Serviços oferecidos: 
 
 #### &nbsp;&nbsp;&nbsp;&nbsp; [JupyterHub](jupyter.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Science Server](sci_server.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [User Query](user_query.md)
+
+## Portais Científicos
+
+Os portais científicos oferecem ferramentas de processamento e visualização de dados desenvolvidas especificamente para cada projeto e são de uso restrito dos membros de cada colaboração. 
+
+#### &nbsp;&nbsp;&nbsp;&nbsp; [DES Science Portal](des.md)
+#### &nbsp;&nbsp;&nbsp;&nbsp; [SSO Portal](sso.md)
+#### &nbsp;&nbsp;&nbsp;&nbsp; [MaNGA Portal](manga.md)
 
