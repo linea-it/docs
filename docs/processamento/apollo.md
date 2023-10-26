@@ -11,7 +11,7 @@ O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 
     Atualmente o número de cores disponíveis é de 2144 devido o _hyper-threading_ estar ativo nos nós de computação.
 
 
-Características atuais: 
+#### Características atuais: 
 
 | # Nodes | # Cores | Total de ram | Instalado em |
 | ------- | ------| ------------ | -----------| 
@@ -21,290 +21,151 @@ Características atuais:
 
 <sup>[1]</sup> _atualmente 2 nós estão sendo usados como máquinas de serviço do cluster_.
 
-## Submissão Jobs
+O **Cluster Apollo** é gerenciado pelo **Slurm version 18.08.8**.
 
-O Condor (oficialmente conhecido como [HTCondor](https://research.cs.wisc.edu/htcondor/)) é o agendador de tarefas, ou escalonador de processos, utilizado no ambiente e possui atualmente uma única fila padrão de processos. Novas filas serão disponibilizadas em breve.
 
-**Universos**
+## Slurm
+Slurm é um sistema de gerenciamento de cluster e agendamento de tarefas de código aberto, tolerante a falhas e altamente escalonável para clusters Linux grandes e pequenos. Slurm não requer modificações no kernel para sua operação e é relativamente independente. Como gerenciador de carga de trabalho de cluster, o Slurm tem três funções principais: 
+ - alocar acesso exclusivo e/ou não exclusivo aos recursos (nós de computação) aos usuários por um determinado período de tempo para que possam realizar o trabalho. 
+ - oferecer uma estrutura para iniciar, executar e monitorar o trabalho (normalmente um trabalho paralelo) no conjunto de nós alocados.
+ - gerenciar a fila de submissão, arbitrando conflitos entre os pedidos de recursos computacionais.
 
-O Condor possui diferentes "universos" cada qual para execução de aplicações específicas. No ambiente, temos disponíveis os universos: `vanilla`,  `docker`, `parallel` e `DAGMan`. Para a maioria dos casos de uso o universo `vanilla` é o recomendado.
+### Acesse o nó de submissão
 
-**Como utilizar o Condor para submeter jobs?** 
+O acesso ao host de submissão é feito por chave `ssh` e é necessário que você possua uma conta válida no LIneA. Depois de se registrar como usuário do LIneA ([detalhes aqui](https://docs.linea.org.br/primeiros_passos.html#registro-de-usuarios)) e receber o e-mail de confirmação, entre em contato com o Service Desk através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações de como acessar o nó de submissão.
 
-1. Acesse o nó de submissão
+### Informações sobre partições disponíveis
 
-O acesso ao host de submissão é feito por chave `ssh` e é necessário que você possua uma conta válida no LIneA. Depois de se registrar como usuário do LIneA ([detalhes aqui](https://docs.linea.org.br/primeiros_passos.html#registro-de-usuarios)) e receber o e-mail de confirmação, entre em contato com o _Service Desk através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações de como acessar o nó de submissão.
+|PARTITION |AVAIL  |TIMELIMIT  |NODES  |STATE |NODELIST|
+|----------|-------|-----------|-------|------|--------|
+|cpu_dev      |up      |30:00     |23   |idle |apl[01-26]|
+|cpu_small    |up |3-00:00:00     |23   |idle |apl[01-26]|
+|cpu          |up |5-00:00:00     |23   |idle |apl[01-26]|
+|cpu_long     |up |31-00:00:0     |23   |idle |apl[01-26]|
+|LSST         |up   |infinite      |9   |idle |apl[18-26]|
 
-2. Configure as dependências
+### Accounts disponíveis e suas prioridades
+- **Workflow** – Interrompe qualquer job que esteja rodando: **hpc-photoz** (photoz)
+- **LSST** – Próximo da fila: **hpc-lsst** [somente nas novas apollos apl[15-26]] (lsst)
+- **Grupo A** - Prioridade Maior: **hpc-bpglsst** (itteam, bpg-lsst)
+- **Grupo B** - Prioridade Intermediária: **hpc-collab** (des, desi, sdss, tno)
+- **Grupo C** - Prioridade Menor: **hpc-public** (linea-members)
 
-Caso sua aplicação possua dependências você pode configurá-las em seu ambiente/seção através do programa EUPS. O EUPS é um gerenciador de pacotes que permite um gerenciamento simples de múltiplas versões de uma aplicação em ambientes *nix, bem como suas dependências.
+As partições (**cpu_dev**, **cpu_small**, **cpu** e **cpu_long**) possuem todas as apollos (*apl[01-26]*), enquanto a partição LSST possui apenas as *apl[15-26]*. Porém, somente o account *hpc-lsst* poderá submeter jobs nessa partição (**LSST**), que possui prioridade maior nesses nodes.
 
-Antes de utilizar o EUPS é preciso configurá-lo em sua sessão/ambiente, para isso execute:
 
-    source /mnt/eups/linea_eups_setup.sh 
+### Anatomia de um Job
 
-Para listar as aplicações/bibliotecas instaladas no eups basta executar os comandos abaixo:
+Um Job solicita recursos de computação e especifica os aplicativos a serem iniciados nesses recursos, juntamente com quaisquer dados/opções de entrada e diretivas de saída. O usuário envia a tarefa, geralmente na forma de um script de tarefa em lote, ao agendador em lote.
+O script de tarefa em lote é composto por quatro componentes principais:
 
-    eups list
+ - O intérprete usado para executar o script
+ - Diretivas “#” que transmitem opções de envio padrão.
+ - A configuração de variáveis de ambiente e/ou script (se necessário)
+ - Os aplicativos a serem executados junto com seus argumentos e opções de entrada.
 
+Aqui está um exemplo de um script em lote que solicita 3 nós na partição "cpu" e inicia 36 tarefas do myApp nos 3 nós alocados:
 
-!!! note
-    Caso alguma dependência não esteja listada, é possível solicitar a instalação enviando e-mail ao nosso suporte em [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). 
-    No assunto do e-mail, coloque `Instalação <nome aplicação/biblioteca> versão n.n`, no corpo da mensagem descreva suas preferências para a instalação e informe a url/site de onde a equipe de suporte poderá baixar a aplicação/biblioteca.
+```bash
+#!/bin/bash
+#SBATCH -N 3
+#SBATCH -p cpu
+#SBATCH --ntasks 36
 
-Exemplo de email solicitando a instalação de uma dependência:
+srun myApp
+```
 
-    Assunto: Instalação pyfits v3.4
-    Corpo do e-mail:
-        Solicito que na compilação seja utilizada a versão 3.8 do python
-        A biblioteca pode ser encontrada em https://github.com/spacetelescope/PyFITS
+Quando a tarefa estiver agendada para execução, o gerenciador de recursos executará o script da tarefa em lote no primeiro nó da alocação.
 
 
-Exemplo de como configurar uma aplicação e suas dependências: 
+#### Executando um Job
+Após ter construído o script de execução com todas basta chama-lo utilizando o comando sbatch como mostra o exemplo abaixo:
 
-    source /mnt/eups/linea_eups_setup.sh     
+```bash
+[usuario@loginapl01]$ sbatch myscript.slurm
+```
 
-inicializa o EUPS na sua sessão
+Se o script estiver correto haverá uma saída que indica o ID do job. Por exemplo:
 
-    setup pyfits 3.4+0 
-  
-adiciona/configura o pacote pyfits, na versão 3.4, revisão 0 na sua sessão
-  
-    unsetup pyfits
+```bash
+[usuario@loginapl01]$ sbatch myscript.slurm
+Submitted batch job 510
+```
 
-remove o pacote pyfits da sua sessão 
+#### Andamento do Job
+A maioria das especificações de um job pode ser vista através do comando `scontrol show job <JobID>`. Mais detalhes sobre o trabalho, incluindo o script do trabalho, podem ser vistos adicionando o sinalizador `-d`. Um usuário não consegue ver o script do trabalho de outro usuário.
 
-!!! tip
-    Ao configurar um pacote que está no repositório EUPS, na sua sessão, todas as suas dependências também são adicionadas automaticamente.
-    Caso queira visualizar as dependências durante a configuração basta adicionar o parâmetro `-v`, neste caso o comando do exemplo ficaria
-    `setup -v pyfits 3.4+0`.
+```bash
+[usuario@loginapl01]$ scontrol show job 510  
+```
 
+O Slurm captura e relata o código de saída do script do job (tarefas sbatch), bem como o sinal que causou o término da execução.
 
-3. Crie o arquivo de submissão
 
-O arquivo de submissão é apenas um arquivo texto simples com as instruções para o condor. O formato das instruções, ou diretivas, segue o padrão `chave = valor`, uma por linha. Para um melhor entendimento veja os exemplos abaixo.
+#### Cancelando um Job
 
-!!! tip
-    Os nomes das chaves(diretivas) e dos valores **NÃO** são *case-sensitive*, ou seja, tanto faz você informar `getenv = true`ou `Getenv = TRUE`, o Condor 
-    entenderá ambas da mesma forma. No entanto, caminhos para arquivos e nomes de arquivos **SÃO** *case-sensitive* então `Executable = /mydir/app` é diferente
-    de `Executable = /MYDIR/App`.
+Se seu Job estiver em execução ou aguardando na fila, você poderá cancelar o trabalho usando o comando `scancel <JobId>`. Use o comando squeue se você não souber o ID do Job. Por exemplo:
 
-4. Submeta à fila de execução
 
-Para submeter à fila de execução basta executar o comando abaixo:
+```bash
+[usuario@loginapl01]$ scancel 510
+```
 
-    condor_submit myapp.sub
+#### Especificando Recursos
+O Slurm tem sua própria sintaxe para solicitar recursos de computação. Abaixo está uma tabela de resumo de alguns recursos solicitados com frequência e a sintaxe de Slurm para obtê-los. Para obter uma lista completa da sintaxe, execute o comando man sbatch.
 
+|Sintaxe  |Significado|
+|---------|-----------|
+|#SBATCH -p partition  | Define a partição em que o job será executado|
+|#SBATCH -J job_name | Define o nome do Job|
+|#SBATCH -n quantidade | Define o número total de tarefas da CPU.|
+|#SBATCH -N quantidade  | Define o número de nós de computação solicitados.|
 
-Onde `myapp.sub` é o arquivo de submissão que você criou e que contém todas as intruções para o condor executar sua aplicação.
 
-## Exemplos 
+#### Comandos Básico do Slurm
+Para aprender sobre todas as opções disponíveis para cada comando, insira man <comando> enquanto estiver conectado ao ambiente do Cluster.
 
-Abaixo três exemplos de como você pode utilizar o Condor para executar suas aplicações.
+|Comando	| Definição|
+|-----------|----------|
+|sbatch	| Envia scripts de tarefas para a fila de execução|
+|scancel	| Cancela um job|
+|scontrol	| Usado para exibir o estado Slurm (várias opções disponíveis apenas para root)|
+|sinfo	| Exibir estado de partições e nós|
+|squeue	| Exibir estado dos jobs|
+|salloc	| Envia um job para execução ou inicia um trabalho em tempo real|
 
-Antes de começar faça o clone do repositório [htcondor-examples](https://github.com/linea-it/htcondor-examples) conforme abaixo. 
+#### Ambiente de Execução
+Para cada tipo de trabalho acima, o usuário tem a capacidade de definir o ambiente de execução. Isso inclui definições de variáveis de ambiente, bem como limites de shell (`bash ulimit` ou `csh limit`). **sbatch** e **salloc** fornecem a opção `--export` para transmitir variáveis de ambiente específicas para o ambiente de execução. E também tem a opção `--propagate` para transmitir limites específicos do shell ao ambiente de execução.
 
-Com o terminal aberto:
+#### Variáveis de ​​ambiente
+A primeira categoria de variáveis de ambiente são aquelas que o Slurm insere no ambiente de execução do trabalho. Eles transmitem ao script da tarefa e informações do aplicativo, como ID da tarefa `(SLURM_JOB_ID)` e ID da tarefa `(SLURM_PROCID)`. Para obter a lista completa, consulte a seção `"OUTPUT ENVIRONMENT VARIABLES"` nas páginas [sbatch](https://slurm.schedmd.com/sbatch.html), [salloc](https://slurm.schedmd.com/salloc.html) e [srun](https://slurm.schedmd.com/srun.html).
 
-    git clone https://github.com/linea-it/htcondor-examples
+A próxima categoria de variáveis de ambiente são aquelas que o usuário pode definir em seu ambiente para transmitir opções padrão para cada trabalho enviado. Isso inclui opções como o limite do relógio de parede. Para obter a lista completa, consulte a seção `"INPUT ENVIRONMENT VARIABLES"` nas páginas [sbatch](https://slurm.schedmd.com/sbatch.html), [salloc](https://slurm.schedmd.com/salloc.html) e [srun](https://slurm.schedmd.com/srun.html).
 
-Acesse o diretório recém criado `htcondor-examples`.
+Finalmente, Slurm permite ao usuário personalizar o comportamento e a saída de alguns comandos usando variáveis de ambiente. Por exemplo, é possível especificar determinados campos para exibição do comando **squeue** definindo a variável `SQUEUE_FORMAT` no ambiente a partir do qual você invoca o **squeue**.
 
-    cd htcondor-examples/
+### Gerenciamento de pacotes (EUPS)
+O objetivo do EUPS é carregar as variáveis de ambiente e a inclusão no path dos programas e bibliotecas de forma modular:
 
+!!! attention
+    Esses comando são aceitos dentro do ambiente LIneA.
 
-O diretório htcondor-examples possui três subdiretórios, cada um corresponde a um exemplo de como você pode utilizar o Condor e, além das aplicações, inclui os arquivos de submissão do Condor e os inputs quando necessários.
+- Para carregar o EUPS:
+```bash
+. /mnt/eups/linea_eups_setup.sh
+```
 
-Lista de sub-diretórios e arquivos.
+- Listar todos os pacotes disponíveis:
+```bash
+eups list 
+```
 
-    ls
-    Example1  Example2  Example3  LICENSE  README.md
+Instalar um pacote:
+```bash
+setup scipy 0.11.0+2
+```
 
-
-### Exemplo 1 - contagem de objetos
-
-No primeiro exemplo, vamos executar um script python que efetua a contagem de objetos em arquivos .fits e que possui como dependência a biblioteca `pyfits 3.4+0`.
-
-!!! tip
-    - No eups o número após a versão identifica a revisão do pacote, por exemplo: `numpy 2.3.1+1`, significa que é a versão `2.3.1` na revisão `1`.
-    - Se você omitir o nome do pacote na hora de listar então o eups listará todos os disponíveis.
-    - Se você omitir a versão na hora do 'setup' então o eups irá carregar a que estiver marcada como `current`.
-
-
-Abra um terminal e acesse o diretório `Example1`.
-
-    cd Example1
-
-
-Dentro do diretório `Example1` você encontrará os seguintes conteúdo:
-
-    ls
-    count_objects_into_fits.py  data  example1.sub  setup.sh
-
-
-- **count_objects_into_fits.py** -> script python que efetua a contagem de linhas(objetos) em arquivos .fits
-- **example1.sub** -> arquivo de submissão de trabalhos para o Condor.
-- [**setup.sh**]() -> arquivo com os comandos utilizados para carregar o EUPS e configurar a dependência `pyfits 3.4+0`.
-
-**data** -> contém 2 arquivos .fits de exemplo.
-
-O primeiro passo é carregar o eups no ambiente e as dependências do script `count_objects_into_fits.py` já contidas no arquivo `setup.sh`, para isso faça:
-
-    source setup.sh
-
-
-Agora que as dependências estão carregadas vamos dar uma olhada no arquivo de submissão `example1.sub`.
-
-
-Agora vamos criar o arquivo de submissão, segue abaixo o arquivo de exemplo `exemplo1.sub` para executar o script python no Condor.
-
-
-    ####################################
-    # Exemplo de arquivo de submissão  #
-    # para execução do script contador #
-    # de objetos em arquivos fits      #
-    ####################################
-    getenv          = true
-    universe        = vanilla
-    executable      = $ENV(HOME)/htcondor-examples/Example1/count_objects_into_fits.py
-    notification    = Complete
-    notify_user     = carlosadean@linea.gov.br
-    error           = example1-$(Process).err
-    output          = example1-$(Process).out
-    log             = example1-$(Process).log
-    queue
-
-
-
-Explicando as linhas do arquivo acima `exemplo1.sub`.
-
-`getenv = true` instrui o Condor a copiar o atual ambiente `shell` do usuário para o nó remoto onde o script será executado. Útil para quando você carregar as dependências configuradas com o eups ou variáves definidas manualmente.
-
-`universe = vanilla` indica o universo em que a aplicação será executada. No ambiente do CAPDA os universos podem ser `vanilla, docker, parallel(mpi) e DAGMan`.
-
-`executable  = $ENV(HOME)/htcondor-examples/Example1/count_objects_into_fits.py` indica o caminho para o script.
-
-`notification = Complete` habilita notificação quando a execução terminar. Deve ser completada com a próxima diretiva.
-
-`notify_user = user@domain.com` e-mail para onde o Condor enviará as notificações de término de execução. **OBS:** *Se você submeter 1000 execuções receberá 1000 emails diferentes.*
-
-`error = example1-$(Process).err` arquivo onde o condor irá armazenar a saída de erro padrão da sua aplicação. Útil para *debugar* problemas na execução.
-
-`output = example1-$(Process).out` arquivo onde será armazenada a saída padrão. Tudo o que a aplicação exibir na tela será enviado para o `'output'`.
-
-`log = example1-$(Process).log` registro de log da execução da aplicação. Por exemplo, é neste arquivo que fica o endereço da máquina remota onde a aplicação foi executada.
-
-`queue` instrução para adicionar na fila de execução.
-
-A 'variável' $(Process) é uma macro interna que recebe automaticamente um número inteiro sequencial.
-
-
-Para executar a aplicação no cluster basta utilizar o comando `condor_submit` seguido do arquivo de submissão.
-
-    condor_submit exemplo1.sub
-
-
-Uma vez submetido o trabalho (job) para acompanhar sua execução utilize o comando `condor_q`.
-
-    condor_q
-
-
-Ao final da execução você verá os três arquivos definidos no arquivo de submissão estarão.
-
-    ls -lths
-
-
-    4.0K -rw-r--r-- 1 carlosadean production 1.1K Apr  9 20:28 example1-0.log
-    4.0K -rw-r--r-- 1 carlosadean production   49 Apr  9 20:28 example1-0.out
-       0 -rw-r--r-- 1 carlosadean production    0 Apr  9 20:28 example1-0.err
-       0 drwxr-xr-x 2 carlosadean production   46 Apr  9 18:50 data
-    4.0K -rw-r--r-- 1 carlosadean production  440 Apr  9 17:04 example1.sub
-    4.0K -rwxr-xr-x 1 carlosadean production  848 Apr  9 17:03 count_objects_into_fits.py
-    4.0K -rw-r--r-- 1 carlosadean production   56 Apr  9 16:55 setup.sh
-
-
-
-A saída do script python está no arquivo `example1-0.out`.
-
-    cat example1-0.out 
-    # files: 2
-    # objects: 3060
-
-
-### Exemplo 2 - calcula pi em C 
-
-Este segundo exemplo trata-se de uma aplicação compilada com gcc e que também recebe argumentos.
-
-    ###################################
-    # Exemplo de arquivo de submissão #
-    # para executar um binário que    #
-    # recebe argumentos               #
-    ###################################
-    universe    = vanilla
-    executable  = /home/user/bin/calculapi
-    arguments = 1000000
-    notification = Complete
-    notify_user = user@domain.com
-    error = calculapi-$(Process).err
-    output = calculapi-$(Process).out
-    log = calculapi-$(Process).log
-    queue
-
-
-Explicando as linhas do arquivo acima `calculapi.sub`.
-
-`universe = vanilla` indica o universo em que a aplicação será executada. No ambiente do CAPDA os universos podem ser `vanilla, docker, parallel(mpi) e DAGMan`.
-
-`executable  = /home/user/bin/calculapi` indica o caminho para a aplicação.
-
-`arguments = 1000000` essa diretiva do Condor recebe os argumentos que serão passados para a aplicação. **NÃO** passe os argumentos através da diretiva `executable`, fazendo assim sua aplicação será executada incorretamente.
-
-
-`notification = Complete` informa ao Condor que você quer ser notificado quando a execução terminar. Deve ser completada com a próxima diretiva
-
-`notify_user = user@domain.com` e-mail para onde o condor enviará as notificações de término de execução. **OBS:** *Se você submeter 1000 execuções receberá 1000 emails diferentes*.
-
-`error = calculapi-$(Process).err` arquivo onde o condor irá armazenar a saída de erro padrão da sua aplicação. Útil para *debugar* problemas na execução.
-
-`output = calculapi-$(Process).out` arquivo onde será armazenada a saída padrão. Tudo o que a aplicação exibir na tela será enviado para o `'output'`.
-
-`log = calculapi-$(Process).log` registro de log da execução da aplicação. Por exemplo, é neste arquivo que fica o endereço da máquina remota onde a aplicação foi executada.
-
-`queue` instrução para o condor adicionar na fila de execução.
-
-A 'variável' $(Process) é uma macro interna do condor e recebe automaticamente um número inteiro sequencial.
-
-
-
-
-Para executar a aplicação no cluster basta utilizar o comando `condor_submit` seguido do arquivo de submissão.
-
-    condor_submit calculapi.sub
-
-
-### Exemplo 3 - hello world mpi
-
-Em breve. 
-
-
-## Monitoramento de jobs
-
-A execução da sua aplicação pelo condor pode ser monitorada com o comando:
-
-    condor_q
-
-## Remoção de jobs da fila ou em execução
-
-Por JOB_ID:
-
-    condor_rm <JOB_ID> 
-
-Todos jobs do usuário: 
-
-    condor_rm <USERNAME>
-
-## Troubleshooting
-
-Em breve.
-
-
+Desinstalar um pacote:
+```bash
+unsetup scipy 0.11.0+2
+```
