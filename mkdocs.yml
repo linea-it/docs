@@ -9,10 +9,13 @@ nav:
       - DES Science Portal: sci-platforms/des.md
       - Solar System Portal: sci-platforms/tno.md
       - MaNGA Portal: sci-platforms/manga.md 
-  - Computação de Alto Desempenho:
-      - Computação de Alto Desempenho: hpc/index.md
+  - Processamento:
+      - Processamento: hpc/index.md
       - Cluster Apollo (LIneA): hpc/apollo.md
       - Santos Dumont (LNCC): hpc/sdu.md
+  - Armazenamento: 
+      - Armazenamento: storage/index.md
+      - Lustre: storage/lustre.md   
   - Dados:
       - Dados: data/index.md
       - DES: data/des.md
@@ -88,6 +91,7 @@ extra:
 
 # Extensions
 markdown_extensions:
+  - attr_list
   - meta
   - footnotes
   - admonition
@@ -114,3 +118,4 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.snippets
+  
