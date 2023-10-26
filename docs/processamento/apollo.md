@@ -3,103 +3,18 @@
 
 ## Características gerais
 
-O cluster HPE Apollo 2000 possui 16 nós computacionais com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz`. Com o sistema de _hyperthreading_ ativado, o conjunto de máquinas Apollo 2000 oferece 448 cores e e provê cerca de 16 Tflops de capacidade computacional. 
+O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 cores**. Seus nós são equipados com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz` (apl01-14) e `Intel(R) Xeon(R) Gold 5320 CPU @ 2.20GHz` (apl15-26) com o sistema de _hyperthreading_ ativado. O conjunto de máquinas provê cerca de 80 Tflops de capacidade computacional. 
 
-Em preparação para o LSST, para compor o _Brazilian Independent Data Access Center_ (IDAC), o cluster Apollo está sendo ampliado com a aquisição de mais 12 nós (624 cores adicionais), e terá a sua capacidade expandida para um total ~85 Tflops antes do início das operações do levantamento. 
+!!! note
+    Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n.
 
-Características atuais (2022-2023): 
+Características atuais: 
 
 | # Nodes | # Cores | Total de ram | Tflops | Instalado em |
 | ------- | ------| ------------ | ------ | -----------| 
-| 16      | 448   | 2TB          | 15.769 |  Abr-2019  |
+| 16      | 448   | 1.8TB          | ~16 |  Abr-2019  |
+| 12      | 624   | 2TB          | ~70 |  Jul-2023  |
 
-
-## Armazenamento (Lustre FS)
-
-O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [Lustre](https://www.lustre.org/) com dois níveis (_tiers_) de armazenamento, um em SSD com ~70 TB (_T0_) e outro em HDD com ~500 TB (_T1_), ambos conectados a uma rede infiniband EDR de 100 Gb/s. Os dois níveis de armazenamento estão disponíveis em `/lustre/t0` e `/lustre/t1`. 
-
-Os usuários poderão acessar seu diretório de scratch através da variável de ambiente `$SCRATCH`, ou acessando o diretório localizado em `/lustre/t0/scratch/users/<username>`. 
-
-!!! note
-    Por exemplo, se seu username é _fulano_ seu diretório será /lustre/t0/scratch/users/fulano.
-    
-#### Características de um sistema de arquivos Lustre
-
-Os sistemas de arquivos Lustre têm um desempenho bastante diferente dos discos locais comuns em outras máquinas. O Lustre foi desenvolvido para fornecer acesso rápido a grandes arquivos de dados necessários para aplicações paralelas. Ele é particularmente ineficiente em lidar com arquivos pequenos e em fazer muitas pequenas operações nesses arquivos. _**Esses casos devem ser evitados tanto quanto possível**_.
-
-**Boa prática de uso em um sistema Lustre**
-
-Para obter o melhor desempenho de um sistema Lustre, você deve usar o menor número possível de arquivos e, sempre que acessar um arquivo, deve ler/gravar o máximo de dados possível de cada vez. Um programa ideal usando Lustre leria um único arquivo de dados usando I/O paralelo (por exemplo, MPI IO), processaria os dados e, no final, gravaria um único arquivo novamente usando IO paralelo, sem uso intermediário do disco.
-
-**Má prática de uso em um sistema Lustre**
-
-Como o Lustre foi projetado para ler rapidamente um pequeno número de arquivos grandes, certos padrões de E/S que são perfeitamente adequados em outros sistemas causam uma carga muito alta em um sistema Lustre, por exemplo:
-
- 1. leituras pequenas
- 2. Abrindo muitos arquivos
- 3. Procurando dentro de um arquivo para ler um pequeno pedaço de dados
-
-Essas práticas são muito comuns em aplicativos que foram projetados para serem executados em sistemas onde cada nó possui seu próprio disco de trabalho local. Em outras palavras, comandos como `ls -l` ou `stat`devem ser evitados sempre que possível.
-
-### Política de quotas e de armazenamento
-
-As seguintes políticas serão aplicadas por _usuário_:
-
-#### Quotas
-
-|area|TB  |blocks (soft)|blocks (hard)|grace period|inodes (soft)|inodes (hard)|grace period|
-|----|----|-------------|-------------|------------|-------------|-------------|------------|
-|T0  | 70 |     1 TB    |   1.25 TB   |  7 days    | 10000 files |11000 files  |  7 days    |
-
-
-#### Armazenamento na área de scratch
-
-Os arquivos que não foram modificados nos últimos 60 dias serão automaticamente removidos.
-
-!!! warning
-    Essa área NÃO sofrerá backup e também NÃO será enviado aviso de remoção de arquivos!
-
-!!! warning
-    O script de limpeza é executado uma vez por semana, aos fins de semana.  
-
-
-#### Comandos úteis do Lustre FS
-
-a) Como acessar a minha área de scratch?
-   
-    cd $SCRATCH 
-    
-b) Como consultar a minha quota disponível?
-
-    lfs quota -u $USER /lustre/t0
-    
-c) Como consultar os meus arquivos criados há _mais_ de 60 dias? 
-
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
-
-c) Como consultar os meus arquivos criados há _menos_ de 60 dias? 
-
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
-    
-d) Como listar os OSTs do Lustre?
-
-    lfs osts /lustre/t0
-
-e) Como listar os arquivos armazenados há mais de 60 dias em um determinado OST do Lustre?
-
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
-    
-f) Como configurar o striping em diretório de modo a "quebrar" os arquivos e distribuir esses "pedaços" em 10 OSTs?
-
-    lfs setstripe -c 10 $SCRATCH/meus_arquivos_grandes
-    
-g) Como consultar o striping de arquivos/diretórios?
-
-    lfs setstripe -c $SCRATCH/meus_arquivos_grandes
-
-
-!!! tip
-    O Lustre do LIneA foi projetado para trabalhar a 100Gbps, para alcançar o máximo de performance faça uso do striping e sempre com arquivos grandes (+100MB).    
 
 ## Como criar par de chaves SSH
 

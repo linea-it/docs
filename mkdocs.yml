@@ -12,12 +12,12 @@ nav:
       - Solar System Portal: portals/tno.md
       - MaNGA Portal: portals/manga.md 
   - Processamento (HPC):
-      - Processamento (HPC): hpc/index.md
-      - Cluster Apollo (LIneA): hpc/apollo.md
-      - Santos Dumont (LNCC): hpc/sdu.md
+      - Processamento (HPC): processamento/index.md
+      - Cluster Apollo (LIneA): processamento/apollo.md
+      - Santos Dumont (LNCC): processamento/sdu.md
   - Armazenamento:
       - Armazenamento: armazenamento/index.md
-      - LustreFS (HPC): armazenamento/lustrefs.md
+#      - LustreFS (HPC): armazenamento/lustrefs.md
 #      - NAS: armazenamento/nas.md
   - Dados:
       - Dados: data/index.md
