@@ -90,7 +90,7 @@ extra:
     - icon: material/facebook
       link: https://facebook.com/linea.org
     - icon: material/youtube
-      link: https://youtube.com/user/lineamcti
+      link: https://youtube.com/@linea_org
 
 # Extensions
 markdown_extensions:
