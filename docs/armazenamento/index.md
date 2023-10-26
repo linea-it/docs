@@ -24,11 +24,11 @@ Como o Lustre foi projetado para ler rapidamente um pequeno número de arquivos 
 Essas práticas são muito comuns em aplicativos que foram projetados para serem executados em sistemas onde cada nó possui seu próprio disco de trabalho local. Em outras palavras, comandos como `ls -l` ou `stat`devem ser evitados sempre que possível.
 
 
-### Quotas
+### Quota
 
-|area|TB  |blocks (soft)|blocks (hard)|grace period|inodes (soft)|inodes (hard)|grace period|
-|----|----|-------------|-------------|------------|-------------|-------------|------------|
-|T0 (scratch)  | 70 |     1 TB    |   1.25 TB   |  7 days    | 10000 files |11000 files  |  7 days    |
+|area|TB  |bsoft|bhard|isoft|ihard|grace period|
+|----|----|-------------|-------------|-------------|-------------|------------|
+|T0 | 70 |     1 TB    |   1.25 TB   | 10000 | 11000  |  7 days    |
 
 
 ### Área de scratch
@@ -39,7 +39,7 @@ Os arquivos que não foram modificados nos últimos 60 dias serão automaticamen
     Essa área NÃO sofrerá backup e também NÃO será enviado aviso de remoção de arquivos!
 
 !!! warning
-    O script de limpeza é executado uma vez por semana, aos fins de semana.  
+    O script de limpeza é executado uma vez por semana sempre nos fins de semana.  
 
 
 ### Comandos úteis
@@ -98,7 +98,8 @@ Características atuais:
 
 ### /home
 
-O diretório `home` é uma área para os usuários armazenarem seus arquivos pessoais e é acessível nos nós de login e também no 
+O diretório `home` é uma área para os usuários armazenarem seus arquivos pessoais e é acessível através dos nós de login do cluster e também na plataforma [jupyter](.).
+
 
 ### /archive
 
@@ -107,6 +108,12 @@ O diretório `home` é uma área para os usuários armazenarem seus arquivos pes
 ### /process
 
 Área de armazenamento de dados provenientes do processamento de dados do DES realizados pelo [Portal do DES](https://des-portal.linea.org.br).
+
+### Quota
+
+|area| bsoft|bhard|isoft|ihard|grace period|
+|----| -------------|-------------|-------------|-------------|------------|
+|/home  |   10 GB    |   15 GB   | 1000  | 1100   |  7 days    |
 
 
 ## Backup
