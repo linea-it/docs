@@ -142,13 +142,12 @@ A primeira categoria de variáveis de ambiente são aquelas que o Slurm insere n
 
 A próxima categoria de variáveis de ambiente são aquelas que o usuário pode definir em seu ambiente para transmitir opções padrão para cada trabalho enviado. Isso inclui opções como o limite do relógio de parede. Para obter a lista completa, consulte a seção `"INPUT ENVIRONMENT VARIABLES"` nas páginas [sbatch](https://slurm.schedmd.com/sbatch.html), [salloc](https://slurm.schedmd.com/salloc.html) e [srun](https://slurm.schedmd.com/srun.html).
 
-Finalmente, Slurm permite ao usuário personalizar o comportamento e a saída de alguns comandos usando variáveis de ambiente. Por exemplo, é possível especificar determinados campos para exibição do comando **squeue** definindo a variável `SQUEUE_FORMAT` no ambiente a partir do qual você invoca o **squeue**.
 
 ### Gerenciamento de pacotes (EUPS)
 O objetivo do EUPS é carregar as variáveis de ambiente e a inclusão no path dos programas e bibliotecas de forma modular:
 
 !!! attention
-    Esses comando são aceitos dentro do ambiente LIneA.
+    Esses comandos deverão ser executados dentro do ambiente LIneA.
 
 - Para carregar o EUPS:
 ```bash
@@ -160,12 +159,12 @@ O objetivo do EUPS é carregar as variáveis de ambiente e a inclusão no path d
 eups list 
 ```
 
-Instalar um pacote:
+- Instalar um pacote:
 ```bash
 setup scipy 0.11.0+2
 ```
 
-Desinstalar um pacote:
+- Desinstalar um pacote:
 ```bash
 unsetup scipy 0.11.0+2
 ```
