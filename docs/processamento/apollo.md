@@ -12,8 +12,8 @@ Características atuais:
 
 | # Nodes | # Cores | Total de ram | Instalado em |
 | ------- | ------| ------------ | -----------| 
-| 16      | 448   | 1.8TB        |  Abr-2019  |
-| 12      | 624   | 2TB          |  Jul-2023  |
+| 16      | 448   | 2TB          |  Abr-2019  |
+| 12      | 624   | 3TB          |  Jul-2023  |
 
 
 ## Submissão Jobs
