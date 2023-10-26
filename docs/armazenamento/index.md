@@ -89,11 +89,11 @@ Características atuais:
 
 | Fabricante | Modelo | Capacidade | Instalado em |
 | ------- | ------ | ------------ | -----------| 
-| SGI<sup>[1]</sup>     | IS5500 | 540TB        |  Dez-2011  |
+| SGI     | IS5500<sup>[1]</sup> | 540TB        |  Dez-2011  |
 | SGI     | IS5600 | 240TB        |  Jul-2014  |
 
 
-<sup>[1]</sup> _este equipamento foi desativado devido a problemas físicos em Jun/2023._
+<sup>[1]</sup> _este equipamento foi desativado em Jun/2023 devido a problemas físicos._
 
 
 ### /home
