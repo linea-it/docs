@@ -2,7 +2,8 @@
 
 Para acessar nosso ambiente via ssh é preciso gerar um par de chaves seguindo os passos abaixos:
 
-1. Gerar par de chaves no sistema operacional Linux.
+
+### Linux
 
 a) Para gerar o par de chaves utilize o comando abaixo em seu terminal.
 
@@ -18,22 +19,7 @@ a) Para gerar o par de chaves utilize o comando abaixo em seu terminal.
 
 b) Após você receber a mensagem que a chave foi gerada. Você pode ver os dois arquivos criados listando o conteúdo do diretório  `ls $HOME/.ssh id_rsa  id_rsa.pub`
 
-c) Após as chaves geradas enviar a chave **.pub** para a equipe de TI via email [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). A equipe de TI do LIneA irá configurar a chave no servidor. ***Aguarde o retorno de ok***.
-
-2. Para facilitar o acesso recomendamos a configuração do cliente SSH em seu sistema operacional:
-
-### Linux
-
-a) Adicionar o arquivo **$HOME/.ssh/config** as seguintes informações:
-
-     Host login
-     hostname login.linea.org.br
-     Port 22
-     User [troque pelo nome do username] 
-     IdentitiesOnly yes
-     Identityfile ~/.ssh/[troque pelo nome do arquivo da sua chave privada]
-     
-b) Para acessar o ambiente basta abrir um terminal e executar `ssh loginicx`.
+c) Após as chaves geradas enviar a chave **.pub** para a equipe de TI via email [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). A equipe de TI do LIneA irá configurar a chave no servidor e retornar com instruções para login no cluster Apollo. ***Aguarde o retorno de ok***.
 
 ### Windows
 

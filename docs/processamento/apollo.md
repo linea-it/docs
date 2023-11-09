@@ -23,17 +23,15 @@ O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 
 
 O **Cluster Apollo** é gerenciado pelo **Slurm version 18.08.8**.
 
+## Acesse o nó de submissão
+
+O acesso ao host de submissão é feito por chave `ssh` e é necessário que você possua uma conta válida no LIneA. Depois de se registrar como usuário do LIneA ([detalhes aqui](https://docs.linea.org.br/primeiros_passos.html#registro-de-usuarios)) e receber o e-mail de confirmação, é necessário entrar em contato com o Service Desk através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações de como acessar o nó de submissão para executar tarefas no cluster.
 
 ## Slurm
 Slurm é um sistema de gerenciamento de cluster e agendamento de tarefas de código aberto, tolerante a falhas e altamente escalonável para clusters Linux grandes e pequenos. Slurm não requer modificações no kernel para sua operação e é relativamente independente. Como gerenciador de carga de trabalho de cluster, o Slurm tem três funções principais: 
  - alocar acesso exclusivo e/ou não exclusivo aos recursos (nós de computação) aos usuários por um determinado período de tempo para que possam realizar o trabalho. 
  - oferecer uma estrutura para iniciar, executar e monitorar o trabalho (normalmente um trabalho paralelo) no conjunto de nós alocados.
  - gerenciar a fila de submissão, arbitrando conflitos entre os pedidos de recursos computacionais.
-
-### Acesse o nó de submissão
-
-O acesso ao host de submissão é feito por chave `ssh` e é necessário que você possua uma conta válida no LIneA. Depois de se registrar como usuário do LIneA ([detalhes aqui](https://docs.linea.org.br/primeiros_passos.html#registro-de-usuarios)) e receber o e-mail de confirmação, entre em contato com o Service Desk através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações de como acessar o nó de submissão.
-
 
 ### Filesystem
 O **Cluster Apollo** conta com um Filesystem Lustre, utilizado como "Scratch".
