@@ -1,477 +1,189 @@
 # HPE Apollo 2000
 
 
-## Características gerais
-
-O cluster HPE Apollo 2000 possui 16 nós computacionais com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz`. Com o sistema de _hyperthreading_ ativado, o conjunto de máquinas Apollo 2000 oferece 448 cores e e provê cerca de 16 Tflops de capacidade computacional. 
-
-Em preparação para o LSST, para compor o _Brazilian Independent Data Access Center_ (IDAC), o cluster Apollo está sendo ampliado com a aquisição de mais 12 nós (624 cores adicionais), e terá a sua capacidade expandida para um total ~85 Tflops antes do início das operações do levantamento. 
-
-Características atuais (2022-2023): 
-
-| # Nodes | # Cores | Total de ram | Tflops | Instalado em |
-| ------- | ------| ------------ | ------ | -----------| 
-| 16      | 448   | 2TB          | 15.769 |  Abr-2019  |
-
-
-## Armazenamento (Lustre FS)
-
-O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [Lustre](https://www.lustre.org/) com dois níveis (_tiers_) de armazenamento, um em SSD com ~70 TB (_T0_) e outro em HDD com ~500 TB (_T1_), ambos conectados a uma rede infiniband EDR de 100 Gb/s. Os dois níveis de armazenamento estão disponíveis em `/lustre/t0` e `/lustre/t1`. 
-
-Os usuários poderão acessar seu diretório de scratch através da variável de ambiente `$SCRATCH`, ou acessando o diretório localizado em `/lustre/t0/scratch/users/<username>`. 
+O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 cores** físicos. Seus nós são equipados com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz` (apl01-14) e `Intel(R) Xeon(R) Gold 5320 CPU @ 2.20GHz` (apl15-26) com o sistema de _hyperthreading_ ativado. O conjunto de máquinas provê cerca de 80 Tflops de capacidade computacional. 
 
 !!! note
-    Por exemplo, se seu username é _fulano_ seu diretório será /lustre/t0/scratch/users/fulano.
+    Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n.
     
-#### Características de um sistema de arquivos Lustre
 
-Os sistemas de arquivos Lustre têm um desempenho bastante diferente dos discos locais comuns em outras máquinas. O Lustre foi desenvolvido para fornecer acesso rápido a grandes arquivos de dados necessários para aplicações paralelas. Ele é particularmente ineficiente em lidar com arquivos pequenos e em fazer muitas pequenas operações nesses arquivos. _**Esses casos devem ser evitados tanto quanto possível**_.
+!!! attention
+    Atualmente o número de cores disponíveis é de 2144 devido o _hyper-threading_ estar ativo nos nós de computação.
 
-**Boa prática de uso em um sistema Lustre**
 
-Para obter o melhor desempenho de um sistema Lustre, você deve usar o menor número possível de arquivos e, sempre que acessar um arquivo, deve ler/gravar o máximo de dados possível de cada vez. Um programa ideal usando Lustre leria um único arquivo de dados usando I/O paralelo (por exemplo, MPI IO), processaria os dados e, no final, gravaria um único arquivo novamente usando IO paralelo, sem uso intermediário do disco.
+#### Características atuais: 
 
-**Má prática de uso em um sistema Lustre**
+| # Nodes | # Cores | Total de ram | Instalado em |
+| ------- | ------| ------------ | -----------| 
+| 16<sup>[1]</sup>      | 448   | 2TB          |  Abr-2019  |
+| 12      | 624   | 3TB          |  Jul-2023  |
 
-Como o Lustre foi projetado para ler rapidamente um pequeno número de arquivos grandes, certos padrões de E/S que são perfeitamente adequados em outros sistemas causam uma carga muito alta em um sistema Lustre, por exemplo:
 
- 1. leituras pequenas
- 2. Abrindo muitos arquivos
- 3. Procurando dentro de um arquivo para ler um pequeno pedaço de dados
+<sup>[1]</sup> _atualmente 2 nós estão sendo usados como máquinas de serviço do cluster_.
 
-Essas práticas são muito comuns em aplicativos que foram projetados para serem executados em sistemas onde cada nó possui seu próprio disco de trabalho local. Em outras palavras, comandos como `ls -l` ou `stat`devem ser evitados sempre que possível.
+O **Cluster Apollo** é gerenciado pelo **Slurm version 18.08.8**.
 
-### Política de quotas e de armazenamento
+## Acesse o nó de submissão
 
-As seguintes políticas serão aplicadas por _usuário_:
+O acesso ao host de submissão é feito por chave `ssh` e é necessário que você possua uma conta válida no LIneA. Depois de se registrar como usuário do LIneA ([detalhes aqui](https://docs.linea.org.br/primeiros_passos.html#registro-de-usuarios)) e receber o e-mail de confirmação, é necessário entrar em contato com o Service Desk através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações de como acessar o nó de submissão para executar tarefas no cluster.
 
-#### Quotas
+## Slurm
+Slurm é um sistema de gerenciamento de cluster e agendamento de tarefas de código aberto, tolerante a falhas e altamente escalonável para clusters Linux grandes e pequenos. Slurm não requer modificações no kernel para sua operação e é relativamente independente. Como gerenciador de carga de trabalho de cluster, o Slurm tem três funções principais: 
 
-|area|TB  |blocks (soft)|blocks (hard)|grace period|inodes (soft)|inodes (hard)|grace period|
-|----|----|-------------|-------------|------------|-------------|-------------|------------|
-|T0  | 70 |     1 TB    |   1.25 TB   |  7 days    | 10000 files |11000 files  |  7 days    |
+ - alocar acesso exclusivo e/ou não exclusivo aos recursos (nós de computação) aos usuários por um determinado período de tempo para que possam realizar o trabalho. 
+ - oferecer uma estrutura para iniciar, executar e monitorar o trabalho (normalmente um trabalho paralelo) no conjunto de nós alocados.
+ - gerenciar a fila de submissão, arbitrando conflitos entre os pedidos de recursos computacionais.
 
+### Filesystem
 
-#### Armazenamento na área de scratch
+O **Cluster Apollo** conta com um Filesystem Lustre, utilizado como "Scratch".
+O "Home" dos usuários (acessível apenas no nó de login), é fornecido através de NFS.
 
-Os arquivos que não foram modificados nos últimos 60 dias serão automaticamente removidos.
+Essas áreas de armazenamento devem ser utilizadas da seguinte forma:
 
-!!! warning
-    Essa área NÃO sofrerá backup e também NÃO será enviado aviso de remoção de arquivos!
+Scratch : Estrutura montada a partir do diretório /lustre/t0/scratch/users/<username>. Utilizado para armazenar todos os arquivos que serão utilizados durante a execução de um job (scripts de submissão, executáveis, dados de entrada, dados de saída etc).
 
-!!! warning
-    O script de limpeza é executado uma vez por semana, aos fins de semana.  
+Home : Estrutura montada a partir do diretório /home/<username>. Utilizado para armazenar especialmente os resultados que se queira manter durante toda a vigência do projeto.
 
+[Clique aqui para mais detalhes](../armazenamento/index.md)
 
-#### Comandos úteis do Lustre FS
+!!! attention
+    Não esqueça de copiar os arquivos necessários (executável, bibliotecas, dados de entrada) para dentro da área de SCRATCH, pois a área de HOMEDIR não é acessível pelos nós computacionais.
 
-a) Como acessar a minha área de scratch?
-   
-    cd $SCRATCH 
-    
-b) Como consultar a minha quota disponível?
+### Informações sobre partições disponíveis
 
-    lfs quota -u $USER /lustre/t0
-    
-c) Como consultar os meus arquivos criados há _mais_ de 60 dias? 
+O cluster Apollo é organizado em diferentes partições (subconjunto de máquinas) para atender a diferentes necessidades, por exemplo, a garantia da prioridade máxima dos usuários do projeto LSST na utilização das máquinas dedicadas ao IDAC-Brasil. 
 
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
+|PARTITION |AVAIL  |TIMELIMIT  |NODES  |STATE |NODELIST|
+|----------|-------|-----------|-------|------|--------|
+|cpu_dev      |up      |30:00     |23   |idle |apl[01-26]|
+|cpu_small    |up |3-00:00:00     |23   |idle |apl[01-26]|
+|cpu          |up |5-00:00:00     |23   |idle |apl[01-26]|
+|cpu_long     |up |31-00:00:0     |23   |idle |apl[01-26]|
+|LSST         |up   |infinite      |9   |idle |apl[18-26]|
 
-c) Como consultar os meus arquivos criados há _menos_ de 60 dias? 
+### Accounts disponíveis e suas prioridades
 
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
-    
-d) Como listar os OSTs do Lustre?
+- **Workflow** – Interrompe qualquer job que esteja rodando: **hpc-photoz** (photoz)
+- **LSST** – Próximo da fila: **hpc-lsst** [somente nas novas apollos apl[15-26]] (lsst)
+- **Grupo A** - Prioridade Maior: **hpc-bpglsst** (itteam, bpg-lsst)
+- **Grupo B** - Prioridade Intermediária: **hpc-collab** (des, desi, sdss, tno)
+- **Grupo C** - Prioridade Menor: **hpc-public** (linea-members)
 
-    lfs osts /lustre/t0
+As partições (**cpu_dev**, **cpu_small**, **cpu** e **cpu_long**) possuem todas as apollos (*apl[01-26]*), enquanto a partição LSST possui apenas as *apl[15-26]*. Porém, somente o account *hpc-lsst* poderá submeter jobs nessa partição (**LSST**), que possui prioridade maior nesses nodes.
 
-e) Como listar os arquivos armazenados há mais de 60 dias em um determinado OST do Lustre?
 
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
-    
-f) Como configurar o striping em diretório de modo a "quebrar" os arquivos e distribuir esses "pedaços" em 10 OSTs?
+### Anatomia de um Job
 
-    lfs setstripe -c 10 $SCRATCH/meus_arquivos_grandes
-    
-g) Como consultar o striping de arquivos/diretórios?
+Um Job solicita recursos de computação e especifica os aplicativos a serem iniciados nesses recursos, juntamente com quaisquer dados/opções de entrada e diretivas de saída. O usuário envia a tarefa, geralmente na forma de um script de tarefa em lote, ao agendador em lote.
+O script de tarefa em lote é composto por quatro componentes principais:
 
-    lfs setstripe -c $SCRATCH/meus_arquivos_grandes
+ - O intérprete usado para executar o script
+ - Diretivas “#” que transmitem opções de envio padrão.
+ - A configuração de variáveis de ambiente e/ou script (se necessário)
+ - Os aplicativos a serem executados junto com seus argumentos e opções de entrada.
 
+Aqui está um exemplo de um script em lote que solicita 3 nós na partição "cpu" e inicia 36 tarefas do myApp nos 3 nós alocados:
 
-!!! tip
-    O Lustre do LIneA foi projetado para trabalhar a 100Gbps, para alcançar o máximo de performance faça uso do striping e sempre com arquivos grandes (+100MB).    
+```bash
+#!/bin/bash
+#SBATCH -N 3
+#SBATCH -p cpu
+#SBATCH --ntasks 36
 
-## Como criar par de chaves SSH
+srun myApp
+```
 
-Para acessar nosso ambiente via ssh é preciso gerar um par de chaves seguindo os passos abaixos:
+Quando a tarefa estiver agendada para execução, o gerenciador de recursos executará o script da tarefa em lote no primeiro nó da alocação.
 
-1. Gerar par de chaves no sistema operacional Linux.
 
-a) Para gerar o par de chaves utilize o comando abaixo em seu terminal.
+#### Executando um Job
+Após ter construído o script de execução com todas basta chama-lo utilizando o comando sbatch como mostra o exemplo abaixo:
 
-    ssh-keygen -t rsa -b 4096
-    
-    Generating public/private rsa key pair.
-    Enter file in which to save the key (/root/.ssh/id_rsa):  [pressione ENTER]
-    Created directory '/root/.ssh'.
-    Enter passphrase (empty for no passphrase): [digite uma senha e para confirmar pressione ENTER]
-    Enter same passphrase again: [repita a senha e pressione ENTER]
+```bash
+[usuario@loginapl01]$ sbatch myscript.slurm
+```
 
-![Image](../images/retorno_da_criacao_de_chave_ssh.png)
+Se o script estiver correto haverá uma saída que indica o ID do job. Por exemplo:
 
-b) Após você receber a mensagem que a chave foi gerada. Você pode ver os dois arquivos criados listando o conteúdo do diretório  `ls $HOME/.ssh id_rsa  id_rsa.pub`
+```bash
+[usuario@loginapl01]$ sbatch myscript.slurm
+Submitted batch job 510
+```
 
-c) Após as chaves geradas enviar a chave **.pub** para a equipe de TI via email [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). A equipe de TI do LIneA irá configurar a chave no servidor. ***Aguarde o retorno de ok***.
+#### Andamento do Job
+A maioria das especificações de um job pode ser vista através do comando `scontrol show job <JobID>`. Mais detalhes sobre o trabalho, incluindo o script do trabalho, podem ser vistos adicionando o sinalizador `-d`. Um usuário não consegue ver o script do trabalho de outro usuário.
 
-2. Para facilitar o acesso recomendamos a configuração do cliente SSH em seu sistema operacional:
+```bash
+[usuario@loginapl01]$ scontrol show job 510  
+```
 
-### Linux
+O Slurm captura e relata o código de saída do script do job (tarefas sbatch), bem como o sinal que causou o término da execução.
 
-a) Adicionar o arquivo **$HOME/.ssh/config** as seguintes informações:
 
-     Host login
-     hostname login.linea.org.br
-     Port 22
-     User [troque pelo nome do username] 
-     IdentitiesOnly yes
-     Identityfile ~/.ssh/[troque pelo nome do arquivo da sua chave privada]
-     
-b) Para acessar o ambiente basta abrir um terminal e executar `ssh loginicx`.
+#### Cancelando um Job
 
-### Windows
+Se seu Job estiver em execução ou aguardando na fila, você poderá cancelar o trabalho usando o comando `scancel <JobId>`. Use o comando squeue se você não souber o ID do Job. Por exemplo:
 
-Para gerar par de chaves no sistema operacional Windows
 
-a) Baixar o aplicativo Putty e instalar.
+```bash
+[usuario@loginapl01]$ scancel 510
+```
 
-b) Acessar a pasta onde o programa foi instalado (essa instalação foi no Windows 10)`C:\Program File\PuTTY` (caminho pode ser diferente devido ao sistema operacional), Abra o programa Puttygen.
+#### Especificando Recursos
+O Slurm tem sua própria sintaxe para solicitar recursos de computação. Abaixo está uma tabela de resumo de alguns recursos solicitados com frequência e a sintaxe de Slurm para obtê-los. Para obter uma lista completa da sintaxe, execute o comando man sbatch.
 
-![Image](../images/caminho_do_programa_puttygem.png)
+|Sintaxe  |Significado|
+|---------|-----------|
+|#SBATCH -p partition  | Define a partição em que o job será executado|
+|#SBATCH -J job_name | Define o nome do Job|
+|#SBATCH -n quantidade | Define o número total de tarefas da CPU.|
+|#SBATCH -N quantidade  | Define o número de nós de computação solicitados.|
 
-c) Clicar em Generate (o tipo de chave mantém como **RSA**).
 
-![Image](../images/gerando_chave_no_windons.png)
+#### Comandos Básico do Slurm
+Para aprender sobre todas as opções disponíveis para cada comando, insira man <comando> enquanto estiver conectado ao ambiente do Cluster.
 
-**OBS : Movimentar o ponteiro do mouse ajuda a gerar a chave mais rapidamente, pois gera bits aleatórios**.
+|Comando	| Definição|
+|-----------|----------|
+|sbatch	| Envia scripts de tarefas para a fila de execução|
+|scancel	| Cancela um job|
+|scontrol	| Usado para exibir o estado Slurm (várias opções disponíveis apenas para root)|
+|sinfo	| Exibir estado de partições e nós|
+|squeue	| Exibir estado dos jobs|
+|salloc	| Envia um job para execução ou inicia um trabalho em tempo real|
 
-![Image](../images/carregamento_da_criacao_da_chave.png)
+#### Ambiente de Execução
+Para cada tipo de trabalho acima, o usuário tem a capacidade de definir o ambiente de execução. Isso inclui definições de variáveis de ambiente, bem como limites de shell (`bash ulimit` ou `csh limit`). **sbatch** e **salloc** fornecem a opção `--export` para transmitir variáveis de ambiente específicas para o ambiente de execução. E também tem a opção `--propagate` para transmitir limites específicos do shell ao ambiente de execução.
 
-d) Par de chaves geradas com sucesso.
- 
- - Copiar a chave publicar para ser salva no servidor (detalhe na imagem em amarelo);
- - Colocar uma senha na chave pública (detalhe na imagem em azul).
- - Após copiar salve as chaves public e private no computador (detalhe na imagem em vermelho) envie a chave `.pub` para a equipe de TI via email [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). A equipe de TI do LIneA irá configurar a chave no servidor. ***Aguarde o retorno de ok***.
+#### Variáveis de ​​ambiente
+A primeira categoria de variáveis de ambiente são aquelas que o Slurm insere no ambiente de execução do trabalho. Eles transmitem ao script da tarefa e informações do aplicativo, como ID da tarefa `(SLURM_JOB_ID)` e ID da tarefa `(SLURM_PROCID)`. Para obter a lista completa, consulte a seção `"OUTPUT ENVIRONMENT VARIABLES"` nas páginas [sbatch](https://slurm.schedmd.com/sbatch.html), [salloc](https://slurm.schedmd.com/salloc.html) e [srun](https://slurm.schedmd.com/srun.html).
 
-![Image](../images/copiando_chave.png)
-    
-e) Após o receber o email de confirmação que a chave `.pub` foi cadastrada no servidor de acesso, fazer as configurações no programa `Putty`.
-    
- - Crie um atalho na área de trabalho, abra o `PuTTY`;
- - Coloque o Hostname login.linea.org.br.
+A próxima categoria de variáveis de ambiente são aquelas que o usuário pode definir em seu ambiente para transmitir opções padrão para cada trabalho enviado. Isso inclui opções como o limite do relógio de parede. Para obter a lista completa, consulte a seção `"INPUT ENVIRONMENT VARIABLES"` nas páginas [sbatch](https://slurm.schedmd.com/sbatch.html), [salloc](https://slurm.schedmd.com/salloc.html) e [srun](https://slurm.schedmd.com/srun.html).
 
-![Image](../images/tela_do_putty.png)
 
-f) Ao lado esquerdo ir na opção `SSH > Auth (detalhe em azul) > aperte em Browse (detalhe em amarelo) e escolha a chave a ser usada com extenção .ppk`.
+### Gerenciamento de pacotes (EUPS)
+O objetivo do EUPS é carregar as variáveis de ambiente e a inclusão no path dos programas e bibliotecas de forma modular:
 
-![Image](../images/configurando_aquivo_ppk.png)
+!!! attention
+    Esses comandos deverão ser executados dentro do ambiente LIneA.
 
-h) Caso precise utilizar algum túnel faça a seguinte configuração.    
-**OBS: os tunnels são configurado conforme o que o usuário vai acessar**
+- Para carregar o EUPS:
+```bash
+. /mnt/eups/linea_eups_setup.sh
+```
 
-- Ir na opção Tunnels (lado esquerdo);
-- Em Source port coloque a porta;
-- Destination > coloque o endereço de destino > Add.
+- Listar todos os pacotes disponíveis:
+```bash
+eups list 
+```
 
-![Image](../images/configurando_tunel_no_putty.png)
+- Instalar um pacote:
+```bash
+setup scipy 0.11.0+2
+```
 
-Volte ao lado esquerdo e vá na primeira opção menu `Session (em vermelho) coloque o nome da sessions (em amarelo) e aperte em Save (em azul)`, para acessar aperte em `Open`.
-
-![Image](../images/logando_no_ambiente_putty.png)
-
-## Submissão Jobs
-
-O Condor (oficialmente conhecido como [HTCondor](https://research.cs.wisc.edu/htcondor/)) é o agendador de tarefas, ou escalonador de processos, utilizado no ambiente e possui atualmente uma única fila padrão de processos. Novas filas serão disponibilizadas em breve.
-
-**Universos**
-
-O Condor possui diferentes "universos" cada qual para execução de aplicações específicas. No ambiente, temos disponíveis os universos: `vanilla`,  `docker`, `parallel` e `DAGMan`. Para a maioria dos casos de uso o universo `vanilla` é o recomendado.
-
-**Como utilizar o Condor para submeter jobs?** 
-
-1. Acesse o nó de submissão
-
-O acesso ao host de submissão é feito por chave `ssh` e é necessário que você possua uma conta válida no LIneA. Depois de se registrar como usuário do LIneA ([detalhes aqui](https://docs.linea.org.br/primeiros_passos.html#registro-de-usuarios)) e receber o e-mail de confirmação, entre em contato com o _Service Desk através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações de como acessar o nó de submissão.
-
-2. Configure as dependências
-
-Caso sua aplicação possua dependências você pode configurá-las em seu ambiente/seção através do programa EUPS. O EUPS é um gerenciador de pacotes que permite um gerenciamento simples de múltiplas versões de uma aplicação em ambientes *nix, bem como suas dependências.
-
-Antes de utilizar o EUPS é preciso configurá-lo em sua sessão/ambiente, para isso execute:
-
-    source /mnt/eups/linea_eups_setup.sh 
-
-Para listar as aplicações/bibliotecas instaladas no eups basta executar os comandos abaixo:
-
-    eups list
-
-
-!!! note
-    Caso alguma dependência não esteja listada, é possível solicitar a instalação enviando e-mail ao nosso suporte em [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). 
-    No assunto do e-mail, coloque `Instalação <nome aplicação/biblioteca> versão n.n`, no corpo da mensagem descreva suas preferências para a instalação e informe a url/site de onde a equipe de suporte poderá baixar a aplicação/biblioteca.
-
-Exemplo de email solicitando a instalação de uma dependência:
-
-    Assunto: Instalação pyfits v3.4
-    Corpo do e-mail:
-        Solicito que na compilação seja utilizada a versão 3.8 do python
-        A biblioteca pode ser encontrada em https://github.com/spacetelescope/PyFITS
-
-
-Exemplo de como configurar uma aplicação e suas dependências: 
-
-    source /mnt/eups/linea_eups_setup.sh     
-
-inicializa o EUPS na sua sessão
-
-    setup pyfits 3.4+0 
-  
-adiciona/configura o pacote pyfits, na versão 3.4, revisão 0 na sua sessão
-  
-    unsetup pyfits
-
-remove o pacote pyfits da sua sessão 
-
-!!! tip
-    Ao configurar um pacote que está no repositório EUPS, na sua sessão, todas as suas dependências também são adicionadas automaticamente.
-    Caso queira visualizar as dependências durante a configuração basta adicionar o parâmetro `-v`, neste caso o comando do exemplo ficaria
-    `setup -v pyfits 3.4+0`.
-
-
-3. Crie o arquivo de submissão
-
-O arquivo de submissão é apenas um arquivo texto simples com as instruções para o condor. O formato das instruções, ou diretivas, segue o padrão `chave = valor`, uma por linha. Para um melhor entendimento veja os exemplos abaixo.
-
-!!! tip
-    Os nomes das chaves(diretivas) e dos valores **NÃO** são *case-sensitive*, ou seja, tanto faz você informar `getenv = true`ou `Getenv = TRUE`, o Condor 
-    entenderá ambas da mesma forma. No entanto, caminhos para arquivos e nomes de arquivos **SÃO** *case-sensitive* então `Executable = /mydir/app` é diferente
-    de `Executable = /MYDIR/App`.
-
-4. Submeta à fila de execução
-
-Para submeter à fila de execução basta executar o comando abaixo:
-
-    condor_submit myapp.sub
-
-
-Onde `myapp.sub` é o arquivo de submissão que você criou e que contém todas as intruções para o condor executar sua aplicação.
-
-## Exemplos 
-
-Abaixo três exemplos de como você pode utilizar o Condor para executar suas aplicações.
-
-Antes de começar faça o clone do repositório [htcondor-examples](https://github.com/linea-it/htcondor-examples) conforme abaixo. 
-
-Com o terminal aberto:
-
-    git clone https://github.com/linea-it/htcondor-examples
-
-Acesse o diretório recém criado `htcondor-examples`.
-
-    cd htcondor-examples/
-
-
-O diretório htcondor-examples possui três subdiretórios, cada um corresponde a um exemplo de como você pode utilizar o Condor e, além das aplicações, inclui os arquivos de submissão do Condor e os inputs quando necessários.
-
-Lista de sub-diretórios e arquivos.
-
-    ls
-    Example1  Example2  Example3  LICENSE  README.md
-
-
-### Exemplo 1 - contagem de objetos
-
-No primeiro exemplo, vamos executar um script python que efetua a contagem de objetos em arquivos .fits e que possui como dependência a biblioteca `pyfits 3.4+0`.
-
-!!! tip
-    - No eups o número após a versão identifica a revisão do pacote, por exemplo: `numpy 2.3.1+1`, significa que é a versão `2.3.1` na revisão `1`.
-    - Se você omitir o nome do pacote na hora de listar então o eups listará todos os disponíveis.
-    - Se você omitir a versão na hora do 'setup' então o eups irá carregar a que estiver marcada como `current`.
-
-
-Abra um terminal e acesse o diretório `Example1`.
-
-    cd Example1
-
-
-Dentro do diretório `Example1` você encontrará os seguintes conteúdo:
-
-    ls
-    count_objects_into_fits.py  data  example1.sub  setup.sh
-
-
-- **count_objects_into_fits.py** -> script python que efetua a contagem de linhas(objetos) em arquivos .fits
-- **example1.sub** -> arquivo de submissão de trabalhos para o Condor.
-- [**setup.sh**]() -> arquivo com os comandos utilizados para carregar o EUPS e configurar a dependência `pyfits 3.4+0`.
-
-**data** -> contém 2 arquivos .fits de exemplo.
-
-O primeiro passo é carregar o eups no ambiente e as dependências do script `count_objects_into_fits.py` já contidas no arquivo `setup.sh`, para isso faça:
-
-    source setup.sh
-
-
-Agora que as dependências estão carregadas vamos dar uma olhada no arquivo de submissão `example1.sub`.
-
-
-Agora vamos criar o arquivo de submissão, segue abaixo o arquivo de exemplo `exemplo1.sub` para executar o script python no Condor.
-
-
-    ####################################
-    # Exemplo de arquivo de submissão  #
-    # para execução do script contador #
-    # de objetos em arquivos fits      #
-    ####################################
-    getenv          = true
-    universe        = vanilla
-    executable      = $ENV(HOME)/htcondor-examples/Example1/count_objects_into_fits.py
-    notification    = Complete
-    notify_user     = carlosadean@linea.gov.br
-    error           = example1-$(Process).err
-    output          = example1-$(Process).out
-    log             = example1-$(Process).log
-    queue
-
-
-
-Explicando as linhas do arquivo acima `exemplo1.sub`.
-
-`getenv = true` instrui o Condor a copiar o atual ambiente `shell` do usuário para o nó remoto onde o script será executado. Útil para quando você carregar as dependências configuradas com o eups ou variáves definidas manualmente.
-
-`universe = vanilla` indica o universo em que a aplicação será executada. No ambiente do CAPDA os universos podem ser `vanilla, docker, parallel(mpi) e DAGMan`.
-
-`executable  = $ENV(HOME)/htcondor-examples/Example1/count_objects_into_fits.py` indica o caminho para o script.
-
-`notification = Complete` habilita notificação quando a execução terminar. Deve ser completada com a próxima diretiva.
-
-`notify_user = user@domain.com` e-mail para onde o Condor enviará as notificações de término de execução. **OBS:** *Se você submeter 1000 execuções receberá 1000 emails diferentes.*
-
-`error = example1-$(Process).err` arquivo onde o condor irá armazenar a saída de erro padrão da sua aplicação. Útil para *debugar* problemas na execução.
-
-`output = example1-$(Process).out` arquivo onde será armazenada a saída padrão. Tudo o que a aplicação exibir na tela será enviado para o `'output'`.
-
-`log = example1-$(Process).log` registro de log da execução da aplicação. Por exemplo, é neste arquivo que fica o endereço da máquina remota onde a aplicação foi executada.
-
-`queue` instrução para adicionar na fila de execução.
-
-A 'variável' $(Process) é uma macro interna que recebe automaticamente um número inteiro sequencial.
-
-
-Para executar a aplicação no cluster basta utilizar o comando `condor_submit` seguido do arquivo de submissão.
-
-    condor_submit exemplo1.sub
-
-
-Uma vez submetido o trabalho (job) para acompanhar sua execução utilize o comando `condor_q`.
-
-    condor_q
-
-
-Ao final da execução você verá os três arquivos definidos no arquivo de submissão estarão.
-
-    ls -lths
-
-
-    4.0K -rw-r--r-- 1 carlosadean production 1.1K Apr  9 20:28 example1-0.log
-    4.0K -rw-r--r-- 1 carlosadean production   49 Apr  9 20:28 example1-0.out
-       0 -rw-r--r-- 1 carlosadean production    0 Apr  9 20:28 example1-0.err
-       0 drwxr-xr-x 2 carlosadean production   46 Apr  9 18:50 data
-    4.0K -rw-r--r-- 1 carlosadean production  440 Apr  9 17:04 example1.sub
-    4.0K -rwxr-xr-x 1 carlosadean production  848 Apr  9 17:03 count_objects_into_fits.py
-    4.0K -rw-r--r-- 1 carlosadean production   56 Apr  9 16:55 setup.sh
-
-
-
-A saída do script python está no arquivo `example1-0.out`.
-
-    cat example1-0.out 
-    # files: 2
-    # objects: 3060
-
-
-### Exemplo 2 - calcula pi em C 
-
-Este segundo exemplo trata-se de uma aplicação compilada com gcc e que também recebe argumentos.
-
-    ###################################
-    # Exemplo de arquivo de submissão #
-    # para executar um binário que    #
-    # recebe argumentos               #
-    ###################################
-    universe    = vanilla
-    executable  = /home/user/bin/calculapi
-    arguments = 1000000
-    notification = Complete
-    notify_user = user@domain.com
-    error = calculapi-$(Process).err
-    output = calculapi-$(Process).out
-    log = calculapi-$(Process).log
-    queue
-
-
-Explicando as linhas do arquivo acima `calculapi.sub`.
-
-`universe = vanilla` indica o universo em que a aplicação será executada. No ambiente do CAPDA os universos podem ser `vanilla, docker, parallel(mpi) e DAGMan`.
-
-`executable  = /home/user/bin/calculapi` indica o caminho para a aplicação.
-
-`arguments = 1000000` essa diretiva do Condor recebe os argumentos que serão passados para a aplicação. **NÃO** passe os argumentos através da diretiva `executable`, fazendo assim sua aplicação será executada incorretamente.
-
-
-`notification = Complete` informa ao Condor que você quer ser notificado quando a execução terminar. Deve ser completada com a próxima diretiva
-
-`notify_user = user@domain.com` e-mail para onde o condor enviará as notificações de término de execução. **OBS:** *Se você submeter 1000 execuções receberá 1000 emails diferentes*.
-
-`error = calculapi-$(Process).err` arquivo onde o condor irá armazenar a saída de erro padrão da sua aplicação. Útil para *debugar* problemas na execução.
-
-`output = calculapi-$(Process).out` arquivo onde será armazenada a saída padrão. Tudo o que a aplicação exibir na tela será enviado para o `'output'`.
-
-`log = calculapi-$(Process).log` registro de log da execução da aplicação. Por exemplo, é neste arquivo que fica o endereço da máquina remota onde a aplicação foi executada.
-
-`queue` instrução para o condor adicionar na fila de execução.
-
-A 'variável' $(Process) é uma macro interna do condor e recebe automaticamente um número inteiro sequencial.
-
-
-
-
-Para executar a aplicação no cluster basta utilizar o comando `condor_submit` seguido do arquivo de submissão.
-
-    condor_submit calculapi.sub
-
-
-### Exemplo 3 - hello world mpi
-
-Em breve. 
-
-
-## Monitoramento de jobs
-
-A execução da sua aplicação pelo condor pode ser monitorada com o comando:
-
-    condor_q
-
-## Remoção de jobs da fila ou em execução
-
-Por JOB_ID:
-
-    condor_rm <JOB_ID> 
-
-Todos jobs do usuário: 
-
-    condor_rm <USERNAME>
-
-## Troubleshooting
-
-Em breve.
-
-
+- Desinstalar um pacote:
+```bash
+unsetup scipy 0.11.0+2
+```

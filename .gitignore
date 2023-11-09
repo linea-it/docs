@@ -2,4 +2,5 @@ site
 **/.DS_Store
 *.exe
 .env/
+.venv/
 *.vscode/
