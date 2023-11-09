@@ -35,6 +35,7 @@ Slurm é um sistema de gerenciamento de cluster e agendamento de tarefas de cód
  - gerenciar a fila de submissão, arbitrando conflitos entre os pedidos de recursos computacionais.
 
 ### Filesystem
+
 O **Cluster Apollo** conta com um Filesystem Lustre, utilizado como "Scratch".
 O "Home" dos usuários (acessível apenas no nó de login), é fornecido através de NFS.
 
@@ -51,6 +52,8 @@ Home : Estrutura montada a partir do diretório /home/<username>. Utilizado para
 
 ### Informações sobre partições disponíveis
 
+O cluster Apollo é organizado em diferentes partições (subconjunto de máquinas) para atender a diferentes necessidades, por exemplo, a garantia da prioridade máxima dos usuários do projeto LSST na utilização das máquinas dedicadas ao IDAC-Brasil. 
+
 |PARTITION |AVAIL  |TIMELIMIT  |NODES  |STATE |NODELIST|
 |----------|-------|-----------|-------|------|--------|
 |cpu_dev      |up      |30:00     |23   |idle |apl[01-26]|
@@ -60,6 +63,7 @@ Home : Estrutura montada a partir do diretório /home/<username>. Utilizado para
 |LSST         |up   |infinite      |9   |idle |apl[18-26]|
 
 ### Accounts disponíveis e suas prioridades
+
 - **Workflow** – Interrompe qualquer job que esteja rodando: **hpc-photoz** (photoz)
 - **LSST** – Próximo da fila: **hpc-lsst** [somente nas novas apollos apl[15-26]] (lsst)
 - **Grupo A** - Prioridade Maior: **hpc-bpglsst** (itteam, bpg-lsst)
