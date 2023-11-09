@@ -44,7 +44,7 @@ Scratch : Estrutura montada a partir do diretório /lustre/t0/scratch/users/<use
 
 Home : Estrutura montada a partir do diretório /home/<username>. Utilizado para armazenar especialmente os resultados que se queira manter durante toda a vigência do projeto.
 
-[Clique aqui para mais detalhes](https://docs.linea.org.br/armazenamento/)
+[Clique aqui para mais detalhes](../armazenamento/index.md)
 
 !!! attention
     Não esqueça de copiar os arquivos necessários (executável, bibliotecas, dados de entrada) para dentro da área de SCRATCH, pois a área de HOMEDIR não é acessível pelos nós computacionais.
