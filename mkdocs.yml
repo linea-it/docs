@@ -1,24 +1,21 @@
 nav:
   - Home: index.md
   - Primeiros passos: primeiros_passos.md 
-  - LIneA Science Platform: 
-      - LIneA Science Platform: lsp/index.md #intro e landing page
-      - JupyterHub: lsp/jupyter.md
-      - Science Server: lsp/sci_server.md
-      - User Query: lsp/user_query.md
-  - Portais Científicos:
-      - Portais Científicos: portals/index.md 
-      - DES Science Portal: portals/des.md
-      - Solar System Portal: portals/tno.md
-      - MaNGA Portal: portals/manga.md 
+  - Plataformas Científicas: 
+      - Plataformas Científicas: sci-platforms/index.md #intro e LSP landing page
+      - JupyterHub: sci-platforms/jupyter.md
+      - Science Server: sci-platforms/sci_server.md
+      - User Query: sci-platforms/user_query.md
+      - DES Science Portal: sci-platforms/des.md
+      - Solar System Portal: sci-platforms/tno.md
+      - MaNGA Portal: sci-platforms/manga.md 
   - Processamento:
       - Processamento: processamento/index.md
       - Cluster Apollo (LIneA): processamento/apollo.md
       - Santos Dumont (LNCC): processamento/sdu.md
-  - Armazenamento:
+  - Armazenamento: 
       - Armazenamento: armazenamento/index.md
-#      - LustreFS (HPC): armazenamento/lustrefs.md
-#      - NAS: armazenamento/nas.md
+ #     - Lustre: armazenamento/lustre.md   
   - Dados:
       - Dados: data/index.md
       - DES: data/des.md
@@ -94,6 +91,7 @@ extra:
 
 # Extensions
 markdown_extensions:
+  - attr_list
   - meta
   - footnotes
   - admonition
@@ -120,3 +118,4 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.snippets
+  
