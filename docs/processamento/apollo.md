@@ -3,12 +3,7 @@
 
 O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 cores** físicos. Seus nós são equipados com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz` (apl01-14) e `Intel(R) Xeon(R) Gold 5320 CPU @ 2.20GHz` (apl15-26) com o sistema de _hyperthreading_ ativado. O conjunto de máquinas provê cerca de 80 Tflops de capacidade computacional. 
 
-!!! note
-    Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n.
-    
-
-!!! attention
-    Atualmente o número de cores disponíveis é de 2144 devido o _hyper-threading_ estar ativo nos nós de computação.
+Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n. Atualmente, o número de cores disponíveis é de 2144 devido o _hyper-threading_ estar ativo nos nós de computação.
 
 
 #### Características atuais: 
@@ -47,7 +42,7 @@ Home : Estrutura montada a partir do diretório /home/<username>. Utilizado para
 
 [Clique aqui para mais detalhes](../armazenamento/index.md)
 
-!!! attention
+!!! Atenção
     Não esqueça de copiar os arquivos necessários (executável, bibliotecas, dados de entrada) para dentro da área de SCRATCH, pois a área de HOMEDIR não é acessível pelos nós computacionais.
 
 ### Informações sobre partições disponíveis
@@ -72,6 +67,8 @@ O cluster Apollo é organizado em diferentes partições (subconjunto de máquin
 
 As partições (**cpu_dev**, **cpu_small**, **cpu** e **cpu_long**) possuem todas as apollos (*apl[01-26]*), enquanto a partição LSST possui apenas as *apl[15-26]*. Porém, somente o account *hpc-lsst* poderá submeter jobs nessa partição (**LSST**), que possui prioridade maior nesses nodes.
 
+!!! Atenção
+	Como parte o programa de conrtribuição in-kind BRA-LIN, o IDAC Brasil possui o compromisso de gerar _redshifts_ fotométricos anualmente para o levantamento LSST, sempre na época que antecede as liberações oficiais dos dados. Nestes períodos, o Cluster Apollo será totalmente ocupado para este propósito por um tempo estimado de algumas horas, mas podendo se estender a alguns dias. Na ocasião, os usuários serão informados com antecência sobre a indisponibilidade do cluster por e-mail. [Clique aqui](https://linea-it.github.io/pz-lsst-inkind-doc/) para saber mais sobre a produção de medidas de _redshift_ e o programa de conrtribuição in-kind BRA-LIN. 
 
 ### Anatomia de um Job
 
