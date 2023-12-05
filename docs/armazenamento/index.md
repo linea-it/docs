@@ -72,7 +72,7 @@ No Lustre, arquivos grandes podem ser divididos em segmentos que, por sua vez, p
 
 A distribuição do arquivo pode ser definida usando o comando `lfs setstripe`. Se o comando for aplicado a um diretório, ele definirá as configurações de distribuição padrão para arquivos criados nesse diretório. Um subdiretório herda todas as configurações de distribuição de seu diretório pai. Se o comando for aplicado a um arquivo, ele distribuirá esse arquivo pelos OSTs de acordo com as configurações especificadas.
 
-`lfs setstripe -s 64m -c 4 filename` => divide o arquivo em segmentos de 64 MB e distribui em 4 OSTs
+`lfs setstripe -s 128m -c 8 filename` => divide o arquivo em segmentos de 128 MB e os distribui em 8 OSTs
 
 Se um arquivo grande for compartilhado em paralelo por vários processos, com cada processo trabalhando em sua própria parte do arquivo, então pode ser útil dividir o arquivo em um número de segmentos igual ao número de processos, ou um múltiplo do número de processos.
 
@@ -80,7 +80,7 @@ Para obter o máximo desempenho, as solicitações de E/S devem ser alinhadas à
 
 Para arquivos pequenos, a distribuição (striping) deve ser desabilitada, isso pode ser conseguido definindo uma contagem de distribuição de 1. O mesmo se aplica se um arquivo grande for acessado por um único processo.
 
-`lfs setstripe -s 1m -c 1 mydirectory/smallfilesdir/` 
+`lfs setstripe -s 1m -c 1 meudiretorio/arquivospequenos/` 
 
 #### Evite instalar software no Lustre
 
