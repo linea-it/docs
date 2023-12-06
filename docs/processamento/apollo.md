@@ -6,7 +6,7 @@ O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 
 Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n. Atualmente, o número de cores disponíveis é de 2144 devido o _hyper-threading_ estar ativo nos nós de computação.
 
 
-#### Características atuais: 
+#### Características atuais 
 
 | # Nodes | # Cores | Total de ram | Instalado em |
 | ------- | ------| ------------ | -----------| 
@@ -18,7 +18,7 @@ Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE P
 
 O **Cluster Apollo** é gerenciado pelo **Slurm version 18.08.8**.
 
-## Acesse o nó de submissão
+## Acesso ao nó de submissão
 
 O acesso ao host de submissão é feito por chave `ssh` e é necessário que você possua uma conta válida no LIneA. Depois de se registrar como usuário do LIneA ([detalhes aqui](https://docs.linea.org.br/primeiros_passos.html#registro-de-usuarios)) e receber o e-mail de confirmação, é necessário entrar em contato com o Service Desk através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber orientações de como acessar o nó de submissão para executar tarefas no cluster.
 
@@ -45,19 +45,19 @@ Home : Estrutura montada a partir do diretório /home/<username>. Utilizado para
 !!! Atenção
     Não esqueça de copiar os arquivos necessários (executável, bibliotecas, dados de entrada) para dentro da área de SCRATCH, pois a área de HOMEDIR não é acessível pelos nós computacionais.
 
-### Informações sobre partições disponíveis
+### Partições disponíveis
 
 O cluster Apollo é organizado em diferentes partições (subconjunto de máquinas) para atender a diferentes necessidades, por exemplo, a garantia da prioridade máxima dos usuários do projeto LSST na utilização das máquinas dedicadas ao IDAC-Brasil. 
 
-|PARTITION |AVAIL  |TIMELIMIT  |NODES  |STATE |NODELIST|
-|----------|-------|-----------|-------|------|--------|
-|cpu_dev      |up      |30:00     |23   |idle |apl[01-26]|
-|cpu_small    |up |3-00:00:00     |23   |idle |apl[01-26]|
-|cpu          |up |5-00:00:00     |23   |idle |apl[01-26]|
-|cpu_long     |up |31-00:00:0     |23   |idle |apl[01-26]|
-|LSST         |up   |infinite      |9   |idle |apl[18-26]|
+|PARTITION   |TIMELIMIT  |NODES  |NODELIST  |
+|------------|-----------|-------|----------|
+|cpu_dev     |30:00      |26     |apl[01-26]|
+|cpu_small   |3-00:00:00 |26     |apl[01-26]|
+|cpu         |5-00:00:00 |26     |apl[01-26]|
+|cpu_long    |31-00:00:0 |26     |apl[01-26]|
+|LSST        |infinite   |12     |apl[15-26]|
 
-### Accounts disponíveis e suas prioridades
+### Accounts disponíveis 
 
 - **Workflow** – Interrompe qualquer job que esteja rodando: **hpc-photoz** (photoz)
 - **LSST** – Próximo da fila: **hpc-lsst** [somente nas novas apollos apl[15-26]] (lsst)
@@ -68,7 +68,7 @@ O cluster Apollo é organizado em diferentes partições (subconjunto de máquin
 As partições (**cpu_dev**, **cpu_small**, **cpu** e **cpu_long**) possuem todas as apollos (*apl[01-26]*), enquanto a partição LSST possui apenas as *apl[15-26]*. Porém, somente o account *hpc-lsst* poderá submeter jobs nessa partição (**LSST**), que possui prioridade maior nesses nodes.
 
 !!! Atenção
-	Como parte o programa de conrtribuição in-kind BRA-LIN, o IDAC Brasil possui o compromisso de gerar _redshifts_ fotométricos anualmente para o levantamento LSST, sempre na época que antecede as liberações oficiais dos dados. Nestes períodos, o Cluster Apollo será totalmente ocupado para este propósito por um tempo estimado de algumas horas, mas podendo se estender a alguns dias. Na ocasião, os usuários serão informados com antecência sobre a indisponibilidade do cluster por e-mail. [Clique aqui](https://linea-it.github.io/pz-lsst-inkind-doc/) para saber mais sobre a produção de medidas de _redshift_ e o programa de conrtribuição in-kind BRA-LIN. 
+	Como parte do programa de conrtribuição in-kind BRA-LIN, o IDAC Brasil possui o compromisso de gerar _redshifts_ fotométricos anualmente para o levantamento LSST, sempre na época que antecede as liberações oficiais dos dados. Nestes períodos, o Cluster Apollo será totalmente ocupado para este propósito por um tempo estimado de algumas horas, mas podendo se estender a alguns dias. Na ocasião, os usuários serão informados com antecência sobre a indisponibilidade do cluster por e-mail. [Clique aqui](https://linea-it.github.io/pz-lsst-inkind-doc/) para saber mais sobre a produção de medidas de _redshift_ e o programa de conrtribuição in-kind BRA-LIN. 
 
 ### Anatomia de um Job
 
@@ -138,7 +138,7 @@ O Slurm tem sua própria sintaxe para solicitar recursos de computação. Abaixo
 |#SBATCH -N quantidade  | Define o número de nós de computação solicitados.|
 
 
-#### Comandos Básico do Slurm
+#### Comandos Básicos do Slurm
 Para aprender sobre todas as opções disponíveis para cada comando, insira man <comando> enquanto estiver conectado ao ambiente do Cluster.
 
 |Comando	| Definição|
