@@ -160,7 +160,7 @@ A próxima categoria de variáveis de ambiente são aquelas que o usuário pode 
 
 
 ### Gerenciamento de pacotes (EUPS)
-O objetivo do EUPS é carregar as variáveis de ambiente e a inclusão no path dos programas e bibliotecas de forma modular:
+O [EUPS](https://github.com/RobertLuptonTheGood/eups) é um gerenciador de pacotes alternativo (e oficial do LSST) e ele permite carregar variáveis de ambiente e incluir em sua sessão o caminho para programas e bibliotecas de forma modular:
 
 !!! attention
     Esses comandos deverão ser executados dentro do ambiente LIneA.
@@ -175,12 +175,12 @@ O objetivo do EUPS é carregar as variáveis de ambiente e a inclusão no path d
 eups list 
 ```
 
-- Instalar um pacote:
+- Carregar um pacote na sessão atual:
 ```bash
 setup scipy 0.11.0+2
 ```
 
-- Desinstalar um pacote:
+- Remover um pacote da sessão atual:
 ```bash
 unsetup scipy 0.11.0+2
 ```
