@@ -160,7 +160,7 @@ A próxima categoria de variáveis de ambiente são aquelas que o usuário pode 
 
 
 ### Gerenciamento de pacotes (EUPS)
-O [EUPS](https://github.com/RobertLuptonTheGood/eups) é um gerenciador de pacotes alternativo (e oficial do LSST) e ele permite carregar variáveis de ambiente e incluir em sua sessão o caminho para programas e bibliotecas de forma modular:
+O [EUPS](https://github.com/RobertLuptonTheGood/eups) é um gerenciador de pacotes alternativo (e oficial do LSST) que permite carregar variáveis de ambiente e incluir o caminho para programas e bibliotecas de forma modular:
 
 !!! attention
     Esses comandos deverão ser executados dentro do ambiente LIneA.
