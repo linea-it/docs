@@ -92,7 +92,7 @@ Além disso, sob alta carga, o acesso de E/S aos sistemas de arquivos Lustre pod
 
 |area|TB  |bsoft|bhard|isoft|ihard|grace period|
 |----|----|-------------|-------------|-------------|-------------|------------|
-|T0 | 70 |     1 TB    |   1.25 TB   | 10000 | 11000  |  7 days    |
+|T0 | 70 |     0.4 TB    |   0.5 TB   | 10000 | 11000  |  7 days    |
 
 
 ### Área de scratch
