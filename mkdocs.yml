@@ -7,7 +7,7 @@ nav:
       - Science Server: sci-platforms/sci_server.md
       - User Query: sci-platforms/user_query.md
       - DES Science Portal: sci-platforms/des.md
-      - Solar System Portal: sci-platforms/tno.md
+      - Solar System Portal: sci-platforms/sso.md
       - MaNGA Portal: sci-platforms/manga.md 
   - Processamento:
       - Processamento: processamento/index.md
