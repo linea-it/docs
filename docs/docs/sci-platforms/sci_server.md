@@ -19,4 +19,4 @@ Oferece a visualização das imagens do DES com exibição baseada nas _Tiles_, 
 O _site_ do **LIneA Science Server** possui uma página de tutoriais em vídeos, com narração em inglês, com exemplos de uso das ferramentas. Acesse os vídeos [neste link](https://desportal2.cosmology.illinois.edu/tutorials).  
 
 ### Minicursos
-O LIneA oferece uma série de minicursos para os estudantes e demais interessados com aulas remotas e atividades práticas propostas. Os vídeos das aulas ficam disponíveis no YouTube e na página do [Minicurso LIneA Science Server](https://classroom.google.com/c/NDkzMTA0MzEyODA1/m/NDcyNjUxMDQxNTAw/details) no Google Classroom. Fique de olho das nossas redes sociais para receber anúncios de novos minicursos! 
+O LIneA oferece uma série de minicursos com aulas remotas e atividades práticas propostas. Os vídeos das aulas ficam disponíveis no YouTube e na página do [Minicurso no Google Classroom](https://classroom.google.com/c/NDkzMTA0MzEyODA1?cjc=kl5jjnd). Fique de olho das nossas redes sociais para receber anúncios de novos minicursos! 
