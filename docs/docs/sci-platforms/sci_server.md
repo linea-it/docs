@@ -1,7 +1,7 @@
 
 O **LIneA Science Server** é um serviço de visualização de imagens e dados de catálogos que foi inicialmente desenvolvido no contexto do levantamento DES, mas continua em desenvolvimento e está recebendo melhorias para operar na era do LSST. O **LIneA Science Server** será a principal ferramenta de visualização de dados oferecida pelo IDAC-Brasil. A versão original da plataforma é hospedada no _National Center for Supercomputing Applications_ (NCSA) e possui duas instalações: [uma que oferece acesso os dados públicos (DES DR2)](https://desportal2.cosmology.illinois.edu/) e [outra que oferece acesso a dados proprietários](https://desportal.cosmology.illinois.edu/) (acessível apenas para membros da colaboração DES). 
 
-A nova versão otimizada e modernizada ficará disponível em breve no endereço: [https://scienceserver.linea.org.br/](https://scienceserver.linea.org.br/). Usuários avançados que queiram contribuir com sugestões durante o período de desenvolvimento podem entrar em contato para receber credenciais de acesso ao ambiente de testes.  
+A nova versão otimizada e modernizada ficará disponível em breve no endereço: [https://scienceserver.linea.org.br/](https://scienceserver.linea.org.br/). Usuários avançados que queiram contribuir com sugestões durante o período de desenvolvimento podem entrar em contato pelo e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para receber credenciais de acesso ao ambiente de testes.  
 
 ### Sky viewer
 Oferece exibição panorâmica das imagens do DES, combinadas para formar uma imagem única limitada apenas pelas bordas do _footprint_, e de mapas em formato [HEALPix](https://healpix.sourceforge.io/).  
