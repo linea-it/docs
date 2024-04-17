@@ -40,7 +40,7 @@ b.) No corpo do email:
 
 Após a obtenção das suas credenciais o acesso deverá ser feito em duas etapas:
 
-   1. Conectar-se ao serviço de VPN do SDumont (Manuais em PDF: [MAC](/hpc/How%20To%20VPN%20SDUMONT%20-%20MAC.pdf), [Linux](/hpc/How%20To%20VPN%20SDUMONT%20%20LINUX%20.pdf), [Windows](/hpc/HowTo-VPN-client-Sdumont-Windows.pdf))
+   1. Conectar-se ao serviço de VPN do SDumont (Manuais em PDF: [MAC](./How%20To%20VPN%20SDUMONT%20-%20MAC.pdf), [Linux](./How%20To%20VPN%20SDUMONT%20%20LINUX%20.pdf), [Windows](./HowTo-VPN-client-Sdumont-Windows.pdf))
    2. Conectar-se, via SSH, ao host login.sdumont.lncc.br (`$ ssh <seu.nome.de.usuario>@login.sdumont.lncc.br`) 
 
 
