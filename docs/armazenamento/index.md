@@ -194,9 +194,9 @@ O diretório `home` é uma área para os usuários armazenarem seus arquivos pes
 
 | áreas | frequência | tipo | retenção |
 | ----- | ---------- | ---- | ---------------- |
-| /home | diário | incremental | 90 dias |
+| /home | diário | incremental | 30 dias |
+| /home | semanal | diferencial | 30 dias |
 | /home | mensal | completo | 90 dias |
 | /archive | - | - | - |
-| /process | - | - | - |
 | /scratch | - | - | - |
 
