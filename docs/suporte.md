@@ -1,6 +1,5 @@
 
-
-
+Talvez a sua dúvida já tenha resposta, dê uma olhada na nossa lista de [perguntas frequentes](faq.md) antes de abrir um chamado.
 
 Para suporte técnico, entre em contato com o nosso _Service Desk_ (suporte via e-mail) ou reserve uma vaga no serviço _Office Hours_ (atendimento por vídeo-chamada) através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). 
 

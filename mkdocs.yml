@@ -1,13 +1,13 @@
 nav:
   - Home: index.md
-  - Registro de Usuários: registro.md 
+  - Primeiros passos: primeiros_passos.md 
   - Plataformas Científicas: 
       - Plataformas Científicas: sci-platforms/index.md #intro e LSP landing page
       - JupyterHub: sci-platforms/jupyter.md
       - Science Server: sci-platforms/sci_server.md
       - User Query: sci-platforms/user_query.md
       - DES Science Portal: sci-platforms/des.md
-      - Solar System Portal: sci-platforms/tno.md
+      - Solar System Portal: sci-platforms/sso.md
       - MaNGA Portal: sci-platforms/manga.md 
   - Processamento:
       - Processamento: processamento/index.md
@@ -34,12 +34,12 @@ nav:
 # Site information
 site_name:  Documentação para Usuários
 site_author: LIneA team 
-site_url: "http://docs.linea.org.br"
-repo_name: linea-it/docs
-repo_url: https://github.com/linea-it/docs
-edit_uri: 'edit/dev/docs'
+site_url: "https://linea-it.github.io"
+repo_name: linea-it/linea-it.github.io
+repo_url: https://github.com/linea-it/linea-it.github.io
+edit_uri: 'edit/main/linea-it.github.io'
 use_directory_urls: false
-copyright: 'Copyright &copy; 2006 - 2022 LIneA'
+copyright: 'Copyright &copy; 2006 - 2024 LIneA'
 # cosmo, material-components, cerulean, journal, slate, readthedocs, readable, spacelab, united, bootstrap, simplex, flatly, yeti, psinder, amelia, cyborg, unidata, mkdocs
 
 
@@ -87,7 +87,7 @@ extra:
     - icon: material/facebook
       link: https://facebook.com/linea.org
     - icon: material/youtube
-      link: https://youtube.com/user/lineamcti
+      link: https://youtube.com/@linea_org
 
 # Extensions
 markdown_extensions:
@@ -118,4 +118,3 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.snippets
-  
