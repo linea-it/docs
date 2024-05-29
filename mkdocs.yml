@@ -34,10 +34,10 @@ nav:
 # Site information
 site_name:  Documentação para Usuários
 site_author: LIneA team 
-site_url: "https://linea-it.github.io"
-repo_name: linea-it/linea-it.github.io
-repo_url: https://github.com/linea-it/linea-it.github.io
-edit_uri: 'edit/main/linea-it.github.io'
+site_url: "https://docs.linea.org.br"
+repo_name: linea-it/docs
+repo_url: https://github.com/linea-it/docs
+edit_uri: 'edit/main/docs'
 use_directory_urls: false
 copyright: 'Copyright &copy; 2006 - 2024 LIneA'
 # cosmo, material-components, cerulean, journal, slate, readthedocs, readable, spacelab, united, bootstrap, simplex, flatly, yeti, psinder, amelia, cyborg, unidata, mkdocs
