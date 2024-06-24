@@ -30,9 +30,9 @@ Para acessar os _notebooks_, basta abrir um Terminal no JupyterLab clicando no b
 
     git clone https://github.com/linea-it/jupyterhub-tutorial.git
 
-### Tutoriais em vídeo
+<!-- ### Tutoriais em vídeo
 
 Para ter acesso a tutoriais em vídeo, visite a [página de tutoriais do LIneA Science Platform](https://lsp.linea.org.br/tutorials).  
  
 ### Minicurso
-Como parte das atividades do programa de Iniciação Científica (IC), em 2022 o LIneA ofereceu uma série de minicursos para os estudantes e demais interessados com aulas remotas e atividades práticas propostas. Os vídeos das aulas estão disponíveis na página do [Minicurso Jupyter Notebook](https://classroom.google.com/c/NDkzMTA0MzEyODA1/m/NDcyNjUyMTg5Mjc1/details) no Google Classroom.  
+Como parte das atividades do programa de Iniciação Científica (IC), em 2022 o LIneA ofereceu uma série de minicursos para os estudantes e demais interessados com aulas remotas e atividades práticas propostas. Os vídeos das aulas estão disponíveis na página do [Minicurso Jupyter Notebook](https://classroom.google.com/c/NDkzMTA0MzEyODA1/m/NDcyNjUyMTg5Mjc1/details) no Google Classroom.   -->
