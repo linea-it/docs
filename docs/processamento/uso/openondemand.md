@@ -50,8 +50,8 @@ srun $EXEC
 ```
  .......... [**Para visualizar mais templates de script de submissão de Jobs, clique aqui**](/processamento/uso/templates-jobs.html) ..........
 
-### Submetendo um Job - [Job Composer](../img/OOD7.png)
-O Open OnDemand facilita todo o processo de submissão de jobs, para isto basta seguir os seguintes passos:
+### Job Composer
+O Open OnDemand facilita todo o processo de submissão de jobs através da ferramenta [Job Composer](../img/OOD7.png). Para isto basta seguir os seguintes passos:
 
 1. Clicar no botão [**"New Job"**](../img/OOD6.1.png);
 2. Escolher a opção **"Default Template"**;
@@ -59,19 +59,21 @@ O Open OnDemand facilita todo o processo de submissão de jobs, para isto basta 
 4. Clicar em **"Submit"** para que o Job entre em execução.
 
 !!! warning 
-    **Os nós de computação do cluster não possuem acesso ao seu diretório de usuário (Home Directory). Mova ou copie, para seu diretório SCRATCH, todos os arquivos necessários para a submissão do seu job.** 
+    Os nós de computação do cluster não possuem acesso ao seu diretório de usuário (Home Directory). Mova ou copie, para seu diretório SCRATCH, todos os arquivos necessários para a submissão do seu job. 
 
-## Interactive Apps - [JupyterLab](../img/OOD12.png)
+### JupyterLab
 Com o Open OnDemand, é viável acessar o Jupyter Notebook em nosso ambiente de HPC. Por meio de "Interactive Apps", o Jupyter Notebook iniciará uma sessão em um dos nós de computação do cluster, bastando para isso:
 
 * Clicar em ["Jupyter Notebook"](../img/OOD8.png);
 * Em seguida preencher os campos "Account", "Partition" e "Select node"; 
 * Depois pressionar o botão ["Launch"](../img/OOD10.png).  
 
-Depois de iniciar a sessão, você poderá conectar-se ao Jupyter Notebook - [**"Connect to Jupyter"**](../img/OOD11.png). Ao abrir um [**terminal dentro do Jupyter**](../img/OOD14.png), é possível verificar que você está localizado em um nó do Cluster Apollo e tem acesso à sua área "_scratch_" no storage de armazenamento Lustre.
+Depois de iniciar a sessão, você poderá conectar-se ao [Jupyter Lab](../img/OOD12.png) - [**"Connect to Jupyter"**](../img/OOD11.png). Ao abrir um [**terminal dentro do Jupyter**](../img/OOD14.png), é possível verificar que você está localizado em um nó do Cluster Apollo e tem acesso à sua área "_scratch_" no storage de armazenamento Lustre.
 
+!!! tip 
+    Nós possuímos dois ambientes Jupyter em duas infraestruturas distintas. Um é acessível em https://jupyter.linea.org.br e é executado sobre [Kubernetes](https://kubernetes.io/) e o outro é este acima que é executado interativamente pela plataforma Open OnDemand diretamente nos nós de processamento.
 
-#### Para mais informações, assista os vídeos:
+## Vídeos tutoriais
 * [Usando o Open OnDemand]()
 * [Como submeter um Job]()
 * [Como acessar o Jupyter Notebook]() 
