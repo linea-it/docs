@@ -1,10 +1,14 @@
 # Como Utilizar 
 
 ##Como acessar
-O acesso ao nosso cluster pode ser feito, através do [**Open OnDemand**](http://127.0.0.1:8088/processamento/uso/openondemand.html) ou pelo do Terminal do **JupyterLab (K8S)**. Em ambas opções, é imprescindível possuir uma conta válida no LIneA, registrando-se como usuário. Entre em contato com o Service Desk por email (helpdesk@linea.org.br) para mais informações.
+O acesso ao nosso cluster pode ser feito, através do [**Open OnDemand**](http://127.0.0.1:8088/processamento/uso/openondemand.html) ou pelo do Terminal do **JupyterLab (K8S)**. Em ambas opções, é imprescindível possuir uma conta válida no ambiente computacional do LIneA. Caso não possua uma conta, entre em contato com o Service Desk por email (helpdesk@linea.org.br) para mais informações.
 
-####Acessando pelo terminal do JupyterLab
-Na [**tela inicial**](img/tela-jupyter.png) do seu Jupyter Notebook, na seção **_"Other"_**, você encontrará o botão do terminal. Ao clicar nele, você será redirecionado para um terminal Linux, inicialmente localizado em seu diretório _home_. Para acessar o Cluster Apollo, basta executar o seguinte comando:
+!!! warning 
+    Mesmo possuindo uma conta ativa no LIneA, o acesso ao ambiente de processamento HPC não é automático. Para mais informações entre em contato com o Service Desk pelo email helpdesk@linea.org.br.
+
+**Acessando pelo terminal do JupyterLab**
+
+Na [**tela inicial**](../img/tela-jupyter.png) do seu Jupyter Notebook, na seção **_"Other"_**, você encontrará o botão do terminal. Ao clicar nele, você será redirecionado para um terminal Linux, inicialmente localizado em seu diretório _home_. Para acessar o Cluster Apollo, basta executar o seguinte comando:
   ```bash
     ssh loginapl01
   ```
@@ -12,7 +16,7 @@ Na [**tela inicial**](img/tela-jupyter.png) do seu Jupyter Notebook, na seção 
 A máquina <font color=\"#172b4d\">**_loginapl_**</font> é onde você poderá fazer a alocação do nó de computação para submeter o seu job. 
 
 !!! warning 
-    **Os nós de computação não possuem acesso ao seu diretório _(home)_ de usuário. Mova ou copie, para seu diretório SCRATCH, todos os arquivos necessários para a submissão do seu job.**
+    Os nós de computação não possuem acesso ao seu diretório _(home)_ de usuário. Mova ou copie, para seu diretório SCRATCH, todos os arquivos necessários para a submissão do seu job.
 
 ## Como usar a area de SCRATCH
 Seu diretório SCRATCH é o local para enviar os arquivos essenciais à submissão do seu Job, assim como verificar os resultados após a execução do código. É crucial informar que **`todos os resultados e arquivos gerados devem ser transferidos de volta para o seu diretório de usuário (home)`**. Caso contrário, **`há o risco de perder esses arquivos armazenados no seu SCRATCH`**.
@@ -26,7 +30,8 @@ Seu diretório SCRATCH é o local para enviar os arquivos essenciais à submiss�
     cp <ARQUIVO> $SCRATCH
   ``` 
 
-## Como Usar o Gerenciador de Pacotes EUPS
+## Gerenciador de pacotes EUPS
+
 O [EUPS](https://github.com/RobertLuptonTheGood/eups) é um gerenciador de pacotes alternativo (e oficial do LSST) que permite carregar variáveis de ambiente e incluir o caminho para programas e bibliotecas de forma modular.
 
 - **Para carregar o EUPS:**
@@ -83,13 +88,7 @@ Se o script estiver correto **haverá uma saída que indica o ID do job**.
     scancel <ID> 
   ```
 
-#### Assista também os vídeos:
-* [How to login](https://youtu.be/3DHqWk7KGHw)
-* [How to use EUPS](https://youtu.be/ifJqGEvqzdY)
-* [How to access the Scratch](https://youtu.be/dnMzGYwICBw)
-* [How to submit a Job](https://youtu.be/AbRCL_KsBVY)
-
-#### Alguns Comandos Slurm  
+## Comandos úteis do Slurm  
 Para aprender sobre todas as opções disponíveis para cada comando, insira `man <comando>` enquanto estiver conectado ao ambiente do Cluster.
 
 |Comando	| Definição|
@@ -99,3 +98,9 @@ Para aprender sobre todas as opções disponíveis para cada comando, insira `ma
 |scontrol	| Usado para exibir o estado Slurm (várias opções disponíveis apenas para root)|
 |sinfo	| Exibir estado de partições e nós|
 |salloc	| Envia um job para execução ou inicia um trabalho em tempo real|
+
+## Vídeos tutoriais
+* [How to login](https://youtu.be/3DHqWk7KGHw)
+* [How to use EUPS](https://youtu.be/ifJqGEvqzdY)
+* [How to access the Scratch](https://youtu.be/dnMzGYwICBw)
+* [How to submit a Job](https://youtu.be/AbRCL_KsBVY)
