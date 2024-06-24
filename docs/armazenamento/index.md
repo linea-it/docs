@@ -5,7 +5,7 @@ O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [
 Os usuários poderão acessar seu diretório de scratch através da variável de ambiente `$SCRATCH`, ou acessando o diretório localizado em `/lustre/t0/scratch/users/<username>`. 
 
     
-### Boas práticas de uso em um sistema **Lustre** 
+### Boas práticas
 
 Sistemas de arquivos distribuídos como o Lustre são ideais para ambientes HPC e HTC. Nesses ambientes, a carga de trabalho típica consiste em arquivos grandes que precisam ser acessados ​​a partir de muitos nós de computação com largura de banda muito alta e/ou baixa latência. Portanto, esses sistemas de arquivos são muito diferentes dos sistemas de arquivos usados ​​em computadores desktop ou servidores isolados. Embora sejam excelentes no manuseio de arquivos grandes, eles também apresentam fortes limitações ao lidar com arquivos pequenos e padrões de acesso mais comumente encontrados em ambientes corporativos e de desktop. As operações que podem ser extremamente rápidas em um disco local de estação de trabalho podem ser dolorosamente lentas e caras em um sistema de arquivos Lustre, afetando tanto os usuários que executam essas operações quanto, eventualmente, todos os outros usuários. Estas melhores práticas e recomendações têm como objetivo permitir um uso tranquilo do Lustre, minimizando ou evitando operações desnecessárias ou muito caras do sistema de arquivos.
 Evite acessar atributos de arquivos e diretórios
@@ -14,42 +14,42 @@ Acessar informações de metadados, como atributos de arquivo (por exemplo, tipo
 
 O mesmo se aplica a comandos como `ls -l` ou `ls --color` que fazem uso das chamadas mencionadas acima. Em vez disso, use um simples `ls` ou `ls -l filename`.
 
-#### Evite usar comandos que acessam metadados massivamente
+**Evite usar comandos que acessam metadados massivamente**
 
 Evite usar comandos como `ls -R`, `find`, `locate`, `du`, `df` e similares. Esses comandos percorrem o sistema de arquivos recursivamente e/ou executam operações pesadas de metadados. Eles são muito intensivos no acesso aos metadados do sistema de arquivos e podem degradar gravemente o desempenho geral do sistema de arquivos. Se for absolutamente necessário percorrer o sistema de arquivos recursivamente, use o comando fornecido com o Lustre `lfs find` em vez de `find`, por exemplo.
 
-#### Use o comando Lustre lfs
+**Use o comando Lustre lfs**
 
 Para minimizar o número de chamadas Lustre RPC, sempre que possível use os comandos `lfs` em vez dos comandos fornecidos pelo sistema:
 
 * `lfs df` => em vez de `df` 
 * `lfs find` => em vez de `find`
 
-#### Evite usar curingas
+**Evite usar curingas**
 
 Expandir os curingas exige muitos recursos. A execução de comandos com curingas em um grande número de arquivos pode levar muito tempo e afetar gravemente o desempenho do sistema de arquivos. Em vez de usar curingas, crie uma lista dos arquivos de destino e aplique o comando a cada um desses arquivos.
 
-#### Acesso somente leitura
+**Acesso somente leitura**
 
 Sempre que possível, abra os arquivos como somente leitura usando `O_RDONLY`, além disso, se você não precisar atualizar o tempo de acesso ao arquivo, abra os arquivos como `O_RDONLY | O_NOATIME`. Se as informações de tempo de acesso forem necessárias durante a execução de E/S paralela, deixe o processo pai abrir os arquivos como `O_RDONLY` e todas as outras classificações abrirem os mesmos arquivos como `O_RDONLY|O_NOATIME`.
 
-#### Evite ter um grande número de arquivos em um único diretório
+**Evite ter um grande número de arquivos em um único diretório**
 
 Quando um arquivo é acessado, o Lustre bloqueia o diretório pai. Quando muitos arquivos no mesmo diretório devem ser abertos, isso cria contenção. Gravar milhares de arquivos em um único diretório produz uma carga massiva nos servidores de metadados Lustre, geralmente resultando na desativação dos sistemas de arquivos. Acessar um único diretório contendo milhares de arquivos pode causar grande contenção de recursos, degradando o desempenho do sistema de arquivos.
 
 A alternativa é organizar os dados em vários subdiretórios e dividir os arquivos entre eles. Uma abordagem comum é usar a raiz quadrada do número de arquivos, por exemplo, para 90.000 arquivos a raiz quadrada seria 300, portanto devem ser criados 300 diretórios contendo 300 arquivos cada.
 
-#### Evite arquivos pequenos
+**Evite arquivos pequenos**
 
 Acessar arquivos pequenos no sistema de arquivos Lustre é muito ineficiente. O tamanho de arquivo recomendado é superior a 1 GB. Reorganize os dados em arquivos grandes ou use formatos de arquivo como **HDF5**. Alternativamente, se o tamanho total dos arquivos for pequeno, como alguns gigabytes, copie os arquivos pequenos para `/tmp` ou para um diretório temporário local para cada nó de computação no início do trabalho (não se esqueça de transferir e/ou excluir os arquivos no fim). Essa abordagem pode ser combinada com o uso de ferramentas de arquivamento, como `tar` e armazenar pequenos arquivos em um ou mais tarballs grandes podem ser mantidos no Lustre de maneira mais eficiente. 
 
 Ao ler ou gravar arquivos, o Lustre tem um desempenho muito melhor com tamanhos de buffer grandes (>= 1 MB). É altamente recomendável agregar pequenas operações de leitura e gravação em operações maiores. O buffer coletivo MPI-IO permite E/S agregada.
 
-#### Evite pequenas operações repetitivas de arquivos
+**Evite pequenas operações repetitivas de arquivos**
 
 Evite realizar pequenas operações de E/S repetitivas, como abrir arquivos frequentemente no modo de acréscimo, gravar pequenas quantidades de dados e fechar o arquivo. Em vez disso, abra o arquivo uma vez, execute todas as operações de E/S e feche.
 
-#### Evite vários processos abrindo os mesmos arquivos ao mesmo tempo
+**Evite vários processos abrindo os mesmos arquivos ao mesmo tempo**
 
 Vários processos abrindo os mesmos arquivos ao mesmo tempo podem criar contenção e erros de abertura de arquivos. Em vez disso, execute a abertura a partir de um único processo (pai), ou abra o arquivo somente leitura para evitar bloqueio, ou implemente a abertura com uma abordagem de tentativa e erro com suspensão em caso de erro.
 Evite acessar a mesma região de arquivo de muitos processos
@@ -60,11 +60,11 @@ Neste caso, pode ser preferível: replicar o arquivo, dividir o arquivo, executa
 
 Se vários processos tentarem anexar ao mesmo arquivo, isso acionará o bloqueio e poderá causar grande contenção. Idealmente, apenas um processo deve anexar cada arquivo.
 
-#### Operações de arquivo através de processo pai
+**Operações de arquivo através de processo pai**
 
 Ao acessar pequenos arquivos compartilhados em uma tarefa paralela, muitas vezes é mais eficiente executar todas as operações necessárias através do processo pai e, se necessário, transmitir os dados para outras classificações, em vez de acessar os mesmos arquivos de todas as classificações. Da mesma forma, se múltiplas classificações de um trabalho paralelo requerem informações sobre um determinado arquivo, a abordagem mais eficiente é fazer com que o processo pai execute as chamadas necessárias (por exemplo `stat()`, `fstat()`, etc) e então transmita as informações para as outras classificações.
 
-#### Distribuição de arquivos (striping)
+**Distribuição de arquivos (striping)**
 
 No Lustre, arquivos grandes podem ser divididos em segmentos que, por sua vez, podem ser distribuídos automaticamente por vários dispositivos de armazenamento. A distribuição de arquivos é útil para E/S paralela em arquivos grandes. Para que isso funcione, o ponto de montagem em questão aponta para vários dispositivos de armazenamento (OSTs). O comando `lfs df` pode ser usado para verificar se um determinado ponto de montagem aponta para vários OSTs. Para obter informações de distribuição de arquivos para um determinado arquivo, use:
 
@@ -82,7 +82,7 @@ Para arquivos pequenos, a distribuição (striping) deve ser desabilitada, isso 
 
 `lfs setstripe -s 1m -c 1 meudiretorio/arquivospequenos/` 
 
-#### Evite instalar software no Lustre
+**Evite instalar software no Lustre** 
 
 Um software geralmente é composto de muitos arquivos pequenos e, como mencionado anteriormente, acessar muitos arquivos pequenos no Lustre pode sobrecarregar os servidores de metadados. As compilações de software em particular podem ser melhor executadas localmente copiando ou descompactando o software para /tmp/$USER/ o para o seu `homedir`.
 
@@ -141,16 +141,6 @@ g) Como consultar o striping de arquivos/diretórios?
     lfs setstripe -c $SCRATCH/meus_arquivos_grandes
 
 
-### Referências
-
-Estas melhores práticas foram compiladas a partir da experiência do time do LIneA e das seguintes fontes:
-
-1. https://www.nas.nasa.gov/hecc/support/kb/lustre-best-practices_226.html
-1. https://hpcf.umbc.edu/general-productivity/lustre-best-practices/
-1. https://wiki.gsi.de/foswiki/bin/view/Linux/LustreFs
-1. https://doc.lustre.org/lustre_manual.pdf
-
-
 !!! tip
     O Lustre do LIneA foi projetado para trabalhar a 100Gbps, para alcançar o máximo de performance faça uso do striping e sempre com arquivos grandes (+1GB).
 
@@ -199,4 +189,15 @@ O diretório `home` é uma área para os usuários armazenarem seus arquivos pes
 | /home | mensal | completo | 90 dias |
 | /archive | - | - | - |
 | /scratch | - | - | - |
+
+
+## Referências
+
+Estas melhores práticas foram compiladas a partir da experiência do time do LIneA e das seguintes fontes:
+
+1. https://www.nas.nasa.gov/hecc/support/kb/lustre-best-practices_226.html
+1. https://hpcf.umbc.edu/general-productivity/lustre-best-practices/
+1. https://wiki.gsi.de/foswiki/bin/view/Linux/LustreFs
+1. https://doc.lustre.org/lustre_manual.pdf
+
 

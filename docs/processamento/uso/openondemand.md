@@ -1,8 +1,8 @@
 # Open OnDemand
-O Open Ondemand é uma interface que facilita a utilização do nosso ambiente de HPC constituído pelo Cluster Apollo. Para acessar é necessário possuir uma conta válida no LIneA ([saiba mais]()). 
+O Open Ondemand é uma interface que facilita a utilização do nosso ambiente de HPC constituído pelo Cluster Apollo. Para acessar é necessário possuir uma conta válida no LIneA ([saiba mais](/primeiros_passos.html)). 
 O acesso ao Open Ondemand é através de https://ondemand.linea.org.br/ .
 
-Na [**tela inicial**](img/OOD1.png) da plataforma, na parte superior, é possível visualizar um menu com os seguinte itens:
+Na [**tela inicial**](../img/OOD1.png) da plataforma, na parte superior, é possível visualizar um menu com os seguinte itens:
 
 * **Files** - fornece uma interface para o seu diretório de usuário (_Home Directory_).
 * **Jobs** - fornece uma interface para as telas “Active Jobs” e “Job Composer”.
@@ -11,13 +11,13 @@ Na [**tela inicial**](img/OOD1.png) da plataforma, na parte superior, é possív
 
 
 ## Home Directory
-O [**Home Directory**](img/OOD2.jpeg) possibilita a visualização do diretório de usuário, onde estão armazenados seus arquivos, além de exibir uma variedade de botões com diferentes funcionalidades. 
+O [**Home Directory**](../img/OOD2.jpeg) possibilita a visualização do diretório de usuário, onde estão armazenados seus arquivos, além de exibir uma variedade de botões com diferentes funcionalidades. 
 
 #### Mudando de Diretório
-Clicar no botão [**Change Directory**](img/OOD3.png) permite que você mude de diretório dentro da nossa infraestrutura. Para isso, basta escrever no campo **_Path_** o destino que deseja ir e apertar em "**ok**".
+Clicar no botão [**Change Directory**](../img/OOD3.png) permite que você mude de diretório dentro da nossa infraestrutura. Para isso, basta escrever no campo **_Path_** o destino que deseja ir e apertar em "**ok**".
 
 #### Acessando o Terminal
-Clicar no botão [**Open Terminal**](img/OOD4.png) o levará ao terminal linux dentro da máquina de login (loginapl01) do Cluster Apollo. 
+Clicar no botão [**Open Terminal**](../img/OOD4.png) o levará ao terminal linux dentro da máquina de login (loginapl01) do Cluster Apollo. 
 Neste terminal, você se encontra no seu diretório de usuário e tem a capacidade de visualizar seus arquivos. No terminal também é possível executar todas as operações usuais de usuário HPC, como por exemplo, alocar um nó de computação e verificar a fila Slurm usando comandos.
 
 #### Criando, Transferindo e Movendo Arquivos 
@@ -25,16 +25,16 @@ No Open OnDemand a criação de novos arquivos e diretórios é bem simples, bas
 
 Para visualizar, renomear ou **editar** o novo arquivo criado, clique no **_"três pontinhos"_** que aparece ao lado direito do arquivo.
 
-Para [**mover** ou **copiar**](img/OOD5.png) arquivos é preciso seguir os passos: 
+Para [**mover** ou **copiar**](../img/OOD5.png) arquivos é preciso seguir os passos: 
 
 1. Selecionar o arquivo que deseja;
 2. Clicar no botão **"Copy/Move"**;
 3. Clicar em **"Change Directory"** e escrever o caminho do diretório para onde deseja copiar ou mover o arquivo;
 4. Clicar em "Copy" ou "Move" na caixa que aparece no canto esquerdo da tela.
 ## Jobs
-Na seção [**Jobs**](img/OOD6.png) do menu inicial, encontram-se as opções "Job Composer" e "Active Jobs". A tela "Job Composer" facilita o processo de submissão de jobs e em [**"Active Jobs"**](img/OOD9.png) você pode acompanhar a execução do seu Job com detalhes.
+Na seção [**Jobs**](../img/OOD6.png) do menu inicial, encontram-se as opções "Job Composer" e "Active Jobs". A tela "Job Composer" facilita o processo de submissão de jobs e em [**"Active Jobs"**](../img/OOD9.png) você pode acompanhar a execução do seu Job com detalhes.
 
-Para submeter um job é necessário utilizar um script de submissão como este descrito abaixo: ([saiba mais](http://127.0.0.1:8088/processamento/apollo.html#anatomia-de-um-job))
+Para submeter um job é necessário utilizar um script de submissão como este descrito abaixo: ([saiba mais](/processamento/apollo/index.html#anatomia-de-um-job)) 
 
 ```bash
 #!/bin/bash
@@ -50,10 +50,10 @@ srun $EXEC
 ```
  .......... [**Para visualizar mais templates de script de submissão de Jobs, clique aqui**](/processamento/uso/templates-jobs.html) ..........
 
-### Submetendo um Job - [Job Composer](img/OOD7.png)
+### Submetendo um Job - [Job Composer](../img/OOD7.png)
 O Open OnDemand facilita todo o processo de submissão de jobs, para isto basta seguir os seguintes passos:
 
-1. Clicar no botão [**"New Job"**](img/OOD6.1.png);
+1. Clicar no botão [**"New Job"**](../img/OOD6.1.png);
 2. Escolher a opção **"Default Template"**;
 3. Editar as especificações do script de submissão em **"Open Editor"**;
 4. Clicar em **"Submit"** para que o Job entre em execução.
@@ -61,14 +61,14 @@ O Open OnDemand facilita todo o processo de submissão de jobs, para isto basta 
 !!! warning 
     **Os nós de computação do cluster não possuem acesso ao seu diretório de usuário (Home Directory). Mova ou copie, para seu diretório SCRATCH, todos os arquivos necessários para a submissão do seu job.** 
 
-## Interactive Apps - [JupyterLab](img/OOD12.png)
+## Interactive Apps - [JupyterLab](../img/OOD12.png)
 Com o Open OnDemand, é viável acessar o Jupyter Notebook em nosso ambiente de HPC. Por meio de "Interactive Apps", o Jupyter Notebook iniciará uma sessão em um dos nós de computação do cluster, bastando para isso:
 
-* Clicar em ["Jupyter Notebook"](img/OOD8.png);
+* Clicar em ["Jupyter Notebook"](../img/OOD8.png);
 * Em seguida preencher os campos "Account", "Partition" e "Select node"; 
-* Depois pressionar o botão ["Launch"](img/OOD10.png).  
+* Depois pressionar o botão ["Launch"](../img/OOD10.png).  
 
-Depois de iniciar a sessão, você poderá conectar-se ao Jupyter Notebook - [**"Connect to Jupyter"**](img/OOD11.png). Ao abrir um [**terminal dentro do Jupyter**](img/OOD14.png), é possível verificar que você está localizado em um nó do Cluster Apollo e tem acesso à sua área "_scratch_" no storage de armazenamento Lustre.
+Depois de iniciar a sessão, você poderá conectar-se ao Jupyter Notebook - [**"Connect to Jupyter"**](../img/OOD11.png). Ao abrir um [**terminal dentro do Jupyter**](../img/OOD14.png), é possível verificar que você está localizado em um nó do Cluster Apollo e tem acesso à sua área "_scratch_" no storage de armazenamento Lustre.
 
 
 #### Para mais informações, assista os vídeos:
