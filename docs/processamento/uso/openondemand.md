@@ -2,7 +2,7 @@
 O Open Ondemand é uma interface que facilita a utilização do nosso ambiente de HPC constituído pelo Cluster Apollo. Para acessar é necessário possuir uma conta válida no LIneA ([saiba mais]()). 
 O acesso ao Open Ondemand é através de https://ondemand.linea.org.br/ .
 
-Na [**tela inicial**](https://github.com/noobiagarcia/teste/blob/main/img/OOD1.png) da plataforma, na parte superior, é possível visualizar um menu com os seguinte itens:
+Na [**tela inicial**](img/OOD1.png) da plataforma, na parte superior, é possível visualizar um menu com os seguinte itens:
 
 * **Files** - fornece uma interface para o seu diretório de usuário (_Home Directory_).
 * **Jobs** - fornece uma interface para as telas “Active Jobs” e “Job Composer”.
@@ -11,7 +11,7 @@ Na [**tela inicial**](https://github.com/noobiagarcia/teste/blob/main/img/OOD1.p
 
 
 ## Home Directory
-O [**Home Directory**](https://github.com/noobiagarcia/teste/blob/main/img/OOD2.jpeg) possibilita a visualização do diretório de usuário, onde estão armazenados seus arquivos, além de exibir uma variedade de botões com diferentes funcionalidades. 
+O [**Home Directory**](img/OOD2.jpeg) possibilita a visualização do diretório de usuário, onde estão armazenados seus arquivos, além de exibir uma variedade de botões com diferentes funcionalidades. 
 
 #### Mudando de Diretório
 Clicar no botão [**Change Directory**](img/OOD3.png) permite que você mude de diretório dentro da nossa infraestrutura. Para isso, basta escrever no campo **_Path_** o destino que deseja ir e apertar em "**ok**".
@@ -31,8 +31,6 @@ Para [**mover** ou **copiar**](img/OOD5.png) arquivos é preciso seguir os passo
 2. Clicar no botão **"Copy/Move"**;
 3. Clicar em **"Change Directory"** e escrever o caminho do diretório para onde deseja copiar ou mover o arquivo;
 4. Clicar em "Copy" ou "Move" na caixa que aparece no canto esquerdo da tela.
-
-
 ## Jobs
 Na seção [**Jobs**](img/OOD6.png) do menu inicial, encontram-se as opções "Job Composer" e "Active Jobs". A tela "Job Composer" facilita o processo de submissão de jobs e em [**"Active Jobs"**](img/OOD9.png) você pode acompanhar a execução do seu Job com detalhes.
 
@@ -51,6 +49,7 @@ EXEC=/lustre/t0/scratch/users/YOUR.USER/ondemand/projects/EXECUTABLE.CODE
 srun $EXEC
 ```
  .......... [**Para visualizar mais templates de script de submissão de Jobs, clique aqui**](/processamento/uso/templates-jobs.html) ..........
+
 ### Submetendo um Job - [Job Composer](img/OOD7.png)
 O Open OnDemand facilita todo o processo de submissão de jobs, para isto basta seguir os seguintes passos:
 

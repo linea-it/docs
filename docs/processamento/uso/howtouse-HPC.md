@@ -1,12 +1,13 @@
 # Como Utilizar 
 
 ##Como acessar
-O acesso ao nosso cluster pode ser feito, através do [**Open OnDemand**](http://127.0.0.1:8088/processamento/uso/openondemand.html) ou pelo do Terminal do **Jupyter Notebook (K8S)**. Em ambas opções, é imprescindível possuir uma conta válida no LIneA, registrando-se como usuário. Entre em contato com o Service Desk por email (helpdesk@linea.org.br) para mais informações.
+O acesso ao nosso cluster pode ser feito, através do [**Open OnDemand**](http://127.0.0.1:8088/processamento/uso/openondemand.html) ou pelo do Terminal do **JupyterLab (K8S)**. Em ambas opções, é imprescindível possuir uma conta válida no LIneA, registrando-se como usuário. Entre em contato com o Service Desk por email (helpdesk@linea.org.br) para mais informações.
 
-####Acessando pelo terminal JupyterLab
-<font color=\"#172b4d\">**_COMPLETAR INFOS_**</font>
-
-
+####Acessando pelo terminal do JupyterLab
+Na [**tela inicial**](img/tela-jupyter.png) do seu Jupyter Notebook, na seção **_"Other"_**, você encontrará o botão do terminal. Ao clicar nele, você será redirecionado para um terminal Linux, inicialmente localizado em seu diretório _home_. Para acessar o Cluster Apollo, basta executar o seguinte comando:
+  ```bash
+    ssh loginapl01
+  ```
 
 A máquina <font color=\"#172b4d\">**_loginapl_**</font> é onde você poderá fazer a alocação do nó de computação para submeter o seu job. 
 
@@ -83,10 +84,10 @@ Se o script estiver correto **haverá uma saída que indica o ID do job**.
   ```
 
 #### Assista também os vídeos:
-* [How to login]()
-* [How to use EUPS]()
-* [How to use storage area]()
-* [How to submit a Job]()
+* [How to login](https://youtu.be/3DHqWk7KGHw)
+* [How to use EUPS](https://youtu.be/ifJqGEvqzdY)
+* [How to access the Scratch](https://youtu.be/dnMzGYwICBw)
+* [How to submit a Job](https://youtu.be/AbRCL_KsBVY)
 
 #### Alguns Comandos Slurm  
 Para aprender sobre todas as opções disponíveis para cada comando, insira `man <comando>` enquanto estiver conectado ao ambiente do Cluster.
