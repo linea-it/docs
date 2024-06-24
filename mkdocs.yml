@@ -34,12 +34,12 @@ nav:
 # Site information
 site_name:  Documentação para Usuários
 site_author: LIneA team 
-site_url: "http://docs.linea.org.br"
+site_url: "https://docs.linea.org.br"
 repo_name: linea-it/docs
 repo_url: https://github.com/linea-it/docs
-edit_uri: 'edit/dev/docs'
+edit_uri: 'edit/main/docs'
 use_directory_urls: false
-copyright: 'Copyright &copy; 2006 - 2022 LIneA'
+copyright: 'Copyright &copy; 2006 - 2024 LIneA'
 # cosmo, material-components, cerulean, journal, slate, readthedocs, readable, spacelab, united, bootstrap, simplex, flatly, yeti, psinder, amelia, cyborg, unidata, mkdocs
 
 
@@ -118,4 +118,3 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.snippets
-  
