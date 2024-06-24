@@ -1,17 +1,22 @@
 nav:
   - Home: index.md
-  - Primeiros passos: primeiros_passos.md 
+  - Primeiros passos: primeiros_passos.md
   - Plataformas Científicas: 
       - Plataformas Científicas: sci-platforms/index.md #intro e LSP landing page
-      - JupyterHub: sci-platforms/jupyter.md
+      - JupyterLab (K8S): sci-platforms/jupyter.md
       - Science Server: sci-platforms/sci_server.md
       - User Query: sci-platforms/user_query.md
       - DES Science Portal: sci-platforms/des.md
       - Solar System Portal: sci-platforms/sso.md
       - MaNGA Portal: sci-platforms/manga.md 
-  - Processamento:
-      - Processamento: processamento/index.md
-      - Cluster Apollo (LIneA): processamento/apollo.md
+  - Processamento (HPC):
+      - Processamento (HPC): processamento/index.md
+      - Cluster Apollo:
+            - cluster apollo: processamento/apollo/index.md
+            - Como utilizar: processamento/uso/howtouse-HPC.md     
+            - Slurm: processamento/apollo/index.html#slurm
+            - Open OnDemand: processamento/uso/openondemand.md
+            - Executando jobs (exemplos): processamento/uso/templates-jobs.md
       - Santos Dumont (LNCC): processamento/sdu.md
   - Armazenamento: 
       - Armazenamento: armazenamento/index.md
