@@ -1,3 +1,3 @@
 
 
-Acesse [aqui](https://linea.org.br/comunicacao/glossary/) a lista de termos técnicos e acrônimos disponível no nosso site.  
+Acesse [aqui](https://www.linea.org.br/glossario) a lista de termos técnicos e acrônimos disponível no nosso site.  
