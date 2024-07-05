@@ -23,8 +23,8 @@ nav:
  #     - Lustre: armazenamento/lustre.md   
   - Dados:
       - Dados: data/index.md
-      - DES: data/des.md
-      - LSST: data/lsst.md      
+      #- DES: data/des.md
+      #- LSST: data/lsst.md      
   - Políticas: 'politicas.md'
   #- Photoz Server: 'photozserver.md'
   #- Armazenamento: 'armazenamento.md'
