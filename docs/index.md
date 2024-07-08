@@ -13,7 +13,7 @@ Welcome to LIneA's _Documentation for Users_ page. This is the central place to 
 	 Se você encontrar algo faltando nesta documentação, fique à vontade para abrir um _issue_  no [repositório de documentação do LIneA no GitHub](https://github.com/linea-it/docs).
 
 
-Última atualização: 24/06/2024
+Última atualização: 03/07/2024
 
 
 <!-- **[EN]**
