@@ -99,7 +99,7 @@ Além disso, sob alta carga, o acesso de E/S aos sistemas de arquivos Lustre pod
 
 Os arquivos que não foram modificados nos últimos 60 dias serão automaticamente removidos.
 
-!!! warning
+!!! critical
     Essa área NÃO sofrerá backup e também NÃO será enviado aviso de remoção de arquivos!
 
 !!! warning
@@ -179,6 +179,8 @@ O diretório `home` é uma área para os usuários armazenarem seus arquivos pes
 |----| -------------|-------------|-------------|-------------|------------|
 |/home  |   40 GB    |   50 GB   | 4000000  | 5000000   |  7 days    |
 
+!!! tip
+    Para verificar os valores de quota configurado basta utilizar o comando `quota -s -u <username> /home` onde.
 
 ## Backup
 
