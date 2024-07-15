@@ -177,7 +177,7 @@ O diretório `home` é uma área para os usuários armazenarem seus arquivos pes
 
 |area| bsoft|bhard|isoft|ihard|grace period|
 |----| -------------|-------------|-------------|-------------|------------|
-|/home  |   50 GB    |   60 GB   | 50000  | 60000   |  7 days    |
+|/home  |   40 GB    |   50 GB   | 4000000  | 5000000   |  7 days    |
 
 
 ## Backup
