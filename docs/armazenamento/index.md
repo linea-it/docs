@@ -180,7 +180,7 @@ O diretório `home` é uma área para os usuários armazenarem seus arquivos pes
 |/home  |   40 GB    |   50 GB   | 4000000  | 5000000   |  7 days    |
 
 !!! tip
-    Para verificar os valores de quota configurado basta utilizar o comando `quota -s -u <username> /home` onde.
+    Para verificar os valores de quota configurado basta utilizar o comando: `quota -s -u <username> /home`.
 
 ## Backup
 
