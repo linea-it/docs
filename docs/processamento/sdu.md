@@ -38,10 +38,9 @@ b.) No corpo do email:
 
 ### Acesso ao supercomputador
 
-Após a obtenção das suas credenciais o acesso deverá ser feito em duas etapas:
 
-   1. Conectar-se ao serviço de VPN do SDumont (Manuais em PDF: [MAC](/hpc/How%20To%20VPN%20SDUMONT%20-%20MAC.pdf), [Linux](/hpc/How%20To%20VPN%20SDUMONT%20%20LINUX%20.pdf), [Windows](/hpc/HowTo-VPN-client-Sdumont-Windows.pdf))
-   2. Conectar-se, via SSH, ao host login.sdumont.lncc.br (`$ ssh <seu.nome.de.usuario>@login.sdumont.lncc.br`) 
+!!! danger ""
+	Após a obtenção das suas credenciais, o acesso e as instruções de uso são fornecidos diretamente pelo LNCC.
 
 
 A submissão dos jobs será feita através do gerenciador de recursos e filas Slurm. O manual de utilização do usuário está disponível na [página do Santos Dumont no site do LNCC](https://sdumont.lncc.br/support_manual.php). 

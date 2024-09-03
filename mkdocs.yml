@@ -17,7 +17,7 @@ nav:
             - Slurm: processamento/apollo/index.html#slurm
             - Open OnDemand: processamento/uso/openondemand.md
             - Executando jobs (exemplos): processamento/uso/templates-jobs.md
-      - Santos Dumont (LNCC): processamento/sdu.md
+      - Santos Dumont (LNCC) - Projeto EUBD: processamento/sdu.md
   - Armazenamento: 
       - Armazenamento: armazenamento/index.md
  #     - Lustre: armazenamento/lustre.md   
