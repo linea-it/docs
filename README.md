@@ -12,21 +12,24 @@ If you need any further assistance send an email to `helpdesk@linea.org.br`.
 
 # How to build the documentation
 
+**1. Clone the repo**
 ```
 git clone https://github.com/linea-it/docs/
-cd docs
+```
 
+**2. Create the python virtual env and intall all packages**
+```
 apt-get install python-pip python3.10-venv
 python3 -m venv mkdocs
 source mkdocs/bin/activate
-pip install -r requirements.txt
+pip install -r docs/requirements.txt
 ```
 
 To run a local server using mkdocs:
 
 ```
 cd docs
-source mkdocs/bin/activate
+source mkdocs/bin/activate    # if not loaded
 mkdocs serve
 ```
 
