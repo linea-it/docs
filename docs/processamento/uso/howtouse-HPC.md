@@ -3,7 +3,7 @@
 ##Como acessar
 O acesso ao nosso cluster pode ser feito, através do [**Open OnDemand**](http://127.0.0.1:8088/processamento/uso/openondemand.html) ou pelo do Terminal do **JupyterLab (K8S)**. Em ambas opções, é imprescindível possuir uma conta válida no ambiente computacional do LIneA. Caso não possua uma conta, entre em contato com o Service Desk por email (helpdesk@linea.org.br) para mais informações.
 
-!!! warning 
+!!! warning "Atenção"
     Mesmo possuindo uma conta ativa no LIneA, o acesso ao ambiente de processamento HPC não é automático. Para mais informações entre em contato com o Service Desk pelo email helpdesk@linea.org.br.
 
 **Acessando pelo terminal do JupyterLab**
@@ -13,9 +13,9 @@ Na [**tela inicial**](../img/tela-jupyter.png) do seu Jupyter Notebook, na seç�
     ssh loginapl01
   ```
 
-A máquina <font color=\"#172b4d\">**_loginapl_**</font> é onde você poderá fazer a alocação do nó de computação para submeter o seu job. 
+A máquina <font color=\"#172b4d\">**_loginapl01_**</font> é onde você poderá fazer a alocação do nó de computação para submeter o seu job. 
 
-!!! warning 
+!!! warning "$HOME e $SCRATCH"
     Os nós de computação não possuem acesso ao seu diretório _(home)_ de usuário. Mova ou copie, para seu diretório SCRATCH, todos os arquivos necessários para a submissão do seu job.
 
 ## Como usar a area de SCRATCH
