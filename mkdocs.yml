@@ -16,8 +16,9 @@ nav:
             - Como utilizar: processamento/uso/howtouse-HPC.md     
             - Slurm: processamento/apollo/index.html#slurm
             - Open OnDemand: processamento/uso/openondemand.md
-            - Executando jobs (exemplos): processamento/uso/templates-jobs.md
-      - Santos Dumont (LNCC) - Projeto EUBD: processamento/sdu.md
+            - JupyterLab: processamento/uso/openondemand.html#jupyterlab
+            - Job Script (exemplos): processamento/uso/templates-jobs.md  
+      - Projeto EUBD - LNCC: processamento/sdu.md
   - Armazenamento: 
       - Armazenamento: armazenamento/index.md
  #     - Lustre: armazenamento/lustre.md   
