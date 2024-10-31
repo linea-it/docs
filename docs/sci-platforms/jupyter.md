@@ -36,3 +36,32 @@ Para ter acesso a tutoriais em vídeo, visite a [página de tutoriais do LIneA S
  
 ### Minicurso
 Como parte das atividades do programa de Iniciação Científica (IC), em 2022 o LIneA ofereceu uma série de minicursos para os estudantes e demais interessados com aulas remotas e atividades práticas propostas. Os vídeos das aulas estão disponíveis na página do [Minicurso Jupyter Notebook](https://classroom.google.com/c/NDkzMTA0MzEyODA1/m/NDcyNjUyMTg5Mjc1/details) no Google Classroom.   -->
+
+### Solicitação de Recursos
+
+Inicialmente cada servidor Jupyter Notebook possui um conjunto básico de recursos computacionais. Caso necessite de mais recursos, você pode solicitá-los entrando em contato com o nosso [Service Desk](https://docs.linea.org.br/suporte.html) e enviando as seguintes informações:
+
+```
+- Cores (CPU):
+- Memória (RAM):
+- Volume de dados (input):
+- Volume de dados (output):
+- Resumo do seu projeto de pesquisa:
+- Breve justificativa para o uso dos recursos solicitados:
+```
+
+Os valores informados podem ser estimativas de uso ou aproximados.
+
+Seu pedido será encaminhado para avaliação do Comitê Gestor, e retornaremos via e-mail. Caso sua solicitação seja aprovada e os recursos sejam adicionados à sua conta, você terá um prazo de 90 dias para utilizá-los. Por favor, atente-se à nossa [política de uso](https://docs.linea.org.br/politicas.html#reconhecimento-de-uso-dos-recursos-computacionais-do-linea).  
+
+**Informações dos Servidores do ambiente K8S**
+
+Um servidor Jupyter Notebook K8S pode utilizar no máximo uma máquina. O nosso ambiente do Kubernetes (K8S) possui 14 máquinas, cada uma equipada com os seguintes recursos,  com hyper-threading habilitado:
+
+| CPU(s):                 | 24      |
+| ----------------------- | ------- |
+| **Thread(s) per core:** | **2**   |
+| **Core(s) per socket:** | **6**   |
+| **Socket(s):**          | **2**   |
+| **Memória (RAM):**      | **94G** |
+ 
