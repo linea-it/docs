@@ -99,6 +99,9 @@ Para aprender sobre todas as opções disponíveis para cada comando, insira `ma
 |sinfo	| Exibir estado de partições e nós|
 |salloc	| Envia um job para execução ou inicia um trabalho em tempo real|
 
+!!! danger "Acesso à internet"
+    Os nós de computação **não** têm acesso à internet. Pacotes e bibliotecas devem ser instalados a partir do nó de submissão de jobs.
+
 ## Vídeos tutoriais
 * [How to login](https://youtu.be/3DHqWk7KGHw)
 * [How to use EUPS](https://youtu.be/ifJqGEvqzdY)
