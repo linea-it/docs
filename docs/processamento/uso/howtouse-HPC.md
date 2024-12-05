@@ -70,8 +70,10 @@ Um Job solicita recursos de computação e especifica os aplicativos a serem ini
 
   srun $EXEC
 ```
-Nesse script é preciso especificar o **nome da fila (Partition)** que será usada, o **nome do nó** que será alocado para a excecução do Job, e o **caminho para o código/programa** a ser executado.             
-.............. [**Para mais templates de script de submissão de Jobs, clique aqui**](/processamento/uso/templates-jobs.html) ..............
+Nesse script é preciso especificar: o **nome da fila (Partition)** que será usada; o **nome do nó** que será alocado para a excecução do Job; e o **caminho para o código/programa** a ser executado. 
+
+!!! danger "ATENÇÃO"
+	 **É expressamente proibida a submissão de _jobs_ diretamente para máquina _loginapl01_. Qualquer código em execução nessa máquina será interrompido imediatamente, sem aviso prévio.**
 
 - **Para submeter o Job:**
   ```bash
@@ -88,19 +90,19 @@ Se o script estiver correto **haverá uma saída que indica o ID do job**.
     scancel <ID> 
   ```
 
+!!! warning "Acesso à internet"
+    Os nós de computação **não** têm acesso à internet. Pacotes e bibliotecas devem ser instalados a partir da _loginapl01_ em sua área de scratch .
+
 ## Comandos úteis do Slurm  
 Para aprender sobre todas as opções disponíveis para cada comando, insira `man <comando>` enquanto estiver conectado ao ambiente do Cluster.
 
-|Comando	| Definição|
-|-----------|----------|
-|sbatch	| Envia scripts de tarefas para a fila de execução|
-|squeue	| Exibir estado dos jobs|
-|scontrol	| Usado para exibir o estado Slurm (várias opções disponíveis apenas para root)|
-|sinfo	| Exibir estado de partições e nós|
-|salloc	| Envia um job para execução ou inicia um trabalho em tempo real|
-
-!!! danger "Acesso à internet"
-    Os nós de computação **não** têm acesso à internet. Pacotes e bibliotecas devem ser instalados a partir do nó de submissão de jobs.
+| Comando  | Definição                                                                     |
+| -------- | ----------------------------------------------------------------------------- |
+| sbatch   | Envia scripts de tarefas para a fila de execução                              |
+| squeue   | Exibir estado dos jobs                                                        |
+| scontrol | Usado para exibir o estado Slurm (várias opções disponíveis apenas para root) |
+| sinfo    | Exibir estado de partições e nós                                              |
+| salloc   | Envia um job para execução ou inicia um trabalho em tempo real                |
 
 ## Vídeos tutoriais
 * [How to login](https://youtu.be/3DHqWk7KGHw)
