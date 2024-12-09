@@ -5,8 +5,15 @@ O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 
 
 Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n. Atualmente, o número de cores disponíveis é de 2144 devido o _hyper-threading_ estar ativo nos nós de computação.
 
+#### Características de cada servidor
 
-#### Características atuais 
+| Modelo | # Cores (HT) | RAM | OS | Instalado em |
+| ------- | ------| ------------ | -------- | -----------| 
+| XL170r  | 56    | 128 GB       | CentOS 7.9 |  Abr-2019  |
+| XL220n  | 104   | 256 GB       | CentOS 7.9 |  Jul-2023  |
+
+
+#### Características cluster (consolidado)
 
 | # Nodes | # Cores | Total de ram | Instalado em |
 | ------- | ------| ------------ | -----------| 
