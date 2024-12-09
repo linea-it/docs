@@ -7,13 +7,12 @@ Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE P
 
 #### Características de cada servidor
 
-| Modelo | # Cores (HT) | RAM | OS | Instalado em |
+| Modelo | # Cores (HT) | RAM | OS | Hosts |
 | ------- | ------| ------------ | -------- | -----------| 
-| XL170r  | 56    | 128 GB       | CentOS 7.9 |  Abr-2019  |
-| XL220n  | 104   | 256 GB       | CentOS 7.9 |  Jul-2023  |
+| XL170r  | 56    | 128 GB       | CentOS 7.9 |  apl[01-14]  |
+| XL220n  | 104   | 256 GB       | CentOS 7.9 |  apl[15-26]  |
 
-
-#### Características cluster (consolidado)
+**Características do cluster (consolidado)**
 
 | # Nodes | # Cores | Total de ram | Instalado em |
 | ------- | ------| ------------ | -----------| 
