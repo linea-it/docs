@@ -57,7 +57,11 @@ O cluster Apollo é organizado em diferentes partições (subconjunto de máquin
 |cpu_small   |3-00:00:00 |26     |apl[01-26]|
 |cpu         |5-00:00:00 |26     |apl[01-26]|
 |cpu_long    |31-00:00:0 |26     |apl[01-26]|
-|LSST        |infinite   |12     |apl[15-26]|
+|lsst_cpu_dev     |30:00      |11     |apl[15-26]|
+|lsst_cpu_small   |3-00:00:00 |11     |apl[15-26]|
+|lsst_cpu         |5-00:00:00 |11   |apl[15-26]|
+|lsst_cpu_long    |10-00:00:0 |11     |apl[15-26]|
+
 
 ### Accounts disponíveis 
 
@@ -67,7 +71,7 @@ O cluster Apollo é organizado em diferentes partições (subconjunto de máquin
 - **Grupo B** - Prioridade Intermediária: **hpc-collab** (des, desi, sdss, tno)
 - **Grupo C** - Prioridade Menor: **hpc-public** (linea-members)
 
-As partições (**cpu_dev**, **cpu_small**, **cpu** e **cpu_long**) possuem todas as apollos (*apl[01-26]*), enquanto a partição LSST possui apenas as *apl[15-26]*. Porém, somente o account *hpc-lsst* poderá submeter jobs nessa partição (**LSST**), que possui prioridade maior nesses nodes.
+As partições (**cpu_dev**, **cpu_small**, **cpu** e **cpu_long**) possuem todas as apollos (*apl[01-26]*), enquanto as partições do grupo LSST possuem apenas as *apl[15-26]*. Somente a account *hpc-lsst* poderá submeter jobs nas partições de prefixo "lsst", que possuem maior prioridade nos nodes.
 
 !!! warning "Atenção"
 	Como parte do programa de contribuição in-kind BRA-LIN, o IDAC Brasil possui o compromisso de gerar _redshifts_ fotométricos anualmente para o levantamento LSST, sempre na época que antecede as liberações oficiais dos dados. Nestes períodos, o Cluster Apollo será totalmente ocupado para este propósito por um tempo estimado de algumas horas, mas podendo se estender a alguns dias. Na ocasião, os usuários serão informados com antecência sobre a indisponibilidade do cluster por e-mail. [Clique aqui](https://linea-it.github.io/pz-lsst-inkind-doc/) para saber mais sobre a produção de medidas de _redshift_ e o programa de conrtribuição in-kind BRA-LIN. 
