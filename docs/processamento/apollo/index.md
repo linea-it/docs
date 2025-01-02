@@ -57,10 +57,10 @@ O cluster Apollo é organizado em diferentes partições (subconjunto de máquin
 |cpu_small   |3-00:00:00 |26     |apl[01-26]|
 |cpu         |5-00:00:00 |26     |apl[01-26]|
 |cpu_long    |31-00:00:0 |26     |apl[01-26]|
-|lsst_cpu_dev     |30:00      |11     |apl[15-26]|
-|lsst_cpu_small   |3-00:00:00 |11     |apl[15-26]|
-|lsst_cpu         |5-00:00:00 |11   |apl[15-26]|
-|lsst_cpu_long    |10-00:00:0 |11     |apl[15-26]|
+|lsst_cpu_dev     |30:00      |12     |apl[15-26]|
+|lsst_cpu_small   |3-00:00:00 |12     |apl[15-26]|
+|lsst_cpu         |5-00:00:00 |12   |apl[15-26]|
+|lsst_cpu_long    |10-00:00:0 |12     |apl[15-26]|
 
 
 ### Accounts disponíveis 
