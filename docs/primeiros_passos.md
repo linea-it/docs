@@ -17,10 +17,16 @@ Para efetuar o registro de usuário no LIneA, você deve ficar atento as instru�
 
 #### Registro para Público Geral 
 
+!!! warning "Registro de usuários temporáriamente suspenso!"
+	 **Estamos realizando um upgrade no nosso sistema de registro de usuários para deixá-lo ainda melhor!** <br>
+	 **Volte aqui no dia 29/01 e efetue seu registro.** <br> <br>
+		Qualquer dúvida, entre em contato com nosso [Service Desk](https://docs.linea.org.br/suporte.html).
+
+<!--
 - Público com vínculo institucional: **graduandos**, **pós-graduandos**, **pesquisadores**, etc, vinculados a uma instituição [registre-se aqui.](https://register.linea.org.br/Shibboleth.sso/Login?SAMLDS=1&target=https://register.linea.org.br/registry/co_petitions/start/coef:155&entityID=https://satosa.linea.org.br/linea/proxy/aHR0cHM6Ly9jaWxvZ29uLm9yZw==)
 
 - Público sem vínculo institucional: **astrônomos amadores**, **estudantes do Ensino Médio**, **entusiastas da astronomia**, etc, [registre-se aqui via Gmail.](https://register.linea.org.br/Shibboleth.sso/Login?SAMLDS=1&target=https://register.linea.org.br/registry/co_petitions/start/coef:155&entityID=https://satosa.linea.org.br/linea/proxy/aHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29t) 
-
+-->
 #### Registro para Membros de Colaboração
 
 Os membros das colaborações DES, DESI, LSST, SDSS e TON, devem passar pelo formulário de triagem abaixo, preenchendo todos os campos necessários e enviando o formulário ao final.
