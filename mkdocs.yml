@@ -59,6 +59,8 @@ theme:
     text: Roboto, Arial
   features:
     - navigation.indexes
+  #language: pt_BR
+
 
   palette:
       # Palette toggle for light mode
@@ -94,6 +96,16 @@ extra:
       link: https://facebook.com/linea.org
     - icon: material/youtube
       link: https://youtube.com/@linea_org
+  alternate:
+    - name: Português
+      link: /pt_BR/
+      lang: pt_BR
+    - name: English
+      link: /en/
+      lang: en
+    - name: Español
+      link: /es/
+      lang: es
 
 # Extensions
 markdown_extensions:
