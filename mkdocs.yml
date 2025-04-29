@@ -6,6 +6,7 @@ nav:
       - JupyterLab (K8S): sci-platforms/jupyter.md
       - OnDemand: sci-platforms/ondemand.md
       - User Query: sci-platforms/user_query.md
+      - TAP Service: sci-platforms/user_query.html#tap-service
       - Sky Viewer: sci-platforms/sky_viewer.md
       - Target Viewer: sci-platforms/target_viewer.md
       - DES Science Server: sci-platforms/sci_server.md
