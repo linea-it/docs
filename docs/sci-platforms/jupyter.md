@@ -6,8 +6,7 @@ Como parte do [LIneA Science Platform](../lsp/index.md), o LIneA JupyterHub est�
 
 Ao clicar no _card_ "JupyterHub" dentro do LIneA Science Platform, você será direcionado para a página de _login_ e em seguida para a página inicial do JupyterHub que mostrará o seu perfil de usuário. Clique no botão **START** para iniciar.       
 
-A instalação padrão do JupyterHub utiliza a nova interface [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) e é baseada na imagem [datascience-notebook](https://github.com/jupyter/docker-stacks), estendida com as bibliotecas [Astropy](https://www.astropy.org/) e [dblinea](https://dblinea.readthedocs.io/en/latest/index.html) (a biblioteca que faz a conexão com o banco de dados). Isto significa que uma série de bibliotecas _Python_ de grande popularidade como [Numpy](https://numpy.org/) e [Matplotlib](https://matplotlib.org/) estarão automaticamente disponíveis.
-
+A instalação padrão do JupyterHub utiliza a nova interface [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) e é baseada na imagem [datascience-notebook](https://github.com/jupyter/docker-stacks). Isto significa que uma série de bibliotecas _Python_ de grande popularidade como [Astropy](https://www.astropy.org/), [Numpy](https://numpy.org/) e [Matplotlib](https://matplotlib.org/) estarão automaticamente disponíveis.
 
 
 ## Apoio ao usuário
@@ -16,7 +15,6 @@ A instalação padrão do JupyterHub utiliza a nova interface [JupyterLab](https
 
 No repositório [jupyterhub-tutorial](https://github.com/linea-it/jupyterhub-tutorial) você encontrará os tutoriais em formato _notebook_:
 
-
 #### 1-primeiros-passos.ipynb 
 Instruções gerais de uso da plataforma JupyterLab, dicas e atalhos na escrita de notebooks para diferentes tipos de células. 
 #### 2-acesso-a-dados.ipynb
@@ -24,44 +22,39 @@ Instruções para uso da biblioteca dblinea para leitura de dados a partir do ba
 #### 3-conda-env.ipynb
 Instruções para criação de ambientes no conda para gerenciamento de bibliotecas que sejam persistentes e sobrevivam a destruição e recriação dos containers para que os usuários possam retornar em uma nova sessão e encontrar o mesmo ambiente da sessão anterior (não disponível para usuários de perfil público bronze).  
 
-***  
-
 Para acessar os _notebooks_, basta abrir um Terminal no JupyterLab clicando no botão "+" na barra superior e em seguida no ícone "Terminal" da seção "Other" na aba "Launcher", e inserir o comando:
 
     git clone https://github.com/linea-it/jupyterhub-tutorial.git
 
-<!-- ### Tutoriais em vídeo
+<!-- 
+### Minicursos
 
-Para ter acesso a tutoriais em vídeo, visite a [página de tutoriais do LIneA Science Platform](https://lsp.linea.org.br/tutorials).  
- 
-### Minicurso
-Como parte das atividades do programa de Iniciação Científica (IC), em 2022 o LIneA ofereceu uma série de minicursos para os estudantes e demais interessados com aulas remotas e atividades práticas propostas. Os vídeos das aulas estão disponíveis na página do [Minicurso Jupyter Notebook](https://classroom.google.com/c/NDkzMTA0MzEyODA1/m/NDcyNjUyMTg5Mjc1/details) no Google Classroom.   -->
+  1. Curso 1Os vídeos das aulas estão disponíveis na página do [Minicurso Jupyter Notebook](https://classroom.google.com/c/NDkzMTA0MzEyODA1/m/NDcyNjUyMTg5Mjc1/details) no Google Classroom. -->
 
-### Solicitação de Recursos
+## Recursos computacionais
 
-Inicialmente cada servidor Jupyter Notebook possui um conjunto básico de recursos computacionais. Caso necessite de mais recursos, você pode solicitá-los entrando em contato com o nosso [Service Desk](https://docs.linea.org.br/suporte.html) e enviando as seguintes informações:
+**Configurações disponíveis para o Jupyter over K8S**
 
-```
-- Cores (CPU):
-- Memória (RAM):
-- Volume de dados (input):
-- Volume de dados (output):
-- Resumo do seu projeto de pesquisa:
-- Breve justificativa para o uso dos recursos solicitados:
-```
+Após efetuar login na plataforma, será exibido um menu com até três opções de configuração. Basta selecionar e clicar em _Start My Server_.
 
-Os valores informados podem ser estimativas de uso ou aproximados.
+| **Tamanho** | **CPUs** |  **RAM**   |
+|---------|------|--------|
+| **Small**   | 1.0  |  4 GiB |
+| **Medium**  | 2.0  |  8 GiB |
+| **Large**   | 4.0  | 16 GiB |
 
-Seu pedido será encaminhado para avaliação do Comitê Gestor, e retornaremos via e-mail. Caso sua solicitação seja aprovada e os recursos sejam adicionados à sua conta, você terá um prazo de 90 dias para utilizá-los. Por favor, atente-se à nossa [política de uso](https://docs.linea.org.br/politicas.html#reconhecimento-de-uso-dos-recursos-computacionais-do-linea).  
 
-**Informações dos Servidores do ambiente K8S**
+**Configuração dos servidores do ambiente K8S**
 
-Um servidor Jupyter Notebook K8S pode utilizar no máximo uma máquina. O nosso ambiente do Kubernetes (K8S) possui 14 máquinas, cada uma equipada com os seguintes recursos,  com hyper-threading habilitado:
+A plataforma Jupyter é executada sobre o Kubernetes (K8S) e possui 12 servidores físicos dedicados. Cada máquina é equipada com os seguintes recursos computacionais:
 
-| CPU(s):                 | 24      |
+|   Kubernetes Node Configuration  ||
 | ----------------------- | ------- |
-| **Thread(s) per core:** | **2**   |
-| **Core(s) per socket:** | **6**   |
-| **Socket(s):**          | **2**   |
-| **Memória (RAM):**      | **94G** |
- 
+| **RAM**                 | 64 GB |
+| **Thread(s) per core**  | 2   |
+| **Core(s) per socket**  | 6   |
+| **Socket(s)**           | 2   | 
+
+
+!!! info "Jupyter over K8S vs Jupyter over HPC"
+	 O LIneA disponibiliza dois ambientes separados de Jupyter Notebook. O primeiro é executado em containers na plataforma Kubernetes (K8S). O segundo está disponível na [plataforma Ondemand](../processamento/uso/openondemand.md) e acessa diretamente a infraestrutura de HPC. 

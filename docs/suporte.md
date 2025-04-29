@@ -1,6 +1,4 @@
 
-<!-- Talvez a sua dúvida já tenha resposta, dê uma olhada na nossa lista de [perguntas frequentes](faq.md) antes de abrir um chamado. -->
-
 Para suporte técnico, entre em contato com o nosso Service Desk através do e-mail [**helpdesk@linea.org.br**](mailto:helpdesk@linea.org.br). Caso seja necessário, nossa equipe poderá agendar um atendimento por vídeo-chamada. 
 
 
