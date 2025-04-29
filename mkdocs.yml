@@ -124,3 +124,8 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.snippets
+
+plugins:
+    - mkdocs-video
+    - git-revision-date-localized:
+        type: date
