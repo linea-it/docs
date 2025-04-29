@@ -30,18 +30,19 @@ nav:
       - Dados: data/index.md
       #- DES: data/des.md
       #- LSST: data/lsst.md      
-  - Políticas: 'politicas.md'
+  - Políticas: politicas.md
   #- Photoz Server: 'photozserver.md'
   #- Armazenamento: 'armazenamento.md'
   #- Monitoramento: 'monitoramento.md'
-  - Glossário: 'glossario.md'
-  - Suporte: 'suporte.md'
+  - Glossário: glossario.md
+  - Suporte: suporte.md
   #- FAQ: 'faq.md'
   #- Mkdocs Exemplos: 'exemplos/exemplos.md' #provisorio
   
 
 
 # Site information
+#docs_dir: docs
 site_name:  Documentação para Usuários
 site_author: LIneA team 
 site_url: "https://docs.linea.org.br"
@@ -63,7 +64,6 @@ theme:
     text: Roboto, Arial
   features:
     - navigation.indexes
-  #language: pt_BR
 
 
   palette:
@@ -100,16 +100,6 @@ extra:
       link: https://facebook.com/linea.org
     - icon: material/youtube
       link: https://youtube.com/@linea_org
-  alternate:
-    - name: Português
-      link: /pt_BR/
-      lang: pt_BR
-    - name: English
-      link: /en/
-      lang: en
-    - name: Español
-      link: /es/
-      lang: es
 
 # Extensions
 markdown_extensions:
@@ -142,6 +132,20 @@ markdown_extensions:
   - pymdownx.snippets
 
 plugins:
-    - mkdocs-video
+    - i18n:
+        docs_structure: folder
+        languages:
+          - locale: pt
+            default: true
+            name: Português
+            build: true
+          - locale: en
+            name: English
+            build: true
+            site_name:  "Users Documentation"
+            nav:
+              - Home: en/index.md
+              - Getting Started: en/primeiros_passos.md
     - git-revision-date-localized:
         type: date
+    #- mkdocs-video
