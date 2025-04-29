@@ -3,21 +3,23 @@ nav:
   - Primeiros passos: primeiros_passos.md
   - Plataformas Científicas: 
       - Plataformas Científicas: sci-platforms/index.md #intro e LSP landing page
-      - JupyterLab (K8S): sci-platforms/jupyter.md
+      - JupyterHub: sci-platforms/jupyter.md
       - OnDemand: sci-platforms/ondemand.md
       - User Query: sci-platforms/user_query.md
+      - TAP Service: sci-platforms/user_query.html#tap-service
       - Sky Viewer: sci-platforms/sky_viewer.md
       - Target Viewer: sci-platforms/target_viewer.md
       - DES Science Server: sci-platforms/sci_server.md
       - Occultation Predictions Database: sci-platforms/linea-occulation-prediction-database.md
       - SDSS Sky Sever: sci-platforms/sdss_sky_server.md
+      - LSST PZ Server: sci-platforms/pz_server.md
       - DES Science Portal: sci-platforms/des.md
       - Solar System Portal: sci-platforms/solar-system-portal.md
       - MaNGA Portal: sci-platforms/manga.md 
   - Processamento (HPC):
       - Processamento (HPC): processamento/index.md
       - Cluster Apollo:
-            - cluster apollo: processamento/apollo/index.md
+            - Cluster Apollo: processamento/apollo/index.md
             - Como utilizar: processamento/uso/howtouse-HPC.md     
             - Slurm: processamento/apollo/index.html#slurm
             - Open OnDemand: processamento/uso/openondemand.md
