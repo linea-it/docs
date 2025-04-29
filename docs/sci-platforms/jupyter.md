@@ -33,7 +33,7 @@ Para acessar os _notebooks_, basta abrir um Terminal no JupyterLab clicando no b
 
 ## Recursos computacionais
 
-**Configurações disponíveis para o Jupyter**
+**Configurações disponíveis para o Jupyter over K8S**
 
 Após efetuar login na plataforma, será exibido um menu com até três opções de configuração. Basta selecionar e clicar em _Start My Server_.
 
