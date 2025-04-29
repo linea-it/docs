@@ -36,8 +36,9 @@ nav:
   #- Photoz Server: 'photozserver.md'
   #- Armazenamento: 'armazenamento.md'
   #- Monitoramento: 'monitoramento.md'
-  - Glossário: glossario.md
-  - Suporte: suporte.md
+  - Cursos e Tutoriais: 'cursos.md'
+  - Glossário: 'glossario.md'
+  - Suporte: 'suporte.md'
   #- FAQ: 'faq.md'
   #- Mkdocs Exemplos: 'exemplos/exemplos.md' #provisorio
   
