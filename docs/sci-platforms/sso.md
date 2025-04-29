@@ -1,12 +1,23 @@
-O estudo de pequenos corpos no Sistema Solar apresenta desafios consideráveis, principalmente devido aos seus pequenos tamanhos e vastas distâncias. Um método para superar esses obstáculos envolve estudos indiretos através de uma técnica conhecida como ocultação estelar. Historicamente, a predição precisa destes eventos se provou ser difícil devido à falta de mapas estelares suficientemente precisos. No entanto, os avanços recentes transformaram esta cenário, permitindo predições de ocultações estelares altamente precisas para corpos do Sistema Solar. A técnica de ocultação estelar é uma ferramenta crucial para estudar estes corpos, especialmente os TNOs, oferecendo informações precisas sobre os seus tamanhos e posições, bem como sobre o seu entorno, graças a uma das características mais marcante da técnica: a tradução de alta resolução temporal em alta resolução angular. Dado o esperado aumento de dez vezes no volume de dados do Sistema Solar a partir do Legacy Survey of Space and Time (LSST), o Portal do Sistema Solar pretende ser uma solução de computação de alto desempenho que prevê, organiza e distribui esses eventos, tornando-os globalmente acessíveis para a comunidade, ao mesmo tempo que alivia a carga computacional.
+O estudo de pequenos corpos no Sistema Solar apresenta desafios consideráveis, principalmente devido aos seus pequenos tamanhos e vastas distâncias. Um método para superar esses obstáculos envolve estudos indiretos por meio da técnica de **ocultação estelar**.
 
-Este portal está divido entre uma interface pública e uma inteface destinada a usuários membros. Para acessar todas as predições de ocultações públicas acesse o [LIneA Occultation Prediction Database](https://solarsystem.linea.org.br) e para uso avançado da plataforma consulte a [documentação](https://solarsystem.linea.org.br/docs/).
+Historicamente, a previsão precisa desses eventos mostrou-se difícil devido à falta de mapas estelares suficientemente precisos. Contudo, avanços recentes transformaram esse cenário, permitindo predições de ocultações estelares altamente precisas para corpos do Sistema Solar. A técnica de ocultação estelar é crucial para estudar esses corpos, especialmente os objetos transnetunianos (TNOs), fornecendo informações precisas sobre tamanhos e posições, características do entorno, etc. Isso é possível graças a uma das características mais marcantes da técnica: a conversão de alta resolução temporal em alta resolução angular.
 
-O LIneA Solar System Portal é destinado aos membros da colaboração _Transneptunian Occultation Network_ (TON). Clique [aqui](https://linea.org.br/010-ciencia/projetos/6-tno/) para saber mais sobre a TON.  
+Com o aumento esperado de **dez vezes no volume de dados** do *Legacy Survey of Space and Time* (LSST), o **Portal do Sistema Solar** surge como uma solução de computação de alto desempenho para:
+
+1. Calcular predições para eventos de ocultação estelar;
+2. Organizar e distribuir dados;
+3. Tornar os eventos acessíveis globalmente;
+4. Reduzir a carga computacional do usuário;
 
 
+### Acesso ao Portal de Sistema Solar e seus serviços
 
+**Interface pública**
 
+- [LIneA Occultation Prediction Database](https://solarsystem.linea.org.br) ([saiba mais aqui](linea-occulation-prediction-database.md))
+- [Documentação](https://solarsystem.linea.org.br/docs/)
 
+**Área restrita**
 
-
+- Destinada a membros da colaboração *Transneptunian Occultation Network* (TON)
+- Saiba mais sobre a TON [aqui](https://www.linea.org.br/010-ciencia/projetos/6-tno/)
