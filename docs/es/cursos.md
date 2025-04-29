@@ -1,0 +1,1 @@
+LIneA ofrece cursos de capacitación sobre las principales herramientas utilizadas por nuestros proyectos. Las grabaciones y materiales didácticos de todos los cursos ofrecidos anteriormente están disponibles en Google Classroom. Visite la [**página de cursos en el sitio web de LIneA**](https://www.linea.org.br/cursos) para más detalles.
