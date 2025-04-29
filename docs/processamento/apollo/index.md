@@ -1,41 +1,41 @@
 # HPE Apollo 2000
 
 
-O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 cores** físicos. Seus nós são equipados com processadores `Intel Xeon Skylake 5120, 14-cores, 2.2GHz` (apl01-14) e `Intel(R) Xeon(R) Gold 5320 CPU @ 2.20GHz` (apl15-26) com o sistema de _hyperthreading_ ativado. O conjunto de máquinas provê cerca de 80 Tflops de capacidade computacional. 
+O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 cores** físicos. Seus nós são equipados com processadores `Intel Xeon Skylake 5120 2.2GHz` (apl01-16) e `Intel Xeon Gold 5320 2.20GHz` (apl17-28). O conjunto de máquinas provê cerca de 85 Tflops de capacidade computacional. 
 
-Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n. Atualmente, o número de cores disponíveis é de 2144 devido o _hyper-threading_ estar ativo nos nós de computação.
+Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n. Atualmente, o número de cores disponíveis é de *2144*, pois o HT estar ativo nos nós de computação.
 
 #### Características de cada servidor
 
-| Modelo | # Cores (HT) | RAM | OS | Hosts |
+| Modelo | # Cores (HT)<sup>[1]</sup> | RAM | OS | Hosts |
 | ------- | ------| ------------ | -------- | -----------| 
-| XL170r  | 56    | 128 GB       | CentOS 7.9 |  apl[01-14]  |
-| XL220n  | 104   | 256 GB       | CentOS 7.9 |  apl[15-26]  |
+| HPE Proliant XL170r  | 56    | 128 GB       | Rocky Linux 9.5 |  apl[01-16]  |
+| HPE Proliant XL220n  | 104   | 256 GB       | Rocky Linux 9.5 |  apl[17-28]  |
+
+<sup>[1]</sup> A tecnologia Hyper-Threading (HT) está habilitada em todos os nós do cluster. 
 
 **Características do cluster (consolidado)**
 
 | # Nodes | # Cores | Total de ram | Instalado em |
 | ------- | ------| ------------ | -----------| 
-| 16<sup>[1]</sup>      | 448   | 2TB          |  Abr-2019  |
+| 16      | 896   | 1.5TB        |  Abr-2019  |
 | 12      | 624   | 3TB          |  Jul-2023  |
 
-
-<sup>[1]</sup> _atualmente 2 nós estão sendo usados como máquinas de serviço do cluster_.
-
-O **Cluster Apollo** é gerenciado pelo **Slurm version 18.08.8**.
+O **Cluster Apollo** é gerenciado pelo **Slurm v24.05.5**.
 
 ### Filesystem
 
-O **Cluster Apollo** conta com um Filesystem Lustre, utilizado como "Scratch".
-O "Home" dos usuários (acessível apenas no nó de login), é fornecido através de NFS.
+O **Cluster Apollo** conta com um sistema de arquivos de alta performance Lustre, disponibilizado como área de _"Scratch"_. O "Home" dos usuários está acessível apenas no nó de login e é fornecido através de NFS.
 
 Essas áreas de armazenamento devem ser utilizadas da seguinte forma:
 
-Scratch : Estrutura montada a partir do diretório /lustre/t0/scratch/users/<username>. Utilizado para armazenar todos os arquivos que serão utilizados durante a execução de um job (scripts de submissão, executáveis, dados de entrada, dados de saída etc).
+**Scratch:** Estrutura montada a partir do diretório `/scratch/<username>`. Utilizado para armazenar todos os arquivos que serão utilizados durante a execução de um job (scripts de submissão, executáveis, dados de entrada, dados de saída etc). Variável de ambiente `$SCRATCH`.
 
-Home : Estrutura montada a partir do diretório /home/<username>. Utilizado para armazenar especialmente os resultados que se queira manter durante toda a vigência do projeto.
+**Home:** Estrutura montada a partir do diretório `/home/<username>`. Utilizado para armazenar especialmente os resultados que se queira manter durante toda a vigência do projeto. Variável de ambiente `$HOME`.
 
-[Clique aqui para mais detalhes](/armazenamento/index.html)
+**Scriptland:** Estrutura montada a partir do diretório `/scriptland/<username>`. É uma área de armazenamento otimizada para armazenar scripts e códigos. Variável de ambiente `$SCRIPTLAND`.
+
+[Clique aqui para mais detalhes](/armazenamento/index.md)
 
 !!! warning "Atenção"
     Não esqueça de copiar os arquivos necessários (executável, bibliotecas, dados de entrada) para dentro da área de SCRATCH, pois a área de HOMEDIR não é acessível pelos nós computacionais.
@@ -53,25 +53,25 @@ O cluster Apollo é organizado em diferentes partições (subconjunto de máquin
 
 |PARTITION   |TIMELIMIT  |NODES  |NODELIST  |
 |------------|-----------|-------|----------|
-|cpu_dev     |30:00      |26     |apl[01-26]|
-|cpu_small   |3-00:00:00 |26     |apl[01-26]|
-|cpu         |5-00:00:00 |26     |apl[01-26]|
-|cpu_long    |31-00:00:0 |26     |apl[01-26]|
-|lsst_cpu_dev     |30:00      |12     |apl[15-26]|
-|lsst_cpu_small   |3-00:00:00 |12     |apl[15-26]|
-|lsst_cpu         |5-00:00:00 |12   |apl[15-26]|
-|lsst_cpu_long    |10-00:00:0 |12     |apl[15-26]|
+|cpu_dev     |30:00      |26     |apl[01-28]|
+|cpu_small   |3-00:00:00 |26     |apl[01-28]|
+|cpu         |5-00:00:00 |26     |apl[01-28]|
+|cpu_long    |31-00:00:0 |26     |apl[01-28]|
+|lsst_cpu_dev     |30:00      |12     |apl[17-28]|
+|lsst_cpu_small   |3-00:00:00 |12     |apl[17-28]|
+|lsst_cpu         |5-00:00:00 |12   |apl[17-28]|
+|lsst_cpu_long    |10-00:00:0 |12     |apl[17-28]|
 
 
 ### Accounts disponíveis 
 
 - **Workflow** – Interrompe qualquer job que esteja rodando: **hpc-photoz** (photoz)
-- **LSST** – Próximo da fila: **hpc-lsst** [somente nas novas apollos apl[15-26]] (lsst)
+- **LSST** – Próximo da fila: **hpc-lsst** [somente nas novas apollos apl[17-28]] (lsst)
 - **Grupo A** - Prioridade Maior: **hpc-bpglsst** (itteam, bpg-lsst)
 - **Grupo B** - Prioridade Intermediária: **hpc-collab** (des, desi, sdss, tno)
 - **Grupo C** - Prioridade Menor: **hpc-public** (linea-members)
 
-As partições (**cpu_dev**, **cpu_small**, **cpu** e **cpu_long**) possuem todas as apollos (*apl[01-26]*), enquanto as partições do grupo LSST possuem apenas as *apl[15-26]*. Somente a account *hpc-lsst* poderá submeter jobs nas partições de prefixo "lsst", que possuem maior prioridade nos nodes.
+As partições (**cpu_dev**, **cpu_small**, **cpu** e **cpu_long**) possuem todas as apollos (*apl[01-28]*), enquanto as partições do grupo LSST possuem apenas as *apl[17-28]*. Somente a account *hpc-lsst* poderá submeter jobs nas partições de prefixo "lsst", que possuem maior prioridade nos nodes.
 
 !!! warning "Atenção"
 	Como parte do programa de contribuição in-kind BRA-LIN, o IDAC Brasil possui o compromisso de gerar _redshifts_ fotométricos anualmente para o levantamento LSST, sempre na época que antecede as liberações oficiais dos dados. Nestes períodos, o Cluster Apollo será totalmente ocupado para este propósito por um tempo estimado de algumas horas, mas podendo se estender a alguns dias. Na ocasião, os usuários serão informados com antecência sobre a indisponibilidade do cluster por e-mail. [Clique aqui](https://linea-it.github.io/pz-lsst-inkind-doc/) para saber mais sobre a produção de medidas de _redshift_ e o programa de conrtribuição in-kind BRA-LIN. 
@@ -131,5 +131,5 @@ A próxima categoria de variáveis de ambiente são aquelas que o usuário pode 
 
 
 !!! info "Mais Informações ?"
-    Saiba como utilizar o Cluster Apollo em [Como Utilizar](https://docs.linea.org.br/processamento/uso/howtouse-HPC.html). <br> 
-    Para maiores informações, entre em contato com o [Service Desk](https://docs.linea.org.br/suporte.html).
+    Saiba como utilizar o Cluster Apollo em [Como Utilizar](/processamento/uso/howtouse-HPC.html). <br> 
+    Para maiores informações, entre em contato com o [Service Desk](/suporte.html).
