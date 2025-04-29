@@ -32,7 +32,7 @@ nav:
       - Dados: data/index.md
       #- DES: data/des.md
       #- LSST: data/lsst.md      
-  - Políticas: politicas.md
+  - Políticas: 'politicas.md'
   #- Photoz Server: 'photozserver.md'
   #- Armazenamento: 'armazenamento.md'
   #- Monitoramento: 'monitoramento.md'
@@ -45,7 +45,6 @@ nav:
 
 
 # Site information
-#docs_dir: docs
 site_name:  Documentação para Usuários
 site_author: LIneA team 
 site_url: "https://docs.linea.org.br"
@@ -67,7 +66,6 @@ theme:
     text: Roboto, Arial
   features:
     - navigation.indexes
-
 
   palette:
       # Palette toggle for light mode
@@ -135,20 +133,6 @@ markdown_extensions:
   - pymdownx.snippets
 
 plugins:
-    - i18n:
-        docs_structure: folder
-        languages:
-          - locale: pt
-            default: true
-            name: Português
-            build: true
-          - locale: en
-            name: English
-            build: true
-            site_name:  "Users Documentation"
-            nav:
-              - Home: en/index.md
-              - Getting Started: en/primeiros_passos.md
+    - mkdocs-video
     - git-revision-date-localized:
         type: date
-    #- mkdocs-video
