@@ -11,6 +11,7 @@ nav:
       - DES Science Server: sci-platforms/sci_server.md
       - Occultation Predictions Database: sci-platforms/linea-occulation-prediction-database.md
       - SDSS Sky Sever: sci-platforms/sdss_sky_server.md
+      - LSST PZ Server: sci-platforms/pz_server.md
       - DES Science Portal: sci-platforms/des.md
       - Solar System Portal: sci-platforms/solar-system-portal.md
       - MaNGA Portal: sci-platforms/manga.md 

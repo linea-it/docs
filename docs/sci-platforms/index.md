@@ -21,6 +21,7 @@ Serviços de acesso a dados com ferramentas diversas para processamento, explora
 #### &nbsp;&nbsp;&nbsp;&nbsp; [DES Science Server](sci_server.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Occultation Prediction Database](linea-occulation-prediction-database.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [SDSS Sky Server](sdss_sky_server.md)
+#### &nbsp;&nbsp;&nbsp;&nbsp; [LSST PZ Server](pz_server.md)
 
 ### Portais Científicos
 
