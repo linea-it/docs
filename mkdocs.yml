@@ -3,7 +3,7 @@ nav:
   - Primeiros passos: primeiros_passos.md
   - Plataformas Científicas: 
       - Plataformas Científicas: sci-platforms/index.md #intro e LSP landing page
-      - JupyterLab (K8S): sci-platforms/jupyter.md
+      - JupyterHub: sci-platforms/jupyter.md
       - OnDemand: sci-platforms/ondemand.md
       - User Query: sci-platforms/user_query.md
       - TAP Service: sci-platforms/user_query.html#tap-service

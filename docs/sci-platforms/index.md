@@ -7,7 +7,7 @@ O LIneA Science Platform (**scienceplatform.linea.org.br**) é uma plataforma on
 
 Durante a operação do levantamento [LSST](https://rubinobservatory.org/), uma versão reduzida do LIneA Science Platform, apenas com os serviços relacionados ao projeto LSST, será o principal ponto de acesso aos dados hospedados no [_Brazilian Independent Data Access Center_ (IDAC-Brasil)](https://www.linea.org.br/idac) para os cientistas da comunidade brasileira.
 
-Nos anos que antecedem a operação do LSST, os serviços do IDAC-Brasil já disponibilizam acesso a dados públicos de outros levantamentos, como o [_Dark Energy Survey_](https://www.darkenergysurvey.org/), para que a comunidade possa se preparar e se familiarizar com as diversas ferramentas oferecidas.
+Nos anos que antecedem a operação do LSST, os serviços do IDAC-Brasil já disponibilizam acesso a dados públicos de outros levantamentos, como o [Dark Energy Survey](https://www.darkenergysurvey.org/), para que a comunidade possa se preparar e se familiarizar com as diversas ferramentas oferecidas.
 
 ### Serviços  
 
