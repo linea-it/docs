@@ -19,7 +19,7 @@ Serviços de acesso a dados com ferramentas diversas para processamento, explora
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Sky Viewer](sky.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Target Viewer](target.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [DES Science Server](sci_server.md)
-#### &nbsp;&nbsp;&nbsp;&nbsp; [Occultation Prediction Database](occultation.md)
+#### &nbsp;&nbsp;&nbsp;&nbsp; [Occultation Prediction Database](linea-occulation-prediction-database.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [SDSS Sky Server](sdss_sky_server.md)
 
 ### Portais Científicos
@@ -27,7 +27,7 @@ Serviços de acesso a dados com ferramentas diversas para processamento, explora
 Conjuntos de ferramentas desenvolvidas especificamente para cada projeto e de uso restrito dos membros de cada colaboração científica.  
 
 #### &nbsp;&nbsp;&nbsp;&nbsp; [DES Science Portal](des.md)
-#### &nbsp;&nbsp;&nbsp;&nbsp; [Solar System Portal](sso.md)
+#### &nbsp;&nbsp;&nbsp;&nbsp; [Solar System Portal](solar-system-portal.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [MaNGA Portal](manga.md)
 
 
