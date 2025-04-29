@@ -1,7 +1,9 @@
 # Acervo de Dados
 
-O acervo de dados do LIneA contém os principais catálogos de astronomia. Clique abaixo para acessar um catátolo específico ou acesse diretamente a plataforma [User Query](https://userquery.linea.org.br/).
+## Catálogos
 
-- [2MASS](https://userquery.linea.org.br/metadata/twomass/)
-- [Gaia DR3](https://userquery.linea.org.br/metadata/gaia_dr3/)
-- [DES DR2](https://userquery.linea.org.br/metadata/des_dr2/)
+As informações relevantes sobre catálogos astronômicos públicos hospedados no LIneA estão disponíveis nas páginas de documentação do serviço [User Query](https://userquery.linea.org.br/). Para acessá-las, clique no menu "Database Tables" e selecione o conjunto de dados desejado.
+
+## Imagens
+
+As imagens públicas hospedadas no LIneA e disponíveis nos serviços de visualização pertencem ao release DES DR2. Para mais informações, acesse a publicação [The Dark Energy Survey Data Release 2](https://arxiv.org/abs/2101.05765).
