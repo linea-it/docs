@@ -15,9 +15,9 @@ Welcome to LIneA's _Documentation for Users_ page. This is the central place to 
 
 
 <div style="display: flex; gap: 10px; justify-content: space-between;">
-  <iframe width="32%" height="200" src="https://www.youtube.com/embed/4oiEKtzTkTA" frameborder="0" allowfullscreen></iframe>
-  <iframe width="32%" height="200" src="https://www.youtube.com/embed/j0NCNa2-u8E" frameborder="0" allowfullscreen></iframe>
-  <iframe width="32%" height="200" src="https://www.youtube.com/embed/TX61BMryKbo" frameborder="0" allowfullscreen></iframe>
+  <iframe width="32%" height="125" src="https://www.youtube.com/embed/4oiEKtzTkTA" frameborder="0" allowfullscreen></iframe>
+  <iframe width="32%" height="125" src="https://www.youtube.com/embed/j0NCNa2-u8E" frameborder="0" allowfullscreen></iframe>
+  <iframe width="32%" height="125" src="https://www.youtube.com/embed/TX61BMryKbo" frameborder="0" allowfullscreen></iframe>
 </div>
 
 
