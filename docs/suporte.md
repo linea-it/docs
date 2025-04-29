@@ -1,9 +1,13 @@
 
 Talvez a sua dúvida já tenha resposta, dê uma olhada na nossa lista de [perguntas frequentes](faq.md) antes de abrir um chamado.
 
-Para suporte técnico, entre em contato com o nosso _Service Desk_ (suporte via e-mail) ou reserve uma vaga no serviço _Office Hours_ (atendimento por vídeo-chamada) através do e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). 
+Para suporte técnico, entre em contato com o nosso Service Desk através do e-mail [**helpdesk@linea.org.br**](mailto:helpdesk@linea.org.br). Caso seja necessário, nossa equipe poderá agendar um atendimento por vídeo-chamada. 
 
-Se você quiser fazer parte da comunidade LIneA e conversar com outros usuários, clique [aqui](https://join.slack.com/t/lineausers/shared_invite/zt-1h9nxy1du-iuHtVycWNJGDgDw8SaSmtQ) para receber um convite para o _Workspace_ _LIneA Users_ no Slack.
+
+Se você quiser fazer parte da comunidade LIneA e conversar com outros usuários, clique [**aqui**](https://join.slack.com/t/lineausers/shared_invite/zt-1h9nxy1du-iuHtVycWNJGDgDw8SaSmtQ) para receber um convite para o Workspace **LIneA Users** no Slack.
+
+
+
 
 
 
