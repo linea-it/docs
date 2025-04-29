@@ -24,7 +24,7 @@ Para efetuar o registro de usuário no LIneA, você deve ficar atento as instru�
 
 Os membros das colaborações DES, DESI, LSST, SDSS e TON, devem passar pelo formulário de triagem abaixo, preenchendo todos os campos necessários e enviando o formulário ao final.
 
-- [Formulário de Triagem para membros de Colaboração.](https://docs.google.com/forms/d/e/1FAIpQLScQuUTV7Wc-C10gWNcznorbW5mOQlGkFAXUikd0R7JzsdgSfQ/viewform)
+- [Solicitação de registro para membros de Colaboração.](https://docs.google.com/forms/d/e/1FAIpQLScQuUTV7Wc-C10gWNcznorbW5mOQlGkFAXUikd0R7JzsdgSfQ/viewform)
 
 Após a avaliação dos dados, entraremos em contato por email.
 
