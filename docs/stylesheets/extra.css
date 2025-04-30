@@ -4,13 +4,13 @@
   border-left-width: 4px;
 }
 
-:root>* {
+:root > * {
   --md-primary-fg-color: #283663;
   --md-primary-fg-color--light: #283663;
   --md-primary-fg-color--dark: #868786;
 }
 
-a.md-logo>img {
+a.md-logo > img {
   transform: scale(1.7);
 }
 
@@ -20,4 +20,11 @@ a.md-logo>img {
 
 .md-nav__link {
   text-decoration: none !important;
+}
+
+/* Unify font size */
+.md-typeset,
+.md-nav,
+.md-nav__title {
+  font-size: 0.75rem;
 }
