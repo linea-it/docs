@@ -1,4 +1,4 @@
-### High Performance Computing (HPC)
+### High Performance Computing
 LIneA provides access to high-performance computing resources for **members of scientific collaborations and projects supported by the laboratory** in the following environments:
 
 !!! warning ""

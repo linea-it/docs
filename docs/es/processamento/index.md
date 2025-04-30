@@ -1,4 +1,4 @@
-### Computación de Alto Rendimiento (HPC)
+### Computación de Alto Rendimiento
 LIneA ofrece acceso a recursos computacionales de alto rendimiento para **miembros de colaboraciones científicas y proyectos apoyados por el laboratorio** en los siguientes entornos:
 
 !!! warning ""
