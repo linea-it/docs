@@ -12,25 +12,37 @@ If you need any further assistance send an email to `helpdesk@linea.org.br`.
 
 # How to build the documentation
 
-**1. Clone the repo**
-```
-git clone https://github.com/linea-it/docs/
-```
-
-**2. Create the python virtual env and intall all packages**
+**1. Create the python virtual env**
 ```
 apt-get install python-pip python3.10-venv
-python3 -m venv mkdocs
-source mkdocs/bin/activate
-pip install -r docs/requirements.txt
+python3 -m venv envdocs
+source envdocs/bin/activate
 ```
+
+
+**2. Clone the repo and install all packages**
+```
+git clone https://github.com/linea-it/docs/
+cd docs
+pip install -r requirements.txt
+```
+
 
 To run a local server using mkdocs:
 
 ```
 cd docs
-source mkdocs/bin/activate    # if not loaded
-mkdocs serve
+source ../envdocs/bin/activate        # if not loaded
+mkdocs serve -a 127.0.0.1:8088     # the argument '-a 127.0.0.1:8088' is optional
+```
+
+
+To deploy on github pages:
+
+```
+cd docs
+source ../envdocs/bin/activate        # if not loaded
+mkdocs gh-deploy -c --config-file mkdocs.yml --remote-branch gh-pages
 ```
 
 
