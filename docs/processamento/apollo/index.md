@@ -35,7 +35,7 @@ Essas áreas de armazenamento devem ser utilizadas da seguinte forma:
 
 **Scriptland:** Estrutura montada a partir do diretório `/scriptland/<username>`. É uma área de armazenamento otimizada para armazenar scripts e códigos. Variável de ambiente `$SCRIPTLAND`.
 
-[Clique aqui para mais detalhes](/armazenamento/index.md)
+[Clique aqui para mais detalhes](/armazenamento/index.html)
 
 !!! warning "Atenção"
     Não esqueça de copiar os arquivos necessários (executável, bibliotecas, dados de entrada) para dentro da área de SCRATCH, pois a área de HOMEDIR não é acessível pelos nós computacionais.

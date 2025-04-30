@@ -11,5 +11,13 @@
 }
 
 a.md-logo>img {
-  transform: scale(1.7)
+  transform: scale(1.7);
+}
+
+.md-typeset a {
+  text-decoration: underline !important;
+}
+
+.md-nav__link {
+  text-decoration: none !important;
 }
