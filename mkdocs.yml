@@ -1,43 +1,51 @@
 nav:
-  - Home: index.md
-  - Primeiros passos: primeiros_passos.md
+  - Início: pt/index.md
+  - Primeiros passos: pt/primeiros_passos.md
   - Plataformas Científicas: 
-      - Plataformas Científicas: sci-platforms/index.md #intro e LSP landing page
-      - JupyterLab (K8S): sci-platforms/jupyter.md
-      - Science Server: sci-platforms/sci_server.md
-      - User Query: sci-platforms/user_query.md
-      - DES Science Portal: sci-platforms/des.md
-      - Solar System Portal: sci-platforms/sso.md
-      - MaNGA Portal: sci-platforms/manga.md 
+      - Plataformas Científicas: pt/sci-platforms/index.md #intro e LSP landing page
+      - JupyterHub: pt/sci-platforms/jupyter.md
+      - OnDemand: pt/sci-platforms/ondemand.md
+      - User Query: pt/sci-platforms/user_query.md
+      - TAP Service: pt/sci-platforms/user_query.html#tap-service
+      - Sky Viewer: pt/sci-platforms/sky_viewer.md
+      - Target Viewer: pt/sci-platforms/target_viewer.md
+      - DES Science Server: pt/sci-platforms/sci_server.md
+      - Occultation Predictions Database: pt/sci-platforms/linea-occulation-prediction-database.md
+      - SDSS Sky Sever: pt/sci-platforms/sdss_sky_server.md
+      - LSST PZ Server: pt/sci-platforms/pz_server.md
+      - DES Science Portal: pt/sci-platforms/des.md
+      - Solar System Portal: pt/sci-platforms/solar-system-portal.md
+      - MaNGA Portal: pt/sci-platforms/manga.md 
   - Processamento (HPC):
-      - Processamento (HPC): processamento/index.md
+      - Processamento (HPC): pt/processamento/index.md
       - Cluster Apollo:
-            - cluster apollo: processamento/apollo/index.md
-            - Como utilizar: processamento/uso/howtouse-HPC.md     
-            - Slurm: processamento/apollo/index.html#slurm
-            - Open OnDemand: processamento/uso/openondemand.md
-            - JupyterLab: processamento/uso/openondemand.html#jupyterlab
-            - Job Script (exemplos): processamento/uso/templates-jobs.md  
-      - Projeto EUBD - LNCC: processamento/sdu.md
+            - Cluster Apollo: pt/processamento/apollo/index.md
+            - Como utilizar: pt/processamento/uso/howtouse-HPC.md     
+            - Slurm: pt/processamento/apollo/index.html#slurm
+            - Open OnDemand: pt/processamento/uso/openondemand.md
+            - JupyterLab: pt/processamento/uso/openondemand.html#jupyterlab
+            - Job Script (exemplos): pt/processamento/uso/templates-jobs.md  
   - Armazenamento: 
-      - Armazenamento: armazenamento/index.md
- #     - Lustre: armazenamento/lustre.md   
+      - Armazenamento: pt/armazenamento/index.md
+ #     - Lustre: pt/armazenamento/lustre.md   
   - Dados:
-      - Dados: data/index.md
-      #- DES: data/des.md
-      #- LSST: data/lsst.md      
-  - Políticas: 'politicas.md'
-  #- Photoz Server: 'photozserver.md'
-  #- Armazenamento: 'armazenamento.md'
-  #- Monitoramento: 'monitoramento.md'
-  - Glossário: 'glossario.md'
-  - Suporte: 'suporte.md'
-  #- FAQ: 'faq.md'
-  #- Mkdocs Exemplos: 'exemplos/exemplos.md' #provisorio
+      - Dados: pt/data/index.md
+      #- DES: pt/data/des.md
+      #- LSST: pt/data/lsst.md      
+  - Políticas: pt/politicas.md
+  #- Photoz Server: 'pt/photozserver.md'
+  #- Armazenamento: 'pt/armazenamento.md'
+  #- Monitoramento: 'pt/monitoramento.md'
+  - Cursos e Tutoriais: 'pt/cursos.md'
+  - Glossário: 'pt/glossario.md'
+  - Suporte: 'pt/suporte.md'
+  #- FAQ: 'pt/faq.md'
+  #- Mkdocs Exemplos: 'pt/exemplos/exemplos.md' #provisorio
   
 
 
 # Site information
+#docs_dir: docs
 site_name:  Documentação para Usuários
 site_author: LIneA team 
 site_url: "https://docs.linea.org.br"
@@ -59,6 +67,7 @@ theme:
     text: Roboto, Arial
   features:
     - navigation.indexes
+
 
   palette:
       # Palette toggle for light mode
@@ -124,3 +133,111 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.snippets
+
+plugins:
+    - i18n:
+        docs_structure: folder
+        languages:
+          - locale: pt
+            default: true
+            name: Português
+            build: true
+          - locale: en
+            name: English
+            build: true
+            site_name: "User Documentation"
+            nav:
+              - Home: en/index.md
+              - Getting Started: en/primeiros_passos.md
+              - Scientific Platforms: 
+                  - Scientific Platforms: en/sci-platforms/index.md #intro and LSP landing page
+                  - JupyterHub: en/sci-platforms/jupyter.md
+                  - OnDemand: en/sci-platforms/ondemand.md
+                  - User Query: en/sci-platforms/user_query.md
+                  - TAP Service: en/sci-platforms/user_query.html#tap-service
+                  - Sky Viewer: en/sci-platforms/sky_viewer.md
+                  - Target Viewer: en/sci-platforms/target_viewer.md
+                  - DES Science Server: en/sci-platforms/sci_server.md
+                  - Occultation Predictions Database: en/sci-platforms/linea-occulation-prediction-database.md
+                  - SDSS Sky Server: en/sci-platforms/sdss_sky_server.md
+                  - LSST PZ Server: en/sci-platforms/pz_server.md
+                  - DES Science Portal: en/sci-platforms/des.md
+                  - Solar System Portal: en/sci-platforms/solar-system-portal.md
+                  - MaNGA Portal: en/sci-platforms/manga.md 
+              - Processing (HPC):
+                  - Processing (HPC): en/processamento/index.md
+                  - Apollo Cluster:
+                        - Apollo Cluster: en/processamento/apollo/index.md
+                        - How to Use: en/processamento/uso/howtouse-HPC.md     
+                        - Slurm: en/processamento/apollo/index.html#slurm
+                        - Open OnDemand: en/processamento/uso/openondemand.md
+                        - JupyterLab: en/processamento/uso/openondemand.html#jupyterlab
+                        - Job Script (examples): en/processamento/uso/templates-jobs.md  
+              - Storage: 
+                  - Storage: en/armazenamento/index.md
+            #     - Lustre: en/armazenamento/lustre.md   
+              - Data:
+                  - Data: en/data/index.md
+                  #- DES: en/data/des.md
+                  #- LSST: en/data/lsst.md      
+              - Policies: en/politicas.md
+              #- Photoz Server: 'en/photozserver.md'
+              #- Storage: 'en/armazenamento.md'
+              #- Monitoring: 'en/monitoramento.md'
+              - Courses and Tutorials: en/cursos.md
+              - Glossary: en/glossario.md
+              - Support: en/suporte.md
+              #- FAQ: en/faq.md
+              #- Mkdocs Examples: en/exemplos/exemplos.md #temporary
+          - locale: es
+            name: Español
+            build: true
+            site_name: "Documentación para Usuarios"
+            nav:
+              - Inicio: es/index.md
+              - Primeros Pasos: es/primeiros_passos.md
+              - Plataformas Científicas: 
+                - Plataformas Científicas: es/sci-platforms/index.md #intro and LSP landing page
+                - JupyterHub: es/sci-platforms/jupyter.md
+                - OnDemand: es/sci-platforms/ondemand.md
+                - User Query: es/sci-platforms/user_query.md
+                - TAP Service: es/sci-platforms/user_query.html#tap-service
+                - Sky Viewer: es/sci-platforms/sky_viewer.md
+                - Target Viewer: es/sci-platforms/target_viewer.md
+                - DES Science Server: es/sci-platforms/sci_server.md
+                - Occultation Predictions Database: es/sci-platforms/linea-occulation-prediction-database.md
+                - SDSS Sky Sever: es/sci-platforms/sdss_sky_server.md
+                - LSST PZ Server: es/sci-platforms/pz_server.md
+                - DES Science Portal: es/sci-platforms/des.md
+                - Solar System Portal: es/sci-platforms/solar-system-portal.md
+                - MaNGA Portal: es/sci-platforms/manga.md 
+              - Procesamiento (HPC):
+                  - Procesamiento (HPC): es/processamento/index.md
+                  - Cluster Apollo:
+                        - Cluster Apollo: es/processamento/apollo/index.md
+                        - Cómo Utilizar: es/processamento/uso/howtouse-HPC.md     
+                        - Slurm: es/processamento/apollo/index.html#slurm
+                        - Open OnDemand: es/processamento/uso/openondemand.md
+                        - JupyterLab: es/processamento/uso/openondemand.html#jupyterlab
+                        - Scripts de Trabajo (ejemplos): es/processamento/uso/templates-jobs.md  
+              - Almacenamiento: 
+                  - Almacenamiento: es/armazenamento/index.md
+            #     - Lustre: es/armazenamento/lustre.md   
+              - Datos:
+                  - Datos: es/data/index.md
+                  #- DES: es/data/des.md
+                  #- LSST: es/data/lsst.md      
+              - Políticas: es/politicas.md
+              #- Servidor Photoz: 'es/photozserver.md'
+              #- Almacenamiento: 'es/armazenamento.md'
+              #- Monitoreo: 'es/monitoramento.md'
+              - Cursos y Tutoriales: 'es/cursos.md'
+              - Glosario: 'es/glossario.md'
+              - Soporte: 'es/suporte.md'
+              #- Preguntas Frecuentes: 'es/faq.md'
+              #- Ejemplos Mkdocs: 'es/exemplos/exemplos.md' #provisional           
+    - search:
+        enabled: true
+    - git-revision-date-localized:
+        type: date
+    #- mkdocs-video

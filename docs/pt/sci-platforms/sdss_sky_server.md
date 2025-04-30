@@ -1,0 +1,4 @@
+O **SDSS Sky Server** é um portal online desenvolvido pelo Sloan Digital Sky Survey (SDSS) que permite o acesso público a uma vasta coleção de dados astronômicos coletados por seus levantamentos. Ele oferece ferramentas interativas para visualizar imagens do céu, explorar espectros e consultar catálogos de objetos celestes, como estrelas, galáxias e quasares. Com uma interface amigável e recursos que atendem desde entusiastas até pesquisadores profissionais, o Sky Server também disponibiliza formas de acessar os dados por meio de consultas SQL, facilitando análises personalizadas diretamente sobre o banco de dados do SDSS. 
+
+O LIneA hospeda um espelho SDSS Sky Server ([**skyserver.linea.org.br**](http://skyserver.linea.org.br/sciserver/)), onde disponibiliza acesso aos dados do release DR17. 
+
