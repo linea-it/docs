@@ -1,5 +1,7 @@
-Bienvenido/a a la página de **Documentación para Usuarios** de LIneA. Este es el lugar central para encontrar guías de usuario y documentación sobre todos los servicios y herramientas proporcionados por LIneA para la comunidad astronómica y el público en general. Aquí también encontrarás enlaces a documentación externa relevante.  
+Bienvenido/a a la página de **Documentación para Usuarios** de LIneA. Este es el lugar central para encontrar guías de usuario y documentación sobre todos los servicios y herramientas proporcionados por LIneA para la comunidad astronómica y el público en general. Aquí también encontrarás enlaces a documentación externa relevante. 
+
 LIneA - Laboratorio Interinstitucional de e-Astronomía - es un laboratorio multiusuario, operado por una organización sin fines de lucro (Asociación LIneA) con apoyo financiero proveniente principalmente del Ministerio de Ciencia, Tecnología e Innovación de Brasil.  
+
 Nuestra misión es trabajar para apoyar a la comunidad astronómica brasileña con infraestructura computacional y experiencia en análisis de _big data_ para proporcionar las condiciones técnicas necesarias para la participación en grandes estudios astronómicos, como el _Sloan Digital Sky Survey_ [(SDSS)](https://www.sdss.org), el _Dark Energy Survey_ [(DES)](https://www.darkenergysurvey.org) y el _Legacy Survey of Space and Time_ [(LSST)](https://rubinobservatory.org).  
 
 Para saber más, consulta nuestros videos institucionales a continuación, nuestro [canal de YouTube](https://www.youtube.com/@linea_org) o navega por nuestro [sitio web institucional](https://www.linea.org.br/).  

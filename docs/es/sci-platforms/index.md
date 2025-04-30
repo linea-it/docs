@@ -1,7 +1,7 @@
-## Plataforma Científica LIneA
+## LIneA Science Platform
 La Plataforma Científica LIneA (**scienceplatform.linea.org.br**) es una plataforma en línea, aún en fase de desarrollo, que agrupará un conjunto de servicios y herramientas ofrecidos para facilitar el acceso y análisis de datos astronómicos alojados en LIneA. Actualmente, una versión de prueba de la plataforma está disponible para evaluación por los usuarios en [**scienceplatform-dev.linea.org.br/lsp**](https://scienceplatform-dev.linea.org.br/lsp).
 
-### Plataforma Científica IDAC
+### IDAC Science Platform
 Durante la operación del relevamiento [LSST](https://rubinobservatory.org/), una versión reducida de la Plataforma Científica LIneA, solo con los servicios relacionados al proyecto LSST, será el principal punto de acceso a los datos alojados en el [_Centro Brasileño de Acceso Independiente a Datos_ (IDAC-Brasil)](https://www.linea.org.br/idac) para los científicos de la comunidad brasileña.
 
 En los años previos a la operación del LSST, los servicios del IDAC-Brasil ya proporcionan acceso a datos públicos de otros relevamientos, como el [Dark Energy Survey](https://www.darkenergysurvey.org/), para que la comunidad pueda prepararse y familiarizarse con las diversas herramientas ofrecidas.
@@ -21,6 +21,7 @@ Servicios de acceso a datos con diversas herramientas para procesamiento, explor
 #### &nbsp;&nbsp;&nbsp;&nbsp; [LSST PZ Server](pz_server.md)
 
 ### Portales Científicos
+
 Conjuntos de herramientas desarrolladas específicamente para cada proyecto y de uso restringido a los miembros de cada colaboración científica.
 
 #### &nbsp;&nbsp;&nbsp;&nbsp; [DES Science Portal](des.md)

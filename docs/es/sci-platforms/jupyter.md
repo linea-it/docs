@@ -18,30 +18,28 @@ Instrucciones para usar la biblioteca dblinea para leer datos directamente desde
 Instrucciones para crear entornos conda para gestionar bibliotecas que persistan y sobrevivan a la destrucción y recreación de contenedores, permitiendo a los usuarios volver en una nueva sesión y encontrar el mismo entorno que en la sesión anterior (no disponible para usuarios de perfil público bronce).
 ***
 Para acceder a los _notebooks_, simplemente abra una Terminal en JupyterLab haciendo clic en el botón "+" en la barra superior y luego en el ícono "Terminal" en la sección "Other" de la pestaña "Launcher", e ingrese el comando:
+
     git clone https://github.com/linea-it/jupyterhub-tutorial.git
 
-### Solicitud de Recursos
-Inicialmente cada servidor Jupyter Notebook tiene un conjunto básico de recursos computacionales. Si necesita más recursos, puede solicitarlos contactando a nuestro [Service Desk](https://docs.linea.org.br/suporte.html) y enviando la siguiente información:
+## Recursos Computacionales
+**Configuraciones disponibles para Jupyter over K8S**
+Después de iniciar sesión en la plataforma, se mostrará un menú con hasta tres opciones de configuración. Solo seleccione y haga clic en _Start My Server_.
 
-```
-Núcleos (CPU):
-Memoria (RAM):
-Volumen de datos (entrada):
-Volumen de datos (salida):
-Resumen de su proyecto de investigación:
-Breve justificación para los recursos solicitados:
-```
+| **Tamaño** | **CPUs** |  **RAM**   |
+|---------|------|--------|
+| **Small**   | 1.0  |  4 GiB |
+| **Medium**  | 2.0  |  8 GiB |
+| **Large**   | 4.0  | 16 GiB |
 
-Los valores proporcionados pueden ser estimaciones o aproximaciones.
+**Configuración de servidores del entorno K8S**
+La plataforma Jupyter se ejecuta sobre Kubernetes (K8S) y cuenta con 12 servidores físicos dedicados. Cada máquina está equipada con los siguientes recursos computacionales:
 
-Su solicitud será enviada al Comité de Gestión para evaluación, y le responderemos por correo electrónico. Si su solicitud es aprobada y los recursos son añadidos a su cuenta, tendrá 90 días para utilizarlos. Por favor, tenga en cuenta nuestra [política de uso](https://docs.linea.org.br/politicas.html#reconhecimento-de-uso-dos-recursos-computacionales-do-linea).
-
-**Información de los Servidores del entorno K8S**
-
-Un servidor Jupyter Notebook K8S puede utilizar como máximo una máquina. Nuestro entorno Kubernetes (K8S) tiene 14 máquinas, cada una equipada con los siguientes recursos, con hyper-threading habilitado:
-| CPU(s):                 | 24      |
+|   Kubernetes Node Configuration  ||
 | ----------------------- | ------- |
-| **Thread(s) per core:** | **2**   |
-| **Core(s) per socket:** | **6**   |
-| **Socket(s):**          | **2**   |
-| **Memoria (RAM):**      | **94G** |
+| **RAM**                 | 64 GB |
+| **Thread(s) per core**  | 2   |
+| **Core(s) per socket**  | 6   |
+| **Socket(s)**           | 2   | 
+
+!!! info "Jupyter over K8S vs Jupyter over HPC"
+     LIneA ofrece dos entornos separados de Jupyter Notebook. El primero se ejecuta en contenedores en la plataforma Kubernetes (K8S). El segundo está disponible en la [plataforma Ondemand](../processamento/uso/openondemand.md) y accede directamente a la infraestructura HPC.
