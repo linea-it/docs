@@ -236,6 +236,8 @@ plugins:
               - Soporte: 'es/suporte.md'
               #- Preguntas Frecuentes: 'es/faq.md'
               #- Ejemplos Mkdocs: 'es/exemplos/exemplos.md' #provisional           
+    - search:
+        enabled: true
     - git-revision-date-localized:
         type: date
     #- mkdocs-video
