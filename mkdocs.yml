@@ -136,6 +136,7 @@ markdown_extensions:
 
 plugins:
     - i18n:
+        reconfigure_search: true
         docs_structure: folder
         languages:
           - locale: pt
@@ -149,6 +150,8 @@ plugins:
             nav:
               - Home: en/index.md
               - Getting Started: en/primeiros_passos.md
+    - search:
+        enabled: true
     - git-revision-date-localized:
         type: date
     #- mkdocs-video
