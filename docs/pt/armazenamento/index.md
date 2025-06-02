@@ -1,8 +1,8 @@
 ## LustreFS (HPC)
 
-O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [Lustre](https://www.lustre.org/) com dois níveis (_tiers_) de armazenamento, um em SSD com ~70 TB (_T0_) e outro em HDD com ~500 TB (_T1_), ambos conectados a uma rede infiniband EDR de 100 Gb/s. Os dois níveis de armazenamento estão disponíveis em `/lustre/t0` e `/lustre/t1`. 
+O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [Lustre](https://www.lustre.org/) com dois níveis (_tiers_) de armazenamento, um em SSD com ~70 TB (_T0_) e outro em HDD com ~500 TB (_T1_), ambos conectados a uma rede infiniband EDR de 100 Gb/s. Os dois níveis de armazenamento estão disponíveis em `/scratch` e `/data`. 
 
-Os usuários poderão acessar seu diretório de scratch através da variável de ambiente `$SCRATCH`, ou acessando o diretório localizado em `/lustre/t0/scratch/users/<username>`. 
+Os usuários poderão acessar seu diretório de scratch através da variável de ambiente `$SCRATCH`, ou acessando o diretório localizado em `/scratc/users/<username>`. 
 
     
 ### Boas práticas
@@ -92,9 +92,9 @@ Além disso, sob alta carga, o acesso de E/S aos sistemas de arquivos Lustre pod
 
 ### Quota
 
-|area|TB  |bsoft|bhard|isoft|ihard|grace period|
-|----|----|-------------|-------------|-------------|-------------|------------|
-|T0 | 70 |     200 GB    |   250 GB   | 200000 | 250000  |  7 days    |
+|area|bsoft|bhard|isoft|ihard|grace period|
+|----|-------------|-------------|-------------|-------------|------------|
+| /scratch |    100 GB    |   120 GB   | 100000 | 120000  |  7 days    |
 
 
 ### Área de scratch
@@ -116,7 +116,7 @@ a) Como acessar a minha área de scratch?
     
 b) Como consultar a minha quota disponível?
 
-    lfs quota -u $USER /lustre/t0
+    lfs quota -u $USER $SCRATCH
     
 c) Como consultar os meus arquivos criados há _mais_ de 60 dias? 
 
@@ -128,7 +128,7 @@ c) Como consultar os meus arquivos criados há _menos_ de 60 dias?
     
 d) Como listar os OSTs do Lustre?
 
-    lfs osts /lustre/t0
+    lfs osts $SCRATCH
 
 e) Como listar os arquivos armazenados há mais de 60 dias em um determinado OST do Lustre?
 
@@ -153,10 +153,11 @@ Os sistemas de armazenamento NAS são utilizados para armazenamento de longo pra
 
 Características atuais: 
 
-| Fabricante | Modelo | Capacidade | Instalado em |
-| ------- | ------ | ------------ | -----------| 
-| SGI     | IS5500<sup>[1]</sup> | 540TB        |  Dez-2011  |
-| SGI     | IS5600 | 240TB        |  Jul-2014  |
+| Fabricante | Modelo | Capacidade | Instalado em | Disponibilidade |
+| ------- | ------ | ------------ | -----------| ------------------|
+| SGI     | IS5500<sup>[1]</sup> | 540TB        |  Dez-2011  | Fora de serviço |
+| SGI     | IS5600 | 240TB        |  Jul-2014  | Em uso | 
+| HPE     | APOLO 4510 | 1.2 PB        |  Apr-2025  | Em uso | 
 
 
 <sup>[1]</sup> _este equipamento foi desativado em Jun/2023 devido a problemas físicos._
@@ -166,20 +167,13 @@ Características atuais:
 
 O diretório `home` é uma área para os usuários armazenarem seus arquivos pessoais e é acessível através dos nós de login do cluster e também na plataforma [jupyter](.).
 
+#### Quota
 
-### /archive
-
-Área de armazenamento de dados brutos de catálogos astronômicos transferidos a partir de outros centros de dados ou produzidos internamente pelas diversas plataformas desenvolvidas pelo LIneA.
-
-### /process
-
-Área de armazenamento de dados provenientes do processamento de dados do DES realizados pelo [Portal do DES](https://des-portal.linea.org.br).
-
-### Quota
-
-|area| bsoft|bhard|isoft|ihard|grace period|
+|profile| bsoft|bhard|isoft|ihard|grace period|
 |----| -------------|-------------|-------------|-------------|------------|
-|/home  |   40 GB    |   50 GB   | 4000000  | 5000000   |  7 days    |
+| public general |   5 GB    |   7 GB   | 7000 | 10000   |  7 days    |
+| public institucional |   25 GB    |   30 GB   | 40000 | 50000   |  7 days    |
+| collaboration |   100 GB    |  120 GB   | 1000000 | 1200000   |  7 days    |
 
 !!! tip
     Para verificar os valores de quota configurado basta utilizar o comando: `quota -s -u <username> /home`.
@@ -191,7 +185,7 @@ O diretório `home` é uma área para os usuários armazenarem seus arquivos pes
 | /home | diário | incremental | 30 dias |
 | /home | semanal | diferencial | 30 dias |
 | /home | mensal | completo | 90 dias |
-| /archive | - | - | - |
+| /data | - | - | - |
 | /scratch | - | - | - |
 
 
