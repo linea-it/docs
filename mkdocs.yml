@@ -12,7 +12,7 @@ nav:
       - DES Science Server: pt/sci-platforms/sci_server.md
       - Occultation Predictions Database: pt/sci-platforms/linea-occulation-prediction-database.md
       - SDSS Sky Sever: pt/sci-platforms/sdss_sky_server.md
-      - LSST PZ Server: pt/sci-platforms/pz_server.md
+      - LSST Photo-z Server: pt/sci-platforms/pz_server.md
       - DES Science Portal: pt/sci-platforms/des.md
       - Solar System Portal: pt/sci-platforms/solar-system-portal.md
       - MaNGA Portal: pt/sci-platforms/manga.md 
@@ -160,7 +160,7 @@ plugins:
                   - DES Science Server: en/sci-platforms/sci_server.md
                   - Occultation Predictions Database: en/sci-platforms/linea-occulation-prediction-database.md
                   - SDSS Sky Server: en/sci-platforms/sdss_sky_server.md
-                  - LSST PZ Server: en/sci-platforms/pz_server.md
+                  - LSST Photo-z Server: en/sci-platforms/pz_server.md
                   - DES Science Portal: en/sci-platforms/des.md
                   - Solar System Portal: en/sci-platforms/solar-system-portal.md
                   - MaNGA Portal: en/sci-platforms/manga.md 
@@ -207,7 +207,7 @@ plugins:
                 - DES Science Server: es/sci-platforms/sci_server.md
                 - Occultation Predictions Database: es/sci-platforms/linea-occulation-prediction-database.md
                 - SDSS Sky Sever: es/sci-platforms/sdss_sky_server.md
-                - LSST PZ Server: es/sci-platforms/pz_server.md
+                - LSST Photo-z Server: es/sci-platforms/pz_server.md
                 - DES Science Portal: es/sci-platforms/des.md
                 - Solar System Portal: es/sci-platforms/solar-system-portal.md
                 - MaNGA Portal: es/sci-platforms/manga.md 
