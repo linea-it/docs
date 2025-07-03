@@ -50,7 +50,7 @@ Dependendo do tipo de produto de dados, se os dados forem tabulares, a ferrament
 
 #### Compartilhar produtos de dados
 
-Cada produto de dados tem um nome único, doravante chamado "**internal_name**", composto automaticamente pelo sistema como um número **id** único mais o nome escolhido pelo usuário com espaços substituídos por sublinhados. Esse nome é o endereço URL da página de detalhes do produto de dados no site do PZ Server (pzserver.linea.org.br/product_id) e é a chave para acessar os dados usando a API Python do Photo-z Server (veja os detalhes abaixo). A maneira mais fácil de compartilhar um produto de dados é fornecendo o **internal_name** ou o URL do produto, que leva à página de download do produto.
+Cada produto de dados tem um nome único, daqui em diante chamado "**internal_name**", composto automaticamente pelo sistema como um número **id** único mais o nome escolhido pelo usuário com espaços substituídos por sublinhados. Esse nome é o endereço URL da página de detalhes do produto de dados no site do PZ Server (pzserver.linea.org.br/product/**internal_name**) e é a chave para acessar os dados usando a API Python do Photo-z Server (veja os detalhes abaixo). A maneira mais fácil de compartilhar um produto de dados é fornecendo o **internal_name** ou a URL do produto, que leva à página de download do produto.
 
 #### Baixar um produto de dados
 

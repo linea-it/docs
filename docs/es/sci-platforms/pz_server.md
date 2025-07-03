@@ -52,7 +52,7 @@ Dependiendo del tipo de producto, si es tabular, puede requerirse un formato esp
 
 #### Compartir productos
 
-Cada producto tiene un nombre único, "**internal_name**", compuesto por un **id** más el nombre proporcionado por el usuario con espacios reemplazados por guiones bajos. Este nombre corresponde a la URL del producto (pzserver.linea.org.br/product_id) y es la clave de acceso desde la API de Python. Compartir el **internal_name** o el enlace permite acceso directo.
+Cada producto tiene un nombre único, "**internal_name**", compuesto por un **id** más el nombre proporcionado por el usuario con espacios reemplazados por guiones bajos. Este nombre corresponde a la URL del producto (pzserver.linea.org.br/product/**internal_name**) y es la clave de acceso desde la API de Python. Compartir el **internal_name** o el enlace permite acceso directo.
 
 #### Descargar un producto
 
