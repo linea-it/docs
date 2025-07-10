@@ -7,3 +7,13 @@ As informações relevantes sobre catálogos astronômicos públicos hospedados 
 ## Imagens
 
 As imagens públicas hospedadas no LIneA e disponíveis nos serviços de visualização pertencem ao release DES DR2. Para mais informações, acesse a publicação [The Dark Energy Survey Data Release 2](https://arxiv.org/abs/2101.05765).
+
+## Produtos de Photo-z
+
+### Produtos Públicos de Photo-z
+
+(em breve) 
+
+### Produtos Privados Photo-z do LSST
+
+[Documentação dos produtos privados do LSST Photo-z Server](./pz_server_data.md)
