@@ -48,7 +48,7 @@ Haz clic en el botón **NEW PRODUCT** en la esquina superior derecha de la [pág
 
 Dependiendo del tipo de producto, si es tabular, puede requerirse un formato específico: CSV, FITS, HDF5 o Parquet[^dagger].
 
-[^dagger]: Contacta al equipo de desarrollo si necesitas otro formato.
+[^dagger]: Contacta al [equipo de desarrollo](mailto:julia@linea.org.br) si necesitas otro formato.
 
 #### Compartir productos
 
