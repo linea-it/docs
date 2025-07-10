@@ -46,7 +46,7 @@ Para enviar um novo produto de dados, clique no botão **NEW PRODUCT** no canto 
 
 Dependendo do tipo de produto de dados, se os dados forem tabulares, a ferramenta de upload pode exigir formatos de arquivos específicos. Os formatos atualmente suportados são: CSV, FITS, HDF5 e Parquet[^dagger]. 
 
-[^dagger]: Entre em contato com a equipe de desenvolvimento se seu caso científico exigir um formato de arquivo diferente.  
+[^dagger]: Entre em contato com a [equipe de desenvolvimento](mailto:julia@linea.org.br) se seu caso científico exigir um formato de arquivo diferente.  
 
 #### Compartilhar produtos de dados
 
@@ -129,3 +129,10 @@ training_set.display_metadata()
 ```
 
 Consulte o [notebook tutorial](https://github.com/linea-it/pzserver/blob/main/docs/notebooks/pzserver_tutorial.ipynb) para a lista completa de exemplos, incluindo métodos para tipos de produtos específicos, instruções para envio e modificação de produtos de dados via a biblioteca `pzserver`.
+
+## Photo-z Server Pipelines 
+
+### Combine Redshift Catalogs 
+
+### Training Set Maker 
+

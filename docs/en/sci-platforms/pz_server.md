@@ -11,6 +11,12 @@ The Photo-z Server was designed to help RSP users participate in the Photo-z (PZ
 
 During the PZ Validation Cooperative, the PZ Coordination Group can use the Photo-z Server to host and distribute standardized training and validation sets for algorithm performance comparison experiments and to collect the results from different users. Nonetheless, the Photo-z Server will continue serving the LSST Community in subsequent years. Beyond the PZ Validation Cooperative, RSP users can use the Photo-z Server to easily keep track of and share lightweight files containing various test results.
 
+
+!!! info "Datasets"
+     The Photo-z Server administrators maintain and periodically update a curated list of data resources to support the LSST Community with photo-z-related data products. Detailed descriptions and links to each data product are available on a [separate page](../data/pz_server_data.md).
+
+
+
 ### Getting started
 
 #### Photo-z Server website
@@ -54,7 +60,7 @@ To upload a new data product, click the button **NEW PRODUCT** on the top right 
 
 Depending on the data product type, if the data is tabular, the upload tool might require specific file formats. The formats currently supported are: CSV, FITS, HDF5, and Parquet[^dagger]. 
 
-[^dagger]: Get in touch with the development team if your science case requires a different file format.  
+[^dagger]: Get in touch with the [development team](mailto:julia@linea.org.br) if your science case requires a different file format.  
 
 #### Share data products
 
@@ -142,4 +148,10 @@ training_set.display_metadata()
 ```
 
 Please see the [tutorial notebook](https://github.com/linea-it/pzserver/blob/main/docs/notebooks/pzserver_tutorial.ipynb) for the complete list of examples, including methods for specific product types, instructions to upload and modify data products via the `pzserver` library. 
+
+## Photo-z Server pipelines 
+
+### Combine Redshift Catalogs 
+
+### Training Set Maker 
 
