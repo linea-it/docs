@@ -3,6 +3,12 @@
 The Photo-z Server administrators regularly upload and update a list of data resources to support the LSST Community with relevant photo-z-related data products. These include both officially released products from Rubin Observatory's Data Management team, datasets prepared by LIneA's Data Management team, and public datasets from other surveys of interest.   
 
 The data product links in the documentation below directs to the product details and download pages. Each page includes a detailed sample description and characterization of the respective data product.  
+
+
+!!! info "Photo-z Server Documentation "
+     The Photo-z Server documentation for users with instructions and examples is available on a [separate page](../sci-platforms/pz_server.md).
+
+
  
 ## External datasets 
 
@@ -12,7 +18,7 @@ Public data collected from the literature and hosted on the Photo-z Server.
 
 | Data product | Survey Name  | Measurement Type | Redshift Range | # of Redshifts| Standard flags translation | Reference   |  
 |---           |---           |---               |---             |---            |---                         |---          |
-|              | COSMOS       |                  | $z < 8$        |  165,312      |                            | [Khostovan et al. 2025](https://arxiv.org/abs/2503.00120) |
+|              | [COSMOS 2025](https://github.com/cosmosastro/speczcompilation/tree/main)       |                  | $z < 8$        |  165,312      |                            | [Khostovan et al. 2025](https://arxiv.org/abs/2503.00120) |
 |              |              |                  |                |               |                            |             |
 |              |              |                  |                |               |                            |             |
 |              |              |                  |                |               |                            |             | 
