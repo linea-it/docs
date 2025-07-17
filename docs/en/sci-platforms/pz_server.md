@@ -3,7 +3,7 @@
 
 ### Introduction 
 
-Inspired by the DES Science Portal ([Gschwend et al., 2018](https://www.sciencedirect.com/science/article/abs/pii/S2213133718300891?via%3Dihub){:target="_blank"}; [Fausti Neto et al., 2018](https://www.sciencedirect.com/science/article/abs/pii/S2213133717300975){:target="_blank"}), the [Photo-z Server](https://pzserver.linea.org.br/) is an online service complementary to the Rubin Science Platform (RSP) to host and produce photo-z-related lightweight data products and to offer data management tools that allow sharing data products among RSP users, attach and share relevant metadata, and help on provenance tracking. 
+Inspired by the DES Science Portal ([Gschwend et al., 2018](https://www.sciencedirect.com/science/article/abs/pii/S2213133718300891?via%3Dihub){:target="_blank"}; [Fausti Neto et al., 2018](https://www.sciencedirect.com/science/article/abs/pii/S2213133717300975){:target="_blank"}), the [Photo-z Server](https://pzserver.linea.org.br/) is an online service complementary to the Rubin Science Platform (RSP) to host and produce photo-z-related lightweight data products and to offer data management tools that allow sharing data products among RSP users, attach and share relevant metadata, and assist in provenance tracking. 
  
 The service is hosted at the Brazilian Independent Data Access Center (IDAC) and is open to the whole LSST Community without geographic constraints. It is designed to be as broad and generic as possible to be helpful for all LSST Science Collaborations working with photo-z data products. As required by the LSST in-kind program, the source code will be publicly available on [GitHub](https://github.com/linea-it/pzserver_app){:target="_blank"}.
 
@@ -29,56 +29,111 @@ The main user interface of the Photo-z Server website is its website at [pzserve
 
 The three cards on the landing page lead to the list of data products (left and center) or to the Photo-z Server pipelines (right). 
 
-On the data products list page, users can browse, search and filter the products uploaded by users or created with the Photo-z Server pipeline. The data products uploaded on the PZ Server becomes automatically visible, downloadable and shareable to all registered users.    
+On the data products list page, users can browse, search and filter the products uploaded by users or created with the Photo-z Server pipeline. The data products uploaded on the Photo-z Server become automatically visible, downloadable and shareable to all registered users.    
 
 <p align="center">
   <img src="../../images/pz-server-user-data-products.png" alt="Photo-z Server Data Products List Page">
 </p>
 
+### Upload a new data product 
 
-### Product types
-
-#### Reference Redshift Catalog
-
-
-Catalog of reference redshifts and positions of galaxies (usually spectroscopic redshifts and equatorial coordinates).
+To upload a new data product, click the **NEW PRODUCT** button at the top right of the [User-generated Data Products page](https://pzserver.linea.org.br/user_products) and fill in the Upload Form with relevant metadata in four steps:
 
 
-<font size=4>Basic requirements</font>
+**Step 1:** Inform a short and mnemonic name for your new data product. Select the type of data product you are uploading (e.g., Reference Redshift Catalog, Training Set, etc.) and the data release to which it belongs (if applicable). 
 
-In the context of the PZ Server, Reference Redshift Catalogs are defined as any catalog containing spherical equatorial coordinates and redshift measurements (usually spectroscopic or true redshifts for simulations). A Reference Redshift Catalog can include data from a single spectroscopic survey or a combination of data from several sources. To be considered a single Reference Redshift Catalog, the data should be provided as a single file to Photo-z Server's upload tool (if your file is larger than the limit of 200MB, please contact the [Photo-z Server team](mailto:julia@linea.org.br)). 
+<p align="center">
+  <img src="../../images/pz-server-upload-form-step1.png" alt="Photo-z Server Upload Form - Step 1">
+</p>
 
-Mandatory columns: 
+**Step 2:** Select your main file and as many auxiliary files as you want to upload. The main file is the one containing the data product itself, while auxiliary files can include documentation, description, or any other relevant information about the data product. 
+
+If the data product is tabular, the upload tool might require specific file formats depending on its type. The formats currently supported are: CSV, FITS, HDF5, and Parquet. Get in touch with the [development team](mailto:pzserver-admin@linea.org.br) if your science case requires a different file format or if your file is larger than the limit of 200MB. 
+
+<p align="center">
+  <img src="../../images/pz-server-upload-form-step2.png" alt="Photo-z Server Upload Form - Step 2">
+</p>
+
+**Step 3:** If the data product is a Reference Redshift Catalog or Training Set, some columns are mandatory. The columns names are free, but you must provide the association with their meaning and [UCDs in the IVOA standard](https://www.ivoa.net/documents/REC/UCD/UCD-20050812.html) as in the figure below. 
+<p align="center">
+  <img src="../../images/pz-server-upload-form-step3.png" alt="Photo-z Server Upload Form - Step 3">
+</p>  
+
+**Step 4:** Revise your information and go back to the previous steps if necessary. Don't forget to press the FINISH button at the bottom of the page to submit your data product.  
+
+<p align="center">
+  <img src="../../images/pz-server-upload-form-step4.png" alt="Photo-z Server Upload Form - Step 4">
+</p>
+
+
+### Download a data product
+
+To download a data product, click on the <img src="../../images/pz-server-download-icon.png" width="30" style="vertical-align: middle;"> icon on the product's row in the [User-generated Data Products page](https://pzserver.linea.org.br/user_products). The click will trigger the preparation of a compressed .zip file with all the contents of the data product, including auxiliary description files. 
+
+There is also a button on the product's details page, which can be accessed by clicking on the product's name on the list. 
+
+<p align="center">
+  <img src="../../images/pz-server-product-details-page.png" alt="Photo-z Server Product Details Page">
+</p>
+
+
+
+### Share data products
+
+To share a data product, click on the <img src="../../images/pz-server-share-icon.png" width="30" style="vertical-align: middle;"> icon on the product's row in the [User-generated Data Products page](https://pzserver.linea.org.br/user_products) or on the product's details page. The click will open a pop-up window with the product's **internal_name** and URL address. You can copy the information to share it with other users.
+
+
+!!! info "internal_name"
+     Each data product has a unique name ("**internal_name**") automatically composed by the system as a unique **id** number followed by the name chosen by the user with spaces replaced by underlines. This name is the URL address of the data product's details page on the Photo-z Server website: 
+     
+     <p align="center"> https://pzserver.linea.org.br/product/internal_name </p>
+     
+     and is the key to access the data using the Photo-z Server Python API (see details below). The easiest way to share a data product is by providing the product's **internal_name** or URL, which leads to the product's download page.
+
+
+
+
+## Product types
+
+### Reference Redshift Catalog
+
+In the context of the Photo-z Server, Reference Redshift Catalogs are defined as any catalog containing spherical equatorial coordinates and redshift measurements (usually spectroscopic or true redshifts for simulations). 
+
+Mandatory columns:
+
 * Right ascension [degrees] - `float`
 * Declination [degrees] - `float`
 * Redshift - `float`
 
-Recommended columns: 
+Recommended column: 
+
 * Redshift error - `float`
-* Quality flag - `integer`, `float`, or `string`
-* Survey name
+
+A Reference Redshift Catalog can include data from a single spectroscopic survey or a combination of data from several sources. 
 
 
+!!! danger "ATTENTION: Pipeline requirements"  
+      If Reference Redshift Catalog is intended to be used as input data for the _Combine Redshift Catalogs_, applying the duplicates resolution feature (see [pipeline details here](./pz_server_crc.md)), it is recommended to include the following columns:
+      
+      * Quality flag (associate with **z_flag** in upload step 3) - `integer`, `float`, or `string` (the original quality flag from the source catalog, when available) 
+      * Measurement type - `string` (e.g., "s" for "spectroscopic", "g" for "grism/prism", "p" for "photometric", as adopted in [SITCOMTN-154](https://sitcomtn-154.lsst.io/){:target="_blank"}) 
+      * Survey name (associate with **survey** in upload step 3) - `string` (e.g., "DESI", "COSMOS2025", "JADES", etc.)
+      * Other columns with additional information you want to use for duplicates resolution (e.g., instrument resolution).  
 
 
-
-#### Training Set
-
-Training set for photo-z algorithms (tabular data). It usually contains magnitudes, errors, and reference redshifts.
+### Training Set
 
  
-In the context of the PZ Server, Training Sets are defined as the product of the spatial cross-matching between a given Spec-z Catalog (single survey or compilation) and the photometric data, in this case, the LSST Objects Catalog. The PZ Server's *Training Set Maker* pipeline allows users to build customized Training Sets based on the available Spec-z Catalogs (details below).    
+In the context of the Photo-z Server, Training Sets are defined as the product of the spatial cross-matching between a given Reference Redshift Catalog (single survey or compilation) and the photometric data, in this case, the LSST Object Catalog. The Photo-z Server's *Training Set Maker* pipeline allows users to build customized Training Sets based on the available Reference Redshift Catalogs (see [pipeline details here](./pz_server_tsm.md)).    
 
-_Note 1: Training sets are commonly split into two or more subsets for photo-z validation purposes. If the Training Set owner has previously defined which objects should belong to each subset (training and validation/test sets), this information must be available as an extra column in the table or as clear instructions for reproducing the subset separation in the data product description._
+!!! Info "train/test subsets" 
+      Training sets are commonly split into two or more subsets for photo-z validation purposes. If the Training Set owner has previously defined which objects should belong to each subset (training and validation/test sets), this information must be available as an extra column in the table or as clear instructions for reproducing the subset separation in the data product description. For two separate files each one must be uploaded separately and will become an independent data product, both with product type as "Training Set".
 
-  
-_Note 2: The PZ Server only supports catalog-level Training Sets. Image-based Training Sets, e.g., for deep-learning algorithms, are not supported._
+!!! Info "image-based training sets"
+      The Photo-z Server only supports catalog-level training sets. Image-based training sets, e.g., for deep-learning algorithms, are not supported. For this case, use the product type "Other" and provide a clear description of the data format in the product description. 
 
+To ensure flexibility in the observables, the only mandatory column is the redshift (`float`). Other expected columns are: 
 
-Mandatory column: 
-* Spectroscopic (or true) redshift - `float`
-
-Other expected columns
 * Object ID from LSST Objects Catalog - `integer`
 * Observables: magnitudes (and/or colors, or fluxes) from LSST Objects Catalog - `float`
 * Observable errors: magnitude errors (and/or color errors, or flux errors) from LSST Objects Catalog - `float`
@@ -88,62 +143,27 @@ Other expected columns
 * Subset Flag - `integer`, `float`, or `string`
 
 
+### Training Results
 
-#### Training Results
-
-Results of a photo-z training procedure (free format). Usually a pickle file created by RAIL Inform submodule.
-
-The training results of machine learning-based PZ algorithms can also be hosted in the PZ Server to be shared and reused. This product type allows files in free format. When the training results are generated with RAIL, they are stored as *pickle* files and can be downloaded to the local work directory. 
-
-OBS: The method `download_product` always brings the data as a compressed (.zip) file, regardless of the number of auxiliary files attached to the data. 
+The training results of machine learning-based PZ algorithms can also be hosted in the Photo-z Server to be shared and reused. This product type allows files in free format. When the training results are generated with [RAIL's `inform` method](https://rail-hub.readthedocs.io/en/latest/source/overview.html#estimation), they are stored as *pickle* files. 
 
 
-#### Validation Results
+### Validation Results
 
-Results of a photo-z validation procedure (free format). Usually contains photo-z estimates (single estimates and/or pdf) of a validation set, photo-z validation metrics, validation plots, etc.
+The product type "Validation Results" is intended to tag the results of any photo-z validation procedure. It can be used to store the results of the PZ Validation Cooperative or any other validation tasks. 
 
-
-
-The PZ Server is also a good place to safely store the results of a photo-z validation procedure. Users can upload a list of files in free format, such as tabular files with photo-z estimates (single estimates and/or PDFs) of a validation set, auxiliary files with photo-z validation metrics, validation plots, etc. 
+This type of product is quite generic. It can contain photo-z estimates (single estimates and/or PDF) of a test set, photo-z validation metrics, QQ-PIT plots, etc. Users can upload one main file and a list of auxiliary files in any format.
 
 
+### Photo-z Estimates
 
-#### Photo-z Estimates
-
-Results of a photo-z estimation procedure (usually the output of RAIL Estimate module). If the data is larger than the file upload limit (200MB), the product entry stores only the metadata (instructions on accessing the data should be provided in the description field.
-
-
-Photo-z tables are the results of a photo-z estimation procedure. If the data is larger than the file upload limit of 200MB (for instance, the PZ tables for the LSST Object catalogs delivered as part of annual data releases), the product entry stores only the metadata (and instructions on accessing the data should be provided in the description field).
-
-#### Other
+Photo-z Estimates are the results of a photo-z estimation procedure, usually the output of [RAIL's `estimate` method](https://rail-hub.readthedocs.io/en/latest/source/overview.html#estimation) module). If the data is larger than the file upload limit (200MB), the product entry stores only the metadata and instructions on accessing the data should be provided in the description field.
 
 
-### Upload a new data product 
+### Other
 
-To upload a new data product, click the button **NEW PRODUCT** on the top right of the [User-generated Data Products page](https://pzserver.linea.org.br/user_products) and fill in the Upload Form with relevant metadata. Description and auxiliary files are optional and can be modified later. 
+Any other data product that does not fit in the previous categories can be uploaded as a product of type "Other". This is a generic product type that allows users to upload any file format and provide a description of the data product in the description field.
 
-
-<p align="center">
-  <img src="../../images/pz-server-upload-form.png" alt="Photo-z Server Upload Form">
-</p>
-
-Depending on the data product type, if the data is tabular, the upload tool might require specific file formats. The formats currently supported are: CSV, FITS, HDF5, and Parquet[^dagger]. 
-
-[^dagger]: Get in touch with the [development team](mailto:julia@linea.org.br) if your science case requires a different file format.  
-
-### Download a data product
-
-On the details page, some relevant metadata is displayed together with a table preview (when tabular data) and the rendered HTML auxiliary file, when available. 
-
-<p align="center">
-  <img src="../../images/pz-server-product-details-page.png" alt="Photo-z Server Product Detaiils Page">
-</p>
-
-The download button triggers the download of a compressed .zip file with all the contents of the data product, including auxiliary description files. 
-
-### Share data products
-
-Each data product has a unique name, hereafter called "**internal_name**" automatically composed by the system as a unique **id** number plus the name chosen by the user with spaces replaced by underlines. This name is the URL address of the data product's details page on the PZ Server website (https://pzserver.linea.org.br/product/**internal_name**) and is the key to access the data using the Photo-z Server Python API (see details below). The easiest way to share a data product is by providing the product's **internal_name** or URL, which leads to the product's download page.
 
 
 ## Photo-z Server API 
@@ -163,14 +183,14 @@ A [tutorial notebook](https://github.com/linea-it/pzserver/blob/main/docs/notebo
 
 ### Access token 
 
-Once installed and imported in a Python environment, the `PzServer` class opens the remote connection to the PZ Server database. 
+Once installed and imported in a Python environment, the `PzServer` class opens the remote connection to the Photo-z Server database. 
 
 ```python
 from pzserver import PzServer
 pz_server = PzServer(token="<paste your access token here>")  
 ``` 
 
-An access token is required for authentication. The token can be generated by users on the PZ Server website (top right corner menu on the home page).    
+An access token is required for authentication. Users can generate the token on the Photo-z Server website (top right corner menu on the home page).    
 
 
 
@@ -220,8 +240,11 @@ data = pz_server.get_product(<product_id>)
 Please see the [tutorial notebook](https://github.com/linea-it/pzserver/blob/main/docs/notebooks/pzserver_tutorial.ipynb) for the complete list of examples, including instructions to upload and modify data products via the `pzserver` library. 
 
 
+
+
 ## Photo-z Server pipelines 
 
+The Photo-z Server pipelines are a set of tools to help users create and manage data products. The pipelines are available on the [Pipelines page](https://pzserver.linea.org.br/pz_pipelines) of the Photo-z Server website.
 
 &ensp; &ensp; [<font size=4>Combine Redshift Catalogs</font>](./crc.md)
 
@@ -233,6 +256,4 @@ Please see the [tutorial notebook](https://github.com/linea-it/pzserver/blob/mai
 
 ## Acknowledgement 
 
-The Photo-z Server uses computational resources of IDAC-Brazil at the Laboratório Interinstitucional de e-Astronomia (LIneA) with financial support from INCT do e-Universo (Process no. 465376/2014-2).
-
-
+_The Photo-z Server uses computational resources of IDAC-Brazil at the Laboratório Interinstitucional de e-Astronomia (LIneA) with financial support from INCT do e-Universo (Process no. 465376/2014-2) and FINEP project: LIneA: e-Science Center for exploring the mysteries of the Universe and support Big Data projects (ref no. 0883/24)._  
