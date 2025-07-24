@@ -240,16 +240,31 @@ See the [tutorial notebook](https://github.com/linea-it/pzserver/blob/main/docs/
 
 ## Photo-z Server pipelines 
 
-The Photo-z Server [pipelines](https://pzserver.linea.org.br/pz_pipelines) are a set of tools to help users create and manage data products. The pipelines available now are: 
+The [Photo-z Server pipelines](https://pzserver.linea.org.br/pz_pipelines) are a set of tools to help users create and manage data products. The pipelines available now are (click on the links for more details): 
 
-&ensp; &ensp; [<font size=4>Combine Redshift Catalogs</font>](./pz_server_crc.md)
+### [Combine Redshift Catalogs](./pz_server_crc.md)
 
-&ensp; &ensp; [<font size=4>Training Set Maker</font>](./pz_server_tsm.md)
+### [Training Set Maker](./pz_server_tsm.md)
 
   
 
+## Open Source Code
+
+The Photo-z Server is an open-source project. Its source code is available in the following GitHub repositories:
+
+* [pzserver\_app](https://github.com/linea-it/pzserver_app): the main application code, including the web interface and API.
+* [pzserver](https://github.com/linea-it/pzserver): the Python library used to access the Photo-z Server API.
+* [pzserver\_pipelines](https://github.com/linea-it/pzserver_pipelines): the pipeline code available on the Photo-z Server.
+* [orchestration](https://github.com/linea-it/orchestration): the application responsible for submitting pipelines to the IDAC HPC cluster and managing their execution.
+* [pz-lsst-inkind](https://github.com/linea-it/pz-lsst-inkind): code for data management tasks in the Photo-z Server's in-kind program, including data preparation, quality assurance, and pipeline validation notebooks.
+* [pz-lsst-inkind-doc](https://github.com/linea-it/pz-lsst-inkind-doc): high-level documentation for the Photo-z Server in-kind program, published via GitHub Pages.
+
+The code is licensed under the [MIT License](https://opensource.org/license/mit). Contributions are welcome!
 
 
 ## Acknowledgement 
 
 _The Photo-z Server uses computational resources of IDAC-Brazil at the Laboratório Interinstitucional de e-Astronomia (LIneA) with financial support from INCT do e-Universo (Process no. 465376/2014-2) and FINEP project: LIneA: e-Science Center for exploring the mysteries of the Universe and support Big Data projects (ref no. 0883/24)._  
+
+
+

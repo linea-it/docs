@@ -215,11 +215,29 @@ Consulte o [notebook de tutorial](https://github.com/linea-it/pzserver/blob/main
 
 ## Photo-z Server pipelines 
 
-Os [pipelines](https://pzserver.linea.org.br/pz_pipelines) do Photo-z Server são um conjunto de ferramentas para ajudar os usuários a criar e gerenciar produtos de dados. Os pipelines atualmente disponíveis são:
+Os [pipelines do Photo-z Server](https://pzserver.linea.org.br/pz_pipelines) são um conjunto de ferramentas para ajudar os usuários a criar e gerenciar produtos de dados. Os pipelines atualmente disponíveis são (clique nos links para mais detalhes):
 
-&ensp; &ensp; [<font size=4>Combine Redshift Catalog</font>](./pz_server_crc.md)
+### [Combine Redshift Catalog](./pz_server_crc.md)
 
-&ensp; &ensp; [<font size=4>Training Set Maker</font>](./pz_server_tsm.md)
+### [Training Set Maker](./pz_server_tsm.md)
+
+
+
+
+## Código Aberto
+
+O Photo-z Server é um projeto de código aberto. Seu código-fonte está disponível nos seguintes repositórios do GitHub:
+
+* [pzserver\_app](https://github.com/linea-it/pzserver_app): o código principal da aplicação, incluindo a interface web e a API.
+* [pzserver](https://github.com/linea-it/pzserver): a biblioteca Python utilizada para acessar a API do Photo-z Server.
+* [pzserver\_pipelines](https://github.com/linea-it/pzserver_pipelines): o código das pipelines disponíveis no Photo-z Server.
+* [orchestration](https://github.com/linea-it/orchestration): a aplicação responsável por enviar as pipelines para o cluster HPC do IDAC e gerenciar sua execução.
+* [pz-lsst-inkind](https://github.com/linea-it/pz-lsst-inkind): código para tarefas de gerenciamento de dados no programa in-kind do Photo-z Server, incluindo preparação de dados, verificação de qualidade e notebooks de validação das pipelines.
+* [pz-lsst-inkind-doc](https://github.com/linea-it/pz-lsst-inkind-doc): documentação de alto nível sobre o programa in-kind do Photo-z Server, publicada via GitHub Pages.
+
+O código está licenciado sob a [Licença MIT](https://opensource.org/license/mit). Contribuições são bem-vindas!
+
+
 
 ## Agradecimentos
 
