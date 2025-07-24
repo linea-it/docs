@@ -29,6 +29,11 @@ When running the pipeline from the [Photo-z Server](https://pzserver.linea.org.b
 
 Once these fields are filled in, users can click **Run** to execute the pipeline.
 
+### Photo-z Server API
+
+!!! warning
+    section under construction 
+
 ### Interpreting `tie_result`
 
 When duplicate resolution is enabled, the pipeline assigns a value to the `tie_result` column:
@@ -79,10 +84,5 @@ This information is especially relevant when choosing the â€œYes, but keep allâ€
     - Add support for new surveys by providing their own translation rules for quality flags and instrument types
 
     ---
-
-### Photo-z Server API
-
-!!! warning
-    section under construction 
     
 
