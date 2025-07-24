@@ -1,60 +1,63 @@
 # Training Set Maker 
 
-
-The **Training Set Maker** pipeline creates high-quality training samples for machine-learning based photometric redshift (photo-z) estimation. It performs a spatial crossmatch between a pre-registered spectroscopic redshift catalog and one of the available photometric catalogs — including [LSST DP0.2](https://dp0-2.lsst.io/), [LSST DP1](https://dp1.lsst.io/index.html), or DES DR2 (from the [Dark Energy Survey](https://www.darkenergysurvey.org/)) — using the [LSDB](https://docs.lsdb.io/en/stable/index.html) library, developed by the [LINCC Frameworks](https://lsstdiscoveryalliance.org/programs/lincc-frameworks/) team.
-
-The left-side catalog (redshift) is loaded directly from a Pandas DataFrame using `lsdb.from_dataframe(...)`, while the right-side photometric catalog is read in HATS format with `lsdb.read_hats(...)`. Margin caching is supported and applied by default to avoid edge effects during the crossmatch. For more on margin cache, refer to the [LSDB margins tutorial](https://docs.lsdb.io/en/stable/tutorials/margins.html).
-
-Although the ideal behavior is to match each spectroscopic object to a unique photometric counterpart, deduplication is not yet implemented, and it's possible for duplicates to appear in the final result due to original redshift catalog duplications or overlapping matches caused by the margin cache.
-
-
-## How the Pipeline Works
-
-
-!!! warning
-    section under construction 
-    
+The Training Set Maker pipeline performs the spatial cross-matching between a pre-registered Redshift Catalog and the LSST Object catalog in order to create training sets for machine-learning based photo-z algorithms. It relies on the [LSDB](https://docs.lsdb.io/en/stable/index.html) library, developed by the [LINCC Frameworks](https://lsstdiscoveryalliance.org/programs/lincc-frameworks/) to handle the spatially distributed data efficiently and provide flexibility in the observables included in the training set. 
 
 
 
-## How to Run the Pipeline
+### Run via Photo-z Server website 
 
-### Photo-z Server website 
+The pipeline can be run through the Photo-z Server website, which provides a user-friendly interface for configuring the cross-matching parameters, selecting the desired output contents and format.
 
+When running the pipeline from the Photo-z Server UI, users must provide the following information: 
 
-When running the pipeline from the Photo-z Server UI, users must provide the following:
-
-1. **Training set name**  
-    Name that will be used to register the result in the system.
+1. **Training Set name**  
+    A short mnemonic name that will be used to register the result in the system, and to find it in the products list in future searches. There is no need to choose a unique name, as the system will automatically append the ID number (automatically generated) to the product's internal name to ensure uniqueness.  
 
 2. **Description (optional)**  
     Notes or summary about the training sample.
 
 3. **Select the Redshift Catalog for the cross-matching**  
-    Must be a previously registered spectroscopic catalog.
+    Choose from the available registered Reference Redshift Catalogs listed on the menu. It can be either the result of a previous run of the Combine Redshift Catalogs pipeline or a custom catalog previously uploaded by the user. 
 
-4. **Select the Objects catalog (photometric data)**  
-    Choose between DES DR2, DP0.2, or DP1.
+4. **Select the Object Catalog (photometric data)**   
+    Choose between the LSST releases available, e.g., DP0.2, DP1, etc.  
 
-5. **Flux type**  
-    Select which flux columns to use during the crossmatch.
-
-6. **Apply dereddening from dustmaps**  
+    * **Flux type**: Select which flux columns to use during the crossmatch. The options are dynamically populated based on the selected Object Catalog, e.g., `cModel`, `gaap1p0`, `psf`, etc.
+    * **Apply dereddening from dustmaps**  
     Select which dust map (if any) to use for dereddening the photometric fluxes.
+    * **Convert fluxes into magnitudes** 
+    Check this box to convert the fluxes into magnitudes. The conversion is done using the formula: 
+    
+    $$
+    mag = -2.5 * \log_{10}(flux) + 31.5 
+    $$ 
+    
+    where $flux$ is the value in the selected flux column.  
 
-7. **Cross-matching configuration**  
-      - Threshold distance (arcsec): maximum allowed distance between matched sources.
-      - Number of neighbors: number of closest matches to retrieve.
-      - Convert fluxes into magnitudes: checkbox to apply flux-to-mag conversion.
+5. **Select the cross-matching configuration choices**  
+      * **Threshold distance (arcsec)**: maximum allowed distance between matched sources.
+      * **Number of neighbors**: number of closest matches to retrieve. Select 1 for a one-to-one match, or a higher number to retrieve multiple matches.
+      
+6. **Select unique galaxies (coming soon)**  
+    In case of multiple matchings, apply a given deduplication criteria (this option is not yet implemented).  
 
-8. **Select unique galaxies (coming soon)**  
-      This option is not yet implemented.
-
-9. **Output format**  
-    Choose from: Parquet, CSV, FITS, or HDF5.
+7. **Output format**  
+    Choose from the list of supported formats: Parquet, CSV, FITS, or HDF5.
 
 
-### Photo-z Server API
+#### Example 1: Training Set with simulated galaxies from DP0.2
+
+!!! warning
+    section under construction 
+    
+    
+#### Example 2: Training Set with observed galaxies from DP1
+
+!!! warning
+    section under construction 
+    
+
+### Run via Photo-z Server API
 
 !!! warning
     section under construction 
