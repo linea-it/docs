@@ -10,11 +10,11 @@ The pipeline can be run through the Photo-z Server website, which provides a use
 
 When running the pipeline from the Photo-z Server UI, users must provide the following information: 
 
-1. **Training Set name**  
+1. **Training set name**  
     A short mnemonic name that will be used to register the result in the system, and to find it in the products list in future searches. There is no need to choose a unique name, as the system will automatically append the ID number (automatically generated) to the product's internal name to ensure uniqueness.  
 
 2. **Description (optional)**  
-    Notes or summary about the training sample.
+    Any description or notes about the sample.
 
 3. **Select the Redshift Catalog for the cross-matching**  
     Choose from the available registered Reference Redshift Catalogs listed on the menu. It can be either the result of a previous run of the Combine Redshift Catalogs pipeline or a custom catalog previously uploaded by the user. 
