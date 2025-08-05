@@ -2,6 +2,7 @@
 
 Back to [Photo-z Server documentation](../sci-platforms/pz_server.md) 
 
+
 ## Datasets classification   
 
 ### Official Datasets 
@@ -24,7 +25,7 @@ Public data collected from the literature and hosted on the Photo-z Server.
 
 ### Public individual reference redshift catalogs  
 
-| Data product | Survey   | # of Redshifts| Standard flags translation `{original : standard}` | Reference Paper  |  
+| Data product | Survey   | # of redshifts| Standard flags translation `{original : standard}` | Reference paper  |  
 |---           |---       |---            |---                         |---          |
 |              | [COSMOS 2025](https://github.com/cosmosastro/speczcompilation/tree/main)|165,312| { : ,  : ,  : }|[Khostovan et al. 2025](https://arxiv.org/abs/2503.00120)| 
 |[6dFGS DR3](https://pzserver.linea.org.br/product/40_6dfgs_dr3)| 6dFGS | 136304 | { 1: 0, 2: 1, 3: 3,  4: 4, 6:6} | [Jones et al., 2009](http://www.6dfgs.net/Publications/REFEREED/6dFGS_DR3_lowres.pdf) |
@@ -46,7 +47,7 @@ Public data collected from the literature and hosted on the Photo-z Server.
 Latest combined catalog of reference redshifts from the literature. 
 
 
-| Data product | Duplicates handling | # of Surveys | Redshift Range | # of Redshifts | Last update | 
+| Data product | Duplicates handling | # of surveys | Redshift range | # of tedshifts | Last update | 
 |---           |---                  |---           |---             |---             |---          |
 |              | Keep all            |              |                |                |             |
 |              | Flag duplicates     |              |                |                |             |
@@ -64,7 +65,7 @@ pz_server.get_product('')
 
 The result of the spatial cross-matching between the public redshifts compilations and public photometric data.   
 
-| Data product | Photo. Catalog  | Duplicates handling | # of matched Spec. Surveys | Redshift Range | # of Galaxies | Last update | 
+| Data product | Photo. catalog  | Duplicates handling | # of matched spec. surveys | Redshift range | # of galaxies | Last update | 
 |---           | ---             | --                  |---                         |---             |---            |---          |             
 |              | DES DR2         | Keep all            |                            |                |               |             |             
 |              | DES DR2         | Flag duplicates     |                            |                |               |             |             
@@ -89,7 +90,7 @@ pz_server.get_product('')
 
 #### Redshift Catalogs 
 
-|       | Redshift Catalogs | 
+|       | Redshift catalogs | 
 |-------|-------------------|
 |       |                   |
 |       |                   | 
@@ -97,7 +98,7 @@ pz_server.get_product('')
 
 #### Training Sets 
 
-|       | Training Sets    | 
+|       | Training sets    | 
 |-------|------------------|
 |       |                  |
 |       |                  | 
@@ -105,7 +106,7 @@ pz_server.get_product('')
 
 #### Training Results 
 
-| Algorithm  | Training Results | 
+| Algorithm  | Training results | 
 |------------|------------------|
 | BPZ        |                  |
 | CMNN       |                  | 
@@ -116,7 +117,7 @@ pz_server.get_product('')
 
 #### Photo-z Estimates 
 
-| Algorithm  | Photo-z Estimates | 
+| Algorithm  | Photo-z estimates | 
 |------------|-------------------|
 | BPZ        |                   |
 | CMNN       |                   | 
@@ -131,47 +132,245 @@ pz_server.get_product('')
 
 
 !!! danger "ATTENTION: Preliminary Datasets"  
-    These datasets were produced by the PZ Science Unit — a working group from Rubin’s Commissioning Team — during the _Initial studies of photometric redshifts with LSSTComCam from DP1_. All results, along with detailed dataset descriptions, are available in the tech note [SITCOMTN-154](https://sitcomtn-154.lsst.io/). **These datasets are not classified as Official Datasets released by Rubin's DM team.**  
+    These datasets were produced by the PZ Science Unit — a working group from Rubin’s Commissioning Team — during the _Initial studies of photometric redshifts with LSSTComCam from DP1_. All results, along with detailed dataset descriptions, are available in the tech note [SITCOMTN-154](https://sitcomtn-154.lsst.io/).
+
+    **These datasets are NOT classified as Official Datasets released by Rubin's DM team.**  
+
+
+
+#### Configuration Files 
+
+As mentioned in Section 3.4 and Appendix A.1 from the tech note [SITCOMTN-154](https://sitcomtn-154.lsst.io/), the configuration files used are available on the GitHub repository [`rail_project_config`](https://github.com/LSSTDESC/rail_project_config). 
+
+
+| Configuration file | Description |
+|-------------------|-------------|
+| [dp1.yaml](https://github.com/LSSTDESC/rail_project_config/blob/main/dp1/dp1.yaml) | Complete set of configurations tested (labeled as analysis _flavors_). |
+| [dp1_v4.yaml](https://github.com/LSSTDESC/rail_project_config/blob/main/dp1/dp1.yaml) | Optimized configuration parameters. |
+
+
+#### Ancillary input files 
+
+The ancillary input files mentioned in Section 3.1 and Appendix A.2 ... 
+
+##### Galaxy SED templates 
+
+##### Filter throughput curves 
+
+
 
 #### Redshift Catalogs 
 
-|       | Redshift Catalogs | 
-|-------|-------------------|
-|       |                   |
-|       |                   | 
-|       |                   | 
+Data products containing reference redshifts catalogs listed in Table 2 from the tech note [SITCOMTN-154](https://sitcomtn-154.lsst.io/). 
 
-#### Training Sets 
 
-|       | Training Sets    | 
-|-------|------------------|
-|       |                  |
-|       |                  | 
-|       |                  | 
+<table style="border-collapse: collapse; font-size: 0.9em;">
+  <thead>
+    <tr>
+      <th align="left">Data product</th>
+      <th align="left">Type</th>
+      <th align="left">Confidence</th>
+      <th align="left">Matches</th>
+      <th align="left">Reference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">2dFGRS SITCOMTN-154</td>
+      <td rowspan="3">s</td>
+      <td>1.00</td><td>3</td>
+      <td rowspan="3"><a href="https://ui.adsabs.harvard.edu/abs/2001MNRAS.328.1039C">Colless et al. (2001)</a></td>
+    </tr>
+    <tr><td>0.99</td><td>4</td></tr>
+    <tr><td>0.90∗</td><td>1</td></tr>
+
+    <tr>
+      <td>2dflens SITCOMTN-154</td><td>s</td><td>1.00</td><td>1</td>
+      <td><a href="https://ui.adsabs.harvard.edu/abs/2016MNRAS.462.4240B">Blake et al. (2016)</a></td>
+    </tr>
+
+    <tr>
+      <td>2MRS SITCOMTN-154</td><td>s</td><td>0.95</td><td>1</td>
+      <td><a href="https://ui.adsabs.harvard.edu/abs/2012ApJS..199...26H">Huchra et al. (2012)</a></td>
+    </tr>
+
+    <tr>
+      <td>6dFGRS SITCOMTN-154</td><td>s</td><td>0.98</td><td>2</td>
+      <td><a href="https://ui.adsabs.harvard.edu/abs/2009MNRAS.399..683J">Jones et al. (2009)</a></td>
+    </tr>
+
+    <tr>
+      <td rowspan="2">3D-HSTs SITCOMTN-154</td>
+      <td rowspan="2">g</td>
+      <td>0.99</td><td>5</td>
+      <td rowspan="2"><a href="https://ui.adsabs.harvard.edu/abs/2016ApJS..225...27M">Momcheva et al. (2016)</a></td>
+    </tr>
+    <tr><td>0.95</td><td>277</td></tr>
+
+    <tr>
+      <td rowspan="2">ASTRODEEP SITCOMTN-154</td>
+      <td>s</td><td>1.00</td><td>4165</td>
+      <td rowspan="2"><a href="https://ui.adsabs.harvard.edu/abs/2021A&A...649A..22M">Merlin et al. (2021)</a></td>
+    </tr>
+    <tr><td>p</td><td>0.97</td><td>8212</td></tr>
+
+    <tr>
+      <td rowspan="3">ASTRODEEP-JWST SITCOMTN-154</td>
+      <td>s</td><td>1.00</td><td>594</td>
+      <td rowspan="3"><a href="https://ui.adsabs.harvard.edu/abs/2024A&A...691A.240M">Merlin et al. (2024)</a></td>
+    </tr>
+    <tr><td>p</td><td>0.92∗</td><td>628</td></tr>
+    <tr><td></td><td>0.90∗</td><td>455</td></tr>
+
+    <tr>
+      <td rowspan="2">CANDELS SITCOMTN-154</td>
+      <td>s</td><td>1.00</td><td>53</td>
+      <td rowspan="2"><a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...942...36K">Kodra et al. (2023)</a></td>
+    </tr>
+    <tr><td>p</td><td>0.93∗</td><td>6</td></tr>
+
+    <tr>
+      <td rowspan="3">JADES SITCOMTN-154</td>
+      <td>s</td><td>0.99</td><td>11</td>
+      <td rowspan="3"><a href="https://ui.adsabs.harvard.edu/abs/2025ApJS..277....4D">D’Eugenio et al. (2025)</a></td>
+    </tr>
+    <tr><td></td><td>0.95</td><td>34</td></tr>
+    <tr><td></td><td>0.90∗</td><td>24</td></tr>
+
+    <tr>
+      <td>MOSDEF SITCOMTN-154</td><td>s</td><td>0.99</td><td>9</td>
+      <td><a href="https://ui.adsabs.harvard.edu/abs/2015ApJS..218...15K">Kriek et al. (2015)</a></td>
+    </tr>
+
+    <tr>
+      <td>NED SITCOMTN-154</td><td>s</td><td>0.95</td><td>847</td>
+      <td><a href="https://ui.adsabs.harvard.edu/abs/1991ASSL..171...89H">Helou et al. (1991)</a></td>
+    </tr>
+
+    <tr>
+      <td>OzDES SITCOMTN-154</td><td>s</td><td>0.99</td><td>897</td>
+      <td><a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.496...19L">Lidman et al. (2020)</a></td>
+    </tr>
+
+    <tr>
+      <td rowspan="2">PRIMUS SITCOMTN-154</td>
+      <td>g</td><td>0.92∗</td><td>3653</td>
+      <td rowspan="2"><a href="https://ui.adsabs.harvard.edu/abs/2013ApJ...767..118C">Cool et al. (2013)</a></td>
+    </tr>
+    <tr><td></td><td>0.85∗</td><td>1687</td></tr>
+
+    <tr>
+      <td>VANDELS SITCOMTN-154</td><td>s</td><td>1.00</td><td>196</td>
+      <td><a href="https://ui.adsabs.harvard.edu/abs/2021A&A...647A.150G">Garilli et al. (2021)</a></td>
+    </tr>
+
+    <tr>
+      <td rowspan="2">VIMOS SITCOMTN-154</td>
+      <td>s</td><td>1.00</td><td>499</td>
+      <td rowspan="2"><a href="https://ui.adsabs.harvard.edu/abs/2010A&A...512A..12B">Balestra et al. (2010)</a></td>
+    </tr>
+    <tr><td></td><td>0.95</td><td>43</td></tr>
+
+    <tr>
+      <td rowspan="3">VUDS SITCOMTN-154</td>
+      <td>s</td><td>1.00</td><td>9</td>
+      <td rowspan="3"><a href="https://ui.adsabs.harvard.edu/abs/2017A&A...600A.110T">Tasca et al. (2017)</a></td>
+    </tr>
+    <tr><td></td><td>0.95</td><td>9</td></tr>
+    <tr><td></td><td>0.80∗</td><td>3</td></tr>
+
+    <tr>
+      <td rowspan="2">VVDS SITCOMTN-154</td>
+      <td>s</td><td>1.00</td><td>101</td>
+      <td rowspan="2"><a href="https://ui.adsabs.harvard.edu/abs/2005A&A...439..845L">Le Fèvre et al. (2005)</a></td>
+    </tr>
+    <tr><td></td><td>0.95</td><td>193</td></tr>
+  </tbody>
+</table>
+
+
+
+
+#### Training and Test Sets 
+
+
+Data products containing training and test sets listed in Table 1 from the tech note [SITCOMTN-154](https://sitcomtn-154.lsst.io/). 
+
+
+| Data Product                 | Data set        | Selection    | Number of objects | 
+|------------------------------|-----------------|--------------|-------------------|
+| training_v1 SITCOMTN-154     | training_v1     | match_prelim |7,000|
+| test_v1     SITCOMTN-154     | test_v1         | match_prelim |2,437|
+| training_v4 SITCOMTN-154     | training_v4     | match_ecdfs  |6,778|
+| test_v4     SITCOMTN-154     | test_v4         | match_ecdfs  |2,905|      
+| test_DESI   SITCOMTN-154     | test_DESI       | match_desi   |2,728|    
+
+
 
 #### Training Results 
 
-| Algorithm  | Training Results | 
-|------------|------------------|
-| BPZ        |                  |
-| CMNN       |                  | 
-| DNF        |                  | 
-| FlexZBoost |                  | 
-| KNN        |                  | 
-| LePHARE    |                  | 
+Estimator data models described in the Appendix A.3 from the tech note [SITCOMTN-154](https://sitcomtn-154.lsst.io/).
 
+
+| Data Product   | Estimator    |
+|----------------|--------------|
+| training_v1 SITCOMTN-154 | BPZ          |
+| training_v1 SITCOMTN-154 | CMNN         |
+| training_v1 SITCOMTN-154 | DNF          |     
+| training_v1 SITCOMTN-154 | FlexZBoost   |
+| training_v1 SITCOMTN-154 | KNN          |
+| training_v1 SITCOMTN-154 | LePHARE      |         
+| training_v4 SITCOMTN-154 | BPZ          |
+| training_v4 SITCOMTN-154 | CMNN         |             
+| training_v4 SITCOMTN-154 | DNF          |     
+| training_v4 SITCOMTN-154 | FlexZBoost   |
+| training_v4 SITCOMTN-154 | KNN          |
+| training_v4 SITCOMTN-154 | LePHARE      |             
+
+
+
+#### Object Catalogs 
+
+
+Data products containing object tables listed in Table 1 from the tech note [SITCOMTN-154](https://sitcomtn-154.lsst.io/). 
+
+
+| Data Product                 | Data set        | Selection    | Number of objects | 
+|------------------------------|-----------------|--------------|-------------------|
+| DP1 Gold SITCOMTN-154        | ECDFS+EDFS+SV_95| gold         |375,610|
+| DP1 Gold 4-band SITCOMTN-154 | SV_38           | gold_4_band  |169,034|
+   
+
+
+
+
+ 
 #### Photo-z Estimates 
 
-| Algorithm  | Photo-z Estimates | 
+##### QP Ensembles 
+
+| Data Product  | Algorithm      |  
 |------------|-------------------|
-| BPZ        |                   |
-| CMNN       |                   | 
-| DNF        |                   | 
-| FlexZBoost |                   | 
-| KNN        |                   | 
-| LePHARE    |                   | 
+|            | BPZ        |                   
+|            | CMNN       |                    
+|            | DNF        |                    
+|            | FlexZBoost |                    
+|            | KNN        |                    
+|            | LePHARE    |                    
+
+
+##### Per-Object Point Estimates 
+
+| Data Product  | Algorithm |  
+|---------------|------------|
+|               | BPZ        | 
+|               | CMNN       |  
+|               | DNF        |  
+|               | FlexZBoost |  
+|               | KNN        |  
+|               | LePHARE    |  
 
 
 
-
-
+Back to [Photo-z Server documentation](../sci-platforms/pz_server.md) 
+ 
