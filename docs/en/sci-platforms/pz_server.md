@@ -10,7 +10,7 @@ The Photo-z Server was conceived to support RSP users participating in the Photo
 Beyond the PZ Validation Cooperative, the Photo-z Server will remain a resource for the LSST Community in the years to follow. RSP users can continue using it to organize, track, and share lightweight files containing diverse test results.
 
 
-!!! tip "Datasets"
+!!! abstract "Datasets"
      The Photo-z Server administrators maintain and periodically update a curated list of data resources to support the LSST Community with photo-z-related data products. Detailed descriptions and links to each data product are available on a [separate page](../data/pz_server_data.md).
 
 

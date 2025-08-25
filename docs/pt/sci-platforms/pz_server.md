@@ -1,6 +1,6 @@
 ### Aviso
 
-!!! danger "Aviso sobre a versão PT-BR" 
+!!! warning "Aviso sobre a versão PT-BR" 
       Esta é uma tradução do documento original disponível em inglês. Optamos por não traduzir os nomes dos pipelines e tipos de produtos para manter os nomes consistentes com os que aparecem no Photo-z Server. Além disso, não traduzimos trechos de código para mantê-los consistentes com o tutorial disponibilizado como Jupyter notebook no repositório da biblioteca Python `pzserver`.  
 
 ### Introdução
@@ -13,7 +13,7 @@ O Photo-z Server foi projetado para auxiliar os usuários do RSP a participar do
 
 Além do PZ Validation Cooperative, o Photo-z Server continuará sendo um recurso para a Comunidade LSST nos próximos anos. Os usuários do RSP podem continuar a usá-lo para organizar, rastrear e compartilhar arquivos leves contendo diversos resultados de testes.
 
-!!! tip "Datasets"
+!!! abstract "Datasets"
       Os administradores do Photo-z Server mantêm e atualizam periodicamente uma lista selecionada de conjuntos de dados para dar suporte à Comunidade LSST com produtos de dados relacionados ao Photo-z. Descrições detalhadas e links para cada produto de dados estão disponíveis em uma [página separada](../../en/data/pz_server_data.md).
 
 ### Site do Photo-z Server
