@@ -1,8 +1,107 @@
 ## LustreFS (HPC)
 
-The Apollo cluster environment features a high-performance [Lustre](https://www.lustre.org/) filesystem with two storage tiers: SSD with ~70TB (T0) and HDD with ~500TB (T1), both connected to a 100Gb/s EDR Infiniband network. Both storage tiers are available at `/lustre/t0` and `/lustre/t1`.
+The Apollo cluster environment features a high-performance [Lustre](https://www.lustre.org/) filesystem with two storage tiers: SSD with ~70TB (T0) and HDD with ~500TB (T1), both connected to a 100Gb/s EDR Infiniband network. Both storage tiers are available at `/scratch` and `data`.
 
-Users can access their scratch directory through the environment variable `$SCRATCH`, or by accessing the directory located at `/lustre/t0/scratch/users/<username>`.
+### Scratch area and quota
+
+Users will be able to access their Scratch directory through the environment variable, or accessing the directory with the full path.
+```Bash
+cd $SCRATCH
+```
+Or
+```Bash
+cd /scratch/users/<username> 
+``` 
+
+!!! danger "ATTENTION"
+    This area will NOT back up!
+
+Files that have not been modified in the last 60 days will be automatically removed, which makes file storage temporary in this area.
+It is recommended that users will transfer the important `$SCRATCH` files to their `homedir`.
+
+!!! warning
+    The cleaning script runs once a week, always on weekends. 
+
+
+**The standard quota of `/scratch` available to users entitled to use the cluster is:**
+
+| area     | bsoft  | bhard  | isoft  | ihard  | grace period |
+| -------- | ------ | ------ | ------ | ------ | ------------ |
+| /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
+
+### Scripts area
+
+Users will be able to access their script directory through the environment variable, or accessing the directory with the full path.
+```Bash
+cd $SCRIPTS
+```
+Or
+```Bash
+cd /scripts/<username> 
+```
+
+This area is intended for the storage of Jobs submission scripts to the cluster and others. It is also recommended to use this path to the creation of Pynton environments (ENVs) and kernels.
+
+**The standard quota of `/scripts` available to users is:**
+
+| area     | bsoft | bhard | isoft | ihard | grace period |
+| -------- | ----- | ----- | ----- | ----- | ------------ |
+| /scripts | 10 GB | 12 GB | 100k  | 120k  | 7 days       |
+
+Note: The `/scripts`  is **not** affected by the automatic cleaning process.
+
+### Homedir
+
+The `Home` directory is an area for users to store their personal files and is accessible through the cluster login nodes and also on the [Jupyter](.) platform.
+
+**The standard quota of homedir available to users, according to their profile, is:**
+
+| profile              | bsoft  | bhard  | isoft   | ihard   | grace period |
+| -------------------- | ------ | ------ | ------- | ------- | ------------ |
+| public general       | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
+| public institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
+| collaboration        | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+
+!!! tip
+    To check the quota values ​​configured simply use the command: `quota -s -u <username> /home`.
+
+Note: The `/home` directory  is **not** affected by the automatic cleaning process. 
+
+
+### Useful Commands
+ 
+a) How to check my available quota?
+
+    show_quota
+    
+b) How to find my files created more than 60 days ago?
+
+    lfs find $SCRATCH --uid $UID -mtime +60 --print
+
+c) How to find my files created less than 60 days ago?
+
+    lfs find $SCRATCH --uid $UID -mtime -60 --print
+    
+d) How to list Lustre OSTs?
+
+    lfs osts $SCRATCH
+   
+e) How to list files older than 60 days on a specific Lustre OST?
+
+    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
+    
+f) How to configure striping on a directory to "split" files and distribute "chunks" across 10 OSTs?
+
+    lfs setstripe -c 10 $SCRATCH/my_large_files
+    
+g) How to check file/directory striping?
+
+    lfs getstripe $SCRATCH/my_large_files
+
+
+!!! tip
+    LIneA's Lustre is designed to work at 100Gbps - to achieve maximum performance use striping and always with large files (+1GB).
+
 
 ### Best Practices
 
@@ -89,60 +188,6 @@ Software typically consists of many small files, and as mentioned earlier, acces
 
 Additionally, under high load, I/O access to Lustre filesystems may be blocked. If executables are stored on Lustre and filesystem access fails, executables may crash. Therefore, whenever possible, it's better to copy executables to cluster nodes' `/tmp`.
 
-### Quota
-
-|area|TB  |bsoft|bhard|isoft|ihard|grace period|
-|----|----|-------------|-------------|-------------|-------------|------------|
-|T0 | 70 |     200 GB    |   250 GB   | 200000 | 250000  |  7 days    |
-
-### Scratch Area
-
-Files not modified in the last 60 days will be automatically removed.
-
-!!! critical
-    This area does NOT have backups and NO removal warnings will be sent!
-
-!!! warning
-    The cleanup script runs weekly on weekends.
-
-### Useful Commands
-
-a) How to access my scratch area?
-   
-    cd $SCRATCH 
-    
-b) How to check my available quota?
-
-    lfs quota -u $USER /lustre/t0
-    
-c) How to find my files created more than 60 days ago?
-
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
-
-d) How to find my files created less than 60 days ago?
-
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
-    
-e) How to list Lustre OSTs?
-
-    lfs osts /lustre/t0
-f) How to list files older than 60 days on a specific Lustre OST?
-
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
-    
-g) How to configure striping on a directory to "split" files and distribute "chunks" across 10 OSTs?
-
-    lfs setstripe -c 10 $SCRATCH/my_large_files
-    
-h) How to check file/directory striping?
-
-    lfs getstripe $SCRATCH/my_large_files
-
-
-!!! tip
-    LIneA's Lustre is designed to work at 100Gbps - to achieve maximum performance use striping and always with large files (+1GB).
-
-
 ## NAS (NFS)
 
 NAS storage systems are used for long-term storage and are not accessible through compute nodes (HPC).
@@ -156,35 +201,15 @@ Current specifications:
 
 <sup>[1]</sup> _this equipment was decommissioned in Jun/2023 due to physical issues._
 
-### /home
-
-The `home` directory is an area for users to store personal files and is accessible through cluster login nodes and the [jupyter](.) platform.
-
-### /archive
-
-Storage area for raw astronomical catalog data transferred from other data centers or produced internally by various platforms developed by LIneA.
-
-### /process
-
-Storage area for data from DES processing performed by the [DES Portal](https://des-portal.linea.org.br).
-
-### Quota
-
-|area| bsoft|bhard|isoft|ihard|grace period|
-|----| -------------|-------------|-------------|-------------|------------|
-|/home  |   40 GB    |   50 GB   | 4000000  | 5000000   |  7 days    |
-
-!!! tip
-    To check configured quota values, use: `quota -s -u <username> /home`.
-
 ## Backup
-| areas | frequency | type | retention |
-| ----- | ---------- | ---- | ---------------- |
-| /home | daily | incremental | 30 days |
-| /home | weekly | differential | 30 days |
-| /home | monthly | full | 90 days |
-| /archive | - | - | - |
-| /scratch | - | - | - |
+| areas    | frequency | type         | retention |
+| -------- | --------- | ------------ | --------- |
+| /home    | daily     | incremental  | 30 days   |
+| /home    | weekly    | differential | 30 days   |
+| /home    | monthly   | full         | 90 days   |
+| /archive | -         | -            | -         |
+| /scratch | -         | -            | -         |
+| /scripts | -         | -            | -         |
 
 ## References
 
