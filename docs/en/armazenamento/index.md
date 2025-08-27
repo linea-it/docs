@@ -1,6 +1,6 @@
 ## LustreFS (HPC)
 
-The Apollo cluster environment features a high-performance [Lustre](https://www.lustre.org/) filesystem with two storage tiers: SSD with ~70TB (T0) and HDD with ~500TB (T1), both connected to a 100Gb/s EDR Infiniband network. Both storage tiers are available at `/scratch` and `data`.
+The Apollo cluster environment features a high-performance [Lustre](https://www.lustre.org/) filesystem with two storage tiers: SSD with ~70TB (T0) and HDD with ~500TB (T1), both connected to a 100Gb/s EDR Infiniband network. Both storage tiers are available at `/scratch` and `/data`.
 
 ### Scratch area and quota
 
@@ -14,7 +14,7 @@ cd /scratch/users/<username>
 ``` 
 
 !!! danger "ATTENTION"
-    This area will NOT back up!
+    There is no backup of /scratch!
 
 Files that have not been modified in the last 60 days will be automatically removed, which makes file storage temporary in this area.
 It is recommended that users will transfer the important `$SCRATCH` files to their `homedir`.
