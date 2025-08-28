@@ -29,77 +29,6 @@ Recomenda-se que os usuários realizem a transferencia dos arquivos importantes 
 | -------- | ------ | ------ | ------ | ------ | ------------ |
 | /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
 
-### Área de scripts
-
-Os usuários poderão acessar seu diretório de scripts através da variável de ambiente, ou acessando o diretório com o caminho completo. 
-```Bash
-cd $SCRIPTS
-```
-Ou 
-```Bash
-cd /scripts/<username> 
-```
-
-Essa área é destinada ao armazenamento de scripts de submissão de jobs ao cluster e outros. Recomenda-se também utilizar esse caminho para a criação de ambientes (envs) pynton e kernels.
-
-**A quota padrão do `/scripts` disponibilizada para usuários é:**
-
-| area     | bsoft | bhard | isoft | ihard | grace period |
-| -------- | ----- | ----- | ----- | ----- | ------------ |
-| /scripts | 10 GB | 12 GB | 100k  | 120k  | 7 days       |
-
-Observação: O diretório `/scripts` **não** é afetado pelo processo de limpeza automática.
-
-### Homedir
-
-O diretório `home` é uma área para os usuários armazenarem seus arquivos pessoais e é acessível através dos nós de login do cluster e também na plataforma [jupyter](.).
-
-**A quota padrão do homedir de cada usuário, segundo o seu perfil, é apresentada abaixo:**
-
-| profile               | bsoft  | bhard  | isoft   | ihard   | grace period |
-| --------------------- | ------ | ------ | ------- | ------- | ------------ |
-| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
-| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| colaboração           | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
-
-!!! tip
-    Para verificar os valores de quota configurado basta utilizar o comando: `quota -s -u <username> /home`.
-
-Observação: O diretório `/home` do usuário **não** é afetado pelo processo de limpeza automática.
-
-### Comandos úteis
-
-a) Como verificar minha quota disponível?
-   
-    show_quota 
-    
-b) Como consultar os meus arquivos criados há _mais_ de 60 dias? 
-
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
-
-c) Como consultar os meus arquivos criados há _menos_ de 60 dias? 
-
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
-    
-d) Como listar os OSTs do Lustre?
-
-    lfs osts $SCRATCH
-
-e) Como listar os arquivos armazenados há mais de 60 dias em um determinado OST do Lustre?
-
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
-    
-f) Como configurar o striping em diretório de modo a "quebrar" os arquivos e distribuir esses "pedaços" em 10 OSTs?
-
-    lfs setstripe -c 10 $SCRATCH/meus_arquivos_grandes
-    
-g) Como consultar o striping de arquivos/diretórios?
-
-    lfs setstripe -c $SCRATCH/meus_arquivos_grandes
-
-
-!!! tip
-    O Lustre do LIneA foi projetado para trabalhar a 100Gbps, para alcançar o máximo de performance faça uso do striping e sempre com arquivos grandes (+1GB).
 
 
 ### Boas práticas
@@ -188,6 +117,78 @@ Para arquivos pequenos, a distribuição (striping) deve ser desabilitada, isso 
 Um software geralmente é composto de muitos arquivos pequenos e, como mencionado anteriormente, acessar muitos arquivos pequenos no Lustre pode sobrecarregar os servidores de metadados. As compilações de software em particular podem ser melhor executadas localmente copiando ou descompactando o software para /tmp/$USER/ o para o seu `homedir`.
 
 Além disso, sob alta carga, o acesso de E/S aos sistemas de arquivos Lustre pode ser bloqueado. Se os executáveis ​​forem armazenados no Lustre e o acesso ao sistema de arquivos falhar, os executáveis ​​poderão travar. Portanto, sempre que possível, é melhor copiar os executáveis ​​para o `/tmp` dos nós do cluster.
+
+## Área de scripts
+
+Os usuários poderão acessar seu diretório de scripts através da variável de ambiente, ou acessando o diretório com o caminho completo. 
+```Bash
+cd $SCRIPTS
+```
+Ou 
+```Bash
+cd /scripts/<username> 
+```
+
+Essa área é destinada ao armazenamento de scripts de submissão de jobs ao cluster e outros. Recomenda-se também utilizar esse caminho para a criação de ambientes (envs) pynton e kernels.
+
+**A quota padrão do `/scripts` disponibilizada para usuários é:**
+
+| area     | bsoft | bhard | isoft | ihard | grace period |
+| -------- | ----- | ----- | ----- | ----- | ------------ |
+| /scripts | 10 GB | 12 GB | 100k  | 120k  | 7 days       |
+
+Observação: O diretório `/scripts` **não** é afetado pelo processo de limpeza automática.
+
+## Homedir
+
+O diretório `home` é uma área para os usuários armazenarem seus arquivos pessoais e é acessível através dos nós de login do cluster e também na plataforma [jupyter](.).
+
+**A quota padrão do homedir de cada usuário, segundo o seu perfil, é apresentada abaixo:**
+
+| profile               | bsoft  | bhard  | isoft   | ihard   | grace period |
+| --------------------- | ------ | ------ | ------- | ------- | ------------ |
+| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
+| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
+| colaboração           | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+
+!!! tip
+    Para verificar os valores de quota configurado basta utilizar o comando: `quota -s -u <username> /home`.
+
+Observação: O diretório `/home` do usuário **não** é afetado pelo processo de limpeza automática.
+
+## Comandos úteis
+
+a) Como verificar minha quota disponível?
+   
+    show_quota 
+    
+b) Como consultar os meus arquivos criados há _mais_ de 60 dias? 
+
+    lfs find $SCRATCH --uid $UID -mtime +60 --print
+
+c) Como consultar os meus arquivos criados há _menos_ de 60 dias? 
+
+    lfs find $SCRATCH --uid $UID -mtime -60 --print
+    
+d) Como listar os OSTs do Lustre?
+
+    lfs osts $SCRATCH
+
+e) Como listar os arquivos armazenados há mais de 60 dias em um determinado OST do Lustre?
+
+    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
+    
+f) Como configurar o striping em diretório de modo a "quebrar" os arquivos e distribuir esses "pedaços" em 10 OSTs?
+
+    lfs setstripe -c 10 $SCRATCH/meus_arquivos_grandes
+    
+g) Como consultar o striping de arquivos/diretórios?
+
+    lfs setstripe -c $SCRATCH/meus_arquivos_grandes
+
+
+!!! tip
+    O Lustre do LIneA foi projetado para trabalhar a 100Gbps, para alcançar o máximo de performance faça uso do striping e sempre com arquivos grandes (+1GB).
 
 
 ## NAS (NFS)

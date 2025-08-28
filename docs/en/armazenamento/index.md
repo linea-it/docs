@@ -29,79 +29,6 @@ It is recommended that users will transfer the important `$SCRATCH` files to the
 | -------- | ------ | ------ | ------ | ------ | ------------ |
 | /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
 
-### Scripts area
-
-Users will be able to access their script directory through the environment variable, or accessing the directory with the full path.
-```Bash
-cd $SCRIPTS
-```
-Or
-```Bash
-cd /scripts/<username> 
-```
-
-This area is intended for the storage of Jobs submission scripts to the cluster and others. It is also recommended to use this path to the creation of Pynton environments (ENVs) and kernels.
-
-**The standard quota of `/scripts` available to users is:**
-
-| area     | bsoft | bhard | isoft | ihard | grace period |
-| -------- | ----- | ----- | ----- | ----- | ------------ |
-| /scripts | 10 GB | 12 GB | 100k  | 120k  | 7 days       |
-
-Note: The `/scripts`  is **not** affected by the automatic cleaning process.
-
-### Homedir
-
-The `Home` directory is an area for users to store their personal files and is accessible through the cluster login nodes and also on the [Jupyter](.) platform.
-
-**The standard quota of homedir available to users, according to their profile, is:**
-
-| profile              | bsoft  | bhard  | isoft   | ihard   | grace period |
-| -------------------- | ------ | ------ | ------- | ------- | ------------ |
-| public general       | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
-| public institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| collaboration        | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
-
-!!! tip
-    To check the quota values ​​configured simply use the command: `quota -s -u <username> /home`.
-
-Note: The `/home` directory  is **not** affected by the automatic cleaning process. 
-
-
-### Useful Commands
- 
-a) How to check my available quota?
-
-    show_quota
-    
-b) How to find my files created more than 60 days ago?
-
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
-
-c) How to find my files created less than 60 days ago?
-
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
-    
-d) How to list Lustre OSTs?
-
-    lfs osts $SCRATCH
-   
-e) How to list files older than 60 days on a specific Lustre OST?
-
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
-    
-f) How to configure striping on a directory to "split" files and distribute "chunks" across 10 OSTs?
-
-    lfs setstripe -c 10 $SCRATCH/my_large_files
-    
-g) How to check file/directory striping?
-
-    lfs getstripe $SCRATCH/my_large_files
-
-
-!!! tip
-    LIneA's Lustre is designed to work at 100Gbps - to achieve maximum performance use striping and always with large files (+1GB).
-
 
 ### Best Practices
 
@@ -187,6 +114,82 @@ For small files, striping should be disabled by setting a stripe count of 1. The
 Software typically consists of many small files, and as mentioned earlier, accessing many small files on Lustre can overload metadata servers. Software compilations in particular are better performed locally by copying or unpacking the software to `/tmp/$USER/` or to your `homedir`.
 
 Additionally, under high load, I/O access to Lustre filesystems may be blocked. If executables are stored on Lustre and filesystem access fails, executables may crash. Therefore, whenever possible, it's better to copy executables to cluster nodes' `/tmp`.
+
+
+## Scripts area
+
+Users will be able to access their script directory through the environment variable, or accessing the directory with the full path.
+```Bash
+cd $SCRIPTS
+```
+Or
+```Bash
+cd /scripts/<username> 
+```
+
+This area is intended for the storage of Jobs submission scripts to the cluster and others. It is also recommended to use this path to the creation of Pynton environments (ENVs) and kernels.
+
+**The standard quota of `/scripts` available to users is:**
+
+| area     | bsoft | bhard | isoft | ihard | grace period |
+| -------- | ----- | ----- | ----- | ----- | ------------ |
+| /scripts | 10 GB | 12 GB | 100k  | 120k  | 7 days       |
+
+Note: The `/scripts`  is **not** affected by the automatic cleaning process.
+
+## Homedir
+
+The `Home` directory is an area for users to store their personal files and is accessible through the cluster login nodes and also on the [Jupyter](.) platform.
+
+**The standard quota of homedir available to users, according to their profile, is:**
+
+| profile              | bsoft  | bhard  | isoft   | ihard   | grace period |
+| -------------------- | ------ | ------ | ------- | ------- | ------------ |
+| public general       | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
+| public institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
+| collaboration        | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+
+!!! tip
+    To check the quota values ​​configured simply use the command: `quota -s -u <username> /home`.
+
+Note: The `/home` directory  is **not** affected by the automatic cleaning process. 
+
+
+## Useful Commands
+ 
+a) How to check my available quota?
+
+    show_quota
+    
+b) How to find my files created more than 60 days ago?
+
+    lfs find $SCRATCH --uid $UID -mtime +60 --print
+
+c) How to find my files created less than 60 days ago?
+
+    lfs find $SCRATCH --uid $UID -mtime -60 --print
+    
+d) How to list Lustre OSTs?
+
+    lfs osts $SCRATCH
+   
+e) How to list files older than 60 days on a specific Lustre OST?
+
+    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
+    
+f) How to configure striping on a directory to "split" files and distribute "chunks" across 10 OSTs?
+
+    lfs setstripe -c 10 $SCRATCH/my_large_files
+    
+g) How to check file/directory striping?
+
+    lfs getstripe $SCRATCH/my_large_files
+
+
+!!! tip
+    LIneA's Lustre is designed to work at 100Gbps - to achieve maximum performance use striping and always with large files (+1GB).
+
+
 
 ## NAS (NFS)
 
