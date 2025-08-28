@@ -29,77 +29,6 @@ Se recomienda a los usuarios transferir los archivos importantes de `$SCRATCH` a
 | -------- | ------ | ------ | ------ | ------ | ------------ |
 | /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
 
-### Área de scripts
-
-Los usuarios podrán acceder a su directorio de scripts a través de la variable de entorno o accediendo al directorio con la ruta completa.
-```Bash
-cd $SCRIPTS
-```
-O
-```Bash
-cd /scripts/<username> 
-```
-
-Esta área está diseñada para almacenar scripts para enviar trabajos al clúster y otros archivos. También se recomienda usar esta ruta para crear entornos (envs) y kernels de Python.
-
-**La cuota predeterminada de `/scripts` disponible para los usuarios es:**
-
-| area     | bsoft | bhard | isoft | ihard | grace period |
-| -------- | ----- | ----- | ----- | ----- | ------------ |
-| /scripts | 10 GB | 12 GB | 100k  | 120k  | 7 days       |
-
-Nota: El directorio `/scripts` **no** se ve afectado por el proceso de limpieza automática.
-
-### Homedir
-
-El directorio `home` es un área donde los usuarios almacenan sus archivos personales y es accesible a través de los nodos de inicio de sesión del clúster y también en la plataforma [jupyter](.).
-
-**La cuota de directorio personal predeterminada para cada usuario, según su perfil, se muestra a continuación:**
-
-| profile               | bsoft  | bhard  | isoft   | ihard   | grace period |
-| --------------------- | ------ | ------ | ------- | ------- | ------------ |
-| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
-| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| colaboração           | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
-
-!!! tip
-    Para comprobar los valores de cuota configurados, simplemente use el comando:`quota -s -u <username> /home`.
-
-Nota: El directorio `/home` **no** se ve afectado por el proceso de limpieza automática.
-
-### Comandos útiles
-   
-a) ¿Cómo consultar mi cuota disponible?
-
-    show_quota
-    
-b) ¿Cómo consultar mis archivos creados hace más de 60 días?
-
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
-
-c) ¿Cómo consultar mis archivos creados hace menos de 60 días?
-
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
-    
-d) ¿Cómo listar los OSTs de Lustre?
-
-    lfs osts $SCRATCH
-
-e) ¿Cómo listar archivos mayores a 60 días en un OST específico?
-
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
-    
-f) ¿Cómo configurar striping en un directorio para "dividir" archivos y distribuir "trozos" en 10 OSTs?
-
-    lfs setstripe -c 10 $SCRATCH/mis_archivos_grandes
-    
-g) ¿Cómo consultar el striping de archivos/directorios?
-
-    lfs getstripe $SCRATCH/mis_archivos_grandes
-
-!!! tip
-    El Lustre de LIneA está diseñado para trabajar a 100Gbps - para máximo rendimiento use striping y siempre con archivos grandes (+1GB).
-
 
 ### Buenas prácticas
 
@@ -182,6 +111,78 @@ Para archivos pequeños, desactive la distribución estableciendo un conteo de 1
 El software generalmente consiste en muchos archivos pequeños, y como se mencionó, acceder a muchos archivos pequeños puede sobrecargar los servidores de metadatos. Las compilaciones en particular se realizan mejor localmente copiando/descomprimiendo el software en `/tmp/$USER/` o en el `homedir`.
 
 Además, bajo alta carga, el acceso a Lustre puede bloquearse. Si los ejecutables están en Lustre y el acceso falla, pueden colapsar. Por lo tanto, es mejor copiar los ejecutables al `/tmp` de los nodos.
+
+## Área de scripts
+
+Los usuarios podrán acceder a su directorio de scripts a través de la variable de entorno o accediendo al directorio con la ruta completa.
+```Bash
+cd $SCRIPTS
+```
+O
+```Bash
+cd /scripts/<username> 
+```
+
+Esta área está diseñada para almacenar scripts para enviar trabajos al clúster y otros archivos. También se recomienda usar esta ruta para crear entornos (envs) y kernels de Python.
+
+**La cuota predeterminada de `/scripts` disponible para los usuarios es:**
+
+| area     | bsoft | bhard | isoft | ihard | grace period |
+| -------- | ----- | ----- | ----- | ----- | ------------ |
+| /scripts | 10 GB | 12 GB | 100k  | 120k  | 7 days       |
+
+Nota: El directorio `/scripts` **no** se ve afectado por el proceso de limpieza automática.
+
+## Homedir
+
+El directorio `home` es un área donde los usuarios almacenan sus archivos personales y es accesible a través de los nodos de inicio de sesión del clúster y también en la plataforma [jupyter](.).
+
+**La cuota de directorio personal predeterminada para cada usuario, según su perfil, se muestra a continuación:**
+
+| profile               | bsoft  | bhard  | isoft   | ihard   | grace period |
+| --------------------- | ------ | ------ | ------- | ------- | ------------ |
+| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
+| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
+| colaboração           | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+
+!!! tip
+    Para comprobar los valores de cuota configurados, simplemente use el comando:`quota -s -u <username> /home`.
+
+Nota: El directorio `/home` **no** se ve afectado por el proceso de limpieza automática.
+
+## Comandos útiles
+   
+a) ¿Cómo consultar mi cuota disponible?
+
+    show_quota
+    
+b) ¿Cómo consultar mis archivos creados hace más de 60 días?
+
+    lfs find $SCRATCH --uid $UID -mtime +60 --print
+
+c) ¿Cómo consultar mis archivos creados hace menos de 60 días?
+
+    lfs find $SCRATCH --uid $UID -mtime -60 --print
+    
+d) ¿Cómo listar los OSTs de Lustre?
+
+    lfs osts $SCRATCH
+
+e) ¿Cómo listar archivos mayores a 60 días en un OST específico?
+
+    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
+    
+f) ¿Cómo configurar striping en un directorio para "dividir" archivos y distribuir "trozos" en 10 OSTs?
+
+    lfs setstripe -c 10 $SCRATCH/mis_archivos_grandes
+    
+g) ¿Cómo consultar el striping de archivos/directorios?
+
+    lfs getstripe $SCRATCH/mis_archivos_grandes
+
+!!! tip
+    El Lustre de LIneA está diseñado para trabajar a 100Gbps - para máximo rendimiento use striping y siempre con archivos grandes (+1GB).
+
 
 ## NAS (NFS)
 
