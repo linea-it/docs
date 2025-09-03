@@ -1,6 +1,6 @@
 ### Advertencia
 
-!!! danger "Advertencia sobre la versión ES"
+!!! warning "Advertencia sobre la versión ES"
     Esta es una traducción del documento original disponible en inglés. Elegimos no traducir los nombres de los pipelines y los tipos de productos para mantener los nombres consistentes con los que aparecen en el Photo-z Server. Además, no traducimos extractos de código para mantenerlos consistentes con el tutorial disponible como Jupyter notebook en el repositorio de la biblioteca Python `pzserver`.
 
 ### Introducción
@@ -15,7 +15,7 @@ Más allá de el PZ Validation Cooperative, el Photo-z Server seguirá siendo un
 
 
 
-!!! tip "Datasets"
+!!! abstract "Datasets"
     Los administradores del Photo-z Server mantienen y actualizan periódicamente una lista seleccionada de recursos de datos para apoyar a la comunidad LSST con productos de datos relacionados con photo-z. Las descripciones detalladas y los enlaces a cada producto de datos están disponibles en una [página aparte](../../en/data/pz_server_data.md).
 
 

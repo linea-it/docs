@@ -4,3 +4,4 @@ site
 .env/
 .venv/
 *.vscode/
+docs/en/data/pz_server-dev_data.md
