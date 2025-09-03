@@ -1,8 +1,6 @@
 # Photo-z Server Data 
 
 
-!!! danger "PAGE UNDER CONSTRUCTION"  
-      COMING SOON!
-      
-      
-      
+!!! Warning "Datasets"
+     Próximamente habrá traducción al español. Consulta la página original en inglés [aquí](https://docs.linea.org.br/en/data/pz_server_data.html).
+

@@ -119,7 +119,7 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
       smart_enable: all
