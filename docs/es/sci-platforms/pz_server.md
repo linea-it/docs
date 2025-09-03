@@ -220,13 +220,28 @@ Consulta el [tutorial notebook](https://github.com/linea-it/pzserver/blob/main/d
 
 ## Photo-z Server pipelines 
 
-Los [pipelines](https://pzserver.linea.org.br/pz_pipelines) de Photo-z Server son un conjunto de herramientas que ayudan a los usuarios a crear y gestionar productos de datos. Los pipelines disponibles actualmente son:
+Los [pipelines de Photo-z Server](https://pzserver.linea.org.br/pz_pipelines) son un conjunto de herramientas que ayudan a los usuarios a crear y gestionar productos de datos. Los pipelines disponibles actualmente son (clic en los enlaces para más detalles):
 
 
-[<font size=4>Combine Redshift Catalog</font>](./pz_server_crc.md)
+### [Combine Redshift Catalog](./pz_server_crc.md)
+
+### [Training Set Maker](./pz_server_tsm.md)
 
 
-[<font size=4>Training Set Maker</font>](./pz_server_tsm.md)
+## Código Abierto
+
+El Photo-z Server es un proyecto de código abierto. Su código fuente está disponible en los siguientes repositorios de GitHub:
+
+* [pzserver\_app](https://github.com/linea-it/pzserver_app): el código principal de la aplicación, incluyendo la interfaz web y la API.
+* [pzserver](https://github.com/linea-it/pzserver): la biblioteca de Python utilizada para acceder a la API del Photo-z Server.
+* [pzserver\_pipelines](https://github.com/linea-it/pzserver_pipelines): el código de los pipelines disponibles en el Photo-z Server.
+* [orchestration](https://github.com/linea-it/orchestration): la aplicación encargada de enviar los pipelines al clúster HPC del IDAC y gestionar su ejecución.
+* [pz-lsst-inkind](https://github.com/linea-it/pz-lsst-inkind): código para tareas de gestión de datos en el programa in-kind del Photo-z Server, incluyendo preparación de datos, control de calidad y notebooks de validación de pipelines.
+* [pz-lsst-inkind-doc](https://github.com/linea-it/pz-lsst-inkind-doc): documentación de alto nivel sobre el programa in-kind del Photo-z Server, publicada a través de GitHub Pages.
+
+El código está licenciado bajo la [Licencia MIT](https://opensource.org/license/mit). ¡Se agradecen las contribuciones!
+
+
 
 ## Agradecimientos
 

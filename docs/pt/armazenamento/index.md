@@ -2,22 +2,50 @@
 
 O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [Lustre](https://www.lustre.org/) com dois níveis (_tiers_) de armazenamento, um em SSD com ~70 TB (_T0_) e outro em HDD com ~500 TB (_T1_), ambos conectados a uma rede infiniband EDR de 100 Gb/s. Os dois níveis de armazenamento estão disponíveis em `/scratch` e `/data`. 
 
-Os usuários poderão acessar seu diretório de scratch através da variável de ambiente `$SCRATCH`, ou acessando o diretório localizado em `/scratc/users/<username>`. 
+### Área de scratch e quota
 
-    
+Os usuários poderão acessar seu diretório de scratch através da variável de ambiente, ou acessando o diretório com o caminho completo.
+```Bash
+cd $SCRATCH
+```
+Ou 
+```Bash
+cd /scratch/users/<username> 
+``` 
+
+!!! danger "ATENÇÃO"
+    Essa área NÃO sofrerá backup!
+
+Os arquivos que não foram modificados nos últimos 60 dias serão automaticamente removidos, o que torna temporário o armazenamento de arquivos nessa área.
+Recomenda-se que os usuários realizem a transferencia dos arquivos importantes do `$SCRATCH`  para o seu `homedir`. 
+
+!!! warning
+    O script de limpeza é executado uma vez por semana, sempre nos fins de semana.  
+
+
+**A quota padrão do `/scratch` disponibilizada para usuários com direito ao uso do Cluster é:**
+
+| area     | bsoft  | bhard  | isoft  | ihard  | grace period |
+| -------- | ------ | ------ | ------ | ------ | ------------ |
+| /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
+
+
+
 ### Boas práticas
 
 Sistemas de arquivos distribuídos como o Lustre são ideais para ambientes HPC e HTC. Nesses ambientes, a carga de trabalho típica consiste em arquivos grandes que precisam ser acessados ​​a partir de muitos nós de computação com largura de banda muito alta e/ou baixa latência. Portanto, esses sistemas de arquivos são muito diferentes dos sistemas de arquivos usados ​​em computadores desktop ou servidores isolados. Embora sejam excelentes no manuseio de arquivos grandes, eles também apresentam fortes limitações ao lidar com arquivos pequenos e padrões de acesso mais comumente encontrados em ambientes corporativos e de desktop. As operações que podem ser extremamente rápidas em um disco local de estação de trabalho podem ser dolorosamente lentas e caras em um sistema de arquivos Lustre, afetando tanto os usuários que executam essas operações quanto, eventualmente, todos os outros usuários. Estas melhores práticas e recomendações têm como objetivo permitir um uso tranquilo do Lustre, minimizando ou evitando operações desnecessárias ou muito caras do sistema de arquivos.
 
 **Evite acessar atributos de arquivos e diretórios**
 
-Acessar informações de metadados, como atributos de arquivo (por exemplo, tipo, propriedade, proteção, tamanho, datas, etc.) no Lustre consome muitos recursos e pode degradar o desempenho do sistema de arquivos, especialmente quando realizado com frequência ou em diretórios com grande quantidade de arquivos. Minimize o uso de chamadas de sistema que acessam ou modificam esses atributos, como `stat()`, `statx()`, `open()`, `openat()`, etc.
+Acessar informações de metadados, como atributos de arquivo (por exemplo, tipo, propriedade, proteção, tamanho, datas, etc.) no Lustre consome muitos recursos e pode degradar o desempenho do sistema de arquivos, especialmente quando realizado com frequência ou em diretórios com grande quantidade de arquivos. 
+Minimize o uso de chamadas de sistema que acessam ou modificam esses atributos, como `stat()`, `statx()`, `open()`, `openat()`, etc.
 
-O mesmo se aplica a comandos como `ls -l` ou `ls --color` que fazem uso das chamadas mencionadas acima. Em vez disso, use um simples `ls` ou `ls -l filename`.
+O mesmo se aplica a comandos como `ls -l`(para todo o diretório) ou `ls --color` que fazem uso das chamadas mencionadas acima. Em vez disso, use um simples `ls` ou `ls -l filename`.
 
 **Evite usar comandos que acessam metadados massivamente**
 
-Evite usar comandos como `ls -R`, `find`, `locate`, `du`, `df` e similares. Esses comandos percorrem o sistema de arquivos recursivamente e/ou executam operações pesadas de metadados. Eles são muito intensivos no acesso aos metadados do sistema de arquivos e podem degradar gravemente o desempenho geral do sistema de arquivos. Se for absolutamente necessário percorrer o sistema de arquivos recursivamente, use o comando fornecido com o Lustre `lfs find` em vez de `find`, por exemplo.
+Evite usar comandos como `ls -R`, `find`, `locate`, `du`, `df` e similares. 
+Esses comandos percorrem o sistema de arquivos recursivamente e/ou executam operações pesadas de metadados. Eles são muito intensivos no acesso aos metadados do sistema de arquivos e podem degradar gravemente o desempenho geral do sistema de arquivos. Se for absolutamente necessário percorrer o sistema de arquivos recursivamente, use o comando fornecido com o Lustre `lfs find` em vez de `find`, por exemplo.
 
 **Use o comando Lustre lfs**
 
@@ -90,35 +118,51 @@ Um software geralmente é composto de muitos arquivos pequenos e, como mencionad
 
 Além disso, sob alta carga, o acesso de E/S aos sistemas de arquivos Lustre pode ser bloqueado. Se os executáveis ​​forem armazenados no Lustre e o acesso ao sistema de arquivos falhar, os executáveis ​​poderão travar. Portanto, sempre que possível, é melhor copiar os executáveis ​​para o `/tmp` dos nós do cluster.
 
-### Quota
+## Área de scripts
 
-|area|bsoft|bhard|isoft|ihard|grace period|
-|----|-------------|-------------|-------------|-------------|------------|
-| /scratch |    100 GB    |   120 GB   | 100000 | 120000  |  7 days    |
+Os usuários poderão acessar seu diretório de scripts através da variável de ambiente, ou acessando o diretório com o caminho completo. 
+```Bash
+cd $SCRIPTS
+```
+Ou 
+```Bash
+cd /scripts/<username> 
+```
 
+Essa área é destinada ao armazenamento de scripts de submissão de jobs ao cluster e outros. Recomenda-se também utilizar esse caminho para a criação de ambientes (envs) pynton e kernels.
 
-### Área de scratch
+**A quota padrão do `/scripts` disponibilizada para usuários é:**
 
-Os arquivos que não foram modificados nos últimos 60 dias serão automaticamente removidos.
+| area     | bsoft | bhard | isoft | ihard | grace period |
+| -------- | ----- | ----- | ----- | ----- | ------------ |
+| /scripts | 10 GB | 12 GB | 100k  | 120k  | 7 days       |
 
-!!! critical
-    Essa área NÃO sofrerá backup e também NÃO será enviado aviso de remoção de arquivos!
+Observação: O diretório `/scripts` **não** é afetado pelo processo de limpeza automática.
 
-!!! warning
-    O script de limpeza é executado uma vez por semana sempre nos fins de semana.  
+## Homedir
 
+O diretório `home` é uma área para os usuários armazenarem seus arquivos pessoais e é acessível através dos nós de login do cluster e também na plataforma [jupyter](.).
 
-### Comandos úteis
+**A quota padrão do homedir de cada usuário, segundo o seu perfil, é apresentada abaixo:**
 
-a) Como acessar a minha área de scratch?
+| profile               | bsoft  | bhard  | isoft   | ihard   | grace period |
+| --------------------- | ------ | ------ | ------- | ------- | ------------ |
+| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
+| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
+| colaboração           | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+
+!!! tip
+    Para verificar os valores de quota configurado basta utilizar o comando: `quota -s -u <username> /home`.
+
+Observação: O diretório `/home` do usuário **não** é afetado pelo processo de limpeza automática.
+
+## Comandos úteis
+
+a) Como verificar minha quota disponível?
    
-    cd $SCRATCH 
+    show_quota 
     
-b) Como consultar a minha quota disponível?
-
-    lfs quota -u $USER $SCRATCH
-    
-c) Como consultar os meus arquivos criados há _mais_ de 60 dias? 
+b) Como consultar os meus arquivos criados há _mais_ de 60 dias? 
 
     lfs find $SCRATCH --uid $UID -mtime +60 --print
 
@@ -153,40 +197,25 @@ Os sistemas de armazenamento NAS são utilizados para armazenamento de longo pra
 
 Características atuais: 
 
-| Fabricante | Modelo | Capacidade | Instalado em | Disponibilidade |
-| ------- | ------ | ------------ | -----------| ------------------|
-| SGI     | IS5500<sup>[1]</sup> | 540TB        |  Dez-2011  | Fora de serviço |
-| SGI     | IS5600 | 240TB        |  Jul-2014  | Em uso | 
-| HPE     | APOLO 4510 | 1.2 PB        |  Apr-2025  | Em uso | 
+| Fabricante | Modelo               | Capacidade | Instalado em | Disponibilidade |     |
+| ---------- | -------------------- | ---------- | ------------ | --------------- | --- |
+| SGI        | IS5500<sup>[1]</sup> | 540TB      | Dez-2011     | Fora de serviço |     |
+| SGI        | IS5600               | 240TB      | Jul-2014     | Em uso          |     |
+| HPE        | APOLO 4510           | 1.2 PB     | Apr-2025     | Em uso          |     |
 
 
 <sup>[1]</sup> _este equipamento foi desativado em Jun/2023 devido a problemas físicos._
 
-
-### /home
-
-O diretório `home` é uma área para os usuários armazenarem seus arquivos pessoais e é acessível através dos nós de login do cluster e também na plataforma [jupyter](.).
-
-#### Quota
-
-|profile| bsoft|bhard|isoft|ihard|grace period|
-|----| -------------|-------------|-------------|-------------|------------|
-| public general |   5 GB    |   7 GB   | 7000 | 10000   |  7 days    |
-| public institucional |   25 GB    |   30 GB   | 40000 | 50000   |  7 days    |
-| collaboration |   100 GB    |  120 GB   | 1000000 | 1200000   |  7 days    |
-
-!!! tip
-    Para verificar os valores de quota configurado basta utilizar o comando: `quota -s -u <username> /home`.
-
 ## Backup
 
-| áreas | frequência | tipo | retenção |
-| ----- | ---------- | ---- | ---------------- |
-| /home | diário | incremental | 30 dias |
-| /home | semanal | diferencial | 30 dias |
-| /home | mensal | completo | 90 dias |
-| /data | - | - | - |
-| /scratch | - | - | - |
+| áreas    | frequência | tipo        | retenção |
+| -------- | ---------- | ----------- | -------- |
+| /home    | diário     | incremental | 30 dias  |
+| /home    | semanal    | diferencial | 30 dias  |
+| /home    | mensal     | completo    | 90 dias  |
+| /data    | -          | -           | -        |
+| /scratch | -          | -           | -        |
+| /scripts | -          | -           | -        |
 
 
 ## Referências

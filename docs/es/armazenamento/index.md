@@ -1,8 +1,34 @@
 ## LustreFS (HPC) 
 
-El entorno del clúster Apollo cuenta con un sistema de archivos de alto rendimiento [Lustre](https://www.lustre.org/) con dos niveles (tiers) de almacenamiento: uno en SSD con ~70 TB (T0) y otro en HDD con ~500 TB (T1), ambos conectados a una red Infiniband EDR de 100 Gb/s. Los dos niveles de almacenamiento están disponibles en `/lustre/t0` y `/lustre/t1`.
+El entorno del clúster Apollo cuenta con un sistema de archivos de alto rendimiento [Lustre](https://www.lustre.org/) con dos niveles (tiers) de almacenamiento: uno en SSD con ~70 TB (T0) y otro en HDD con ~500 TB (T1), ambos conectados a una red Infiniband EDR de 100 Gb/s. Los dos niveles de almacenamiento están disponibles en `/scratch` y `/data`.
 
-Los usuarios podrán acceder a su directorio de scratch mediante la variable de entorno `$SCRATCH`, o accediendo al directorio ubicado en `/lustre/t0/scratch/users/<username>`.
+### Área de scratch y cuota
+
+Los usuarios pueden acceder a su directorio scratch mediante una variable de entorno o accediendo al directorio con la ruta completa.
+```Bash
+cd $SCRATCH
+```
+O
+```Bash
+cd /scratch/users/<username> 
+``` 
+
+!!! danger "ATENCIÓN"
+    ¡Esta área NO tendrá respaldo!
+
+Los archivos que no se hayan modificado en los últimos 60 días se eliminarán automáticamente, lo que hará que el almacenamiento en esta área sea temporal.
+Se recomienda a los usuarios transferir los archivos importantes de `$SCRATCH` a su directorio personal.
+
+!!! warning
+    El script de limpieza se ejecuta una vez a la semana, siempre los fines de semana. 
+
+
+**La cuota `/scratch` predeterminada disponible para los usuarios con derecho a usar el Cluster es:**
+
+| area     | bsoft  | bhard  | isoft  | ihard  | grace period |
+| -------- | ------ | ------ | ------ | ------ | ------------ |
+| /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
+
 
 ### Buenas prácticas
 
@@ -86,59 +112,77 @@ El software generalmente consiste en muchos archivos pequeños, y como se mencio
 
 Además, bajo alta carga, el acceso a Lustre puede bloquearse. Si los ejecutables están en Lustre y el acceso falla, pueden colapsar. Por lo tanto, es mejor copiar los ejecutables al `/tmp` de los nodos.
 
-### Cuota
+## Área de scripts
 
-|area|TB  |bsoft|bhard|isoft|ihard|grace period|
-|----|----|-------------|-------------|-------------|-------------|------------|
-|T0 | 70 |     200 GB    |   250 GB   | 200000 | 250000  |  7 days    |
+Los usuarios podrán acceder a su directorio de scripts a través de la variable de entorno o accediendo al directorio con la ruta completa.
+```Bash
+cd $SCRIPTS
+```
+O
+```Bash
+cd /scripts/<username> 
+```
 
-### Área de scratch
+Esta área está diseñada para almacenar scripts para enviar trabajos al clúster y otros archivos. También se recomienda usar esta ruta para crear entornos (envs) y kernels de Python.
 
-Los archivos no modificados en los últimos 60 días serán eliminados automáticamente.
+**La cuota predeterminada de `/scripts` disponible para los usuarios es:**
 
-!!! critical
-    ¡Esta área NO tiene backup y NO se enviarán avisos de eliminación!
+| area     | bsoft | bhard | isoft | ihard | grace period |
+| -------- | ----- | ----- | ----- | ----- | ------------ |
+| /scripts | 10 GB | 12 GB | 100k  | 120k  | 7 days       |
 
-!!! warning
-    El script de limpieza se ejecuta semanalmente los fines de semana.
+Nota: El directorio `/scripts` **no** se ve afectado por el proceso de limpieza automática.
 
+## Homedir
 
-### Comandos útiles
+El directorio `home` es un área donde los usuarios almacenan sus archivos personales y es accesible a través de los nodos de inicio de sesión del clúster y también en la plataforma [jupyter](.).
 
-a) ¿Cómo acceder a mi área de scratch?
+**La cuota de directorio personal predeterminada para cada usuario, según su perfil, se muestra a continuación:**
+
+| profile               | bsoft  | bhard  | isoft   | ihard   | grace period |
+| --------------------- | ------ | ------ | ------- | ------- | ------------ |
+| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
+| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
+| colaboração           | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+
+!!! tip
+    Para comprobar los valores de cuota configurados, simplemente use el comando:`quota -s -u <username> /home`.
+
+Nota: El directorio `/home` **no** se ve afectado por el proceso de limpieza automática.
+
+## Comandos útiles
    
-    cd $SCRATCH 
-    
-b) ¿Cómo consultar mi cuota disponible?
+a) ¿Cómo consultar mi cuota disponible?
 
-    lfs quota -u $USER /lustre/t0
+    show_quota
     
-c) ¿Cómo consultar mis archivos creados hace más de 60 días?
+b) ¿Cómo consultar mis archivos creados hace más de 60 días?
 
     lfs find $SCRATCH --uid $UID -mtime +60 --print
 
-d) ¿Cómo consultar mis archivos creados hace menos de 60 días?
+c) ¿Cómo consultar mis archivos creados hace menos de 60 días?
 
     lfs find $SCRATCH --uid $UID -mtime -60 --print
     
-e) ¿Cómo listar los OSTs de Lustre?
+d) ¿Cómo listar los OSTs de Lustre?
 
-    lfs osts /lustre/t0
+    lfs osts $SCRATCH
 
-f) ¿Cómo listar archivos mayores a 60 días en un OST específico?
+e) ¿Cómo listar archivos mayores a 60 días en un OST específico?
 
     lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
     
-g) ¿Cómo configurar striping en un directorio para "dividir" archivos y distribuir "trozos" en 10 OSTs?
+f) ¿Cómo configurar striping en un directorio para "dividir" archivos y distribuir "trozos" en 10 OSTs?
 
     lfs setstripe -c 10 $SCRATCH/mis_archivos_grandes
     
-h) ¿Cómo consultar el striping de archivos/directorios?
+g) ¿Cómo consultar el striping de archivos/directorios?
 
     lfs getstripe $SCRATCH/mis_archivos_grandes
 
 !!! tip
     El Lustre de LIneA está diseñado para trabajar a 100Gbps - para máximo rendimiento use striping y siempre con archivos grandes (+1GB).
+
 
 ## NAS (NFS)
 
@@ -146,43 +190,23 @@ Los sistemas NAS se usan para almacenamiento a largo plazo y no son accesibles d
 
 Características actuales:
 
-| Fabricante | Modelo | Capacidad | Instalado |
-| ------- | ------ | ------------ | -----------| 
-| SGI     | IS5500<sup>[1]</sup> | 540TB        |  Dic-2011  |
-| SGI     | IS5600 | 240TB        |  Jul-2014  |
+| Fabricante | Modelo               | Capacidad | Instalado |
+| ---------- | -------------------- | --------- | --------- |
+| SGI        | IS5500<sup>[1]</sup> | 540TB     | Dic-2011  |
+| SGI        | IS5600               | 240TB     | Jul-2014  |
 
 <sup>[1]</sup> _este equipo fue desactivado en Jun/2023 por problemas físicos._
 
-### /home
-
-El directorio `home` es para que los usuarios almacenen archivos personales y es accesible desde los nodos de login del clúster y la plataforma [jupyter](.).
-
-### /archive
-
-Área para almacenar datos crudos de catálogos astronómicos transferidos desde otros centros de datos o producidos internamente por las plataformas de LIneA.
-
-### /process
-
-Área para almacenar datos provenientes del procesamiento del DES realizados por el [Portal del DES](https://des-portal.linea.org.br).
-
-### Cuota
-
-|area| bsoft|bhard|isoft|ihard|grace period|
-|----| -------------|-------------|-------------|-------------|------------|
-|/home  |   40 GB    |   50 GB   | 4000000  | 5000000   |  7 days    |
-
-!!! tip
-    Para verificar las cuotas configuradas use: `quota -s -u <usuario> /home`.
-
 ## Backup
 
-| áreas | frecuencia | tipo | retención |
-| ----- | ---------- | ---- | ---------------- |
-| /home | diario | incremental | 30 días |
-| /home | semanal | diferencial | 30 días |
-| /home | mensal | completo | 90 días |
-| /archive | - | - | - |
-| /scratch | - | - | - |
+| áreas    | frecuencia | tipo        | retención |
+| -------- | ---------- | ----------- | --------- |
+| /home    | diario     | incremental | 30 días   |
+| /home    | semanal    | diferencial | 30 días   |
+| /home    | mensal     | completo    | 90 días   |
+| /archive | -          | -           | -         |
+| /scratch | -          | -           | -         |
+| /scripts | -          | -           | -         |
 
 ## Referencias
 

@@ -214,5 +214,3 @@ Public data collected from the literature and hosted on the Photo-z Server.
 
 Back to [Photo-z Server documentation](../sci-platforms/pz_server.md) 
  
-
-
