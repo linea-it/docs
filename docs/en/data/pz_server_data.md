@@ -212,5 +212,107 @@ Public data collected from the literature and hosted on the Photo-z Server.
     ⏳ Documentation in preparation.
 
 
+
+
+
+### Reference Redshift Catalogs 
+
+#### Individual Surveys
+
+The PZ Server hosts several public spectroscopic redshift catalogs from different surveys that can be used as reference datasets for training and validation of photo-z estimates. The data products listed below are the original catalogs, not filtered to the ECDFS field nor cleaned with the selection criteria described in Section 2.2.1 from the tech note SITCOMTN-154.
+
+
+The links and short description of these datasets are organized in the table below.  
+
+| Data Product | Reference | Number of Redshifts |
+|--------------|-----------|---------------------|
+| [2dFGRS Final Data Release](https://pzserver-dev.linea.org.br/product/385_2dfgrs_final_data_release) | [Colless et al. (2001)](https://ui.adsabs.harvard.edu/abs/2001MNRAS.328.1039C) | 245,591 |
+| [2dFLens](https://pzserver-dev.linea.org.br/product/386_2dflens) | [Blake et al. (2016)](https://ui.adsabs.harvard.edu/abs/2016MNRAS.462.4240B) | 70,079 |
+| [2MRS v240](https://pzserver-dev.linea.org.br/product/387_2mrs_v240) | [Huchra et al. (2012)](https://ui.adsabs.harvard.edu/abs/2012ApJS..199...26H) | 240,496 |
+| [3D-HST v415](https://pzserver-dev.linea.org.br/product/493_3dhst_v415) | [Momcheva et al. (2016)](https://ui.adsabs.harvard.edu/abs/2016ApJS..225...27M) | 207,967 |
+| [6dFGS DR3](https://pzserver-dev.linea.org.br/product/396_6dfgs_dr3) | [Jones et al. (2009)](https://ui.adsabs.harvard.edu/abs/2009MNRAS.399..683J) | 136,304 |
+|[ACES]()|[]() | ⏳ |
+|[ATLAS]()|[]()| ⏳ |
+|[ASTRODEEP]()|[]()| ⏳|
+|[ASTRODEEP-JWST]()|[]()| ⏳|
+|[C3R2	DR3]()|[]()|⏳ |
+|[CANUCS	SMACS]()|[]()|⏳ |
+|[CDB]()|[]()|⏳ |
+|[CLASH-VLT	FR]()|[]()|⏳ |
+|[COSMOS 2025]()|[]()|⏳ |
+|[DEEP2	DR4]()|[]()|⏳ |
+|[DEIMOS 10K]()|[]()|⏳ |
+|[DESI EDR](https://pzserver-dev.linea.org.br/product/148_desi_edr) | [DESI Collaboration et al. (2025)](https://arxiv.org/abs/2503.14745) | 2,451,325 |
+|[DESI DR1 (Inside DP1)](https://pzserver-dev.linea.org.br/product/389_desi_dr1_inside_dp1) | [DESI Collaboration et al. (2025)](https://arxiv.org/abs/2503.14745) | 50,634 |
+|[Euclid	Q1 SPE]() | | ⏳ | 
+|[FMOS-COSMOS]() | | ⏳ | 
+|[AMA	DR4]() | | ⏳ | 
+|[GLASS]() | | ⏳ | 
+|[HectoMAP	DR2]() | | ⏳ | 
+|[HETDEX	DR1]() | | ⏳ | 
+|[JADES DR3](https://pzserver-dev.linea.org.br/product/390_jades_dr3) | [D’Eugenio et al. (2025)](https://ui.adsabs.harvard.edu/abs/2025ApJS..277....4D) | 8,172 |
+|[LEGA-C	DR3]()|[]()|⏳ |
+|[MOSDEF (MOSFIRE)	FR]()|[]()|⏳ |
+|[MUSE	DR1]()|[]()|⏳ |
+|[OzDES DR2](https://pzserver-dev.linea.org.br/product/391_ozdes_dr2) | [Lidman et al. (2020)](https://ui.adsabs.harvard.edu/abs/2020MNRAS.496...19L) | 38,624 |
+|[PRIMUS DR1](https://pzserver-dev.linea.org.br/product/392_primus_dr1) | [Cool et al. (2013)](https://ui.adsabs.harvard.edu/abs/2013ApJ...767..118C) | 213,696 |
+|[SAGA	DR2]()|[]()|⏳ |
+|[SDSS	DR17]()|[]()|⏳ |
+|[SpARCS	]()|[]()|⏳ |
+|[SPT-GMOS	]()|[]()|⏳ |
+|[UDS]()|[]()|⏳ |
+|[VANDELS DR4](https://pzserver-dev.linea.org.br/product/393_vandels_dr4) | [Garilli et al. (2021)](https://ui.adsabs.harvard.edu/abs/2021A&A...647A.150G) | 2,165 |
+|[VIPERS]()|[]()|⏳ |
+|[VLT-VIMOS v201](https://pzserver-dev.linea.org.br/product/492_vltvimos_v201) | [Balestra et al. (2010)](https://ui.adsabs.harvard.edu/abs/2010A&A...512A..12B) | 5,052 |
+|[VUDS]()|[]()|⏳ |
+|[VVDS Final Data Release](https://pzserver-dev.linea.org.br/product/394_vvds_final_data_release) | [Le Fèvre et al. (2005)](https://ui.adsabs.harvard.edu/abs/2005A&A...439..845L) | 40,944 |
+|[WiggleZ]()|[]()|⏳ |
+|[zCOSMOS	20k/10k]()|[]()|⏳ |
+|[ZFIRE]()|[]()|⏳ |
+	
+
+#### Combined catalogs
+
+
+| Data product | # of surveys | # of redshifts | Last update | 
+|---           |---           |---             |---          |
+|              |              |                |  ⏳         |
+
+Quick access via `pzserver` library: 
+
+```python
+pz_server.get_product('26_public_specz_compilation') 
+``` 
+
+### Training Sets   
+
+The result of the spatial cross-matching between the public redshifts compilations and public photometric data.   
+
+| Data product | Photo. catalog  | # of matched spec. surveys | # of galaxies | Last update | 
+|---           | ---             | --                         |---            |---          |
+|              | DES DR2         |                            |               |   ⏳        |             
+|              | DES Y6 Gold     |                            |               |   ⏳        |             
+
+
+Quick access via `pzserver` library: 
+
+```python
+pz_server.get_product('') 
+``` 
+
+
+⏳: in progress, please check back later.
+
+
+
+
+
+
+
+
+
+
+
+
 Back to [Photo-z Server documentation](../sci-platforms/pz_server.md) 
  
