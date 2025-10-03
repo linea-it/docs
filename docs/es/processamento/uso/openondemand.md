@@ -51,7 +51,7 @@ Para enviar un job necesitas usar un script de envío como este: ([más informac
 #SBATCH -J simple-job                      #Nombre del Job
 #----------------------------------------------------------------------------#
 ##ruta al código ejecutable
-EXEC=/lustre/t0/scratch/users/USUARIO/ondemand/projects/CODIGO.EJECUTABLE
+EXEC=/scratch/users/USUARIO/ondemand/projects/CODIGO.EJECUTABLE
 srun $EXEC
 ```
 [**Para ver más plantillas de scripts de envío de Jobs, haz clic aquí**](../../processamento/uso/templates-jobs.html)
