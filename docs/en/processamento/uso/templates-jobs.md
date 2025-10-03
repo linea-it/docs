@@ -10,7 +10,7 @@
   #----------------------------------------------------------------------------#
 
   ##path to executable code
-  EXEC=/lustre/t0/scratch/users/YOUR.USER/EXECUTABLE.CODE
+  EXEC=/scripts/YOUR.USER/EXECUTABLE.CODE
 
   srun $EXEC
 ```
@@ -33,7 +33,7 @@ In this script you need to specify the **queue name (Partition)** to be used, th
   setup <PACKAGE> <VERSION>
 
   ##path to executable code
-  EXEC=/lustre/t0/scratch/users/YOUR.USER/EXECUTABLE.CODE
+  EXEC=/scripts/YOUR.USER/EXECUTABLE.CODE
 
   srun $EXEC
 ```

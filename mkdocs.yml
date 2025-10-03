@@ -23,7 +23,7 @@ nav:
             - Como utilizar: pt/processamento/uso/howtouse-HPC.md     
             - Slurm: processamento/apollo/index.html#slurm
             - Open OnDemand: pt/processamento/uso/openondemand.md
-            - JupyterLab: pt/processamento/uso/openondemand.html#jupyterlab
+            - JupyterLab: processamento/uso/openondemand.html#jupyterlab
             - Job Script (exemplos): pt/processamento/uso/templates-jobs.md  
   - Armazenamento: 
       - Armazenamento: pt/armazenamento/index.md

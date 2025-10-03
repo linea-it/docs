@@ -44,11 +44,11 @@ Para submeter um job é necessário utilizar um script de submissão como este d
 #!/bin/bash
 #SBATCH -p PARTITION                       #Name of the Partition to use
 #SBATCH --nodelist=NODE                    #Name of the Node to be allocated
-#SBATCH -J simple-job			                 #Job name
+#SBATCH -J simple-job			           #Job name
 #----------------------------------------------------------------------------#
 
 ##path to executable code
-EXEC=/lustre/t0/scratch/users/YOUR.USER/ondemand/projects/EXECUTABLE.CODE
+EXEC=/scratch/users/YOUR.USER/ondemand/projects/EXECUTABLE.CODE
 
 srun $EXEC
 ```
@@ -116,7 +116,7 @@ Siga os comandos abaixo:
 
     ```` yaml
     
-    #[InstallIPythonKernelSpecApp] WARNING | Installing to /lustre/t0/scratch/users/YOUR.USER/.local/share/jupyter/kernels, which is not in ['/lustre/t0/scratch/users/YOUR.USER/kernelname/share/jupyter/kernels', '/home/YOUR.USER/.local/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/YOUR.USER/.ipython/kernels']. The kernelspec may not be found.
+    #[InstallIPythonKernelSpecApp] WARNING | Installing to /scratch/users/YOUR.USER/.local/share/jupyter/kernels, which is not in ['/lustre/t0/scratch/users/YOUR.USER/kernelname/share/jupyter/kernels', '/home/YOUR.USER/.local/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/YOUR.USER/.ipython/kernels']. The kernelspec may not be found.
     Installed kernelspec kernelname in /lustre/t0/scratch/users/YOUR.USER/.local/share/jupyter/kernels/kernelname
     
     ```` 
