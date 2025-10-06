@@ -10,7 +10,7 @@
   #----------------------------------------------------------------------------#
 
   ##ruta al código ejecutable
-  EXEC=/lustre/t0/scratch/users/USUARIO/CODIGO.EJECUTABLE
+  EXEC=/scripts/USUARIO/CODIGO.EJECUTABLE
 
   srun $EXEC
 ```
@@ -33,7 +33,7 @@ En este script debe especificar el **nombre de la cola (Partition)** a usar, el 
   setup <PAQUETE> <VERSIÓN>
 
   ##ruta al código ejecutable
-  EXEC=/lustre/t0/scratch/users/USUARIO/CODIGO.EJECUTABLE
+  EXEC=/scripts/USUARIO/CODIGO.EJECUTABLE
 
   srun $EXEC
 ```
