@@ -54,7 +54,7 @@ To submit a job, you need a submission script like this: ([learn more](../../pro
 #SBATCH -J simple-job                      #Job name
 #----------------------------------------------------------------------------#
 ##path to executable code
-EXEC=/lustre/t0/scratch/users/YOUR.USER/ondemand/projects/EXECUTABLE.CODE
+EXEC=/scratch/users/YOUR.USER/ondemand/projects/EXECUTABLE.CODE
 srun $EXEC
 ```
 

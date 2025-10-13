@@ -1,7 +1,6 @@
 # How to Use
 
-## How to access
-
+## How to Access
 Access to our cluster can be done through [**Open OnDemand**](../../processamento/uso/openondemand.html) or via the **JupyterLab (K8S) Terminal**. In both options, it is essential to have a valid account in LIneA's computational environment. If you don't have an account, contact the Service Desk by email (helpdesk@linea.org.br) for more information.
 
 !!! warning "Attention"
@@ -17,16 +16,16 @@ In the [**home screen**](../img/tela-jupyter.png) of your Jupyter Notebook, in t
 The machine <font color="#172b4d">**_loginapl01_**</font> is where you can allocate compute nodes to submit your job.
 
 !!! warning "$HOME and $SCRATCH"
-    Compute nodes don't have access to your user _(home)_ directory. Move or copy all files needed for job submission to your SCRATCH directory.
+    Compute nodes don't have access to your user _home_ directory. Move or copy all files needed for job submission to your SCRATCH directory.
 
-## How to use the SCRATCH area
+## How to use the Scratch area
 
-Your SCRATCH directory is the place to send essential files for job submission, as well as to check results after code execution. It's crucial to note that **`all results and generated files must be transferred back to your user directory (home)`**. Otherwise, **`there's a risk of losing these files stored in your SCRATCH`**.
+Your `SCRATCH` directory is the place where you can direct your job results files, as well as **temporarily** store data that is used by the code at the time of processing.
 
 - **To access your SCRATCH directory:**
 
   ```bash
-    ssh $SCRATCH
+    cd $SCRATCH
   ``` 
   
 - **To send files to your SCRATCH directory:**
@@ -35,39 +34,29 @@ Your SCRATCH directory is the place to send essential files for job submission, 
     cp <FILE> $SCRATCH
   ``` 
 
-## EUPS Package Manager
 
-[EUPS](https://github.com/RobertLuptonTheGood/eups) is an alternative package manager (and official LSST one) that allows loading environment variables and including paths to programs and libraries in a modular way.
+#### Automatic Scratch cleaning
 
-- **To load EUPS:**
+The **scratch** is a temporary storage area for the output and processing files of the cluster. To maintain the environment organized and ensure space available for all, a **automatic cleaning script** is in force, which is performed **once a week**.
+This process removes **files that have not been accessed within the definite retention period** - Currently, **45 days**.
 
-  ```bash
-    . /mnt/eups/linea_eups_setup.sh
-  ```
+Essential configuration files (eg: `.Bashrc`,` .Bash_Profile`, `.ssh`, etc.) are automatically preserved and **do not enter the exclusion process**.
 
-- **To list all available packages:**
+!!! danger "ATTENTION"
+	Scratch should not be used for permanent storage. We recommend moving important data for your **home** directory.
 
-  ```bash
-    eups list
-  ```
+## How to use the Scripts area
 
-- **To list a specific package:**
+Your `SCRIPTS` directory is where you can store scripts and codes to run in the cluster. It is also recommended to use this area to create _environments_ Conda.
 
-  ```bash
-    eups list | grep <PACKAGE>
-  ```
+- **To access your SCRIPTS Directory:**
 
-- **To load a package in current session:**
+  ```Bash
+    cd $SCRIPTS
+  ``` 
 
-  ```bash
-    setup <PACKAGE NAME> <PACKAGE VERSION>
-  ```
-
-- **To remove loaded package:**
-
-  ```bash
-    unsetup <PACKAGE NAME> <PACKAGE VERSION>
-  ```
+!!! Warning "Stay attentive"
+	The script area is not included in the backup routine. Therefore, it should not be used as permanent data storage.
 
 ## How to Submit a Job
 
@@ -80,7 +69,7 @@ A Job requests computing resources and specifies applications to be launched on 
   #SBATCH -J simple-job                      #Job name
   #----------------------------------------------------------------------------#
   ##path to executable code
-  EXEC=/lustre/t0/scratch/users/YOUR.USER/EXECUTABLE.CODE
+  EXEC=/scripts/YOUR.USER/EXECUTABLE.CODE
   srun $EXEC
 ```
 
@@ -112,20 +101,51 @@ If the script is correct **there will be an output indicating the job ID**.
 !!! warning "Internet access"
     Compute nodes **do not** have internet access. Packages and libraries must be installed from _loginapl01_ in your scratch area.
 
-## Useful Slurm Commands
+## EUPS Package Manager
+[EUPS](https://github.com/RobertLuptonTheGood/eups) is an alternative package manager (and official LSST one) that allows loading environment variables and including paths to programs and libraries in a modular way.
 
+- **To load EUPS:**
+
+  ```bash
+    . /mnt/eups/linea_eups_setup.sh
+  ```
+
+- **To list all available packages:**
+
+  ```bash
+    eups list
+  ```
+
+- **To list a specific package:**
+
+  ```bash
+    eups list <PACKAGE>
+  ```
+
+- **To load a package in current session:**
+
+  ```bash
+    setup <PACKAGE NAME> <PACKAGE VERSION>
+  ```
+
+- **To remove loaded package:**
+
+  ```bash
+    unsetup <PACKAGE NAME> <PACKAGE VERSION>
+  ```
+
+## Useful Slurm Commands
 To learn about all available options for each command, enter `man <command>` while connected to the Cluster environment.
 
-| Command  | Definition                                                                     |
-| -------- | ----------------------------------------------------------------------------- |
-| sbatch   | Submits job scripts to execution queue                                        |
-| squeue   | Displays job status                                                           |
-| scontrol | Used to display Slurm state (various options available only to root)          |
-| sinfo    | Displays partition and node status                                            |
-| salloc   | Submits a job for execution or starts a real-time job                         |
+| Command  | Definition                                                           |
+| -------- | -------------------------------------------------------------------- |
+| sbatch   | Submits job scripts to execution queue                               |
+| squeue   | Displays job status                                                  |
+| scontrol | Used to display Slurm state (various options available only to root) |
+| sinfo    | Displays partition and node status                                   |
+| salloc   | Submits a job for execution or starts a real-time job                |
 
 ## Tutorial videos
-
 * [How to login](https://youtu.be/3DHqWk7KGHw)
 * [How to use EUPS](https://youtu.be/ifJqGEvqzdY)
 * [How to access the Scratch](https://youtu.be/dnMzGYwICBw)
