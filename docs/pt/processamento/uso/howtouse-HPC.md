@@ -101,7 +101,7 @@ O [EUPS](https://github.com/RobertLuptonTheGood/eups) é um gerenciador de pacot
 
 - **Para carregar o EUPS:**
 
-''' info
+!!! info
     Atualmente o EUPS é carregado automaticamente após o usuário acessar qualquer máquina do cluster apollo.
   
   
