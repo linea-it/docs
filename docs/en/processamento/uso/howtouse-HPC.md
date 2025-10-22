@@ -106,9 +106,8 @@ If the script is correct **there will be an output indicating the job ID**.
 
 - **To load EUPS:**
 
-  ```bash
-    . /mnt/eups/linea_eups_setup.sh
-  ```
+!!! info
+    Currently, EUPS is automatically loaded after the user logs into any machine in the Apollo cluster.
 
 - **To list all available packages:**
 

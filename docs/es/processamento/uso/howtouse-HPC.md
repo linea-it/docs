@@ -106,9 +106,8 @@ Si el script es correcto **habrá una salida que indica el ID del job**.
 
 - **Para cargar EUPS:**
 
-  ```bash
-    . /mnt/eups/linea_eups_setup.sh
-  ```
+!!! info
+    Actualmente, EUPS se carga automáticamente después de que el usuario accede a cualquier máquina del clúster Apollo.
 
 - **Para listar todos los paquetes disponibles:**
 
