@@ -101,9 +101,9 @@ O [EUPS](https://github.com/RobertLuptonTheGood/eups) é um gerenciador de pacot
 
 - **Para carregar o EUPS:**
 
-  ```bash
-    . /mnt/eups/linea_eups_setup.sh
-  ```
+''' info
+    Atualmente o EUPS é carregado automaticamente após o usuário acessar qualquer máquina do cluster apollo.
+  
   
 - **Para listar todos os pacotes disponíveis:**
 
