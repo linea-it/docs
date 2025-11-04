@@ -16,7 +16,7 @@ Más allá de el PZ Validation Cooperative, el Photo-z Server seguirá siendo un
 
 
 !!! abstract "Datasets"
-    Los administradores del Photo-z Server mantienen y actualizan periódicamente una lista seleccionada de recursos de datos para apoyar a la comunidad LSST con productos de datos relacionados con photo-z. Las descripciones detalladas y los enlaces a cada producto de datos están disponibles en una [página aparte](../../es/data/pz_server_data.md).
+    Los administradores del Photo-z Server mantienen y actualizan periódicamente una lista seleccionada de recursos de datos para apoyar a la comunidad LSST con productos de datos relacionados con photo-z. Las descripciones detalladas y los enlaces a cada producto de datos están disponibles en una [página aparte](https://data.linea.org.br/es/sci_products/pzserver.html).
 
 
 ### Sitio web del Photo-z Server
