@@ -37,4 +37,26 @@
         }
       }
     </script>
+
+    <!-- Force external links to open in a new tab -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select all links inside the documentation
+        document.querySelectorAll("a[href]").forEach(function (link) {
+          // Skip internal anchors and same-origin links
+          const href = link.getAttribute("href");
+          if (
+            href.startsWith("#") ||
+            href.startsWith("/") ||
+            href.startsWith(".") ||
+            link.hostname === window.location.hostname
+          ) {
+            return;
+          }
+          // Set to open in new tab
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener noreferrer");
+        });
+      });
+    </script>
     {% endblock %}
