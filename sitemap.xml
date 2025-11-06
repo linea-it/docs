@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://docs.linea.org.br/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/cursos.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/cursos.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/cursos.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/cursos.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/faq.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/faq.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/faq.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/faq.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/glossario.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/glossario.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/glossario.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/glossario.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/monitoramento.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/monitoramento.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/monitoramento.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/monitoramento.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/politicas.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/politicas.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/politicas.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/politicas.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/primeiros_passos.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/primeiros_passos.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/primeiros_passos.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/primeiros_passos.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/suporte.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/suporte.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/suporte.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/suporte.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/armazenamento/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/armazenamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/armazenamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/armazenamento/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/data/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/data/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/data/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/data/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/exemplos/exemplos.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/exemplos/exemplos.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/exemplos/exemplos.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/exemplos/exemplos.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/processamento/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/processamento/sdu.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/sdu.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/sdu.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/sdu.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/processamento/apollo/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/apollo/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/apollo/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/apollo/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/processamento/uso/howtouse-HPC.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/howtouse-HPC.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/howtouse-HPC.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/howtouse-HPC.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/processamento/uso/openondemand.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/openondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/openondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/openondemand.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/processamento/uso/politicadeuso.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/politicadeuso.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/politicadeuso.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/politicadeuso.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/processamento/uso/templates-jobs.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/templates-jobs.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/templates-jobs.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/templates-jobs.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/des.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/des.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/des.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/des.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/jupyter.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/jupyter.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/jupyter.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/jupyter.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/linea-occulation-prediction-database.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/linea-occulation-prediction-database.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/linea-occulation-prediction-database.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/linea-occulation-prediction-database.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/manga.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/manga.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/manga.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/manga.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/ondemand.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/ondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/ondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/ondemand.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/pz_server.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/pz_server.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/pz_server.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/pz_server.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/pz_server_crc.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/pz_server_crc.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/pz_server_crc.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/pz_server_crc.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/pz_server_tsm.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/pz_server_tsm.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/pz_server_tsm.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/pz_server_tsm.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/sci_server.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/sci_server.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/sci_server.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/sci_server.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/sdss_sky_server.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/sdss_sky_server.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/sdss_sky_server.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/sdss_sky_server.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/sky_viewer.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/sky_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/sky_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/sky_viewer.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/solar-system-portal.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/solar-system-portal.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/solar-system-portal.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/solar-system-portal.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/target_viewer.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/target_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/target_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/target_viewer.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/sci-platforms/user_query.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/user_query.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/user_query.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/user_query.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/cursos.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/cursos.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/cursos.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/cursos.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/faq.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/faq.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/faq.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/faq.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/glossario.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/glossario.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/glossario.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/glossario.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/politicas.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/politicas.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/politicas.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/politicas.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/primeiros_passos.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/primeiros_passos.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/primeiros_passos.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/primeiros_passos.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/suporte.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/suporte.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/suporte.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/suporte.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/armazenamento/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/armazenamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/armazenamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/armazenamento/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/data/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/data/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/data/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/data/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/data/pz_server_data.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/data/pz_server_data.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/processamento/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/processamento/sdu.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/sdu.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/sdu.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/sdu.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/processamento/apollo/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/apollo/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/apollo/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/apollo/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/processamento/uso/howtouse-HPC.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/howtouse-HPC.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/howtouse-HPC.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/howtouse-HPC.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/processamento/uso/openondemand.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/openondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/openondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/openondemand.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/processamento/uso/politicadeuso.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/politicadeuso.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/politicadeuso.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/politicadeuso.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/processamento/uso/templates-jobs.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/templates-jobs.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/templates-jobs.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/templates-jobs.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/index.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/des.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/des.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/des.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/des.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/jupyter.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/jupyter.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/jupyter.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/jupyter.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/linea-occulation-prediction-database.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/linea-occulation-prediction-database.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/linea-occulation-prediction-database.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/linea-occulation-prediction-database.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/manga.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/manga.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/manga.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/manga.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/ondemand.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/ondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/ondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/ondemand.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/pz_server.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/pz_server.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/pz_server.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/pz_server.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/pz_server_crc.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/pz_server_crc.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/pz_server_crc.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/pz_server_crc.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/pz_server_tsm.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/pz_server_tsm.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/pz_server_tsm.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/pz_server_tsm.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/sci_server.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/sci_server.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/sci_server.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/sci_server.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/sdss_sky_server.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/sdss_sky_server.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/sdss_sky_server.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/sdss_sky_server.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/sky_viewer.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/sky_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/sky_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/sky_viewer.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/solar-system-portal.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/solar-system-portal.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/solar-system-portal.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/solar-system-portal.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/target_viewer.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/target_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/target_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/target_viewer.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/sci-platforms/user_query.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/user_query.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/user_query.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/user_query.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/monitoramento.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/monitoramento.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/monitoramento.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/monitoramento.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/en/exemplos/exemplos.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/exemplos/exemplos.html"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/exemplos/exemplos.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/exemplos/exemplos.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/cursos.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/cursos.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/cursos.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/cursos.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/faq.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/faq.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/faq.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/faq.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/glossario.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/glossario.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/glossario.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/glossario.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/monitoramento.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/monitoramento.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/monitoramento.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/monitoramento.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/politicas.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/politicas.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/politicas.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/politicas.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/primeiros_passos.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/primeiros_passos.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/primeiros_passos.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/primeiros_passos.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/suporte.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/suporte.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/suporte.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/suporte.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/armazenamento/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/armazenamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/armazenamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/armazenamento/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/data/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/data/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/data/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/data/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/processamento/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/processamento/sdu.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/sdu.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/sdu.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/sdu.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/processamento/apollo/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/apollo/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/apollo/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/apollo/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/processamento/uso/howtouse-HPC.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/howtouse-HPC.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/howtouse-HPC.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/howtouse-HPC.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/processamento/uso/openondemand.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/openondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/openondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/openondemand.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/processamento/uso/politicadeuso.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/politicadeuso.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/politicadeuso.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/politicadeuso.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/processamento/uso/templates-jobs.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/processamento/uso/templates-jobs.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/processamento/uso/templates-jobs.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/processamento/uso/templates-jobs.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/index.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/index.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/index.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/index.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/des.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/des.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/des.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/des.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/jupyter.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/jupyter.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/jupyter.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/jupyter.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/linea-occulation-prediction-database.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/linea-occulation-prediction-database.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/linea-occulation-prediction-database.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/linea-occulation-prediction-database.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/manga.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/manga.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/manga.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/manga.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/ondemand.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/ondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/ondemand.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/ondemand.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/pz_server.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/pz_server.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/pz_server.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/pz_server.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/pz_server_crc.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/pz_server_crc.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/pz_server_crc.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/pz_server_crc.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/pz_server_old.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/pz_server_old.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/pz_server_tsm.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/pz_server_tsm.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/pz_server_tsm.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/pz_server_tsm.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/sci_server.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/sci_server.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/sci_server.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/sci_server.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/sdss_sky_server.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/sdss_sky_server.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/sdss_sky_server.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/sdss_sky_server.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/sky_viewer.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/sky_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/sky_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/sky_viewer.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/solar-system-portal.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/solar-system-portal.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/solar-system-portal.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/solar-system-portal.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/target_viewer.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/target_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/target_viewer.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/target_viewer.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/sci-platforms/user_query.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/sci-platforms/user_query.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/sci-platforms/user_query.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/sci-platforms/user_query.html"/>
+    </url>
+    <url>
+        <loc>https://docs.linea.org.br/es/exemplos/exemplos.html</loc>
+        <lastmod>2025-11-06</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs.linea.org.br/es/exemplos/exemplos.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs.linea.org.br/en/exemplos/exemplos.html"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://docs.linea.org.br/exemplos/exemplos.html"/>
+    </url>
+</urlset>

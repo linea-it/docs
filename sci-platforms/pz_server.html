@@ -1,0 +1,1616 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="LIneA team">
+      
+      
+        <link rel="canonical" href="https://docs.linea.org.br/sci-platforms/pz_server.html">
+      
+      <link rel="icon" href="../images/linea_favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>LSST Photo-z Server - Documentação para Usuários</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+
+<script async src="https://siteimproveanalytics.com/js/siteanalyze_6025767.js"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto,+Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto, Arial";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aviso" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../index.html" title="Documentação para Usuários" class="md-header__button md-logo" aria-label="Documentação para Usuários" data-md-component="logo">
+      
+  <img src="../images/linea.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação para Usuários
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              LSST Photo-z Server
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Selecione o idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="pz_server.html" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../en/sci-platforms/pz_server.html" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../es/sci-platforms/pz_server.html" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linea-it/docs" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linea-it/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Documentação para Usuários" class="md-nav__button md-logo" aria-label="Documentação para Usuários" data-md-component="logo">
+      
+  <img src="../images/linea.png" alt="logo">
+
+    </a>
+    Documentação para Usuários
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linea-it/docs" title="Ir ao repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linea-it/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Início
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeiros_passos.html" class="md-nav__link">
+        Primeiros passos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="index.html">Plataformas Científicas</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Plataformas Científicas" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Plataformas Científicas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="jupyter.html" class="md-nav__link">
+        JupyterHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ondemand.html" class="md-nav__link">
+        OnDemand
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_query.html" class="md-nav__link">
+        User Query
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pt/sci-platforms/user_query.html#tap-service" class="md-nav__link">
+        TAP Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sky_viewer.html" class="md-nav__link">
+        Sky Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="target_viewer.html" class="md-nav__link">
+        Target Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sci_server.html" class="md-nav__link">
+        DES Science Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="linea-occulation-prediction-database.html" class="md-nav__link">
+        Occultation Predictions Database
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sdss_sky_server.html" class="md-nav__link">
+        SDSS Sky Sever
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          LSST Photo-z Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="pz_server.html" class="md-nav__link md-nav__link--active">
+        LSST Photo-z Server
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aviso" class="md-nav__link">
+    Aviso
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-do-photo-z-server" class="md-nav__link">
+    Site do Photo-z Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-de-um-novo-produto-de-dados" class="md-nav__link">
+    Upload de um novo produto de dados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-de-um-produto-de-dados" class="md-nav__link">
+    Download de um produto de dados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compartilhar-produtos-de-dados" class="md-nav__link">
+    Compartilhar produtos de dados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-produtos" class="md-nav__link">
+    Tipos de produtos
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de produtos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reference-redshift-catalog" class="md-nav__link">
+    Reference Redshift Catalog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-set" class="md-nav__link">
+    Training Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-results" class="md-nav__link">
+    Training Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-results" class="md-nav__link">
+    Validation Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#photo-z-estimates" class="md-nav__link">
+    Photo-z Estimates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-python-library" class="md-nav__link">
+    API &amp; Python library
+  </a>
+  
+    <nav class="md-nav" aria-label="API &amp; Python library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-notebook" class="md-nav__link">
+    Tutorial notebook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-de-acesso" class="md-nav__link">
+    Token de acesso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-basicos" class="md-nav__link">
+    Comandos básicos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#photo-z-server-pipelines" class="md-nav__link">
+    Photo-z Server pipelines
+  </a>
+  
+    <nav class="md-nav" aria-label="Photo-z Server pipelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#combine-redshift-catalog" class="md-nav__link">
+    Combine Redshift Catalog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-set-maker" class="md-nav__link">
+    Training Set Maker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-aberto" class="md-nav__link">
+    Código Aberto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agradecimentos" class="md-nav__link">
+    Agradecimentos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="des.html" class="md-nav__link">
+        DES Science Portal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="solar-system-portal.html" class="md-nav__link">
+        Solar System Portal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="manga.html" class="md-nav__link">
+        MaNGA Portal
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../processamento/index.html">Processamento (HPC)</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Processamento (HPC)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Processamento (HPC)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../processamento/apollo/index.html">Cluster Apollo</a>
+          
+            <label for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Cluster Apollo" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cluster Apollo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/howtouse-HPC.html" class="md-nav__link">
+        Como utilizar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/apollo/index.html#slurm" class="md-nav__link">
+        Slurm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/openondemand.html" class="md-nav__link">
+        Open OnDemand
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/openondemand.html#jupyterlab" class="md-nav__link">
+        JupyterLab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/templates-jobs.html" class="md-nav__link">
+        Job Script (exemplos)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../armazenamento/index.html">Armazenamento</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Armazenamento" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Armazenamento
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../data/index.html">Dados</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Dados" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Dados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../politicas.html" class="md-nav__link">
+        Políticas
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cursos.html" class="md-nav__link">
+        Cursos e Tutoriais
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossario.html" class="md-nav__link">
+        Glossário
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../suporte.html" class="md-nav__link">
+        Suporte
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aviso" class="md-nav__link">
+    Aviso
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-do-photo-z-server" class="md-nav__link">
+    Site do Photo-z Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upload-de-um-novo-produto-de-dados" class="md-nav__link">
+    Upload de um novo produto de dados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-de-um-produto-de-dados" class="md-nav__link">
+    Download de um produto de dados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compartilhar-produtos-de-dados" class="md-nav__link">
+    Compartilhar produtos de dados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-produtos" class="md-nav__link">
+    Tipos de produtos
+  </a>
+  
+    <nav class="md-nav" aria-label="Tipos de produtos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reference-redshift-catalog" class="md-nav__link">
+    Reference Redshift Catalog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-set" class="md-nav__link">
+    Training Set
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-results" class="md-nav__link">
+    Training Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-results" class="md-nav__link">
+    Validation Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#photo-z-estimates" class="md-nav__link">
+    Photo-z Estimates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-python-library" class="md-nav__link">
+    API &amp; Python library
+  </a>
+  
+    <nav class="md-nav" aria-label="API &amp; Python library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-notebook" class="md-nav__link">
+    Tutorial notebook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-de-acesso" class="md-nav__link">
+    Token de acesso
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-basicos" class="md-nav__link">
+    Comandos básicos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#photo-z-server-pipelines" class="md-nav__link">
+    Photo-z Server pipelines
+  </a>
+  
+    <nav class="md-nav" aria-label="Photo-z Server pipelines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#combine-redshift-catalog" class="md-nav__link">
+    Combine Redshift Catalog
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-set-maker" class="md-nav__link">
+    Training Set Maker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codigo-aberto" class="md-nav__link">
+    Código Aberto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agradecimentos" class="md-nav__link">
+    Agradecimentos
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/linea-it/docs/edit/main/docs/pt/sci-platforms/pz_server.md" title="Editar esta página" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>LSST Photo-z Server</h1>
+
+<h3 id="aviso">Aviso<a class="headerlink" href="#aviso" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Aviso sobre a versão PT-BR</p>
+<p>Esta é uma tradução do documento original disponível em inglês. Optamos por não traduzir os nomes dos pipelines e tipos de produtos para manter os nomes consistentes com os que aparecem no Photo-z Server. Além disso, não traduzimos trechos de código para mantê-los consistentes com o tutorial disponibilizado como Jupyter notebook no repositório da biblioteca Python <code>pzserver</code>.  </p>
+</div>
+<h3 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h3>
+<p>Inspirado no DES Science Portal (<a href="https://www.sciencedirect.com/science/article/abs/pii/S2213133718300891?via%3Dihub" target="_blank">Gschwend et al., 2018</a>; <a href="https://www.sciencedirect.com/science/article/abs/pii/S2213133717300975" target="_blank">Fausti Neto et al., 2018</a>), o <a href="https://pzserver.linea.org.br/">Photo-z Server</a> é um serviço online complementar ao Rubin Science Platform (RSP) para hospedar e produzir produtos de dados leves relacionados ao photo-z e oferecer ferramentas de gerenciamento de dados que permitam o compartilhamento de produtos de dados entre usuários do RSP, anexar e compartilhar metadados relevantes e auxiliar no rastreamento de proveniência.</p>
+<p>O serviço está hospedado no Brazilian Independent Data Access Center (<a href="https://scienceplatform.linea.org.br/idac">IDAC</a>) e está aberto a toda a Comunidade LSST, sem restrições geográficas. Ele foi projetado para ser o mais amplo e genérico possível, a fim de ser útil a todas as Colaborações Científicas do LSST que trabalham com produtos de dados de photo-z. Conforme exigido pelo programa de contribuições <em>in-kind</em> do LSST, o código-fonte está disponível publicamente no <a href="https://github.com/linea-it/pzserver_app" target="_blank">GitHub</a>.</p>
+<p>O Photo-z Server foi projetado para auxiliar os usuários do RSP a participar do Photo-z (PZ) Validation Cooperative. Esta iniciativa da equipe de Data Management (DM) ocorrerá durante a fase de comissionamento do LSST (consulte a nota técnica <a href="https://dmtn-049.lsst.io/">dmtn-049</a> para obter detalhes). O PZ Coordination Group receberá credenciais de usuário administrador com permissões especiais para adicionar produtos de dados marcados como <em>official data products</em>. Isso incluirá conjuntos padronizados de treinamento e validação utilizados para comparações de desempenho de algoritmos, bem como um meio de coletar resultados de múltiplos usuários.</p>
+<p>Além do PZ Validation Cooperative, o Photo-z Server continuará sendo um recurso para a Comunidade LSST nos próximos anos. Os usuários do RSP podem continuar a usá-lo para organizar, rastrear e compartilhar arquivos leves contendo diversos resultados de testes.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Datasets</p>
+<p>Os administradores do Photo-z Server mantêm e atualizam periodicamente uma lista selecionada de conjuntos de dados para dar suporte à Comunidade LSST com produtos de dados relacionados ao Photo-z. Descrições detalhadas e links para cada produto de dados estão disponíveis em uma <a href="https://data.linea.org.br/sci_products/pzserver.html">página separada</a>.</p>
+</div>
+<h3 id="site-do-photo-z-server">Site do Photo-z Server<a class="headerlink" href="#site-do-photo-z-server" title="Permanent link">&para;</a></h3>
+<p>A interface principal do Photo-z Server é o seu site no endereço <a href="https://pzserver.linea.org.br/">pzserver.linea.org.br</a>.</p>
+<p align="center">
+<img src="../../images/pz-server-landing-page.png" alt="Página Inicial do Photo-z Server">
+</p>
+
+<p>Os três cards na página inicial levam à lista de produtos de dados (esquerda e centro) ou aos pipelines do Photo-z Server (direita).</p>
+<p>Na página da lista de produtos de dados, os usuários podem navegar, pesquisar e filtrar os produtos enviados por outros usuários ou criados com um pipelines do Photo-z Server. Os produtos de dados enviados para o PZ Server tornam-se automaticamente visíveis, baixáveis e compartilháveis com todos os usuários registrados.</p>
+<p align="center">
+<img src="../../images/pz-server-user-data-products.png" alt="Página da Lista de Produtos de Dados do Photo-z Server">
+</p>
+
+<h3 id="upload-de-um-novo-produto-de-dados">Upload de um novo produto de dados<a class="headerlink" href="#upload-de-um-novo-produto-de-dados" title="Permanent link">&para;</a></h3>
+<p>Para fazer upload de um novo produto de dados, clique no botão <strong>NOVO PRODUTO</strong> no canto superior direito da <a href="https://pzserver.linea.org.br/user_products">User-generated Data Products page</a> e preencha o formulário com os metadados relevantes em quatro etapas:</p>
+<p><strong>Etapa 1:</strong> Informe um nome curto e mnemônico para o seu novo produto de dados. Selecione o tipo de produto de dados que você está carregando (por exemplo, Reference Redshift Catalog, Training Set, etc.) e ao release ao qual ele pertence (se aplicável).</p>
+<p align="center">
+<img src="../../images/pz-server-upload-form-step1.png" alt="Formulário de Upload do Photo-z Server - Etapa 1">
+</p>
+
+<p><strong>Etapa 2:</strong> Selecione o arquivo principal e quantos arquivos auxiliares desejar enviar. O arquivo principal contém o produto de dados em si, enquanto os arquivos auxiliares podem incluir documentação, descrição ou qualquer outra informação relevante sobre o produto de dados.</p>
+<p>Se o produto de dados for tabular, a ferramenta de upload pode exigir formatos de arquivo específicos, dependendo do tipo. Os formatos atualmente suportados são: CSV, FITS, HDF5 e Parquet. Entre em contato com a <a href="mailto:pzserver-admin@linea.org.br">equipe de desenvolvimento</a> se o seu caso científico exigir um formato de arquivo diferente ou se o arquivo for maior que o limite de 200 MB.</p>
+<p align="center">
+<img src="../../images/pz-server-upload-form-step2.png" alt="Formulário de Upload do Photo-z Server - Etapa 2">
+</p>
+
+<p><strong>Etapa 3:</strong> Se o produto de dados for um Reference Redshift Catalog ou um Training Set, algumas colunas são obrigatórias. Os nomes das colunas são livres, mas você deve fornecer a associação com seu significado e <a href="https://www.ivoa.net/documents/REC/UCD/UCD-20050812.html">UCDs no padrão IVOA</a>, como na figura abaixo.</p>
+<p align="center">
+<img src="../../images/pz-server-upload-form-step3.png" alt="Formulário de Upload do Photo-z Server - Etapa 3">
+</p>
+
+<p><strong>Etapa 4:</strong> Revise suas informações e volte aos passos anteriores, se necessário. Não se esqueça de clicar no botão FINISH na parte inferior da página para enviar seu produto de dados.</p>
+<p align="center">
+<img src="../../images/pz-server-upload-form-step4.png" alt="Formulário de Upload do Photo-z Server - Etapa 4">
+</p>
+
+<h3 id="download-de-um-produto-de-dados">Download de um produto de dados<a class="headerlink" href="#download-de-um-produto-de-dados" title="Permanent link">&para;</a></h3>
+<p>Para baixar um produto de dados, clique no ícone <img src="../../images/pz-server-download-icon.png" width="30" style="vertical-align: middle;"> na linha do produto na <a href="https://pzserver.linea.org.br/user_products">página Produtos de Dados Gerados pelo Usuário</a>. O clique acionará a preparação de um arquivo .zip compactado com todo o conteúdo do produto de dados, incluindo arquivos de descrição auxiliares.</p>
+<p>Há também um botão na página de detalhes do produto, que pode ser acessada clicando no nome do produto na lista.</p>
+<p align="center">
+<img src="../../images/pz-server-product-details-page.png" alt="Página de Detalhes do Produto do Photo-z Server">
+</p>
+
+<h3 id="compartilhar-produtos-de-dados">Compartilhar produtos de dados<a class="headerlink" href="#compartilhar-produtos-de-dados" title="Permanent link">&para;</a></h3>
+<p>Para compartilhar um produto de dados, clique no ícone <img src="../../images/pz-server-share-icon.png" width="30" style="vertical-align: middle;"> na linha do produto na <a href="https://pzserver.linea.org.br/user_products">página Produtos de Dados Gerados pelo Usuário</a> ou na página de detalhes do produto. O clique abrirá uma janela pop-up com o <strong>internal_name</strong> e o endereço URL do produto. Você pode copiar as informações para compartilhá-las com outros usuários.</p>
+<div class="admonition info">
+<p class="admonition-title">internal_name</p>
+<p>Cada produto de dados possui um nome único ("<strong>internal_name</strong>"), composto automaticamente pelo sistema como um número <strong>id</strong> único seguido pelo nome escolhido pelo usuário, com espaços substituídos por sublinhados. Este nome é o endereço URL da página de detalhes do produto de dados no site do Photo-z Server:</p>
+<p><p align="center"> <a href="https://pzserver.linea.org.br/product/internal_name">https://pzserver.linea.org.br/product/internal_name</a> </p></p>
+<p>e é a chave para acessar os dados usando a API Python do Photo-z Server (veja os detalhes abaixo). A maneira mais fácil de compartilhar um produto de dados é fornecendo o <strong>internal_name</strong> ou a URL do produto, que leva à página de download do produto.</p>
+</div>
+<h2 id="tipos-de-produtos">Tipos de produtos<a class="headerlink" href="#tipos-de-produtos" title="Permanent link">&para;</a></h2>
+<h3 id="reference-redshift-catalog">Reference Redshift Catalog<a class="headerlink" href="#reference-redshift-catalog" title="Permanent link">&para;</a></h3>
+<p>No contexto do PZ Server, Reference Redshift Catalogs são definidos como qualquer catálogo contendo coordenadas equatoriais esféricas e medidas de redshift (geralmente medidas espectroscópicas ou redshift verdadeiros, em caso de simulações).</p>
+<p>Colunas obrigatórias:</p>
+<ul>
+<li>Ascensão reta [graus] - <code>float</code></li>
+<li>Declinação [graus] - <code>float</code></li>
+<li>Redshift - <code>float</code></li>
+</ul>
+<p>Coluna recomendada:</p>
+<ul>
+<li>Erros do redshift - <code>float</code></li>
+</ul>
+<p>Um Catálogo de Desvio para o Vermelho de Referência pode incluir dados de um único levantamento espectroscópico ou uma combinação de dados de várias fontes.</p>
+<div class="admonition warning">
+<p class="admonition-title">Requisitos do pipeline</p>
+<p>Se um Reference Redshift Catalog for destinado a ser utilizado como dado de entrada para o pipeline <em>Combine Redshift Catalogs</em> aplicando o recurso de resolução de duplicatas (consulte <a href="pz_server_crc.html">detalhes do pipeline aqui</a>), recomenda-se incluir as seguintes colunas:</p>
+<ul>
+<li>Indicador de qualidade (associar com <strong>z_flag</strong> na etapa 3 do upload) - <code>integer</code>, <code>float</code> ou <code>string</code> (o sinalizador de qualidade original do catálogo de origem, quando disponível)</li>
+<li>Tipo de medição - <code>string</code> (por exemplo, "s" para "spectroscopic", "g" para "grism/prism", "p" para "photometric", conforme adotado em <a href="https://sitcomtn-154.lsst.io/" target="_blank">SITCOMTN-154</a>)</li>
+<li>Nome do levantamento (associar com <strong>survey</strong> na etapa 3 do upload) - <code>string</code> (ex.: "DESI", "COSMOS2025", "JADES", etc.)</li>
+<li>Outras colunas com informações adicionais que você deseja usar para resolução de duplicatas (ex.: resolução de instrumento).</li>
+</ul>
+</div>
+<h3 id="training-set">Training Set<a class="headerlink" href="#training-set" title="Permanent link">&para;</a></h3>
+<p>No contexto do Photo-z Server, os Training Sets são definidos como o produto da associação espacial entre um determinado Reference Redshift Catalog (levantamento único ou compilação) e os dados fotométricos, neste caso, o LSST Object Catalog. O pipeline <em>Training Set Maker</em> do Photo-z Server permite que os usuários criem Training Sets personalizados com base nos Reference Redshift Catalogs disponíveis (consulte <a href="pz_server_tsm.html">detalhes do pipeline aqui</a>).</p>
+<div class="admonition info">
+<p class="admonition-title">subconjuntos de train/test</p>
+<p>Os training sets comumente divididos em dois ou mais subconjuntos para fins de validação do photo-z. Se o proprietário do training set tiver definido previamente quais objetos devem pertencer a cada subconjunto (treinamento e validação/teste), essas informações devem estar disponíveis como uma coluna extra na tabela ou como instruções claras para reproduzir a separação de subconjuntos na descrição do produto. Para o caso de dois arquivos previamente separados, seus uploads devem ser feitos separadamente, gerando dois produtos de dados independentes, ambos classificados com o tipo de produto "Training Set". A sua destinação pode ser informada explicitamente no nome e/ou descrição do produto. </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">training sets baseados em imagens</p>
+<p>O tipo de produto Training Set aceita apenas dados de catálogos. Training sets baseados em imagens comumente usados por algoritmos de deep-learning não são compatíveis. Nesse caso, utilize o tipo de produto "Other" e forneça uma descrição clara do formato dos dados na descrição do produto.</p>
+</div>
+<p>Para garantir flexibilidade nos observáveis, a única coluna obrigatória é o redshift (<code>float</code>). Outras colunas esperadas são:</p>
+<ul>
+<li><code>objectId</code> do LSST Objects Catalog - <code>integer</code></li>
+<li>Observáveis (magnitudes e/ou cores, ou fluxos) do LSST Objects Catalog - <code>float</code></li>
+<li>Erros dos observáveis - <code>float</code></li>
+<li>Ascensão reta [graus] - <code>float</code></li>
+<li>Declinação [graus] - <code>float</code></li>
+<li>Indicador de Qualidade - <code>integer</code>, <code>float</code> ou <code>string</code></li>
+<li>Indicador de Subconjunto - <code>integer</code>, <code>float</code> ou <code>string</code></li>
+</ul>
+<h3 id="training-results">Training Results<a class="headerlink" href="#training-results" title="Permanent link">&para;</a></h3>
+<p>Os resultados do treinamento de algoritmos baseados machine learning também podem ser hospedados no Photo-z Server para serem compartilhados e reutilizados. Este tipo de produto permite arquivos em formato livre. Quando os resultados do treinamento são gerados com o <a href="https://rail-hub.readthedocs.io/en/latest/source/overview.html#estimation">método <code>inform</code> do RAIL</a>, eles são armazenados como arquivos <em>pickle</em>.</p>
+<h3 id="validation-results">Validation Results<a class="headerlink" href="#validation-results" title="Permanent link">&para;</a></h3>
+<p>O tipo de produto Validation Results destina-se a identificar os resultados de qualquer procedimento de validação de foto-z. Ele pode ser usado para armazenar os resultados da PZ Validation Cooperative ou quaisquer outras tarefas de validação.</p>
+<p>Este tipo de produto é bastante genérico. Ele pode conter estimativas de photo-z (estimativas individuais e/ou PDF) de um conjunto de teste, métricas de validação, gráficos QQ-PIT, etc. Os usuários podem carregar um arquivo principal e uma lista de arquivos auxiliares em qualquer formato.</p>
+<h3 id="photo-z-estimates">Photo-z Estimates<a class="headerlink" href="#photo-z-estimates" title="Permanent link">&para;</a></h3>
+<p>As Estimativas Photo-z são os resultados de qualquer procedimento de estimativa Photo-z, geralmente a saída do <a href="https://rail-hub.readthedocs.io/en/latest/source/overview.html#estimation">método <code>estimate</code> do RAIL</a>. Se os dados forem maiores que o limite de upload de arquivo (200 MB), a entrada do produto armazenará apenas os metadados e as instruções de acesso aos dados devem ser fornecidas no campo de descrição.</p>
+<h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h3>
+<p>Qualquer outro produto de dados que não se enquadre nas categorias anteriores pode ser carregado como um produto do tipo Other. Este é um tipo de produto genérico que permite aos usuários carregar qualquer formato de arquivo e fornecer uma descrição do produto de dados no campo de descrição.</p>
+<h2 id="api-python-library">API &amp; Python library<a class="headerlink" href="#api-python-library" title="Permanent link">&para;</a></h2>
+<p>O Photo-z Server também oferece uma API e uma biblioteca Python para facilitar o acesso de linha de comando a dados e metadados. A API contém funções para explorar os produtos de dados disponíveis, recuperar o conteúdo de um determinado produto de dados para trabalhar na memória ou baixar os arquivos de interesse.</p>
+<p>O pacote Python <code>pzserver</code> é de código aberto e está disponível no <a href="https://github.com/linea-it/pzserver" target="_blank">GitHub</a> e pode ser instalado via pip com:</p>
+<div class="highlight"><pre><span></span><code>pip install pzserver
+</code></pre></div>
+<h3 id="tutorial-notebook">Tutorial notebook<a class="headerlink" href="#tutorial-notebook" title="Permanent link">&para;</a></h3>
+<p>Um <a href="https://github.com/linea-it/pzserver/blob/main/docs/notebooks/pzserver_tutorial.ipynb">notebook de tutorial</a> com exemplos para todos os métodos <code>pzserver</code> está disponível no <a href="https://github.com/linea-it/pzserver">repositório da biblioteca <code>pzserver</code> no GitHub</a>. Há também a <a href="https://linea-it.github.io/pzserver" target="_blank">página de documentação da API</a> com mais detalhes voltados para desenvolvedores.</p>
+<h3 id="token-de-acesso">Token de acesso<a class="headerlink" href="#token-de-acesso" title="Permanent link">&para;</a></h3>
+<p>Após instalada e importada em um ambiente Python, a classe <code>PzServer</code> abre a conexão remota com o banco de dados do PZ Server.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pzserver</span> <span class="kn">import</span> <span class="n">PzServer</span>
+<span class="n">pz_server</span> <span class="o">=</span> <span class="n">PzServer</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="s2">&quot;&lt;cole seu token de acesso aqui&gt;&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Um token de acesso é necessário para autenticação. Os usuários podem gerar o token no site do PZ Server (menu no canto superior direito da página inicial).</p>
+<p><img src="../../images/pz-server-token-menu.png" width=200pt align="top"/> <img src="../../images/pz-server-generate-token.png" width=350pt /></p>
+<h3 id="comandos-basicos">Comandos básicos<a class="headerlink" href="#comandos-basicos" title="Permanent link">&para;</a></h3>
+<p>Comandos básicos para exibir dados e metadados em uma célula do notebook Jupyter (se não estiver em um notebook Jupyter, substitua <code>display</code> por <code>get</code> para retornar os resultados como dicionários Python):</p>
+<div class="highlight"><pre><span></span><code><span class="n">pz_server</span><span class="o">.</span><span class="n">display_product_types</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">pz_server</span><span class="o">.</span><span class="n">display_releases</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">pz_server</span><span class="o">.</span><span class="n">display_products_list</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">pz_server</span><span class="o">.</span><span class="n">display_products_list</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;release&quot;</span><span class="p">:</span> <span class="s2">&quot;DP1&quot;</span><span class="p">,</span>
+                                         <span class="s2">&quot;product_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Training Set&quot;</span><span class="p">})</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">search_results</span> <span class="o">=</span> <span class="n">pz_server</span><span class="o">.</span><span class="n">get_products_list</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;product_type&quot;</span><span class="p">:</span> <span class="s2">&quot;results&quot;</span><span class="p">})</span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span class="n">pz_server</span><span class="o">.</span><span class="n">display_product_metadata</span><span class="p">(</span><span class="nb">id</span> <span class="ow">or</span> <span class="s2">&quot;internal_name&quot;</span><span class="p">)</span>
+</code></pre></div>
+Comandos básicos para baixar ou retornar dados para a memória:</p>
+<div class="highlight"><pre><span></span><code><span class="n">pz_server</span><span class="o">.</span><span class="n">download_product</span><span class="p">(</span><span class="nb">id</span> <span class="ow">or</span> <span class="s2">&quot;internal_name&quot;</span><span class="p">,</span> <span class="n">save_in</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">data</span> <span class="o">=</span> <span class="n">pz_server</span><span class="o">.</span><span class="n">get_product</span><span class="p">(</span><span class="nb">id</span> <span class="ow">or</span> <span class="s2">&quot;internal_name&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Consulte o <a href="https://github.com/linea-it/pzserver/blob/main/docs/notebooks/pzserver_tutorial.ipynb">notebook de tutorial</a> para obter a lista completa de exemplos, incluindo instruções para upload e edição de metadados por meio da biblioteca <code>pzserver</code>.</p>
+<h2 id="photo-z-server-pipelines">Photo-z Server pipelines<a class="headerlink" href="#photo-z-server-pipelines" title="Permanent link">&para;</a></h2>
+<p>Os <a href="https://pzserver.linea.org.br/pz_pipelines">pipelines do Photo-z Server</a> são um conjunto de ferramentas para ajudar os usuários a criar e gerenciar produtos de dados. Os pipelines atualmente disponíveis são (clique nos links para mais detalhes):</p>
+<h3 id="combine-redshift-catalog"><a href="pz_server_crc.html">Combine Redshift Catalog</a><a class="headerlink" href="#combine-redshift-catalog" title="Permanent link">&para;</a></h3>
+<h3 id="training-set-maker"><a href="pz_server_tsm.html">Training Set Maker</a><a class="headerlink" href="#training-set-maker" title="Permanent link">&para;</a></h3>
+<h2 id="codigo-aberto">Código Aberto<a class="headerlink" href="#codigo-aberto" title="Permanent link">&para;</a></h2>
+<p>O Photo-z Server é um projeto de código aberto. Seu código-fonte está disponível nos seguintes repositórios do GitHub:</p>
+<ul>
+<li><a href="https://github.com/linea-it/pzserver_app">pzserver_app</a>: o código principal da aplicação, incluindo a interface web e a API.</li>
+<li><a href="https://github.com/linea-it/pzserver">pzserver</a>: a biblioteca Python utilizada para acessar a API do Photo-z Server.</li>
+<li><a href="https://github.com/linea-it/pzserver_pipelines">pzserver_pipelines</a>: o código das pipelines disponíveis no Photo-z Server.</li>
+<li><a href="https://github.com/linea-it/orchestration">orchestration</a>: a aplicação responsável por enviar as pipelines para o cluster HPC do IDAC e gerenciar sua execução.</li>
+<li><a href="https://github.com/linea-it/pz-lsst-inkind">pz-lsst-inkind</a>: código para tarefas de gerenciamento de dados no programa in-kind do Photo-z Server, incluindo preparação de dados, verificação de qualidade e notebooks de validação das pipelines.</li>
+<li><a href="https://github.com/linea-it/pz-lsst-inkind-doc">pz-lsst-inkind-doc</a>: documentação de alto nível sobre o programa in-kind do Photo-z Server, publicada via GitHub Pages.</li>
+</ul>
+<p>O código está licenciado sob a <a href="https://opensource.org/license/mit">Licença MIT</a>. Contribuições são bem-vindas!</p>
+<h2 id="agradecimentos">Agradecimentos<a class="headerlink" href="#agradecimentos" title="Permanent link">&para;</a></h2>
+<p><em>O Photo-z Server utiliza recursos computacionais do IDAC-Brasil no Laboratório Interinstitucional de e-Astronomia (LIneA) com apoio financeiro do INCT do e-Universo (Processo n.º 465376/2014-2) e do projeto FINEP: LIneA: Centro de e-Ciência para explorar os mistérios do Universo e apoiar projetos de Big Data (ref. n.º 0883/24).</em></p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Última atualização:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 de novembro de 2025 17:48:41">6 de novembro de 2025</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <div>
+        <a href="https://linea.org.br/" title="LIneA" target="_blank">
+          <img alt=LIneA" src="/images/linea-dark-invert.png" height="70" width="90"
+            style="padding: 10px; height: 70px;">
+        </a>
+        <a href="https://linea.org.br/010-ciencia/3-inct-do-e-universo-2/" title="INCT do e-Universo" target="_blank">
+          <img alt="INCT do e-Universo" src="/images/inct_euniverso_logo.png" height="70" style="padding: 10px; height: 70px;">
+        </a>
+        <img alt="IDAC" src="/images/idac.png" height="70" style="height: 70px;">
+      </div>
+
+      <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linea.org.br" target="_blank" rel="noopener" title="www.linea.org.br" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.07 4.93C17.22 3 14.66 1.96 12 2c-2.66-.04-5.21 1-7.06 2.93C3 6.78 1.96 9.34 2 12c-.04 2.66 1 5.21 2.93 7.06C6.78 21 9.34 22.04 12 22c2.66.04 5.21-1 7.06-2.93C21 17.22 22.04 14.66 22 12c.04-2.66-1-5.22-2.93-7.07M17 12v6h-3.5v-5h-3v5H7v-6H5l7-7 7.5 7H17Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/linea-it" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/linea_org" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://instagram.com/linea_org" target="_blank" rel="noopener" title="instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://facebook.com/linea.org" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://youtube.com/@linea_org" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg>
+    </a>
+  
+</div>
+
+    </div>
+  </div>
+  <footer>
+    
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.config.lang": "pt", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Buscar", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version.title": "Selecione a vers\u00e3o"}}</script>
+    
+    <script>
+      var __search = {
+        transform: function (query) {
+          return query
+        }
+      }
+    </script>
+
+    <!-- Force external links to open in a new tab -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select all links inside the documentation
+        document.querySelectorAll("a[href]").forEach(function (link) {
+          // Skip internal anchors and same-origin links
+          const href = link.getAttribute("href");
+          if (
+            href.startsWith("#") ||
+            href.startsWith("/") ||
+            href.startsWith(".") ||
+            link.hostname === window.location.hostname
+          ) {
+            return;
+          }
+          // Set to open in new tab
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener noreferrer");
+        });
+      });
+    </script>
+    
+    
+      <script src="../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
