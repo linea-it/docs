@@ -1,6 +1,6 @@
 # Combine Redshift Catalogs
 
-The **Combine Redshift Catalogs** pipeline allows users to generate a single, unified redshift sample by combining multiple individual redshift catalogs. It uses the [LSDB](https://docs.lsdb.io/en/stable/index.html) library, developed by the [LINCC Frameworks](https://lsstdiscoveryalliance.org/programs/lincc-frameworks/), to perform spatial crossmatching between catalogs and identify multiple measurements of the same galaxy. The pipeline offers flexible options to resolve or retain duplicates.
+The *Combine Redshift Catalogs* pipeline allows users to generate a single, unified redshift sample by combining multiple individual redshift catalogues. It uses the [LSDB](https://docs.lsdb.io/en/stable/index.html) library, developed by [LINCC Frameworks](https://lsstdiscoveryalliance.org/programs/lincc-frameworks/), to perform spatial crossmatching between catalogues and identify multiple measurements of the same galaxy. The pipeline offers flexible options to resolve or retain duplicates.
 
 This process is especially useful for preparing clean redshift samples that can be used as training sets, validation sets, or calibration inputs for photometric redshift (photo-z) estimation.
 
@@ -8,7 +8,7 @@ This process is especially useful for preparing clean redshift samples that can 
 
 ### Photo-z Server website 
 
-When running the pipeline from the [Photo-z Server](https://pzserver.linea.org.br/) GUI, users must provide the following:
+When running the pipeline from the [*Photo-z Server*](https://pzserver.linea.org.br/) GUI, users must provide the following:
 
 1. **Combined catalog name**  
     A short mnemonic name that will be used to register the result in the system, and to find it in the products list in future searches. There is no need to choose a unique name, as the system will automatically append the ID number (automatically generated) to the product's internal name to ensure uniqueness.
@@ -32,7 +32,7 @@ Once these fields are filled in, users can click **Run** to execute the pipeline
 
 ### Photo-z Server API
 
-For instructions on running this pipeline via the Photo-z Server Python library (API), see:  
+For instructions on running this pipeline via the *Photo-z Server* Python library (API), see:  
 https://github.com/linea-it/pzserver/blob/main/docs/notebooks/pzserver_tutorial.ipynb
 
 ### Interpreting `tie_result`

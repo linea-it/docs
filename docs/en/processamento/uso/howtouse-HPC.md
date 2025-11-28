@@ -8,7 +8,7 @@ Access to our cluster can be done through [**Open OnDemand**](../../processament
 
 **Accessing via JupyterLab terminal**
 
-In the [**home screen**](../img/tela-jupyter.png) of your Jupyter Notebook, in the **_"Other"_** section, you will find the terminal button. When clicking it, you will be redirected to a Linux terminal, initially located in your _home_ directory. To access the Apollo Cluster, simply execute the following command:
+In the [**home screen**](../img/tela-jupyter.png) of your Jupyter Notebook, in the **_"Other"_** section, you will find the terminal button. When clicking it, you will be redirected to a Linux terminal, initially located in your _home_ directory. To access the *Apollo Cluster*, simply execute the following command:
 
   ```bash
     ssh loginapl01
@@ -37,8 +37,8 @@ Your `SCRATCH` directory is the place where you can direct your job results file
 
 #### Automatic Scratch cleaning
 
-The **scratch** is a temporary storage area for the output and processing files of the cluster. To maintain the environment organized and ensure space available for all, a **automatic cleaning script** is in force, which is performed **once a week**.
-This process removes **files that have not been accessed within the definite retention period** - Currently, **45 days**.
+The **scratch** is a temporary storage area for the output and processing files of the cluster. To maintain the environment organized and ensure space available for all, an **automatic cleaning script** is in effect, which runs **once a week**.
+This process removes **files that have not been accessed within the defined retention period** - Currently, **45 days**.
 
 Essential configuration files (eg: `.Bashrc`,` .Bash_Profile`, `.ssh`, etc.) are automatically preserved and **do not enter the exclusion process**.
 
@@ -60,7 +60,7 @@ Your `SCRIPTS` directory is where you can store scripts and codes to run in the 
 
 ## How to Submit a Job
 
-A Job requests computing resources and specifies applications to be launched on those resources, along with any input data/options and output directives. Cluster task and resource management is done through Slurm. Therefore, to submit a Job you need to use a script like below:
+A Job requests computing resources and specifies applications to be launched on those resources, along with any input data/options and output directives. Cluster task and resource management is done through *Slurm*. Therefore, to submit a Job you need to use a script like below:
 
 ```bash
   #!/bin/bash
@@ -99,7 +99,7 @@ If the script is correct **there will be an output indicating the job ID**.
   ```
   
 !!! warning "Internet access"
-    Compute nodes **do not** have internet access. Packages and libraries must be installed from _loginapl01_ in your scratch area.
+    Compute nodes **do not** have internet access. Packages and libraries must be installed from _loginapl01_ in your scripts area.
 
 ## EUPS Package Manager
 [EUPS](https://github.com/RobertLuptonTheGood/eups) is an alternative package manager (and official LSST one) that allows loading environment variables and including paths to programs and libraries in a modular way.
@@ -107,7 +107,7 @@ If the script is correct **there will be an output indicating the job ID**.
 - **To load EUPS:**
 
 !!! info
-    Currently, EUPS is automatically loaded after the user logs into any machine in the Apollo cluster.
+    Currently, EUPS is automatically loaded after the user logs into any machine in the *Apollo cluster*.
 
   ```bash
     source /opt/eups/bin/setups.sh
@@ -138,14 +138,14 @@ If the script is correct **there will be an output indicating the job ID**.
     unsetup <PACKAGE NAME> <PACKAGE VERSION>
   ```
 
-## Useful Slurm Commands
+## Useful *Slurm* Commands
 To learn about all available options for each command, enter `man <command>` while connected to the Cluster environment.
 
 | Command  | Definition                                                           |
 | -------- | -------------------------------------------------------------------- |
 | sbatch   | Submits job scripts to execution queue                               |
 | squeue   | Displays job status                                                  |
-| scontrol | Used to display Slurm state (various options available only to root) |
+| scontrol | Used to display *Slurm* state (various options available only to root) |
 | sinfo    | Displays partition and node status                                   |
 | salloc   | Submits a job for execution or starts a real-time job                |
 

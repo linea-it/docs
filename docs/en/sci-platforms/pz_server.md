@@ -1,23 +1,23 @@
 ### Introduction 
 
-Inspired by the DES Science Portal ([Gschwend et al., 2018](https://www.sciencedirect.com/science/article/abs/pii/S2213133718300891?via%3Dihub){:target="_blank"}; [Fausti Neto et al., 2018](https://www.sciencedirect.com/science/article/abs/pii/S2213133717300975){:target="_blank"}), the [Photo-z Server](https://pzserver.linea.org.br/) is an online service complementary to the Rubin Science Platform (RSP) to host and produce photo-z-related lightweight data products and to offer data management tools that allow sharing data products among RSP users, attach and share relevant metadata, and assist in provenance tracking. 
+Inspired by the *DES Science Portal* ([Gschwend et al., 2018](https://www.sciencedirect.com/science/article/abs/pii/S2213133718300891?via%3Dihub){:target="_blank"}; [Fausti Neto et al., 2018](https://www.sciencedirect.com/science/article/abs/pii/S2213133717300975){:target="_blank"}), the [*Photo-z Server*](https://pzserver.linea.org.br/) is an online service complementary to the Rubin Science Platform (RSP) to host and produce photo-z-related lightweight data products and to offer data management tools that allow sharing data products among RSP users, attach and share relevant metadata, and assist in provenance tracking. 
  
 The service is hosted at the Brazilian Independent Data Access Center ([IDAC](https://scienceplatform.linea.org.br/idac)) and is open to the whole LSST Community without geographic constraints. It is designed to be as broad and generic as possible to be helpful for all LSST Science Collaborations working with photo-z data products. As required by the LSST in-kind program, the source code will be publicly available on [GitHub](https://github.com/linea-it/pzserver_app){:target="_blank"}.
 
 
-The Photo-z Server was conceived to support RSP users participating in the Photo-z (PZ) Validation Cooperative, an initiative led by the Data Management (DM) team during the LSST commissioning phase (see technical note [DMTN-049](https://dmtn-049.lsst.io/) for details). Members of the PZ Coordination Group will be granted administrative credentials with special permissions to upload data products marked as _official data products_. These will include standardized training and validation sets used for algorithm performance comparisons, as well as a means to collect results from multiple users.
+The *Photo-z Server* was conceived to support RSP users participating in the Photo-z (PZ) Validation Cooperative, an initiative led by the Data Management (DM) team during the LSST commissioning phase (see technical note [DMTN-049](https://dmtn-049.lsst.io/) for details). Members of the PZ Coordination Group will be granted administrative credentials with special permissions to upload data products marked as _official data products_. These will include standardized training and validation sets used for algorithm performance comparisons, as well as a means to collect results from multiple users.
 
-Beyond the PZ Validation Cooperative, the Photo-z Server will remain a resource for the LSST Community in the years to follow. RSP users can continue using it to organize, track, and share lightweight files containing diverse test results.
+Beyond the PZ Validation Cooperative, the *Photo-z Server* will remain a resource for the LSST Community in the years to follow. RSP users can continue using it to organize, track, and share lightweight files containing diverse test results.
 
 
 !!! abstract "Datasets"
-     The Photo-z Server administrators maintain and periodically update a curated list of data resources to support the LSST Community with photo-z-related data products. Detailed descriptions and links to each data product are available on a [separate page](https://data.linea.org.br/en/sci_products/pzserver.html).
+     The *Photo-z Server* administrators maintain and periodically update a curated list of data resources to support the LSST Community with photo-z-related data products. Detailed descriptions and links to each data product are available on a [separate page](https://data.linea.org.br/en/sci_products/pzserver.html).
 
 
 
 ### Photo-z Server website
 
-The main user interface of the Photo-z Server website is its website at [pzserver.linea.org.br](https://pzserver.linea.org.br/). 
+The main user interface of the *Photo-z Server* is its website at [pzserver.linea.org.br](https://pzserver.linea.org.br/). 
 
 
 <p align="center">
@@ -25,9 +25,9 @@ The main user interface of the Photo-z Server website is its website at [pzserve
 </p>
 
 
-The three cards on the landing page lead to the list of data products (left and center) or to the Photo-z Server pipelines (right). 
+The three cards on the landing page lead to the list of data products (left and center) or to the *Photo-z Server* pipelines (right). 
 
-On the data products list page, users can browse, search and filter the products uploaded by users or created with a Photo-z Server pipeline. The data products uploaded on the Photo-z Server become automatically visible, downloadable and shareable to all registered users.    
+On the data products list page, users can browse, search and filter the products uploaded by users or created with a *Photo-z Server* pipeline. The data products uploaded on the *Photo-z Server* become automatically visible, downloadable and shareable to all registered users.    
 
 <p align="center">
   <img src="../../images/pz-server-user-data-products.png" alt="Photo-z Server Data Products List Page">
@@ -82,11 +82,11 @@ To share a data product, click on the <img src="../../images/pz-server-share-ico
 
 
 !!! info "internal_name"
-    Each data product has a unique name ("**internal_name**") automatically composed by the system as a unique **id** number followed by the name chosen by the user with spaces replaced by underlines. This name is the URL address of the data product's details page on the Photo-z Server website: 
+    Each data product has a unique name ("**internal_name**") automatically composed by the system as a unique **id** number followed by the name chosen by the user with spaces replaced by underlines. This name is the URL address of the data product's details page on the *Photo-z Server* website: 
   
     <p align="center"> https://pzserver.linea.org.br/product/internal_name </p>
      
-    and is the key to access the data using the Photo-z Server Python API (see details below). The easiest way to share a data product is by providing the product's **internal_name** or URL, which leads to the product's download page.
+    and is the key to access the data using the *Photo-z Server* Python API (see details below). The easiest way to share a data product is by providing the product's **internal_name** or URL, which leads to the product's download page.
 
 
 
@@ -95,7 +95,7 @@ To share a data product, click on the <img src="../../images/pz-server-share-ico
 
 ### Reference Redshift Catalog
 
-In the context of the Photo-z Server, Reference Redshift Catalogs are defined as any catalog containing spherical equatorial coordinates and redshift measurements (usually spectroscopic or true redshifts for simulations). 
+In the context of the *Photo-z Server*, Reference Redshift Catalogs are defined as any catalog containing spherical equatorial coordinates and redshift measurements (usually spectroscopic or true redshifts for simulations). 
 
 Mandatory columns:
 
@@ -121,7 +121,7 @@ A Reference Redshift Catalog can include data from a single spectroscopic survey
 
 ### Training Set
  
-In the context of the Photo-z Server, Training Sets are defined as the product of the spatial cross-matching between a given Reference Redshift Catalog (single survey or compilation) and the photometric data, in this case, the LSST Object Catalog. The Photo-z Server's *Training Set Maker* pipeline allows users to build customized Training Sets based on the available Reference Redshift Catalogs (see [pipeline details here](./pz_server_tsm.md)).    
+In the context of the *Photo-z Server*, Training Sets are defined as the product of the spatial cross-matching between a given Reference Redshift Catalog (single survey or compilation) and the photometric data, in this case, the LSST Object Catalog. The *Photo-z Server's* *Training Set Maker* pipeline allows users to build customized Training Sets based on the available Reference Redshift Catalogs (see [pipeline details here](./pz_server_tsm.md)).    
 
 !!! info "train/test subsets" 
     Training sets are commonly split into two or more subsets for photo-z validation purposes. If the Training Set owner has previously defined which objects should belong to each subset (training and validation/test sets), this information must be available as an extra column in the table or as clear instructions for reproducing the subset separation in the data product description. For two separate files each one must be uploaded separately and will become an independent data product, both with product type set as "Training Set", and their destination can be explicitly informed in the product name and/or description.
@@ -143,7 +143,7 @@ To ensure flexibility in the observables, the only mandatory column is the redsh
 
 ### Training Results
 
-The training results of machine learning-based algorithms can also be hosted in the Photo-z Server to be shared and reused. This product type allows files in free format. When the training results are generated with [RAIL's `inform` method](https://rail-hub.readthedocs.io/en/latest/source/overview.html#estimation), they are stored as *pickle* files. 
+The training results of machine learning-based algorithms can also be hosted in the *Photo-z Server* to be shared and reused. This product type allows files in free format. When the training results are generated with [RAIL's `inform` method](https://rail-hub.readthedocs.io/en/latest/source/overview.html#estimation), they are stored as *pickle* files. 
 
 
 ### Validation Results
@@ -166,7 +166,7 @@ Any other data product that does not fit in the previous categories can be uploa
 
 ## API & Python library 
 
-The Photo-z Server also offers an API and a Python library to facilitate the command-line access of data and metadata. The API contains functions to explore the data products available, retrieve the contents of a given data product to work on memory or download the files of interest. 
+The *Photo-z Server* also offers an API and a Python library to facilitate the command-line access of data and metadata. The API contains functions to explore the data products available, retrieve the contents of a given data product to work on memory or download the files of interest. 
 
 The Python package `pzserver` is open source available on [GitHub](https://github.com/linea-it/pzserver){:target="_blank"} and is installable via pip with: 
 
@@ -181,14 +181,14 @@ A [tutorial notebook](https://github.com/linea-it/pzserver/blob/main/docs/notebo
 
 ### Access token 
 
-Once installed and imported in a Python environment, the `PzServer` class opens the remote connection to the Photo-z Server database. 
+Once installed and imported in a Python environment, the `PzServer` class opens the remote connection to the *Photo-z Server* database. 
 
 ```python
 from pzserver import PzServer
 pz_server = PzServer(token="<paste your access token here>")  
 ``` 
 
-An access token is required for authentication. Users can generate the token on the Photo-z Server website (top right corner menu on the home page).    
+An access token is required for authentication. Users can generate the token on the *Photo-z Server* website (top right corner menu on the home page).    
 
 
 
@@ -240,7 +240,7 @@ See the [tutorial notebook](https://github.com/linea-it/pzserver/blob/main/docs/
 
 ## Photo-z Server pipelines 
 
-The [Photo-z Server pipelines](https://pzserver.linea.org.br/pz_pipelines) are a set of tools to help users create and manage data products. The pipelines available now are (click on the links for more details): 
+The [*Photo-z Server* pipelines](https://pzserver.linea.org.br/pz_pipelines) are a set of tools to help users create and manage data products. The pipelines available now are (click on the links for more details): 
 
 ### [Combine Redshift Catalogs](./pz_server_crc.md)
 
@@ -250,21 +250,21 @@ The [Photo-z Server pipelines](https://pzserver.linea.org.br/pz_pipelines) are a
 
 ## Open Source Code
 
-The Photo-z Server is an open-source project. Its source code is available in the following GitHub repositories:
+The *Photo-z Server* is an open-source project. Its source code is available in the following GitHub repositories:
 
 * [pzserver\_app](https://github.com/linea-it/pzserver_app): the main application code, including the web interface and API.
-* [pzserver](https://github.com/linea-it/pzserver): the Python library used to access the Photo-z Server API.
-* [pzserver\_pipelines](https://github.com/linea-it/pzserver_pipelines): the pipeline code available on the Photo-z Server.
+* [pzserver](https://github.com/linea-it/pzserver): the Python library used to access the *Photo-z Server* API.
+* [pzserver\_pipelines](https://github.com/linea-it/pzserver_pipelines): the pipeline code available on the *Photo-z Server*.
 * [orchestration](https://github.com/linea-it/orchestration): the application responsible for submitting pipelines to the IDAC HPC cluster and managing their execution.
-* [pz-lsst-inkind](https://github.com/linea-it/pz-lsst-inkind): code for data management tasks in the Photo-z Server's in-kind program, including data preparation, quality assurance, and pipeline validation notebooks.
-* [pz-lsst-inkind-doc](https://github.com/linea-it/pz-lsst-inkind-doc): high-level documentation for the Photo-z Server in-kind program, published via GitHub Pages.
+* [pz-lsst-inkind](https://github.com/linea-it/pz-lsst-inkind): code for data management tasks in the *Photo-z Server's* in-kind program, including data preparation, quality assurance, and pipeline validation notebooks.
+* [pz-lsst-inkind-doc](https://github.com/linea-it/pz-lsst-inkind-doc): high-level documentation for the *Photo-z Server* in-kind program, published via GitHub Pages.
 
 The code is licensed under the [MIT License](https://opensource.org/license/mit). Contributions are welcome!
 
 
 ## Acknowledgement 
 
-_The Photo-z Server uses computational resources of IDAC-Brazil at the Laboratório Interinstitucional de e-Astronomia (LIneA) with financial support from INCT do e-Universo (Process no. 465376/2014-2) and FINEP project: LIneA: e-Science Center for exploring the mysteries of the Universe and support Big Data projects (ref no. 0883/24)._  
+_The *Photo-z Server* uses computational resources of IDAC-Brazil at the Laboratório Interinstitucional de e-Astronomia (LIneA) with financial support from INCT do e-Universo (Process no. 465376/2014-2) and FINEP project: LIneA: e-Science Center for exploring the mysteries of the Universe and support Big Data projects (ref no. 0883/24)._  
 
 
 

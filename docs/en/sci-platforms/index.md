@@ -1,13 +1,13 @@
 ## LIneA Science Platform
-The LIneA Science Platform (**scienceplatform.linea.org.br**) is an online platform, still under development, that will aggregate a set of services and tools offered to facilitate access and analysis of astronomical data hosted at LIneA. Currently, a test version of the platform is available for user evaluation at [**scienceplatform-dev.linea.org.br/lsp**](https://scienceplatform-dev.linea.org.br/lsp).
+The LIneA Science Platform (**scienceplatform.linea.org.br**) is an online platform that aggregates a set of services and tools designed to facilitate access and analysis of astronomical data hosted at LIneA. The platform is available at [**scienceplatform.linea.org.br/lsp**](https://scienceplatform.linea.org.br/lsp).
 
 ### IDAC Science Platform
-During the operation of the [LSST](https://rubinobservatory.org/) survey, a reduced version of the LIneA Science Platform, containing only services related to the LSST project, will be the main access point to data hosted at the [_Brazilian Independent Data Access Center_ (IDAC-Brazil)](https://www.linea.org.br/idac) for scientists in the Brazilian community.
+During the operation of the [LSST](https://rubinobservatory.org/) survey, a reduced version of the LIneA Science Platform, containing only services related to the LSST project, will be the main access point to data hosted at the [*Brazilian Independent Data Access Center* (IDAC-Brazil)](https://www.linea.org.br/idac) for scientists in the Brazilian community.
 
-In the years preceding LSST operations, IDAC-Brazil services already provide access to public data from other surveys, such as the [Dark Energy Survey](https://www.darkenergysurvey.org/), so the community can prepare and familiarize themselves with the various tools offered.
+In the years preceding LSST operations, IDAC-Brazil services already provide access to public data from other surveys, such as the *Dark Energy Survey*, so the community can prepare and familiarise themselves with the various tools offered.
 
 ### Services
-Data access services with various tools for processing, exploring, visualizing, and analyzing public and private data.
+Data access services with various tools for processing, exploring, visualising, and analysing public and private data.
 
 #### &nbsp;&nbsp;&nbsp;&nbsp; [JupyterHub](jupyter.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [OnDemand](ondemand.md)
