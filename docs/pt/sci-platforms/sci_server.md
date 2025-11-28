@@ -1,7 +1,7 @@
 
 O [DES Science Server](https://scienceserver.linea.org.br/) é um serviço de visualização de imagens e dados de catálogos que foi desenvolvido como parte da contribuição do LIneA para o levantamento [Dark Energy Survey](https://www.darkenergysurvey.org/) (DES). 
 
-O DES Science Server é composto por microsserviços independentes para atender a diferentes demandas. Para cada um desses microsserviços, uma nova versão mais flexível e moderna está sendo desenvolvida para oferecer acesso aos dados privados do projeto LSST para membros e dados públicos de diversos levantamentos para toda a comunidade, tudo num só lugar (veja detalhes sobre os novos seviços de visualização Sky Viewer e Target Viewer na página [Plataformas Científicas](/sci-platforms/index.html). Sua versão inicial ainda está disponível e oferece acesso às imagens e dados tabulares do DES DR2.
+O DES Science Server é composto por microsserviços independentes para atender a diferentes demandas. Para cada um desses microsserviços, uma nova versão mais flexível e moderna está sendo desenvolvida para oferecer acesso aos dados privados do projeto LSST para membros e dados públicos de diversos levantamentos para toda a comunidade, tudo num só lugar (veja detalhes sobre os novos serviços de visualização Sky Viewer e Target Viewer na página [Plataformas Científicas](./index.md)). Sua versão inicial ainda está disponível e oferece acesso às imagens e dados tabulares do DES DR2.
 
 
 ### Sky Viewer

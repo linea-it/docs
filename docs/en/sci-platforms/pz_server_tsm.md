@@ -1,14 +1,14 @@
 # Training Set Maker 
 
-The **Training Set Maker** pipeline performs the spatial cross-matching between a pre-registered Redshift Catalog and the **LSST Object** catalog in order to create training sets for machine-learning based photo-z algorithms. It relies on the [LSDB](https://docs.lsdb.io/en/stable/index.html) library, developed by the [LINCC Frameworks](https://lsstdiscoveryalliance.org/programs/lincc-frameworks/) to handle the spatially distributed data efficiently and provide flexibility in the observables included in the training set. 
+The *Training Set Maker* pipeline performs the spatial cross-matching between a pre-registered Redshift Catalogue and the *LSST Object* catalogue in order to create training sets for machine-learning based photo-z algorithms. It relies on the [LSDB](https://docs.lsdb.io/en/stable/index.html) library, developed by [LINCC Frameworks](https://lsstdiscoveryalliance.org/programs/lincc-frameworks/), to handle the spatially distributed data efficiently and provide flexibility in the observables included in the training set. 
 
 
 
 ### Run via Photo-z Server website 
 
-The pipeline can be run through the **Photo-z Server** website, which provides a user-friendly interface for configuring the cross-matching parameters, selecting the desired output contents and format.
+The pipeline can be run through the *Photo-z Server* website, which provides a user-friendly interface for configuring the cross-matching parameters, selecting the desired output contents and format.
 
-When running the pipeline from the Photo-z Server UI, users must provide the following information: 
+When running the pipeline from the *Photo-z Server* UI, users must provide the following information: 
 
 1. **Training set name**  
     A short mnemonic name that will be used to register the result in the system, and to find it in the products list in future searches. There is no need to choose a unique name, as the system will automatically append the ID number (automatically generated) to the product's internal name to ensure uniqueness.  
@@ -17,7 +17,7 @@ When running the pipeline from the Photo-z Server UI, users must provide the fol
     Any description or notes about the sample.
 
 3. **Select the Redshift Catalog for the cross-matching**  
-    Choose from the available registered Reference Redshift Catalogs listed on the menu. It can be either the result of a previous run of the **Combine Redshift Catalogs** pipeline or a custom catalog previously uploaded by the user. 
+    Choose from the available registered Reference Redshift Catalogs listed on the menu. It can be either the result of a previous run of the *Combine Redshift Catalogs* pipeline or a custom catalog previously uploaded by the user. 
 
 4. **Select the Object Catalog (photometric data)**   
     Choose between the LSST releases available, e.g., **DP0.2**, **DP1**, etc.  
@@ -57,7 +57,7 @@ When running the pipeline from the Photo-z Server UI, users must provide the fol
     section under construction 
     
 
-### Run via Photo-z Server API
+### Run via the Photo-z Server API
 
 !!! warning
     section under construction

@@ -21,7 +21,7 @@ Ao executar o pipeline pela interface gráfica do [Photo-z Server](https://pzser
    Escolha dois ou mais catálogos já disponíveis no sistema.
 
 4. **Resolver duplicatas**
-     - **Não**: Apenas concatena os catálogos, empilhando as colunas conforme o significado atribuído durante a associação de colunas no momento do upload ([etapa 3 da seção “Upload a new data product”](http://127.0.0.1:8000/en/sci-platforms/pz_server.html#upload-a-new-data-product)).  
+     - **Não**: Apenas concatena os catálogos, empilhando as colunas conforme o significado atribuído durante a associação de colunas no momento do upload ([etapa 3 da seção "Upload a new data product"](./pz_server.md#upload-a-new-data-product)).  
        **Importante:** Mesmo nesse modo, a etapa de preparação ainda é executada e tenta produzir `z_flag_homogenized` e `instrument_type_homogenized` caso ainda não existam. Portanto, erros de validação ainda podem ocorrer (veja os avisos abaixo).
      - **Sim, mas manter todos**: Identifica duplicatas e adiciona a informação `tie_result`, mas mantém todas as entradas.
      - **Sim, e remover duplicatas**: Identifica e **mantém apenas a melhor medição** por galáxia (somente linhas com `tie_result == 1`).

@@ -2,14 +2,14 @@
 
 ## Cómo Acceder
 
-El acceso a nuestro clúster puede realizarse a través de [**Open OnDemand**](../../processamento/uso/openondemand.html) o mediante el Terminal de **JupyterLab (K8S)**. En ambas opciones, es imprescindible poseer una cuenta válida en el entorno computacional de LIneA. Si no tiene una cuenta, contacte al Service Desk por correo (helpdesk@linea.org.br) para más información.
+El acceso a nuestro clúster puede realizarse a través de [**Open OnDemand**](./openondemand.md) o mediante el Terminal de **JupyterLab (K8S)**. En ambas opciones, es imprescindible poseer una cuenta válida en el entorno computacional de LIneA. Si no tiene una cuenta, contacte al Service Desk por correo (helpdesk@linea.org.br) para más información.
 
 !!! warning "Atención"
     Aún teniendo una cuenta activa en LIneA, el acceso al entorno de procesamiento HPC no es automático. Para más información contacte al Service Desk en helpdesk@linea.org.br.
 
 **Accediendo por terminal de JupyterLab**
 
-En la [**pantalla inicial**](../img/tela-jupyter.png) de su Jupyter Notebook, en la sección **_"Other"_**, encontrará el botón del terminal. Al hacer clic en él, será redirigido a un terminal Linux, inicialmente ubicado en su directorio _home_. Para acceder al Cluster Apollo, simplemente ejecute el siguiente comando:
+En la [**pantalla inicial**](../img/tela-jupyter.png) de su Jupyter Notebook, en la sección **_"Other"_**, encontrará el botón del terminal. Al hacer clic en él, será redirigido a un terminal Linux, inicialmente ubicado en su directorio _home_. Para acceder al *Cluster Apollo*, simplemente ejecute el siguiente comando:
 
   ```bash
     ssh loginapl01
@@ -40,7 +40,7 @@ Su directorio de `SCRATCH` es el lugar donde puede dirigir los archivos de resul
 
 Este proceso elimina los **archivos a los que no se ha accedido dentro del período establecido de retención**, actualmente **45 días**.
 
-Los archivos de configuración esenciales (por ejemplo, `.bashrc`, `.bash_profile`, `.ssh`, etc.) se conservan automáticamente y **no ingresan el proceso de exclusión**.
+Los archivos de configuración esenciales (por ejemplo, `.bashrc`, `.bash_profile`, `.ssh`, etc.) se conservan automáticamente y **no entran en el proceso de exclusión**.
 
 !!! danger "Atención"
 	El scratch no debe usarse para el almacenamiento permanente. Recomendamos mover datos importantes a su directorio **home**.
@@ -59,7 +59,7 @@ Su directorio de `SCRIPTS` es el lugar donde puede almacenar scripts, códigos p
 
 ## Cómo Enviar un Job
 
-Un Job solicita recursos de computación y especifica las aplicaciones a iniciar en esos recursos, junto con cualquier dato/opción de entrada y directiva de salida. La gestión y programación de tareas y recursos del clúster se realiza a través de Slurm. Por lo tanto, para enviar un Job necesita usar un script como el siguiente:
+Un Job solicita recursos de computación y especifica las aplicaciones a iniciar en esos recursos, junto con cualquier dato/opción de entrada y directiva de salida. La gestión y programación de tareas y recursos del clúster se realiza a través de *Slurm*. Por lo tanto, para enviar un Job necesita usar un script como el siguiente:
 
 ```bash
   #!/bin/bash
@@ -98,7 +98,7 @@ Si el script es correcto **habrá una salida que indica el ID del job**.
 ```
 
 !!! warning "Acceso a internet"
-    Los nodos de computación **no** tienen acceso a internet. Paquetes y bibliotecas deben instalarse desde _loginapl01_ en su área scratch.
+    Los nodos de computación **no** tienen acceso a internet. Paquetes y bibliotecas deben instalarse desde _loginapl01_ en su área de scripts.
 
 ## Gestor de paquetes EUPS
 
@@ -137,7 +137,7 @@ Si el script es correcto **habrá una salida que indica el ID del job**.
     unsetup <NOMBRE DEL PAQUETE> <VERSIÓN DEL PAQUETE>
   ```
 
-## Comandos útiles de Slurm
+## Comandos útiles de *Slurm*
 
 Para aprender sobre todas las opciones disponibles para cada comando, ingrese `man <comando>` mientras esté conectado al entorno del Cluster.
 
@@ -145,7 +145,7 @@ Para aprender sobre todas las opciones disponibles para cada comando, ingrese `m
 | -------- | ------------------------------------------------------------------------------- |
 | sbatch   | Envía scripts de trabajos a la cola de ejecución                                |
 | squeue   | Muestra estado de los jobs                                                      |
-| scontrol | Usado para mostrar estado de Slurm (varias opciones disponibles solo para root) |
+| scontrol | Usado para mostrar estado de *Slurm* (varias opciones disponibles solo para root) |
 | sinfo    | Muestra estado de particiones y nodos                                           |
 | salloc   | Envía un job para ejecución o inicia un trabajo en tiempo real                  |
 

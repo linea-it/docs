@@ -1,3 +1,20 @@
-Para soporte técnico, contacta a nuestro Service Desk al correo [**helpdesk@linea.org.br**](mailto:helpdesk@linea.org.br). Si es necesario, nuestro equipo puede agendar una videollamada.
 
-Si deseas unirte a la comunidad LIneA y conversar con otros usuarios, haz clic [**aquí**](https://join.slack.com/t/lineausers/shared_invite/zt-1h9nxy1du-iuHtVycWNJGDgDw8SaSmtQ) para recibir una invitación al espacio de trabajo **LIneA Users** en Slack.
+Para soporte técnico, contacte con nuestro *Service Desk* a través del correo electrónico [**helpdesk@linea.org.br**](mailto:helpdesk@linea.org.br). En caso de ser necesario, nuestro equipo podrá programar una atención por videollamada.
+
+
+Si desea formar parte de la comunidad LIneA y conversar con otros usuarios, haga clic [**aquí**](https://join.slack.com/t/lineausers/shared_invite/zt-1h9nxy1du-iuHtVycWNJGDgDw8SaSmtQ) para recibir una invitación al *Workspace* **LIneA Users** en *Slack*.
+
+
+
+
+<!-- **[EN]**
+
+## Help 
+
+Comments, questions, suggestions? If you find something missing in this documentation, be welcome to open an issue on the [LIneA's Documentation repository on GitHub](https://github.com/linea-it/docs). 
+
+For technical support, contact us on [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). 
+
+If you need to talk with our specialists, be welcome to book a slot in the _Office Hours_ service by sending an email to our communications team on [cde@linea.org.br](mailto:cde@linea.org.br).
+
+If you want to be part of the LIneA community and chat with other users, click [here](https://join.slack.com/t/lineausers/shared_invite/zt-1h9nxy1du-iuHtVycWNJGDgDw8SaSmtQ) to receive an invitation for the _LIneA Users_ Workspace on Slack.  -->

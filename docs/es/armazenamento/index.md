@@ -1,6 +1,6 @@
 ## LustreFS (HPC) 
 
-El entorno del clúster Apollo cuenta con un sistema de archivos de alto rendimiento [Lustre](https://www.lustre.org/) con dos niveles (tiers) de almacenamiento: uno en SSD con ~70 TB (T0) y otro en HDD con ~500 TB (T1), ambos conectados a una red Infiniband EDR de 100 Gb/s. Los dos niveles de almacenamiento están disponibles en `/scratch` y `/data`.
+El entorno del *Cluster Apollo* cuenta con un sistema de archivos de alto rendimiento [*Lustre*](https://www.lustre.org/) con dos niveles (tiers) de almacenamiento: uno en SSD con ~70 TB (T0) y otro en HDD con ~500 TB (T1), ambos conectados a una red Infiniband EDR de 100 Gb/s. Los dos niveles de almacenamiento están disponibles en `/scratch` y `/data`.
 
 ### Área de scratch y cuota
 
@@ -32,21 +32,21 @@ Se recomienda a los usuarios transferir los archivos importantes de `$SCRATCH` a
 
 ### Buenas prácticas
 
-Los sistemas de archivos distribuidos como Lustre son ideales para entornos HPC y HTC. En estos entornos, la carga de trabajo típica consiste en archivos grandes que necesitan ser accedidos desde muchos nodos de computación con gran ancho de banda y/o baja latencia. Por lo tanto, estos sistemas de archivos son muy diferentes a los usados en computadoras de escritorio o servidores aislados. Aunque son excelentes para manejar archivos grandes, también presentan fuertes limitaciones al tratar con archivos pequeños y patrones de acceso más comunes en entornos corporativos y de escritorio. Las operaciones que pueden ser extremadamente rápidas en un disco local de estación de trabajo pueden ser dolorosamente lentas y costosas en Lustre, afectando tanto a los usuarios que realizan estas operaciones como, eventualmente, a todos los demás usuarios. Estas mejores prácticas tienen como objetivo permitir un uso tranquilo de Lustre, minimizando operaciones innecesarias o muy costosas.
+Los sistemas de archivos distribuidos como *Lustre* son ideales para entornos HPC y HTC. En estos entornos, la carga de trabajo típica consiste en archivos grandes que necesitan ser accedidos desde muchos nodos de computación con gran ancho de banda y/o baja latencia. Por lo tanto, estos sistemas de archivos son muy diferentes a los usados en computadoras de escritorio o servidores aislados. Aunque son excelentes para manejar archivos grandes, también presentan fuertes limitaciones al tratar con archivos pequeños y patrones de acceso más comunes en entornos corporativos y de escritorio. Las operaciones que pueden ser extremadamente rápidas en un disco local de estación de trabajo pueden ser dolorosamente lentas y costosas en *Lustre*, afectando tanto a los usuarios que realizan estas operaciones como, eventualmente, a todos los demás usuarios. Estas mejores prácticas tienen como objetivo permitir un uso tranquilo de *Lustre*, minimizando operaciones innecesarias o muy costosas.
 
 **Evite acceder a atributos de archivos y directorios**
 
-Acceder a metadatos como atributos de archivo (tipo, propiedad, protección, tamaño, fechas, etc.) en Lustre consume muchos recursos y puede degradar el rendimiento, especialmente cuando se realiza con frecuencia o en directorios con muchos archivos. Minimice el uso de llamadas al sistema que accedan o modifiquen estos atributos, como `stat()`, `statx()`, `open()`, `openat()`, etc.
+Acceder a metadatos como atributos de archivo (tipo, propiedad, protección, tamaño, fechas, etc.) en *Lustre* consume muchos recursos y puede degradar el rendimiento, especialmente cuando se realiza con frecuencia o en directorios con muchos archivos. Minimice el uso de llamadas al sistema que accedan o modifiquen estos atributos, como `stat()`, `statx()`, `open()`, `openat()`, etc.
 
 Lo mismo aplica para comandos como `ls -l` o `ls --color` que usan estas llamadas. En su lugar, use un simple `ls` o `ls -l nombrearchivo`.
 
 **Evite comandos que accedan masivamente a metadatos**
 
-Evite comandos como `ls -R`, `find`, `locate`, `du`, `df` y similares. Estos comandos recorren recursivamente el sistema de archivos y/o realizan operaciones pesadas de metadatos. Son muy intensivos en acceso a metadatos y pueden degradar gravemente el rendimiento. Si es absolutamente necesario recorrer recursivamente el sistema, use el comando `lfs find` de Lustre en lugar de `find`.
+Evite comandos como `ls -R`, `find`, `locate`, `du`, `df` y similares. Estos comandos recorren recursivamente el sistema de archivos y/o realizan operaciones pesadas de metadatos. Son muy intensivos en acceso a metadatos y pueden degradar gravemente el rendimiento. Si es absolutamente necesario recorrer recursivamente el sistema, use el comando `lfs find` de *Lustre* en lugar de `find`.
 
-**Use el comando lfs de Lustre**
+**Use el comando lfs de *Lustre***
 
-Para minimizar llamadas RPC a Lustre, siempre que sea posible use los comandos `lfs` en lugar de los del sistema:
+Para minimizar llamadas RPC a *Lustre*, siempre que sea posible use los comandos `lfs` en lugar de los del sistema:
 
 * `lfs df` => en lugar de `df`
 * `lfs find` => en lugar de `find`
@@ -61,15 +61,15 @@ Cuando sea posible, abra archivos como solo lectura con `O_RDONLY`, y si no nece
 
 **Evite muchos archivos en un solo directorio**
 
-Cuando se accede a un archivo, Lustre bloquea su directorio padre. Muchos archivos en el mismo directorio crean contención. Escribir miles de archivos en un directorio sobrecarga los servidores de metadatos, a menudo resultando en indisponibilidad del sistema. Acceder a un directorio con miles de archivos puede causar gran contención.
+Cuando se accede a un archivo, *Lustre* bloquea su directorio padre. Muchos archivos en el mismo directorio crean contención. Escribir miles de archivos en un directorio sobrecarga los servidores de metadatos, a menudo resultando en indisponibilidad del sistema. Acceder a un directorio con miles de archivos puede causar gran contención.
 
 La alternativa es organizar los datos en múltiples subdirectorios. Un enfoque común es usar la raíz cuadrada del número de archivos - para 90,000 archivos crear 300 directorios con 300 archivos cada uno.
 
 **Evite archivos pequeños**
 
-Acceder a archivos pequeños en Lustre es muy ineficiente. El tamaño recomendado es mayor a 1 GB. Reorganice datos en archivos grandes o use formatos como **HDF5**. Alternativamente, si el tamaño total es pequeño (pocos GB), copie los archivos a `/tmp` o a un directorio temporal local al inicio del trabajo (no olvide transferir/eliminar al final). Esto puede combinarse con herramientas como `tar` para almacenar archivos pequeños en tarballs grandes.
+Acceder a archivos pequeños en *Lustre* es muy ineficiente. El tamaño recomendado es mayor a 1 GB. Reorganice datos en archivos grandes o use formatos como **HDF5**. Alternativamente, si el tamaño total es pequeño (pocos GB), copie los archivos a `/tmp` o a un directorio temporal local al inicio del trabajo (no olvide transferir/eliminar al final). Esto puede combinarse con herramientas como `tar` para almacenar archivos pequeños en tarballs grandes.
 
-Al leer/escribir archivos, Lustre funciona mucho mejor con buffers grandes (>= 1 MB). Se recomienda agregar pequeñas operaciones de E/S en operaciones mayores. MPI-IO permite E/S agregada.
+Al leer/escribir archivos, *Lustre* funciona mucho mejor con buffers grandes (>= 1 MB). Se recomienda agregar pequeñas operaciones de E/S en operaciones mayores. MPI-IO permite E/S agregada.
 
 **Evite pequeñas operaciones repetitivas**
 
@@ -79,8 +79,9 @@ Evite realizar pequeñas operaciones de E/S repetitivas como abrir frecuentement
 
 Esto puede crear contención y errores. En su lugar, realice la apertura desde un proceso padre, o abra como solo lectura para evitar bloqueos, o implemente un enfoque de reintento con espera ante errores.
 
-Evite múltiples procesos accediendo a la misma región de archivo
-Si múltiples procesos acceden a la misma región simultáneamente, el administrador de bloqueos de Lustre forzará coherencia, lo que puede degradar el rendimiento.
+**Evite múltiples procesos accediendo a la misma región de archivo**
+
+Si múltiples procesos acceden a la misma región simultáneamente, el administrador de bloqueos de *Lustre* forzará coherencia, lo que puede degradar el rendimiento.
 En este caso, puede ser preferible: replicar el archivo, dividirlo, realizar E/S desde un solo proceso, o asegurar que no habrá acceso simultáneo. Se recomienda minimizar operaciones paralelas de apertura/bloqueo.
 
 Si múltiples procesos intentan anexar al mismo archivo, esto causará contención. Idealmente, solo un proceso debe anexar a cada archivo.
@@ -91,7 +92,7 @@ Al acceder a archivos pequeños compartidos en tareas paralelas, suele ser más 
 
 **Distribución de archivos (striping)**
 
-En Lustre, archivos grandes pueden dividirse en segmentos distribuidos automáticamente entre múltiples dispositivos de almacenamiento. La distribución es útil para E/S paralela en archivos grandes. Para que funcione, el punto de montaje debe apuntar a múltiples dispositivos (OSTs). Use `lfs df` para verificar esto. Para obtener información de distribución de un archivo:
+En *Lustre*, archivos grandes pueden dividirse en segmentos distribuidos automáticamente entre múltiples dispositivos de almacenamiento. La distribución es útil para E/S paralela en archivos grandes. Para que funcione, el punto de montaje debe apuntar a múltiples dispositivos (OSTs). Use `lfs df` para verificar esto. Para obtener información de distribución de un archivo:
 
 `lfs getstripe nombrearchivo`
 
@@ -106,11 +107,11 @@ Para archivos pequeños, desactive la distribución estableciendo un conteo de 1
 
 `lfs setstripe -s 1m -c 1 midir/archivospequenos/`
 
-**Evite instalar software en Lustre**
+**Evite instalar software en *Lustre***
 
 El software generalmente consiste en muchos archivos pequeños, y como se mencionó, acceder a muchos archivos pequeños puede sobrecargar los servidores de metadatos. Las compilaciones en particular se realizan mejor localmente copiando/descomprimiendo el software en `/tmp/$USER/` o en el `homedir`.
 
-Además, bajo alta carga, el acceso a Lustre puede bloquearse. Si los ejecutables están en Lustre y el acceso falla, pueden colapsar. Por lo tanto, es mejor copiar los ejecutables al `/tmp` de los nodos.
+Además, bajo alta carga, el acceso a *Lustre* puede bloquearse. Si los ejecutables están en *Lustre* y el acceso falla, pueden colapsar. Por lo tanto, es mejor copiar los ejecutables al `/tmp` de los nodos.
 
 ## Área de scripts
 
@@ -139,11 +140,11 @@ El directorio `home` es un área donde los usuarios almacenan sus archivos perso
 
 **La cuota de directorio personal predeterminada para cada usuario, según su perfil, se muestra a continuación:**
 
-| profile               | bsoft  | bhard  | isoft   | ihard   | grace period |
+| perfil                | bsoft  | bhard  | isoft   | ihard   | grace period |
 | --------------------- | ------ | ------ | ------- | ------- | ------------ |
-| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
+| público general       | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
 | público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| colaboração           | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+| colaboración          | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
 
 !!! tip
     Para comprobar los valores de cuota configurados, simplemente use el comando:`quota -s -u <username> /home`.
@@ -164,7 +165,7 @@ c) ¿Cómo consultar mis archivos creados hace menos de 60 días?
 
     lfs find $SCRATCH --uid $UID -mtime -60 --print
     
-d) ¿Cómo listar los OSTs de Lustre?
+d) ¿Cómo listar los OSTs de *Lustre*?
 
     lfs osts $SCRATCH
 
@@ -181,7 +182,7 @@ g) ¿Cómo consultar el striping de archivos/directorios?
     lfs getstripe $SCRATCH/mis_archivos_grandes
 
 !!! tip
-    El Lustre de LIneA está diseñado para trabajar a 100Gbps - para máximo rendimiento use striping y siempre con archivos grandes (+1GB).
+    El *Lustre* de LIneA está diseñado para trabajar a 100Gbps - para máximo rendimiento use striping y siempre con archivos grandes (+1GB).
 
 
 ## NAS (NFS)
@@ -203,7 +204,7 @@ Características actuales:
 | -------- | ---------- | ----------- | --------- |
 | /home    | diario     | incremental | 30 días   |
 | /home    | semanal    | diferencial | 30 días   |
-| /home    | mensal     | completo    | 90 días   |
+| /home    | mensual    | completo    | 90 días   |
 | /archive | -          | -           | -         |
 | /scratch | -          | -           | -         |
 | /scripts | -          | -           | -         |

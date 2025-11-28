@@ -7,6 +7,6 @@ LIneA provides access to high-performance computing resources for **members of s
 !!! danger ""
     Failure to comply with our security policies and environment usage policies may result in your account being blocked without prior notice. The policies can be found [here](../politicas.md).
 
-* [HPE Apollo 2000 Cluster (LIneA)](../processamento/apollo/index.html)
-* [Open OnDemand](../processamento/uso/openondemand.html)
-* [JupyterLab over HPC](../processamento/uso/openondemand.html#interactive-apps-jupyter-notebook)
+* [HPE Apollo 2000 Cluster (LIneA)](./apollo/index.md)
+* [Open OnDemand](./uso/openondemand.md)
+* [JupyterLab over HPC](./uso/openondemand.md#interactive-apps-jupyter-notebook)

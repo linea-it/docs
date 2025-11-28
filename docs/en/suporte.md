@@ -1,3 +1,20 @@
-For technical support, contact our Service Desk at [**helpdesk@linea.org.br**](mailto:helpdesk@linea.org.br). If needed, our team can schedule a video call.
 
-If you want to join the LIneA community and chat with other users, click [**here**](https://join.slack.com/t/lineausers/shared_invite/zt-1h9nxy1du-iuHtVycWNJGDgDw8SaSmtQ) to receive an invitation to the **LIneA Users** Slack workspace.
+For technical support, contact our *Service Desk* via email at [**helpdesk@linea.org.br**](mailto:helpdesk@linea.org.br). If necessary, our team can schedule an appointment via video call.
+
+
+If you would like to join the LIneA community and chat with other users, click [**here**](https://join.slack.com/t/lineausers/shared_invite/zt-1h9nxy1du-iuHtVycWNJGDgDw8SaSmtQ) to receive an invitation to the **LIneA Users** *Workspace* on *Slack*.
+
+
+
+
+<!-- **[EN]**
+
+## Help 
+
+Comments, questions, suggestions? If you find something missing in this documentation, be welcome to open an issue on the [LIneA's Documentation repository on GitHub](https://github.com/linea-it/docs). 
+
+For technical support, contact us on [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). 
+
+If you need to talk with our specialists, be welcome to book a slot in the _Office Hours_ service by sending an email to our communications team on [cde@linea.org.br](mailto:cde@linea.org.br).
+
+If you want to be part of the LIneA community and chat with other users, click [here](https://join.slack.com/t/lineausers/shared_invite/zt-1h9nxy1du-iuHtVycWNJGDgDw8SaSmtQ) to receive an invitation for the _LIneA Users_ Workspace on Slack.  -->

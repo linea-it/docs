@@ -7,34 +7,34 @@ LIneA tiene un proyecto "paraguas" aprobado en [LNCC](https://lncc.br/) llamado 
 5. Redshifts Fotométricos (programa de contribuciones in-kind LSST)
 
 !!! info 
-    Si tu proyecto tiene demandas de HPC y aún no forma parte del alcance del proyecto EUBD, contáctanos a través del correo [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para recibir orientación.
+    Si su proyecto tiene demandas de HPC y aún no forma parte del alcance del proyecto EUBD, contáctenos a través del correo [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br) para recibir orientación.
 
 ---
 
 ### Registro de usuarios para acceso al Supercomputador - Proyecto EUBD
-Envía un correo electrónico, siguiendo el modelo abajo indicado a helpdesk@linea.org.br y espera nuestra respuesta (máximo en 72 horas):
+Envíe un correo electrónico siguiendo el modelo indicado a continuación a helpdesk@linea.org.br y espere nuestra respuesta (máximo en 72 horas):
 
-a.) En el campo asunto escribe:
+a.) En el campo asunto escriba:
 
     Acceso al supercomputador Santos Dumont - Proyecto EUBD
     
 b.) En el cuerpo del correo:
-     1. Tu nombre completo:
+     1. Su nombre completo:
      2. Nombre de la institución (acrónimo):
      3. Nombre del asesor (si aplica): 
      4. Correo del asesor/supervisor (si aplica):
      5. Justificación de uso:
         
-        - Escribe en máximo 5 líneas cuál es el objetivo y la importancia de
+        - Escriba en máximo 5 líneas cuál es el objetivo y la importancia de
         usar estos recursos computacionales.
-        - Si es posible, informa cuántas horas/CPU pretendes utilizar y también
-        el volumen de datos de entrada y salida de tu aplicación.
-        - Utiliza KiloBytes(KB), MegaBytes(MB) o GigaBytes(GB) para
-        representar el volumen de tus datos.
+        - Si es posible, informe cuántas horas/CPU pretende utilizar y también
+        el volumen de datos de entrada y salida de su aplicación.
+        - Utilice KiloBytes(KB), MegaBytes(MB) o GigaBytes(GB) para
+        representar el volumen de sus datos.
 
 ### Acceso al supercomputador
 
 !!! danger ""
-    Después de obtener tus credenciales, el acceso y las instrucciones de uso son proporcionadas directamente por LNCC.
+    Después de obtener sus credenciales, el acceso y las instrucciones de uso son proporcionados directamente por LNCC.
 
-La sumisión de jobs se realizará a través del gestor de recursos y colas Slurm. El manual de usuario está disponible en la [página de Santos Dumont en el sitio de LNCC](https://sdumont.lncc.br/support_manual.php).
+El envío de jobs se realizará a través del gestor de recursos y colas Slurm. El manual de usuario está disponible en la [página de Santos Dumont en el sitio de LNCC](https://sdumont.lncc.br/support_manual.php).

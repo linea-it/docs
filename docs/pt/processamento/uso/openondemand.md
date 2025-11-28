@@ -1,5 +1,5 @@
 # Open OnDemand
-O Open Ondemand é uma interface que facilita a utilização do nosso ambiente de HPC constituído pelo Cluster Apollo. Para acessar é necessário possuir uma conta válida no LIneA ([saiba mais](/primeiros_passos.html)). 
+O Open Ondemand é uma interface que facilita a utilização do nosso ambiente de HPC constituído pelo Cluster Apollo. Para acessar é necessário possuir uma conta válida no LIneA ([saiba mais](../../primeiros_passos.md)). 
 O acesso ao Open Ondemand é através de https://ondemand.linea.org.br/ .
 
 Na [**tela inicial**](../img/OOD1.png) da plataforma, na parte superior, é possível visualizar um menu com os seguinte itens:
@@ -38,7 +38,7 @@ Para [**mover** ou **copiar**](../img/OOD5.png) arquivos é preciso seguir os pa
 ## Jobs
 Na seção [**Jobs**](../img/OOD6.png) do menu inicial, encontram-se as opções "Job Composer" e "Active Jobs". A tela "Job Composer" facilita o processo de submissão de jobs e em [**"Active Jobs"**](../img/OOD9.png) você pode acompanhar a execução do seu Job com detalhes.
 
-Para submeter um job é necessário utilizar um script de submissão como este descrito abaixo: ([saiba mais](/processamento/apollo/index.html#anatomia-de-um-job)) 
+Para submeter um job é necessário utilizar um script de submissão como este descrito abaixo: ([saiba mais](../apollo/index.md#anatomia-de-um-job)) 
 
 ```bash
 #!/bin/bash
@@ -52,7 +52,7 @@ EXEC=/scratch/users/YOUR.USER/ondemand/projects/EXECUTABLE.CODE
 
 srun $EXEC
 ```
-[**Para visualizar mais templates de script de submissão de Jobs, clique aqui**](/processamento/uso/templates-jobs.html)
+[**Para visualizar mais templates de script de submissão de Jobs, clique aqui**](./templates-jobs.md)
 
 ### Job Composer
 O Open OnDemand facilita todo o processo de submissão de jobs através da ferramenta [Job Composer](../img/OOD7.png). Para isto basta seguir os seguintes passos:
@@ -129,7 +129,7 @@ Ao final dessa execução de comandos, será possível ver o botão do kernel py
 * [Como submeter um Job](https://youtu.be/6w1H3VS40Ew)
 * [Como acessar o Jupyter Notebook](https://youtu.be/SemHNDr8vjg) 
 
-Qualquer dúvida, entre em contato com o [Service Desk](https://docs.linea.org.br/suporte.html).
+Qualquer dúvida, entre em contato com o [Service Desk](../../suporte.md).
 
 
 

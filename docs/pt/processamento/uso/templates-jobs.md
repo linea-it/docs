@@ -13,7 +13,7 @@
 
   srun $EXEC
 ```
-Nesse script é preciso especificar o **nome da fila (Partition)** que será usada, o **nome do nó** que será alocado para a excecução do Job, e o **caminho para o código/programa** a ser executado.
+Nesse script é preciso especificar o **nome da fila (Partition)** que será usada, o **nome do nó** que será alocado para a execução do Job, e o **caminho para o código/programa** a ser executado.
 
 #### EUPS Load Script
 

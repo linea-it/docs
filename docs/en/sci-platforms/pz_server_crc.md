@@ -1,6 +1,6 @@
 # Combine Redshift Catalogs
 
-The **Combine Redshift Catalogs** pipeline allows users to generate a single, unified redshift sample by combining multiple individual redshift catalogs. It uses the [LSDB](https://docs.lsdb.io/en/stable/index.html) library, developed by the [LINCC Frameworks](https://lsstdiscoveryalliance.org/programs/lincc-frameworks/), to perform spatial crossmatching between catalogs and identify multiple measurements of the same galaxy. The pipeline offers flexible options to resolve or retain duplicates.
+The *Combine Redshift Catalogs* pipeline allows users to generate a single, unified redshift sample by combining multiple individual redshift catalogues. It uses the [LSDB](https://docs.lsdb.io/en/stable/index.html) library, developed by [LINCC Frameworks](https://lsstdiscoveryalliance.org/programs/lincc-frameworks/), to perform spatial crossmatching between catalogues and identify multiple measurements of the same galaxy. The pipeline offers flexible options to resolve or retain duplicates.
 
 This process is especially useful for preparing clean redshift samples that can be used as training sets, validation sets, or calibration inputs for photometric redshift (photo-z) estimation.
 
@@ -8,7 +8,7 @@ This process is especially useful for preparing clean redshift samples that can 
 
 ### Photo-z Server website 
 
-When running the pipeline from the [Photo-z Server](https://pzserver.linea.org.br/) GUI, users must provide the following:
+When running the pipeline from the [*Photo-z Server*](https://pzserver.linea.org.br/) GUI, users must provide the following:
 
 1. **Combined catalog name**  
     A short mnemonic name that will be used to register the result in the system, and to find it in the products list in future searches. There is no need to choose a unique name, as the system will automatically append the ID number (automatically generated) to the product's internal name to ensure uniqueness.
@@ -20,7 +20,7 @@ When running the pipeline from the [Photo-z Server](https://pzserver.linea.org.b
    Choose two or more catalogs already available in the system.
 
 4. **Resolve duplicates**
-     - **No**: Simply concatenate the catalogs, stacking the columns according to the meaning assigned during column association at upload time ([step 3 of the "Upload a new data product" section](http://127.0.0.1:8000/en/sci-platforms/pz_server.html#upload-a-new-data-product)).  
+     - **No**: Simply concatenate the catalogs, stacking the columns according to the meaning assigned during column association at upload time ([step 3 of the "Upload a new data product" section](./pz_server.md#upload-a-new-data-product)).  
        **Important:** Even in this mode, the preparation stage still runs and attempts to produce `z_flag_homogenized` and `instrument_type_homogenized` if they are not already present. Therefore, validation errors can still occur (see warnings below).
      - **Yes, but keep all**: Identify duplicates and add `tie_result` information, but retain all entries.
      - **Yes, and remove duplicates**: Identify and **keep only the best measurement** per galaxy (only rows with `tie_result == 1`).
@@ -32,7 +32,7 @@ Once these fields are filled in, users can click **Run** to execute the pipeline
 
 ### Photo-z Server API
 
-For instructions on running this pipeline via the Photo-z Server Python library (API), see:  
+For instructions on running this pipeline via the *Photo-z Server* Python library (API), see:  
 https://github.com/linea-it/pzserver/blob/main/docs/notebooks/pzserver_tutorial.ipynb
 
 ### Interpreting `tie_result`

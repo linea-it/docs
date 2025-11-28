@@ -6,7 +6,7 @@ nav:
       - JupyterHub: pt/sci-platforms/jupyter.md
       - OnDemand: pt/sci-platforms/ondemand.md
       - User Query: pt/sci-platforms/user_query.md
-      - TAP Service: pt/sci-platforms/user_query.html#tap-service
+      - TAP Service: sci-platforms/user_query.html#tap-service # pt/ removido para evitar conflito de links
       - Sky Viewer: pt/sci-platforms/sky_viewer.md
       - Target Viewer: pt/sci-platforms/target_viewer.md
       - DES Science Server: pt/sci-platforms/sci_server.md

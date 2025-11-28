@@ -1,6 +1,6 @@
 ## Como criar par de chaves SSH
 
-Para acessar nosso ambiente via ssh é preciso gerar um par de chaves seguindo os passos abaixos:
+Para acessar nosso ambiente via ssh é preciso gerar um par de chaves seguindo os passos abaixo:
 
 
 ### Linux
@@ -41,7 +41,7 @@ c) Clicar em Generate (o tipo de chave mantém como **RSA**).
 
 d) Par de chaves geradas com sucesso.
  
- - Copiar a chave publicar para ser salva no servidor (detalhe na imagem em amarelo);
+ - Copiar a chave pública para ser salva no servidor (detalhe na imagem em amarelo);
  - Colocar uma senha na chave pública (detalhe na imagem em azul).
  - Após copiar salve as chaves public e private no computador (detalhe na imagem em vermelho) envie a chave `.pub` para a equipe de TI via email [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br). A equipe de TI do LIneA irá configurar a chave no servidor. ***Aguarde o retorno de ok***.
 
@@ -54,7 +54,7 @@ e) Após o receber o email de confirmação que a chave `.pub` foi cadastrada no
 
 ![Image](../images/tela_do_putty.png)
 
-f) Ao lado esquerdo ir na opção `SSH > Auth (detalhe em azul) > aperte em Browse (detalhe em amarelo) e escolha a chave a ser usada com extenção .ppk`.
+f) Ao lado esquerdo ir na opção `SSH > Auth (detalhe em azul) > aperte em Browse (detalhe em amarelo) e escolha a chave a ser usada com extensão .ppk`.
 
 ![Image](../images/configurando_aquivo_ppk.png)
 

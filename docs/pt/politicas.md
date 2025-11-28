@@ -8,7 +8,7 @@ Para acessar a PSI, clique [aqui](https://docs.google.com/document/d/1guNonR3KK8
 
 ## Política de Uso do Ambiente de HPC
 
-Em conformidade com a Política de Segurança da Informação (PSI), o LIneA também estabelece diretrizes para o uso do ambiente de computação de alto desempenho. A Política de Uso do Ambiente de HPC visa informar aos colaboradores e usuários acerca da utilização da infraestrutura de forma responsável, eficiente e alinhada à propósitos científicos. 
+Em conformidade com a Política de Segurança da Informação (PSI), o LIneA também estabelece diretrizes para o uso do ambiente de computação de alto desempenho. A Política de Uso do Ambiente de HPC visa informar aos colaboradores e usuários acerca da utilização da infraestrutura de forma responsável, eficiente e alinhada a propósitos científicos. 
 
 Para acessar a Política de Uso do Ambiente de HPC, clique [aqui](https://docs.google.com/document/d/1guNonR3KK8u016o5_DVXsYQqrZdKLOIkASiOkPqBgOE/edit?tab=t.0#heading=h.kuskslbjusdl)
 
@@ -24,7 +24,7 @@ OU
 
 ## Incidentes de Segurança
 
-Se você desconfia que ocorreu algum incidente de segurança com sua conta, serviço ou aplicação que você esteja utilizando você deve contatar o LIneA imediatamente em helpdesk@linea.org.br.
+Se você desconfia que ocorreu algum incidente de segurança com sua conta, serviço ou aplicação que você esteja utilizando, você deve contatar o LIneA imediatamente em helpdesk@linea.org.br.
 
 Recomendamos que salve qualquer evidência referente ao incidente (logs, mensagens, screenshots etc) e inclua quantos detalhes for possível no seu email para nós.
 

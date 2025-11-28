@@ -17,7 +17,7 @@ cd /scratch/users/<username>
     Essa área NÃO sofrerá backup!
 
 Os arquivos que não foram modificados nos últimos 60 dias serão automaticamente removidos, o que torna temporário o armazenamento de arquivos nessa área.
-Recomenda-se que os usuários realizem a transferencia dos arquivos importantes do `$SCRATCH`  para o seu `homedir`. 
+Recomenda-se que os usuários realizem a transferência dos arquivos importantes do `$SCRATCH`  para o seu `homedir`. 
 
 !!! warning
     O script de limpeza é executado uma vez por semana, sempre nos fins de semana.  
@@ -114,7 +114,7 @@ Para arquivos pequenos, a distribuição (striping) deve ser desabilitada, isso 
 
 **Evite instalar software no Lustre** 
 
-Um software geralmente é composto de muitos arquivos pequenos e, como mencionado anteriormente, acessar muitos arquivos pequenos no Lustre pode sobrecarregar os servidores de metadados. As compilações de software em particular podem ser melhor executadas localmente copiando ou descompactando o software para /tmp/$USER/ o para o seu `homedir`.
+Um software geralmente é composto de muitos arquivos pequenos e, como mencionado anteriormente, acessar muitos arquivos pequenos no Lustre pode sobrecarregar os servidores de metadados. As compilações de software em particular podem ser melhor executadas localmente copiando ou descompactando o software para /tmp/$USER/ ou para o seu `homedir`.
 
 Além disso, sob alta carga, o acesso de E/S aos sistemas de arquivos Lustre pode ser bloqueado. Se os executáveis ​​forem armazenados no Lustre e o acesso ao sistema de arquivos falhar, os executáveis ​​poderão travar. Portanto, sempre que possível, é melhor copiar os executáveis ​​para o `/tmp` dos nós do cluster.
 
@@ -129,7 +129,7 @@ Ou
 cd /scripts/<username> 
 ```
 
-Essa área é destinada ao armazenamento de scripts de submissão de jobs ao cluster e outros. Recomenda-se também utilizar esse caminho para a criação de ambientes (envs) pynton e kernels.
+Essa área é destinada ao armazenamento de scripts de submissão de jobs ao cluster e outros. Recomenda-se também utilizar esse caminho para a criação de ambientes (envs) Python e kernels.
 
 **A quota padrão do `/scripts` disponibilizada para usuários é:**
 
