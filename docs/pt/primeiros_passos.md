@@ -28,5 +28,5 @@ Os membros das colaborações DES, DESI, LSST, SDSS e TON, devem passar pelo for
 
 Após a avaliação dos dados, entraremos em contato por email.
 
-Qualquer dúvida ou problema, entre em contato com o nosso [Service Desk](../../suporte.html).
+Qualquer dúvida ou problema, entre em contato com o nosso [Service Desk](./suporte.md).
 

@@ -56,7 +56,7 @@ Export your results from the **Download** tab:
 
 ---
 
-## Programmatic Access with Python
+## TAP Service
 
 For automated workflows, reproducible analyses, or accessing embargoed data, you can query LIneA databases directly from Python using the *TAP Service* (*Table Access Protocol*) and the [`pyvo`](https://pyvo.readthedocs.io/en/latest/){:target="_blank"} library.
 

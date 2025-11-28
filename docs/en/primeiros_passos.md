@@ -28,5 +28,5 @@ Members of the DES, DESI, LSST, SDSS, and TON collaborations must complete the s
 
 After data evaluation, we will contact you via email.
 
-For any questions or issues, please contact our [Service Desk](../../suporte.html).
+For any questions or issues, please contact our [Service Desk](./suporte.md).
 

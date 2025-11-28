@@ -35,7 +35,7 @@ Essas áreas de armazenamento devem ser utilizadas da seguinte forma:
 
 **Scriptland:** Estrutura montada a partir do diretório `/scriptland/<username>`. É uma área de armazenamento otimizada para armazenar scripts e códigos. Variável de ambiente `$SCRIPTLAND`.
 
-[Clique aqui para mais detalhes](/armazenamento/index.html)
+[Clique aqui para mais detalhes](../../armazenamento/index.md)
 
 !!! warning "Atenção"
     Não esqueça de copiar os arquivos necessários (executável, bibliotecas, dados de entrada) para dentro da área de SCRATCH, pois a área de HOMEDIR não é acessível pelos nós computacionais.
@@ -131,5 +131,5 @@ A próxima categoria de variáveis de ambiente são aquelas que o usuário pode 
 
 
 !!! info "Mais Informações ?"
-    Saiba como utilizar o Cluster Apollo em [Como Utilizar](/processamento/uso/howtouse-HPC.html). <br> 
-    Para maiores informações, entre em contato com o [Service Desk](/suporte.html).
+    Saiba como utilizar o Cluster Apollo em [Como Utilizar](../uso/howtouse-HPC.md). <br> 
+    Para maiores informações, entre em contato com o [Service Desk](../../suporte.md).

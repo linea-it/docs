@@ -5,5 +5,5 @@
 * File management tool
 * Access to the environment via Linux Terminal
 
-Click [here](../processamento/uso/openondemand.html) for further details on how to use the *OnDemand* service.
+Click [here](../processamento/uso/openondemand.md) for further details on how to use the *OnDemand* service.
 

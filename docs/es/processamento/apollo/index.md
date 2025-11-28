@@ -32,7 +32,7 @@ Estas áreas de almacenamiento deben utilizarse de la siguiente forma:
 
 **Scriptland:** Estructura montada desde `/scriptland/<usuario>`. Es un área de almacenamiento optimizada para scripts y códigos. Variable de entorno `$SCRIPTLAND`.
 
-[Haga clic aquí para más detalles](../../armazenamento/index.html)
+[Haga clic aquí para más detalles](../../armazenamento/index.md)
 
 !!! warning "Atención"
     No olvide copiar los archivos necesarios (ejecutable, bibliotecas, datos de entrada) al área de SCRATCH, pues el área de HOMEDIR no es accesible por los nodos computacionales.
@@ -131,5 +131,5 @@ La primera categoría son variables que Slurm inserta en el entorno de ejecució
 La siguiente categoría son variables que el usuario puede definir en su entorno para pasar opciones predeterminadas a cada job enviado. Esto incluye opciones como el límite de tiempo. Para la lista completa, consulte la sección `"INPUT ENVIRONMENT VARIABLES"` en las páginas [sbatch](https://slurm.schedmd.com/sbatch.html), [salloc](https://slurm.schedmd.com/salloc.html) y [srun](https://slurm.schedmd.com/srun.html).
 
 !!! info "¿Más Información?"
-    Aprenda a utilizar el *Cluster Apollo* en [Cómo Utilizar](../../processamento/uso/howtouse-HPC.html). <br> 
-    Para mayor información, contacte al [Service Desk](../../suporte.html).
+    Aprenda a utilizar el *Cluster Apollo* en [Cómo Utilizar](../uso/howtouse-HPC.md). <br> 
+    Para mayor información, contacte al [Service Desk](../../suporte.md).

@@ -16,7 +16,7 @@ Serviços de acesso a dados com ferramentas diversas para processamento, explora
 #### &nbsp;&nbsp;&nbsp;&nbsp; [JupyterHub](jupyter.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [OnDemand](ondemand.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [User Query](user_query.md)
-#### &nbsp;&nbsp;&nbsp;&nbsp; [TAP Service](user_query.html#tap-service)
+#### &nbsp;&nbsp;&nbsp;&nbsp; [TAP Service](user_query.md#tap-service)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Sky Viewer](sky_viewer.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Target Viewer](target_viewer.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [DES Science Server](sci_server.md)

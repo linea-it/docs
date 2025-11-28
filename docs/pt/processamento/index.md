@@ -11,6 +11,6 @@ O LIneA oferece acesso a recursos computacionais de alto desempenho a usuários 
 !!! danger ""
     A não observância das nossas políticas de segurança e de uso do ambiente, pode acarretar no bloqueio de sua conta sem aviso prévio. As políticas podem ser encontradas [aqui](../politicas.md).
 
-* [Cluster HPE Apollo 2000 (LIneA)](../processamento/apollo/index.html)
-* [Open OnDemand](../processamento/uso/openondemand.html)
-* [JupyterLab over HPC](../processamento/uso/openondemand.html#interactive-apps-jupyter-notebook)
+* [Cluster HPE Apollo 2000 (LIneA)](./apollo/index.md)
+* [Open OnDemand](./uso/openondemand.md)
+* [JupyterLab over HPC](./uso/openondemand.md#interactive-apps-jupyter-notebook)

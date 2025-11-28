@@ -56,7 +56,7 @@ Exporte sus resultados desde la pestaña **Download**:
 
 ---
 
-## Acceso programático con Python
+## TAP Service
 
 Para flujos de trabajo automatizados, análisis reproducibles o acceso a datos embargados, puede consultar las bases de datos de LIneA directamente desde Python utilizando el *TAP Service* (*Table Access Protocol*) y la biblioteca [`pyvo`](https://pyvo.readthedocs.io/en/latest/){:target="_blank"}.
 

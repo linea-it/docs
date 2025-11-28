@@ -2,7 +2,7 @@
 
 ## Cómo Acceder
 
-El acceso a nuestro clúster puede realizarse a través de [**Open OnDemand**](../../processamento/uso/openondemand.html) o mediante el Terminal de **JupyterLab (K8S)**. En ambas opciones, es imprescindible poseer una cuenta válida en el entorno computacional de LIneA. Si no tiene una cuenta, contacte al Service Desk por correo (helpdesk@linea.org.br) para más información.
+El acceso a nuestro clúster puede realizarse a través de [**Open OnDemand**](./openondemand.md) o mediante el Terminal de **JupyterLab (K8S)**. En ambas opciones, es imprescindible poseer una cuenta válida en el entorno computacional de LIneA. Si no tiene una cuenta, contacte al Service Desk por correo (helpdesk@linea.org.br) para más información.
 
 !!! warning "Atención"
     Aún teniendo una cuenta activa en LIneA, el acceso al entorno de procesamiento HPC no es automático. Para más información contacte al Service Desk en helpdesk@linea.org.br.

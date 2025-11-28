@@ -20,7 +20,7 @@ When running the pipeline from the [*Photo-z Server*](https://pzserver.linea.org
    Choose two or more catalogs already available in the system.
 
 4. **Resolve duplicates**
-     - **No**: Simply concatenate the catalogs, stacking the columns according to the meaning assigned during column association at upload time ([step 3 of the "Upload a new data product" section](http://127.0.0.1:8000/en/sci-platforms/pz_server.html#upload-a-new-data-product)).  
+     - **No**: Simply concatenate the catalogs, stacking the columns according to the meaning assigned during column association at upload time ([step 3 of the "Upload a new data product" section](./pz_server.md#upload-a-new-data-product)).  
        **Important:** Even in this mode, the preparation stage still runs and attempts to produce `z_flag_homogenized` and `instrument_type_homogenized` if they are not already present. Therefore, validation errors can still occur (see warnings below).
      - **Yes, but keep all**: Identify duplicates and add `tie_result` information, but retain all entries.
      - **Yes, and remove duplicates**: Identify and **keep only the best measurement** per galaxy (only rows with `tie_result == 1`).

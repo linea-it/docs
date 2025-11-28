@@ -5,5 +5,5 @@ O **OnDemand ([ondemand.linea.org.br](https://ondemand.linea.org.br/))** é uma 
 * Ferramenta de gerenciamento de arquivos 
 * Acesso ao ambiente via Terminal Linux 
 
-Clique [aqui](../processamento/uso/openondemand.html) para mais detalhes sobre como utilizar o serviço OnDemand. 
+Clique [aqui](../processamento/uso/openondemand.md) para mais detalhes sobre como utilizar o serviço OnDemand. 
 

@@ -1,6 +1,6 @@
 # Open OnDemand
 
-The *Open OnDemand* is an interface that facilitates the use of our HPC environment consisting of the *Apollo Cluster*. To access it, you need a valid LIneA account ([learn more](../../primeiros_passos.html)).
+The *Open OnDemand* is an interface that facilitates the use of our HPC environment consisting of the *Apollo Cluster*. To access it, you need a valid LIneA account ([learn more](../../primeiros_passos.md)).
 
 Access to the *Open OnDemand* is through https://ondemand.linea.org.br/.
 
@@ -45,7 +45,7 @@ To [**move** or **copy**](../img/OOD5.png) files:
 
 In the [**Jobs**](../img/OOD6.png) section of the main menu, you'll find "Job Composer" and "Active Jobs". The "Job Composer" screen simplifies job submission, while [**"Active Jobs"**](../img/OOD9.png) lets you monitor your job execution in detail.
 
-To submit a job, you need a submission script like this: ([learn more](../../processamento/apollo/index.html#anatomia-de-um-job))
+To submit a job, you need a submission script like this: ([learn more](../apollo/index.md#anatomia-de-um-job))
 
 ```bash
 #!/bin/bash
@@ -58,7 +58,7 @@ EXEC=/scratch/users/YOUR.USER/ondemand/projects/EXECUTABLE.CODE
 srun $EXEC
 ```
 
-[**To view more job submission script templates, click here**](/processamento/uso/templates-jobs.html)
+[**To view more job submission script templates, click here**](./templates-jobs.md)
 
 ### Job Composer
 
@@ -140,4 +140,4 @@ After executing these commands, you'll see the created Python kernel button.
 * [How to submit a Job](https://youtu.be/6w1H3VS40Ew)
 * [How to access Jupyter Notebook](https://youtu.be/SemHNDr8vjg)
 
-For any questions, contact the [Service Desk](../../suporte.html).
+For any questions, contact the [Service Desk](../../suporte.md).

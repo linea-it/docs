@@ -32,7 +32,7 @@ These storage areas should be used as follows:
 
 **Scriptland:** Mounted from `/scriptland/<username>`. A storage area optimized for scripts and code. Environment variable `$SCRIPTLAND`.
 
-[Click here for more details](../../armazenamento/index.html)
+[Click here for more details](../../armazenamento/index.md)
 
 !!! warning "Attention"
     Remember to copy necessary files (executables, libraries, input data) to the SCRATCH area, as the HOMEDIR area is not accessible by compute nodes.
@@ -131,5 +131,5 @@ The first category of environment variables are those that *Slurm* inserts into 
 The next category are environment variables that users can define in their environment to pass default options to each submitted job. This includes options like the wall clock limit. For the complete list, see the `"INPUT ENVIRONMENT VARIABLES"` section in the [sbatch](https://slurm.schedmd.com/sbatch.html), [salloc](https://slurm.schedmd.com/salloc.html) and [srun](https://slurm.schedmd.com/srun.html) man pages.
 
 !!! info "More Information?"
-    Learn how to use the *Apollo Cluster* at [How to Use](../../processamento/uso/howtouse-HPC.html). <br> 
-    For more information, contact the [Service Desk](../../suporte.html).
+    Learn how to use the *Apollo Cluster* at [How to Use](../uso/howtouse-HPC.md). <br> 
+    For more information, contact the [Service Desk](../../suporte.md).

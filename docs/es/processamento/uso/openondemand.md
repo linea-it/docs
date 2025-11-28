@@ -1,6 +1,6 @@
 # Open OnDemand
 
-El *Open OnDemand* es una interfaz que facilita el uso de nuestro entorno HPC conformado por el *Cluster Apollo*. Para acceder es necesario tener una cuenta válida en LIneA ([más información](../../primeiros_passos.html)). 
+El *Open OnDemand* es una interfaz que facilita el uso de nuestro entorno HPC conformado por el *Cluster Apollo*. Para acceder es necesario tener una cuenta válida en LIneA ([más información](../../primeiros_passos.md)). 
 
 El acceso al *Open OnDemand* es a través de https://ondemand.linea.org.br/.
 
@@ -54,7 +54,7 @@ Para enviar un *job* es necesario usar un script de envío como este: ([más inf
 EXEC=/scratch/users/USUARIO/ondemand/projects/CODIGO.EJECUTABLE
 srun $EXEC
 ```
-[**Para ver más plantillas de scripts de envío de *Jobs*, haga clic aquí**](../../processamento/uso/templates-jobs.html)
+[**Para ver más plantillas de scripts de envío de *Jobs*, haga clic aquí**](./templates-jobs.md)
 
 ### Job Composer
 
@@ -136,4 +136,4 @@ Al finalizar estos comandos, podrá ver el botón del *kernel* de Python creado.
 * [Cómo enviar un Job](https://youtu.be/6w1H3VS40Ew)
 * [Cómo acceder a Jupyter Notebook](https://youtu.be/SemHNDr8vjg)
 
-Para cualquier duda, contacte al [Service Desk](../../suporte.html).
+Para cualquier duda, contacte al [Service Desk](../../suporte.md).
