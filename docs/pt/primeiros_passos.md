@@ -10,7 +10,7 @@ Para ter acesso às plataformas e serviços disponibilizados pelo LIneA, você p
 
 ### Não possui registro? 
 
-Para efetuar o registro de usuário no LIneA, você deve ficar atento as instruções abaixo:  
+Para efetuar o registro de usuário no LIneA, você deve ficar atento às instruções abaixo:  
 #### Registro para Público Geral 
 
 - Público com vínculo institucional: **graduandos**, **pós-graduandos**, **pesquisadores**, etc, vinculados a uma instituição [registre-se aqui](https://register.linea.org.br/registry/co_petitions/start/coef:155).

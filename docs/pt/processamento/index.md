@@ -3,7 +3,7 @@
 
 ### Computação de Alto Desempenho
 
-O LIneA oferece acesso recursos computacionais de alto desempenho a usuários **membros de colaborações científicas e com projetos apoiados pelo laboratório** nos seguintes ambientes:
+O LIneA oferece acesso a recursos computacionais de alto desempenho a usuários **membros de colaborações científicas e com projetos apoiados pelo laboratório** nos seguintes ambientes:
 
 !!! warning ""
     O registro no ambiente do LIneA NÃO concede acesso automático aos recursos de HPC. Após ter o seu registro aprovado, é necessário abrir um [ticket](../suporte.md) e solicitar o acesso, enviando uma justificativa de uso, que será encaminhada para avaliação do Comitê Gestor.

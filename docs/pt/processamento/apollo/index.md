@@ -3,7 +3,7 @@
 
 O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 cores** físicos. Seus nós são equipados com processadores `Intel Xeon Skylake 5120 2.2GHz` (apl01-16) e `Intel Xeon Gold 5320 2.20GHz` (apl17-28). O conjunto de máquinas provê cerca de 85 Tflops de capacidade computacional. 
 
-Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n. Atualmente, o número de cores disponíveis é de *2144*, pois o HT estar ativo nos nós de computação.
+Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n. Atualmente, o número de cores disponíveis é de *2144*, pois o HT está ativo nos nós de computação.
 
 #### Características de cada servidor
 
@@ -74,7 +74,7 @@ O cluster Apollo é organizado em diferentes partições (subconjunto de máquin
 As partições (**cpu_dev**, **cpu_small**, **cpu** e **cpu_long**) possuem todas as apollos (*apl[01-28]*), enquanto as partições do grupo LSST possuem apenas as *apl[17-28]*. Somente a account *hpc-lsst* poderá submeter jobs nas partições de prefixo "lsst", que possuem maior prioridade nos nodes.
 
 !!! warning "Atenção"
-	Como parte do programa de contribuição in-kind BRA-LIN, o IDAC Brasil possui o compromisso de gerar _redshifts_ fotométricos anualmente para o levantamento LSST, sempre na época que antecede as liberações oficiais dos dados. Nestes períodos, o Cluster Apollo será totalmente ocupado para este propósito por um tempo estimado de algumas horas, mas podendo se estender a alguns dias. Na ocasião, os usuários serão informados com antecência sobre a indisponibilidade do cluster por e-mail. [Clique aqui](https://linea-it.github.io/pz-lsst-inkind-doc/) para saber mais sobre a produção de medidas de _redshift_ e o programa de conrtribuição in-kind BRA-LIN. 
+	Como parte do programa de contribuição in-kind BRA-LIN, o IDAC Brasil possui o compromisso de gerar _redshifts_ fotométricos anualmente para o levantamento LSST, sempre na época que antecede as liberações oficiais dos dados. Nestes períodos, o Cluster Apollo será totalmente ocupado para este propósito por um tempo estimado de algumas horas, mas podendo se estender a alguns dias. Na ocasião, os usuários serão informados com antecência sobre a indisponibilidade do cluster por e-mail. [Clique aqui](https://linea-it.github.io/pz-lsst-inkind-doc/) para saber mais sobre a produção de medidas de _redshift_ e o programa de contribuição in-kind BRA-LIN. 
 
 ### Anatomia de um Job
 

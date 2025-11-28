@@ -1,4 +1,4 @@
-O **Target Viewer** ([**targetviewer.linea.org.br**](https://targetviewer.linea.org.br)) é um serviço, em fase de desenvolvimento, personalizado para visualização imagens astronômicas com base em uma lista de objetos-alvo previamente definida pelo usuário.
+O **Target Viewer** ([**targetviewer.linea.org.br**](https://targetviewer.linea.org.br)) é um serviço, em fase de desenvolvimento, personalizado para a visualização de imagens astronômicas com base em uma lista de objetos-alvo previamente definida pelo usuário.
 
 **Passo a passo:**
 
