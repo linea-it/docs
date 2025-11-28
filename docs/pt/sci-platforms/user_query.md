@@ -7,3 +7,6 @@ O **User Query** ([**userquery.linea.org.br**](https://userquery.linea.org.br/))
 O TAP Service (Table Access Protocol) do [IVOA](https://ivoa.net/index.html) é um padrão que permite acesso e consulta a bancos de dados astronômicos por meio de linguagem SQL, de forma padronizada e interoperável entre diferentes serviços. Além do serviço User Query, os catálogos públicos hospedados no LIneA também podem ser acessados remotamente por meio do TAP Service no programa [TOPCAT](https://www.star.bris.ac.uk/~mbt/topcat/) ou programaticamente por meio da biblioteca Python [`pyvo`](https://pyvo.readthedocs.io/en/latest/#). Acesse a [documentação do TAP Service](https://userquery.linea.org.br/cms/services/scripted-access/) no site do User Query para mais detalhes sobre como utilizar o serviço.
 
 
+<p align="center">
+<img src="../../images/token-userquery.png" alt="Token menu">
+</p>
