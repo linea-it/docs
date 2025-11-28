@@ -1,29 +1,32 @@
-Para acceder a las plataformas y servicios proporcionados por LIneA, necesitas tener un registro activo en nuestro entorno e iniciar sesión con una de las siguientes opciones:
 
-* Inicio de sesión con credenciales institucionales - Recomendado para quienes tienen afiliación institucional (estudiantes de pregrado, posgrado, investigadores, etc.). El inicio de sesión se realiza a través de CILogon.  
-* Inicio de sesión con Google - Recomendado para astrónomos aficionados, estudiantes de secundaria, entusiastas de la astronomía, etc. Accesible para cualquier persona con una cuenta de Gmail.  
 
-!!! info "Miembros de Colaboraciones Científicas"  
-    El inicio de sesión con credenciales institucionales es obligatorio para acceder a servicios exclusivos para miembros de las colaboraciones DES, DESI, LSST, SDSS y TON.  
+Para acceder a las plataformas y servicios proporcionados por LIneA, es necesario disponer de un registro activo en nuestro entorno e iniciar sesión con una de las siguientes opciones:
 
-### ¿No tienes una cuenta? 
+* Inicio de sesión con credenciales institucionales - Indicado para quienes tienen vínculo institucional (estudiantes de grado, posgrado, investigadores, etc.). El inicio de sesión se realiza a través de *CILogon*.
+* Inicio de sesión con Google - Indicado para astrónomos aficionados, estudiantes de secundaria, entusiastas de la astronomía, etc. Accesible para cualquier persona; basta con disponer de una cuenta de Gmail.
 
-Para registrarte como usuario en LIneA, sigue las instrucciones a continuación:  
-#### Registro para Público General  
+!!! info "Miembros de colaboraciones científicas"
+	El inicio de sesión con credencial institucional es obligatorio para acceder a servicios exclusivos para miembros de las colaboraciones DES, DESI, LSST, SDSS y TON.
 
-- Público con afiliación institucional: Estudiantes de pregrado, posgrado, investigadores, etc., afiliados a una institución [regístrate aquí](https://register.linea.org.br/registry/co_petitions/start/coef:155). 
+### ¿No dispone de registro?
 
-- Público sin afiliación institucional: Astrónomos aficionados, estudiantes de secundaria, entusiastas de la astronomía, etc., [regístrate aquí con inicio de sesión de Google](https://register.linea.org.br/registry/co_petitions/start/coef:155). 
-<br>
-!!! danger "ATENCIÓN: Público Sin Afiliación Institucional"  
-    **Debes buscar y seleccionar Google en el campo "Select an Identity Provider" en la página inicial de CILogon.**  
+Para efectuar el registro de usuario en LIneA, debe prestar atención a las instrucciones indicadas a continuación:
+#### Registro para público general
 
-#### Registro para Miembros de Colaboraciones
+- Público con vínculo institucional: **estudiantes de grado**, **posgrado**, **investigadores**, etc., vinculados a una institución, [regístrese aquí](https://register.linea.org.br/registry/co_petitions/start/coef:155).
 
-Los miembros de las colaboraciones DES, DESI, LSST, SDSS y TON deben completar el formulario de selección a continuación, llenando todos los campos requeridos y enviando el formulario al final.  
+- Público sin vínculo institucional: **astrónomos aficionados**, **estudiantes de secundaria**, **entusiastas de la astronomía**, etc., [regístrese aquí con inicio de sesión vía Gmail](https://register.linea.org.br/registry/co_petitions/start/coef:155). <br>
+!!! danger "ATENCIÓN: Público sin vínculo institucional"
+	**Es necesario buscar y seleccionar Google en el campo «Select an Identity Provider» en la página inicial de *CILogon*.**
 
-- [Solicitud de registro para miembros de Colaboraciones.](https://docs.google.com/forms/d/e/1FAIpQLScQuUTV7Wc-C10gWNcznorbW5mOQlGkFAXUikd0R7JzsdgSfQ/viewform)  
 
-Después de revisar los datos, nos pondremos en contacto contigo por correo electrónico.  
+#### Registro para miembros de colaboración
 
-Para cualquier duda o problema, contacta a nuestro [Service Desk](suporte.html).  
+Los miembros de las colaboraciones DES, DESI, LSST, SDSS y TON deben completar el formulario de triaje indicado a continuación, rellenando todos los campos necesarios y enviando el formulario al final.
+
+- [Solicitud de registro para miembros de colaboración.](https://docs.google.com/forms/d/e/1FAIpQLScQuUTV7Wc-C10gWNcznorbW5mOQlGkFAXUikd0R7JzsdgSfQ/viewform)
+
+Tras la evaluación de los datos, nos pondremos en contacto por correo electrónico.
+
+Ante cualquier duda o problema, contacte con nuestro [Service Desk](suporte.md).
+
