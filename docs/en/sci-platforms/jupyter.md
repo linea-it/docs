@@ -2,7 +2,7 @@
 
 [JupyterHub](https://jupyter.org/hub) is a multi-user development environment based on *iPython Notebooks* that provides access to shared computing resources on a remote server, without requiring installation or maintenance by users. The only prerequisites to access JupyterHub are: having a LIneA user account (see [here](../primeiros_passos.md) how to create your account) and a web browser with internet access. So-called [Jupyter Notebooks](https://docs.jupyter.org/en/latest/) allow combining interactive code, execution results, explanatory text, and multimedia resources in a single document.
 
-As part of the [LIneA Science Platform](../lsp/index.md), the LIneA JupyterHub is integrated with other visualisation tools ([Science Server](../lsp/sci_server.md)) and data access tools ([User Query](../lsp/user_query.md)). This way, all data analysis can be performed *online* within the platform, from reading, visualisation, processing to result analysis, without the need to *download* the data.
+As part of the [LIneA Science Platform](./index.md), the LIneA JupyterHub is integrated with other visualisation tools ([*Science Server*](./sci_server.md)) and data access tools ([*User Query*](./user_query.md)). This way, all data analysis can be performed *online* within the platform, from reading, visualisation, processing to result analysis, without the need to *download* the data.
 
 When clicking on the "JupyterHub" card within the LIneA Science Platform, you will be directed to the login page and then to the JupyterHub homepage showing your user profile. Click the **START** button to begin.
 
