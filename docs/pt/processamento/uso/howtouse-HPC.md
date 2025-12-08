@@ -76,7 +76,8 @@ Nesse script é preciso especificar: o **nome da fila (Partition)** que será us
 - **Para submeter o Job:**
 
   ```bash
-    sbatch script-submit-job.sh
+    cd $SCRATCH 
+    sbatch $SCRIPTS/PATH/TO/script-submit-job.sh
   ```
 Se o script estiver correto **haverá uma saída que indica o ID do job**.
 
@@ -103,11 +104,6 @@ O [EUPS](https://github.com/RobertLuptonTheGood/eups) é um gerenciador de pacot
 
 !!! info
     Atualmente o EUPS é carregado automaticamente após o usuário acessar qualquer máquina do cluster apollo.
-
-  ```bash
-    source /opt/eups/bin/setups.sh
-  ```
-  
   
 - **Para listar todos os pacotes disponíveis:**
 

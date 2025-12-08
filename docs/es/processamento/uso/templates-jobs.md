@@ -44,3 +44,25 @@ En este script debe especificar el **nombre de la cola (Partition)** a usar, el 
 
 
 #### MPI
+```bash
+  #!/bin/bash
+  #SBATCH -p PARTITION
+  #SBATCH --nodes=QT-NODES   
+  #SBATCH --account=ACCOUNT
+  #SBATCH --ntasks-per-node=QT-TASKS-PER-NODE
+  #SBATCH -J JOB-NAME            
+  #----------------------------------------------------------#
+
+  echo "SLURM_NODELIST=$SLURM_NODELIST"
+  echo "SLURM_NTASKS=$SLURM_NTASKS"
+  echo "Running on nodes: $(scontrol show hostnames $SLURM_NODELIST)"
+
+  #Subir EUPS
+  export EUPS_USERDATA=/scratch/users/YOUR.USER
+  . /opt/eups/bin/setups.sh
+
+  setup openmpi 5.0.8+0
+
+  #Ejecutar mediante srun o mpirun
+  mpirun /path/to/code
+```

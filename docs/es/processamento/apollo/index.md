@@ -1,6 +1,6 @@
 # HPE Apollo 2000
 
-El ***Cluster Apollo*** posee 28 nodos computacionales y ofrece un total de **1072 núcleos** físicos. Sus nodos están equipados con procesadores `Intel Xeon Skylake 5120 2.2GHz` (apl01-16) y `Intel Xeon Gold 5320 2.20GHz` (apl17-28). El conjunto de máquinas provee cerca de 85 Tflops de capacidad computacional.
+El ***Cluster Apollo*** posee 28 nodos computacionales y ofrece un total de **1072 núcleos** físicos. Sus nodos están equipados con procesadores `Intel Xeon Skylake 5120 2.2GHz` (apl01-16) y `Intel Xeon Gold 5320 2.20GHz` (apl17-28). 
 
 Los 28 nodos computacionales del *Cluster Apollo* pertenecen a la familia de servidores HPE ProLiant, siendo 16 del modelo XL170r y 12 del modelo XL220n. Actualmente, el número de núcleos disponibles es de *2144*, ya que el HT está activo en los nodos de computación.
 
@@ -10,6 +10,7 @@ Los 28 nodos computacionales del *Cluster Apollo* pertenecen a la familia de ser
 | ------- | ------| ------------ | -------- | -----------| 
 | HPE Proliant XL170r  | 56    | 128 GB       | Rocky Linux 9.5 |  apl[01-16]  |
 | HPE Proliant XL220n  | 104   | 256 GB       | Rocky Linux 9.5 |  apl[17-28]  |
+
 <sup>[1]</sup> La tecnología Hyper-Threading (HT) está habilitada en todos los nodos del cluster.
 
 **Características del cluster (consolidado)**
@@ -30,7 +31,7 @@ Estas áreas de almacenamiento deben utilizarse de la siguiente forma:
 
 **Home:** Estructura montada desde `/home/<usuario>`. Utilizada especialmente para almacenar resultados que se desee mantener durante toda la vigencia del proyecto. Variable de entorno `$HOME`.
 
-**Scriptland:** Estructura montada desde `/scriptland/<usuario>`. Es un área de almacenamiento optimizada para scripts y códigos. Variable de entorno `$SCRIPTLAND`.
+**Scripts:** Estructura montada desde `/scripts/<usuario>`. Es un área de almacenamiento optimizada para scripts y códigos. Variable de entorno `$SCRIPTS`.
 
 [Haga clic aquí para más detalles](../../armazenamento/index.md)
 
@@ -51,10 +52,10 @@ El cluster Apollo está organizado en diferentes particiones (subconjuntos de m�
 
 |PARTICIÓN   |LÍMITE TIEMPO  |NODES  |LISTA NODOS  |
 |------------|-----------|-------|----------|
-|cpu_dev     |30:00      |26     |apl[01-28]|
-|cpu_small   |3-00:00:00 |26     |apl[01-28]|
-|cpu         |5-00:00:00 |26     |apl[01-28]|
-|cpu_long    |31-00:00:0 |26     |apl[01-28]|
+|cpu_dev     |30:00      |28     |apl[01-28]|
+|cpu_small   |3-00:00:00 |28     |apl[01-28]|
+|cpu         |5-00:00:00 |28     |apl[01-28]|
+|cpu_long    |31-00:00:0 |28     |apl[01-28]|
 |lsst_cpu_dev     |30:00      |12     |apl[17-28]|
 |lsst_cpu_small   |3-00:00:00 |12     |apl[17-28]|
 |lsst_cpu         |5-00:00:00 |12   |apl[17-28]|
@@ -62,13 +63,15 @@ El cluster Apollo está organizado en diferentes particiones (subconjuntos de m�
 
 ### Cuentas disponibles
 
-- **Workflow** – Interrumpe cualquier job en ejecución: **hpc-photoz** (photoz)
-- **LSST** – Próximo en la cola: **hpc-lsst** [solo en nuevas apollos apl[17-28]] (lsst)
-- **Grupo A** - Prioridad Mayor: **hpc-bpglsst** (itteam, bpg-lsst)
-- **Grupo B** - Prioridad Intermedia: **hpc-collab** (des, desi, sdss, tno)
-- **Grupo C** - Prioridad Menor: **hpc-public** (linea-members)
+|ACCOUNT     |PRIORIDADE |GRUPO                         |          |
+|------------|-----------|----------------------------- |----------|
+|hpc-public  |Baixa      |Usuarios con acceso autorizado|apl[01-28]|
+|hpc-collab  |Média      |DES, DESI, SDSS e TON members |apl[01-28]|
+|hpc-lsst*   |Alta       |LSST members                  |apl[17-28]|
+|hpc-bpglsst |Alta       |BPG members                   |apl[01-28]|
 
-Las particiones (**cpu_dev**, **cpu_small**, **cpu** y **cpu_long**) incluyen todas las apollos (*apl[01-28]*), mientras que las particiones del grupo LSST solo incluyen *apl[17-28]*. Solo la cuenta *hpc-lsst* puede enviar jobs a particiones con prefijo "lsst", que tienen mayor prioridad en los nodos.
+
+\*Sólo la cuenta **hpc-lsst** podrá enviar trabajos en particiones con el prefijo "lsst".
 
 !!! warning "Atención"
     Como parte del programa de contribución in-kind BRA-LIN, IDAC Brasil tiene el compromiso de generar redshifts fotométricos anualmente para el relevamiento LSST, siempre en el período previo a las liberaciones oficiales de datos. En estos períodos, el *Cluster Apollo* estará completamente ocupado para este propósito por un tiempo estimado de varias horas, pudiendo extenderse a varios días. Los usuarios serán informados con anticipación por correo sobre la indisponibilidad del cluster. [Haga clic aquí](https://linea-it.github.io/pz-lsst-inkind-doc/) para conocer más sobre la producción de redshifts fotométricos y el programa de contribución in-kind BRA-LIN.

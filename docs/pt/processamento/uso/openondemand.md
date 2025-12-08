@@ -38,17 +38,17 @@ Para [**mover** ou **copiar**](../img/OOD5.png) arquivos é preciso seguir os pa
 ## Jobs
 Na seção [**Jobs**](../img/OOD6.png) do menu inicial, encontram-se as opções "Job Composer" e "Active Jobs". A tela "Job Composer" facilita o processo de submissão de jobs e em [**"Active Jobs"**](../img/OOD9.png) você pode acompanhar a execução do seu Job com detalhes.
 
-Para submeter um job é necessário utilizar um script de submissão como este descrito abaixo: ([saiba mais](../apollo/index.md#anatomia-de-um-job)) 
+**Para submeter um job é necessário utilizar um script de submissão como o descrito abaixo:** 
 
 ```bash
 #!/bin/bash
 #SBATCH -p PARTITION                       #Name of the Partition to use
 #SBATCH --nodelist=NODE                    #Name of the Node to be allocated
-#SBATCH -J simple-job			           #Job name
+#SBATCH -J simple-job			             #Job name
 #----------------------------------------------------------------------------#
 
 ##path to executable code
-EXEC=/scratch/users/YOUR.USER/ondemand/projects/EXECUTABLE.CODE
+EXEC=/scripts/YOUR.USER/EXECUTABLE.CODE
 
 srun $EXEC
 ```
@@ -63,7 +63,7 @@ O Open OnDemand facilita todo o processo de submissão de jobs através da ferra
 4. Clicar em **"Submit"** para que o Job entre em execução.
 
 !!! warning "Aviso Importante"
-    Os nós de computação do cluster não possuem acesso ao seu diretório de usuário (Home Directory). Mova ou copie, para seu diretório SCRATCH, todos os arquivos necessários para a submissão do seu job. 
+    Os nós de computação do cluster não possuem acesso ao seu diretório de usuário (Home Directory). Mova ou copie, para seu diretório SCRATCH ou SCRIPTS, todos os arquivos necessários para a submissão do seu job. 
 
 ## JupyterLab
 Com o Open OnDemand, é viável acessar o Jupyter Notebook em nosso ambiente de HPC. Por meio de "Interactive Apps", o Jupyter Notebook iniciará uma sessão em um dos nós de computação do cluster, bastando para isso:
@@ -84,13 +84,13 @@ Ao abrir um [**terminal dentro do JupyterLab**](../img/OOD14.png) via Open OnDem
 
 Siga os comandos abaixo:
 
-1. Vá para sua área SCRATCH, Instale e carregue o Miniconda:
+1. Vá para sua área SCRIPTS, Instale e carregue o Miniconda:
 ``` bash
-	cd $SCRATCH
+	cd $SCRIPTS
 
     curl -L -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     chmod +x Miniconda3-latest-Linux-x86_64.sh
-    ./Miniconda3-latest-Linux-x86_64.sh -p $SCRATCH/miniconda
+    ./Miniconda3-latest-Linux-x86_64.sh -p $SCRIPTS/miniconda
     
     source miniconda/bin/activate 
 
@@ -98,7 +98,7 @@ Siga os comandos abaixo:
 ```
 2. Crie, ative um venv conda e instale o _ipykernel_:
 ``` bash
-	conda create -p $SCRATCH/kernelname
+	conda create -p $SCRIPTS/kernelname
     conda activate kernelname/
     
     conda install -c anaconda ipykernel
@@ -108,7 +108,7 @@ Siga os comandos abaixo:
 	JUPYTER_PATH=$SCRATCH/.local
 	echo $JUPYTER_PATH
     
-    python -m ipykernel install --prefix=$JUPYTER_PATH --name 'kernelname'
+   python -m ipykernel install --prefix=$JUPYTER_PATH --name 'kernelname'
 ```
 4. Abra uma sessão do Jupyter Notebook.
 
@@ -116,8 +116,8 @@ Siga os comandos abaixo:
 
     ```` yaml
     
-    #[InstallIPythonKernelSpecApp] WARNING | Installing to /scratch/users/YOUR.USER/.local/share/jupyter/kernels, which is not in ['/lustre/t0/scratch/users/YOUR.USER/kernelname/share/jupyter/kernels', '/home/YOUR.USER/.local/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/YOUR.USER/.ipython/kernels']. The kernelspec may not be found.
-    Installed kernelspec kernelname in /lustre/t0/scratch/users/YOUR.USER/.local/share/jupyter/kernels/kernelname
+    #[InstallIPythonKernelSpecApp] WARNING | Installing to /scratch/users/YOUR.USER/.local/share/jupyter/kernels, which is not in ['/scratch/users/YOUR.USER/kernelname/share/jupyter/kernels', '/home/YOUR.USER/.local/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/YOUR.USER/.ipython/kernels']. The kernelspec may not be found.
+    Installed kernelspec kernelname in /scratch/users/YOUR.USER/.local/share/jupyter/kernels/kernelname
     
     ```` 
 
@@ -127,7 +127,8 @@ Ao final dessa execução de comandos, será possível ver o botão do kernel py
 
 ## Vídeos tutoriais
 * [Como submeter um Job](https://youtu.be/6w1H3VS40Ew)
-* [Como acessar o Jupyter Notebook](https://youtu.be/SemHNDr8vjg) 
+* [Como acessar o Jupyter Notebook](https://youtu.be/SemHNDr8vjg)
+* [Como criar um kernel]() 
 
 Qualquer dúvida, entre em contato com o [Service Desk](../../suporte.md).
 
