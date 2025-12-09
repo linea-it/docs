@@ -18,7 +18,7 @@ Caso o usuário **não possua uma conta no RSP**, **o procedimento de registro n
 
 --- 
 
-Siga as instruções para habilitar os recursos oferecidos pela LIneA aos membros do LSST.
+Siga as instruções para habilitar os recursos oferecidos pelo LIneA aos membros do LSST.
 
 !!! warning "Mesmo usuários já registrados no LIneA como público geral devem realizar todas as etapas a seguir."
 
