@@ -25,12 +25,13 @@ Nesse script é preciso especificar o **nome da fila (Partition)** que será usa
   #----------------------------------------------------------------------------#
 
   #Carregar o EUPS
-  . /mnt/eups/linea_eups_setup.sh
-
+  export EUPS_USERDATA=/scratch/users/YOUR.USER
+  . /opt/eups/bin/setups.sh
+  
   #Carregar pacote 
   setup <PACKAGE> <VERSION>
 
-  ##path to executable code
+  #Caminho para seu código
   EXEC=/scripts/YOUR.USER/EXECUTABLE.CODE
 
   srun $EXEC
@@ -42,3 +43,26 @@ Nesse script é preciso especificar o **nome da fila (Partition)** que será usa
 
 
 #### MPI
+```bash
+  #!/bin/bash
+  #SBATCH -p PARTITION
+  #SBATCH --nodes=QT-NODES   
+  #SBATCH --account=ACCOUNT
+  #SBATCH --ntasks-per-node=QT-TASKS-PER-NODE
+  #SBATCH -J JOB-NAME            
+  #----------------------------------------------------------#
+
+  #Exibe os nodes alocados
+  echo "SLURM_NODELIST=$SLURM_NODELIST"
+  echo "SLURM_NTASKS=$SLURM_NTASKS"
+  echo "Running on nodes: $(scontrol show hostnames $SLURM_NODELIST)"
+
+  #Carregar o EUPS
+  export EUPS_USERDATA=/scratch/users/YOUR.USER
+  . /opt/eups/bin/setups.sh
+  
+  setup openmpi 5.0.8+0
+
+  #Executar via srun ou mpirun
+  mpirun /path/to/code
+```

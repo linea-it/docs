@@ -68,8 +68,10 @@ A Job requests computing resources and specifies applications to be launched on 
   #SBATCH --nodelist=NODE                    #Name of the Node to be allocated
   #SBATCH -J simple-job                      #Job name
   #----------------------------------------------------------------------------#
+  
   ##path to executable code
   EXEC=/scripts/YOUR.USER/EXECUTABLE.CODE
+  
   srun $EXEC
 ```
 
@@ -81,7 +83,8 @@ In this script you need to specify: the **queue name (Partition)** to be used; t
 - **To submit the Job:**
 
   ```bash
-    sbatch script-submit-job.sh
+    cd $SCRATCH 
+    sbatch $SCRIPTS/PATH/TO/script-submit-job.sh
   ```
 
 If the script is correct **there will be an output indicating the job ID**.
@@ -108,11 +111,6 @@ If the script is correct **there will be an output indicating the job ID**.
 
 !!! info
     Currently, EUPS is automatically loaded after the user logs into any machine in the *Apollo cluster*.
-
-  ```bash
-    source /opt/eups/bin/setups.sh
-  ```
-
 
 - **To list all available packages:**
 

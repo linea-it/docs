@@ -1,6 +1,8 @@
 nav:
   - Início: pt/index.md
-  - Primeiros passos: pt/primeiros_passos.md
+  - Primeiros Passos: 
+      - Registro de Usuários: pt/primeiros_passos.md
+      - Registro para membros do LSST: pt/registro_user_lsst.md
   - Plataformas Científicas: 
       - Plataformas Científicas: pt/sci-platforms/index.md #intro e LSP landing page
       - JupyterHub: pt/sci-platforms/jupyter.md
@@ -154,7 +156,9 @@ plugins:
             site_name: "User Documentation"
             nav:
               - Home: en/index.md
-              - Getting Started: en/primeiros_passos.md
+              - Getting Started:
+                  - User Registration: en/primeiros_passos.md
+                  - LSST Member Registration: en/lsst_member_registration.md                   
               - Scientific Platforms: 
                   - Scientific Platforms: en/sci-platforms/index.md #intro and LSP landing page
                   - JupyterHub: en/sci-platforms/jupyter.md
@@ -201,7 +205,9 @@ plugins:
             site_name: "Documentación para Usuarios"
             nav:
               - Inicio: es/index.md
-              - Primeros Pasos: es/primeiros_passos.md
+              - Primeros Pasos: 
+                - Registro de usuario: es/primeiros_passos.md
+                - Registro de miembros de LSST: es/registro_user_lsst.md
               - Plataformas Científicas: 
                 - Plataformas Científicas: es/sci-platforms/index.md #intro and LSP landing page
                 - JupyterHub: es/sci-platforms/jupyter.md

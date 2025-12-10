@@ -67,8 +67,11 @@ Un Job solicita recursos de computación y especifica las aplicaciones a iniciar
   #SBATCH --nodelist=NODO                    #Nombre del Nodo a asignar
   #SBATCH -J simple-job                      #Nombre del Job
   #----------------------------------------------------------------------------#
+  
   ##ruta al código ejecutable
+  
   EXEC=/scripts/USUARIO/CODIGO.EJECUTABLE
+  
   srun $EXEC
 ```
 
@@ -80,7 +83,8 @@ En este script debe especificar: el **nombre de la cola (Partition)** a usar; el
 - **Para enviar el Job:**
 
 ```bash
- sbatch script-submit-job.sh
+   cd $SCRATCH 
+   sbatch $SCRIPTS/PATH/TO/script-submit-job.sh
 ```
 
 Si el script es correcto **habrá una salida que indica el ID del job**.
@@ -109,9 +113,6 @@ Si el script es correcto **habrá una salida que indica el ID del job**.
 !!! info
     Actualmente, EUPS se carga automáticamente después de que el usuario accede a cualquier máquina del clúster Apollo.
 
-  ```bash
-    source /opt/eups/bin/setups.sh
-  ```
 
 - **Para listar todos los paquetes disponibles:**
 

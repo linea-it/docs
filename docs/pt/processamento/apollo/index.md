@@ -1,7 +1,7 @@
 # HPE Apollo 2000
 
 
-O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 cores** físicos. Seus nós são equipados com processadores `Intel Xeon Skylake 5120 2.2GHz` (apl01-16) e `Intel Xeon Gold 5320 2.20GHz` (apl17-28). O conjunto de máquinas provê cerca de 85 Tflops de capacidade computacional. 
+O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 cores** físicos. Seus nós são equipados com processadores `Intel Xeon Skylake 5120 2.2GHz` (apl01-16) e `Intel Xeon Gold 5320 2.20GHz` (apl17-28). 
 
 Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n. Atualmente, o número de cores disponíveis é de *2144*, pois o HT está ativo nos nós de computação.
 
@@ -33,7 +33,7 @@ Essas áreas de armazenamento devem ser utilizadas da seguinte forma:
 
 **Home:** Estrutura montada a partir do diretório `/home/<username>`. Utilizado para armazenar especialmente os resultados que se queira manter durante toda a vigência do projeto. Variável de ambiente `$HOME`.
 
-**Scriptland:** Estrutura montada a partir do diretório `/scriptland/<username>`. É uma área de armazenamento otimizada para armazenar scripts e códigos. Variável de ambiente `$SCRIPTLAND`.
+**Scripts:** Estrutura montada a partir do diretório `/scripts/<username>`. É uma área de armazenamento otimizada para armazenar scripts e códigos. Variável de ambiente `$SCRIPTS`.
 
 [Clique aqui para mais detalhes](../../armazenamento/index.md)
 
@@ -53,10 +53,10 @@ O cluster Apollo é organizado em diferentes partições (subconjunto de máquin
 
 |PARTITION   |TIMELIMIT  |NODES  |NODELIST  |
 |------------|-----------|-------|----------|
-|cpu_dev     |30:00      |26     |apl[01-28]|
-|cpu_small   |3-00:00:00 |26     |apl[01-28]|
-|cpu         |5-00:00:00 |26     |apl[01-28]|
-|cpu_long    |31-00:00:0 |26     |apl[01-28]|
+|cpu_dev     |30:00      |28     |apl[01-28]|
+|cpu_small   |3-00:00:00 |28     |apl[01-28]|
+|cpu         |5-00:00:00 |28     |apl[01-28]|
+|cpu_long    |31-00:00:0 |28     |apl[01-28]|
 |lsst_cpu_dev     |30:00      |12     |apl[17-28]|
 |lsst_cpu_small   |3-00:00:00 |12     |apl[17-28]|
 |lsst_cpu         |5-00:00:00 |12   |apl[17-28]|
@@ -64,14 +64,15 @@ O cluster Apollo é organizado em diferentes partições (subconjunto de máquin
 
 
 ### Accounts disponíveis 
+|ACCOUNT     |PRIORIDADE |GRUPO                         |          |
+|------------|-----------|------------------------------|----------|
+|hpc-public  |Baixa      |Usuários com acesso concedido |apl[01-28]|
+|hpc-collab  |Média      |DES, DESI, SDSS e TON members |apl[01-28]|
+|hpc-lsst*   |Alta       |LSST members                  |apl[17-28]|
+|hpc-bpglsst |Alta       |BPG members                   |apl[01-28]|
 
-- **Workflow** – Interrompe qualquer job que esteja rodando: **hpc-photoz** (photoz)
-- **LSST** – Próximo da fila: **hpc-lsst** [somente nas novas apollos apl[17-28]] (lsst)
-- **Grupo A** - Prioridade Maior: **hpc-bpglsst** (itteam, bpg-lsst)
-- **Grupo B** - Prioridade Intermediária: **hpc-collab** (des, desi, sdss, tno)
-- **Grupo C** - Prioridade Menor: **hpc-public** (linea-members)
 
-As partições (**cpu_dev**, **cpu_small**, **cpu** e **cpu_long**) possuem todas as apollos (*apl[01-28]*), enquanto as partições do grupo LSST possuem apenas as *apl[17-28]*. Somente a account *hpc-lsst* poderá submeter jobs nas partições de prefixo "lsst", que possuem maior prioridade nos nodes.
+\*Somente a account *hpc-lsst* poderá submeter jobs nas partições de prefixo "lsst".
 
 !!! warning "Atenção"
 	Como parte do programa de contribuição in-kind BRA-LIN, o IDAC Brasil possui o compromisso de gerar _redshifts_ fotométricos anualmente para o levantamento LSST, sempre na época que antecede as liberações oficiais dos dados. Nestes períodos, o Cluster Apollo será totalmente ocupado para este propósito por um tempo estimado de algumas horas, mas podendo se estender a alguns dias. Na ocasião, os usuários serão informados com antecência sobre a indisponibilidade do cluster por e-mail. [Clique aqui](https://linea-it.github.io/pz-lsst-inkind-doc/) para saber mais sobre a produção de medidas de _redshift_ e o programa de contribuição in-kind BRA-LIN. 

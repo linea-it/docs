@@ -44,3 +44,27 @@ In this script you need to specify the **queue name (Partition)** to be used, th
 
 
 #### MPI
+
+```bash
+  #!/bin/bash
+  #SBATCH -p PARTITION
+  #SBATCH --nodes=NUMBER-NODES   
+  #SBATCH --account=ACCOUNT
+  #SBATCH --ntasks-per-node=QT-TASKS-PER-NODE
+  #SBATCH -J JOB-NAME            
+  #----------------------------------------------------------#
+
+  echo "SLURM_NODELIST=$SLURM_NODELIST"
+  echo "SLURM_NTASKS=$SLURM_NTASKS"
+  echo "Running on nodes: $(scontrol show hostnames $SLURM_NODELIST)"
+
+  #Setup EUPS
+  
+  export EUPS_USERDATA=/scratch/users/YOUR.USER
+  . /opt/eups/bin/setups.sh
+
+  setup openmpi 5.0.8+0
+
+  #Execute with srun or mpirun
+  mpirun /path/to/code
+```

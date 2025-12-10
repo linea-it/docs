@@ -53,8 +53,10 @@ To submit a job, you need a submission script like this: ([learn more](../apollo
 #SBATCH --nodelist=NODE                    #Name of the Node to be allocated
 #SBATCH -J simple-job                      #Job name
 #----------------------------------------------------------------------------#
+
 ##path to executable code
-EXEC=/scratch/users/YOUR.USER/ondemand/projects/EXECUTABLE.CODE
+EXEC=/scripts/YOUR.USER/EXECUTABLE.CODE
+
 srun $EXEC
 ```
 
@@ -94,13 +96,13 @@ When opening a [**terminal within JupyterLab**](../img/OOD14.png) via Open OnDem
 
 Follow these commands:
 
-1. Go to your SCRATCH area, install and load Miniconda:
+1. Go to your SCRIPTS area, install and load Miniconda:
 
 ```bash
-    cd $SCRATCH
+    cd $SCRIPTS
     curl -L -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     chmod +x Miniconda3-latest-Linux-x86_64.sh
-    ./Miniconda3-latest-Linux-x86_64.sh -p $SCRATCH/miniconda
+    ./Miniconda3-latest-Linux-x86_64.sh -p $SCRIPTS/miniconda
     
     source miniconda/bin/activate 
     conda deactivate #Required to deactivate "base" env
@@ -109,7 +111,7 @@ Follow these commands:
 2. Create, activate a conda venv and install _ipykernel_:
 
 ```bash
-    conda create -p $SCRATCH/kernelname
+    conda create -p $SCRIPTS/kernelname
     conda activate kernelname/
     
     conda install -c anaconda ipykernel
@@ -129,8 +131,8 @@ Follow these commands:
 ???+ success "The last command's output should be:"
 
     ````yaml
-    #[InstallIPythonKernelSpecApp] WARNING | Installing to /lustre/t0/scratch/users/YOUR.USER/.local/share/jupyter/kernels, which is not in ['/lustre/t0/scratch/users/YOUR.USER/kernelname/share/jupyter/kernels', '/home/YOUR.USER/.local/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/YOUR.USER/.ipython/kernels']. The kernelspec may not be found.
-    Installed kernelspec kernelname in /lustre/t0/scratch/users/YOUR.USER/.local/share/jupyter/kernels/kernelname
+    #[InstallIPythonKernelSpecApp] WARNING | Installing to /scratch/users/YOUR.USER/.local/share/jupyter/kernels, which is not in ['/scratch/users/YOUR.USER/kernelname/share/jupyter/kernels', '/home/YOUR.USER/.local/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/YOUR.USER/.ipython/kernels']. The kernelspec may not be found.
+    Installed kernelspec kernelname in /scratch/users/YOUR.USER/.local/share/jupyter/kernels/kernelname
     ````
 
 After executing these commands, you'll see the created Python kernel button.
@@ -139,5 +141,6 @@ After executing these commands, you'll see the created Python kernel button.
 
 * [How to submit a Job](https://youtu.be/6w1H3VS40Ew)
 * [How to access Jupyter Notebook](https://youtu.be/SemHNDr8vjg)
+* [How to create a Kernel]()
 
 For any questions, contact the [Service Desk](../../suporte.md).
