@@ -26,6 +26,7 @@ nav:
             - Slurm: processamento/apollo/index.html#slurm
             - Open OnDemand: pt/processamento/uso/openondemand.md
             - JupyterLab: processamento/uso/openondemand.html#jupyterlab
+            - Apptainer: processamento/uso/apptainer-uso.md
             - Job Script (exemplos): pt/processamento/uso/templates-jobs.md  
   - Armazenamento: 
       - Armazenamento: pt/armazenamento/index.md
@@ -182,6 +183,7 @@ plugins:
                         - Slurm: en/processamento/apollo/index.html#slurm
                         - Open OnDemand: en/processamento/uso/openondemand.md
                         - JupyterLab: en/processamento/uso/openondemand.html#jupyterlab
+                        - Apptainer: en/processamento/uso/apptainer-uso.md
                         - Job Script (examples): en/processamento/uso/templates-jobs.md  
               - Storage: 
                   - Storage: en/armazenamento/index.md
@@ -231,6 +233,7 @@ plugins:
                         - Slurm: es/processamento/apollo/index.html#slurm
                         - Open OnDemand: es/processamento/uso/openondemand.md
                         - JupyterLab: es/processamento/uso/openondemand.html#jupyterlab
+                        - Apptainer: es/processamento/uso/apptainer-uso.md
                         - Scripts de Trabajo (ejemplos): es/processamento/uso/templates-jobs.md  
               - Almacenamiento: 
                   - Almacenamiento: es/armazenamento/index.md
