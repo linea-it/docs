@@ -14,27 +14,49 @@ Apesar de existir essa etapa de autenticação, é fundamental destacar que:
 
 Caso o usuário **não possua uma conta no RSP**, **o procedimento de registro no LIneA não poderá ser concluído**. Nesses casos, recomendamos que o usuário primeiro solicite sua conta no RSP.
 
-- Para criar um conta no RSP, acesse:  https://rsp.lsst.io/index.html
+??? info "Link para criar uma conta no Rubin Science Platform (RSP) - clique para abrir"
+
+    Antes de prosseguir com o registro no RSP, certifique-se de que o seu nome consta na lista de Data Rights Holders (DRHs) do LSST.
+
+    Caso não tenha conhecimento sobre esse procedimento, orientamos que **não** solicite, neste momento, o registro na plataforma RSP. **É necessário constar previamente na lista oficial de DRHs do Rubin/LSST.**
+
+    Caso você não saiba quem é o responsável (Program Manager) pelo seu país ou instituição, consulte a [página oficial de programas e contatos do Rubin/LSST](https://www.lsst.org/scientists/in-kind-program/programs).
+
+    Em caso de dúvidas, entre em contato com o nosso service desk pelo e-mail helpdesk@linea.org.br para os devidos esclarecimentos.
+
+    ??? success "Sim, já estou na lista de DRHs e só preciso criar uma conta no RSP"
+
+        Para criar uma conta no RSP, acesse:  https://rsp.lsst.io/index.html
 
 --- 
 
-Siga as instruções para habilitar os recursos oferecidos pelo LIneA aos membros do LSST.
+!!! warning "Usuários já registrados no LIneA como público geral também devem realizar todas as etapas a seguir."
 
-!!! warning "Mesmo usuários já registrados no LIneA como público geral devem realizar todas as etapas a seguir."
+---
 
+??? info "Instruções para habilitar os recursos oferecidos pelo LIneA/IDAC-BR aos membros do LSST"
 
-**1.** Acesse: [https://scienceplatform.linea.org.br/lsp](https://scienceplatform.linea.org.br/lsp)
+    Antes de prosseguir com o registro no ambiente do LIneA/IDAC-BR, certifique-se de que o seu nome consta na lista de Data Rights Holders (DRHs) do LSST e de que você já possui uma conta ativa no Rubin Science Platform (RSP).
 
-**2.** Clique em **"Sign In"** (canto superior direito da tela).
+    Caso você ainda não conste na lista de DRHs, por favor, não prossiga com o registro no RSP neste momento. **É necessário estar previamente incluído na lista oficial de DRHs do Rubin/LSST.**
 
-**3.** Clique no botão de acesso via RSP: **"LSST MEMBERS (RSP ACCOUNT)"**.
+    Em caso de dúvidas, entre em contato com o nosso service desk pelo e-mail helpdesk@linea.org.br para os devidos esclarecimentos.
 
-**4.** Na página do CILogon, procure e selecione sua instituição no campo "Select an Identity Provider".
+    ??? success "Sim, já possuo conta ativa no RSP e só preciso criar uma conta no LIneA/IDAC-BR"
 
-**5.** Após a etapa anterior, será exibida uma tela com a mensagem **"Unauthorized Access"**. Neste momento, clique em **"register here"**.
+        **1.** Acesse: [https://scienceplatform.linea.org.br/lsp](https://scienceplatform.linea.org.br/lsp)
 
-**6.** Preencha e submeta o formulário de registro exibido e aceite os termos.
+        **2.** Clique em **"Sign In"** (canto superior direito da tela).
 
-Siga este procedimento através do vídeo tutorial disponível em: **<ins>https://youtu.be/nyRN5xVRRqo</ins>**.
+        **3.** Clique no botão de acesso via RSP: **"LSST MEMBERS (RSP ACCOUNT)"**.
+
+        **4.** Na página do CILogon, localize e selecione sua instituição no campo "Select an Identity Provider".
+
+        **5.** Após essa etapa, será exibida uma tela com a mensagem **"Unauthorized Access"**. Nesse momento, clique em **"register here"**.
+
+        **6.** Preencha e envie o formulário de registro exibido e aceite os termos.
+
+        Siga este procedimento por meio do vídeo tutorial disponível em: https://youtu.be/nyRN5xVRRqo
+
 
 Em caso de dúvidas, entre em contato com o Service Desk pelo e-mail [helpdesk@linea.org.br](mailto:helpdesk@linea.org.br).
