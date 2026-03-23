@@ -5,9 +5,6 @@ To access the platforms and services provided by LIneA, you need to have an acti
 * Institutional Credentials Login – Recommended for those with institutional affiliation (undergraduates, postgraduates, researchers, etc.). Login is performed via *CILogon*.
 * Google Login – Recommended for amateur astronomers, high school students, astronomy enthusiasts, etc. Accessible to anyone; you simply need a Gmail account.
 
-!!! info "Members of scientific collaborations"
-	Login with institutional credentials is mandatory to access services exclusive to members of the DES, DESI, LSST, SDSS, and TON collaborations.
-
 #### Do not have a registration?
 
 To register as a user with LIneA, please follow the instructions below:
@@ -30,14 +27,6 @@ The LIneA registration process for LSST members includes specific steps that mus
 
 - Follow the instructions [here](./registro_user_lsst.md)
 
-
-### Registration for other collaboration members
-
-Members of the DES, DESI, SDSS, and TON collaborations must complete the screening form below, filling in all required fields and submitting the form at the end.
-
-- [Registration request for collaboration members.](https://docs.google.com/forms/d/e/1FAIpQLScQuUTV7Wc-C10gWNcznorbW5mOQlGkFAXUikd0R7JzsdgSfQ/viewform)
-
-After data evaluation, we will contact you via email.
 
 For any questions or issues, please contact our [Service Desk](./suporte.md).
 

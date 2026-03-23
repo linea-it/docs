@@ -4,9 +4,7 @@ Para ter acesso às plataformas e serviços disponibilizados pelo LIneA, você p
 
 * Login com Credenciais Institucionais - Indicado para quem tem vínculo institucional (graduandos, pós-graduandos, pesquisadores, etc). O login é feito via CILogon. 
 * Login via Google - Indicado para astrônomos amadores, estudantes do Ensino Médio, entusiastas da astronomia, etc. Acessível a qualquer pessoa, basta ter um Gmail.  
-
-!!! info "Membros de Colaborações Científicas"
-	O login com credencial institucional é obrigatório para acessar serviços que são exclusivos para membros das colaborações DES, DESI, LSST, SDSS e TON. 
+ 
 
 #### Não possui registro? 
 
@@ -30,13 +28,4 @@ O processo de registro no LIneA para membros do LSST inclui etapas específicas 
 - Siga as instruções [aqui](./registro_user_lsst.md)
 
 
-### Registro para Membros de outras Colaborações Científicas
-
-Os membros das colaborações DES, DESI, SDSS e TON, devem passar pelo formulário de triagem abaixo, preenchendo todos os campos necessários e enviando o formulário ao final.
-
-- [Solicitação de registro para membros de Colaboração.](https://docs.google.com/forms/d/e/1FAIpQLScQuUTV7Wc-C10gWNcznorbW5mOQlGkFAXUikd0R7JzsdgSfQ/viewform)
-
-Após a avaliação dos dados, entraremos em contato por email.
-
 Qualquer dúvida ou problema, entre em contato com o nosso [Service Desk](./suporte.md).
-
