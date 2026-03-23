@@ -1,6 +1,6 @@
 O [*User Query*](https://userquery.linea.org.br/query) é a interface SQL baseada em web do LIneA para consultar bases de dados astronômicas. Permite executar consultas em catálogos de *surveys* públicos (como *DES* DR2 e *Gaia* DR3), salvar resultados no seu espaço de trabalho pessoal e exportar dados em diversos formatos.
 
-As tabelas que você cria são armazenadas no *MyDB*, seu espaço privado de banco de dados. Essas tabelas podem ser acessadas imediatamente a partir do *JupyterHub* do LIneA ou remotamente via *TAP Service*. Se sua tabela incluir coordenadas celestes (AR/Dec) e identificadores únicos, ela estará automaticamente disponível no [*Target Viewer*](../sci-platforms/target_viewer.md) para visualização de imagens.
+As tabelas que você cria são armazenadas no *MyDB*, seu espaço privado de banco de dados. Essas tabelas podem ser acessadas imediatamente a partir do *JupyterHub* do LIneA ou remotamente via *TAP Service*. Se sua tabela incluir coordenadas celestes (R.A./Dec.) e identificadores únicos, ela estará automaticamente disponível no [*Target Viewer*](../sci-platforms/target_viewer.md) para visualização de imagens.
 
 ---
 
