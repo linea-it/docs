@@ -22,17 +22,3 @@ Welcome to LIneA's _Documentation for Users_ page. This is the central place to 
 
 !!! info "Comentários, dúvidas, sugestões?"
 	 Se você encontrar algo faltando nesta documentação, fique à vontade para abrir um _issue_  no [repositório de documentação do LIneA no GitHub](https://github.com/linea-it/docs/issues/new).
-
-??? info "Link para registro no Rubin Science Platform (RSP) - clique para abrir"
-
-    Antes de prosseguir com o registro na RSP, verifique se você já foi incluído na lista de Data Rights Holders (DRHs) do LSST pelo Program Manager.
-
-    Caso não tenha conhecimento sobre esse procedimento, orientamos que **não** solicite, neste momento, o registro na plataforma RSP. **É necessário constar previamente na lista oficial de DRHs do Rubin/LSST.**
-
-    Em caso de dúvidas, entre em contato com o nosso service desk pelo e-mail helpdesk@linea.org.br para os devidos esclarecimentos.
-
-    ??? success "Sim, eu já estou na lista de DRHs, agora só preciso do link de registro no RSP - clique para abrir"
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-        nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-        massa, nec semper lorem quam in massa.
