@@ -16,7 +16,7 @@ cd /scratch/users/<username>
 !!! danger "ATENÇÃO"
     Essa área NÃO sofrerá backup!
 
-Os arquivos que não foram modificados nos últimos 60 dias serão automaticamente removidos, o que torna temporário o armazenamento de arquivos nessa área.
+Os arquivos que não foram modificados nos últimos 30 dias serão automaticamente removidos, o que torna temporário o armazenamento de arquivos nessa área.
 Recomenda-se que os usuários realizem a transferência dos arquivos importantes do `$SCRATCH`  para o seu `homedir`. 
 
 !!! warning
@@ -27,7 +27,7 @@ Recomenda-se que os usuários realizem a transferência dos arquivos importantes
 
 | area     | bsoft  | bhard  | isoft  | ihard  | grace period |
 | -------- | ------ | ------ | ------ | ------ | ------------ |
-| /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
+| /scratch | 35 GB  | 40 GB  | 100000 | 120000 | 7 days       |
 
 
 
@@ -149,7 +149,7 @@ O diretório `home` é uma área para os usuários armazenarem seus arquivos pes
 | --------------------- | ------ | ------ | ------- | ------- | ------------ |
 | público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
 | público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| colaboração           | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+| colaboração LSST      | 35 GB  | 40 GB  | 1000000 | 1200000 | 7 days       |
 
 !!! tip
     Para verificar os valores de quota configurado basta utilizar o comando: `quota -s -u <username> /home`.
@@ -162,21 +162,21 @@ a) Como verificar minha quota disponível?
    
     show_quota 
     
-b) Como consultar os meus arquivos criados há _mais_ de 60 dias? 
+b) Como consultar os meus arquivos criados há _mais_ de 30 dias? 
 
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
+    lfs find $SCRATCH --uid $UID -mtime +30 --print
 
-c) Como consultar os meus arquivos criados há _menos_ de 60 dias? 
+c) Como consultar os meus arquivos criados há _menos_ de 30 dias? 
 
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
+    lfs find $SCRATCH --uid $UID -mtime -30 --print
     
 d) Como listar os OSTs do Lustre?
 
     lfs osts $SCRATCH
 
-e) Como listar os arquivos armazenados há mais de 60 dias em um determinado OST do Lustre?
+e) Como listar os arquivos armazenados há mais de 30 dias em um determinado OST do Lustre?
 
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
+    lfs find $SCRATCH -mtime +30 --print --obd t0-OST0002_UUID
     
 f) Como configurar o striping em diretório de modo a "quebrar" os arquivos e distribuir esses "pedaços" em 10 OSTs?
 
@@ -197,14 +197,10 @@ Os sistemas de armazenamento NAS são utilizados para armazenamento de longo pra
 
 Características atuais: 
 
-| Fabricante | Modelo               | Capacidade | Instalado em | Disponibilidade |     |
-| ---------- | -------------------- | ---------- | ------------ | --------------- | --- |
-| SGI        | IS5500<sup>[1]</sup> | 540TB      | Dez-2011     | Fora de serviço |     |
-| SGI        | IS5600               | 240TB      | Jul-2014     | Em uso          |     |
-| HPE        | APOLO 4510           | 1.2 PB     | Apr-2025     | Em uso          |     |
-
-
-<sup>[1]</sup> _este equipamento foi desativado em Jun/2023 devido a problemas físicos._
+| Fabricante | Modelo               | Capacidade | Instalado em | Disponibilidade |
+| ---------- | -------------------- | ---------- | ------------ | --------------- |
+| SGI        | IS5600               | 240TB      | Jul-2014     | Em uso          |
+| HPE        | APOLO 4510           | 1.2 PB     | Apr-2025     | Em uso          |
 
 ## Backup
 

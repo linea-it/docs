@@ -16,7 +16,7 @@ cd /scratch/users/<username>
 !!! danger "ATENCIÓN"
     ¡Esta área NO tendrá respaldo!
 
-Los archivos que no se hayan modificado en los últimos 60 días se eliminarán automáticamente, lo que hará que el almacenamiento en esta área sea temporal.
+Los archivos que no se hayan modificado en los últimos 30 días se eliminarán automáticamente, lo que hará que el almacenamiento en esta área sea temporal.
 Se recomienda a los usuarios transferir los archivos importantes de `$SCRATCH` a su directorio personal.
 
 !!! warning
@@ -144,7 +144,7 @@ El directorio `home` es un área donde los usuarios almacenan sus archivos perso
 | --------------------- | ------ | ------ | ------- | ------- | ------------ |
 | público general       | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
 | público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| colaboración          | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+| colaboración LSST     | 35 GB  | 40 GB  | 1000000 | 1200000 | 7 days       |
 
 !!! tip
     Para comprobar los valores de cuota configurados, simplemente use el comando:`quota -s -u <username> /home`.
@@ -157,21 +157,21 @@ a) ¿Cómo consultar mi cuota disponible?
 
     show_quota
     
-b) ¿Cómo consultar mis archivos creados hace más de 60 días?
+b) ¿Cómo consultar mis archivos creados hace más de 30 días?
 
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
+    lfs find $SCRATCH --uid $UID -mtime +30 --print
 
-c) ¿Cómo consultar mis archivos creados hace menos de 60 días?
+c) ¿Cómo consultar mis archivos creados hace menos de 30 días?
 
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
+    lfs find $SCRATCH --uid $UID -mtime -30 --print
     
 d) ¿Cómo listar los OSTs de *Lustre*?
 
     lfs osts $SCRATCH
 
-e) ¿Cómo listar archivos mayores a 60 días en un OST específico?
+e) ¿Cómo listar archivos mayores a 30 días en un OST específico?
 
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
+    lfs find $SCRATCH -mtime +30 --print --obd t0-OST0002_UUID
     
 f) ¿Cómo configurar striping en un directorio para "dividir" archivos y distribuir "trozos" en 10 OSTs?
 
@@ -191,10 +191,10 @@ Los sistemas NAS se usan para almacenamiento a largo plazo y no son accesibles d
 
 Características actuales:
 
-| Fabricante | Modelo               | Capacidad | Instalado |
-| ---------- | -------------------- | --------- | --------- |
-| SGI        | IS5500<sup>[1]</sup> | 540TB     | Dic-2011  |
-| SGI        | IS5600               | 240TB     | Jul-2014  |
+| Fabricante | Modelo               | Capacidad | Instalado | Disponibilidad  |
+| ---------- | -------------------- | --------- | --------- | --------------- |
+| SGI        | IS5600               | 240TB     | Jul-2014  | En uso          |
+| HPE        | APOLO 4510           | 1.2 PB    | Apr-2025  | En uso          |
 
 <sup>[1]</sup> _este equipo fue desactivado en Jun/2023 por problemas físicos._
 

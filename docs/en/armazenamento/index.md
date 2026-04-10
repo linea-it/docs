@@ -16,7 +16,7 @@ cd /scratch/users/<username>
 !!! danger "ATTENTION"
     There is no backup of /scratch!
 
-Files that have not been modified in the last 60 days will be automatically removed, which makes file storage temporary in this area.
+Files that have not been modified in the last 30 days will be automatically removed, which makes file storage temporary in this area.
 It is recommended that users will transfer the important `$SCRATCH` files to their `homedir`.
 
 !!! warning
@@ -147,7 +147,7 @@ The `Home` directory is an area for users to store their personal files and is a
 | -------------------- | ------ | ------ | ------- | ------- | ------------ |
 | public general       | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
 | public institutional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| collaboration        | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+| LSST collaboration   | 35 GB  | 40 GB  | 1000000 | 1200000 | 7 days       |
 
 !!! tip
     To check the quota values ​​configured simply use the command: `quota -s -u <username> /home`.
@@ -161,21 +161,21 @@ a) How to check my available quota?
 
     show_quota
     
-b) How to find my files created more than 60 days ago?
+b) How to find my files created more than 30 days ago?
 
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
+    lfs find $SCRATCH --uid $UID -mtime +30 --print
 
-c) How to find my files created less than 60 days ago?
+c) How to find my files created less than 30 days ago?
 
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
+    lfs find $SCRATCH --uid $UID -mtime -30 --print
     
 d) How to list *Lustre* OSTs?
 
     lfs osts $SCRATCH
    
-e) How to list files older than 60 days on a specific *Lustre* OST?
+e) How to list files older than 30 days on a specific *Lustre* OST?
 
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
+    lfs find $SCRATCH -mtime +30 --print --obd t0-OST0002_UUID
     
 f) How to configure striping on a directory to "split" files and distribute "chunks" across 10 OSTs?
 
@@ -197,10 +197,10 @@ NAS storage systems are used for long-term storage and are not accessible throug
 
 Current specifications:
 
-| Manufacturer | Model | Capacity | Installed |
-| ------- | ------ | ------------ | -----------| 
-| SGI     | IS5500<sup>[1]</sup> | 540TB        |  Dec-2011  |
-| SGI     | IS5600 | 240TB        |  Jul-2014  |
+| Manufacturer | Model          | Capacity     | Installed  | Availability |
+| ------------ | ---------------| ------------ | -----------| -------------|
+| SGI          | IS5600         | 240TB        |  Jul-2014  | Available    |
+| HPE          | APOLO 4510     | 1.2 PB       | Apr-2025   | Available    |
 
 <sup>[1]</sup> _this equipment was decommissioned in Jun/2023 due to physical issues._
 
