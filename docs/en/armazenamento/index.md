@@ -2,7 +2,7 @@
 
 The *Apollo cluster* environment features a high-performance [*Lustre*](https://www.lustre.org/) filesystem with two storage tiers: SSD with ~70TB (T0) and HDD with ~500TB (T1), both connected to a 100Gb/s EDR Infiniband network. Both storage tiers are available at `/scratch` and `/data`.
 
-### Scratch area and quota
+### /scratch area and quota
 
 Users will be able to access their Scratch directory through the environment variable, or accessing the directory with the full path.
 ```Bash
@@ -27,7 +27,7 @@ It is recommended that users will transfer the important `$SCRATCH` files to the
 
 | area     | bsoft  | bhard  | isoft  | ihard  | grace period |
 | -------- | ------ | ------ | ------ | ------ | ------------ |
-| /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
+| /scratch | 35 GB  | 40 GB  | 100000 | 120000 | 7 days       |
 
 
 ### Best Practices
@@ -116,7 +116,7 @@ Software typically consists of many small files, and as mentioned earlier, acces
 Additionally, under high load, I/O access to *Lustre* filesystems may be blocked. If executables are stored on *Lustre* and filesystem access fails, executables may crash. Therefore, whenever possible, it's better to copy executables to cluster nodes' `/tmp`.
 
 
-## Scripts area
+## /scripts area
 
 Users will be able to access their script directory through the environment variable, or accessing the directory with the full path.
 ```Bash

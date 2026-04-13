@@ -2,7 +2,7 @@
 
 El entorno del *Cluster Apollo* cuenta con un sistema de archivos de alto rendimiento [*Lustre*](https://www.lustre.org/) con dos niveles (tiers) de almacenamiento: uno en SSD con ~70 TB (T0) y otro en HDD con ~500 TB (T1), ambos conectados a una red Infiniband EDR de 100 Gb/s. Los dos niveles de almacenamiento están disponibles en `/scratch` y `/data`.
 
-### Área de scratch y cuota
+### Área /scratch y cuota
 
 Los usuarios pueden acceder a su directorio scratch mediante una variable de entorno o accediendo al directorio con la ruta completa.
 ```Bash
@@ -27,7 +27,7 @@ Se recomienda a los usuarios transferir los archivos importantes de `$SCRATCH` a
 
 | area     | bsoft  | bhard  | isoft  | ihard  | grace period |
 | -------- | ------ | ------ | ------ | ------ | ------------ |
-| /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
+| /scratch | 35 GB  | 40 GB  | 100000 | 120000 | 7 days       |
 
 
 ### Buenas prácticas
@@ -113,7 +113,7 @@ El software generalmente consiste en muchos archivos pequeños, y como se mencio
 
 Además, bajo alta carga, el acceso a *Lustre* puede bloquearse. Si los ejecutables están en *Lustre* y el acceso falla, pueden colapsar. Por lo tanto, es mejor copiar los ejecutables al `/tmp` de los nodos.
 
-## Área de scripts
+## Área /scripts
 
 Los usuarios podrán acceder a su directorio de scripts a través de la variable de entorno o accediendo al directorio con la ruta completa.
 ```Bash
