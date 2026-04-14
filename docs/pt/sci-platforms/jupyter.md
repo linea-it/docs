@@ -1,5 +1,3 @@
-
-
 O [JupyterHub](https://jupyter.org/hub) é um ambiente de desenvolvimento multiusuário baseado em _iPython Notebooks_ que oferece acesso a recursos computacionais compartilhados em um servidor remoto, sem a necessidade de instalação e manutenção por parte dos usuários. Os únicos pré-requisitos para acessar o JupyterHub são: ter uma conta de usuário no LIneA (veja [aqui](../primeiros_passos.md) como criar sua conta) e um navegador com acesso à Internet. Os chamados [Jupyter Notebooks](https://docs.jupyter.org/en/latest/) permitem combinar código interativo, resultados de execução, texto explicativo e recursos de multimídia em um só documento.  
 
 Como parte do [LIneA Science Platform](./index.md), o LIneA JupyterHub está integrado às demais ferramentas de visualização e acesso a dados. Desse modo, toda a análise de dados pode ser feita _online_ dentro da plataforma, desde a leitura, visualização, processamento e análise de resultados, sem a necessidade de _download_ dos dados para o computador pessoal do usuário.   
@@ -485,17 +483,25 @@ No menu `Tutorials` na barra superior do Jupyter lab você encontra modelos de n
 * Acessar os dados hospedados no LIneA diretamente a partir de um notebook  
 
 
-[PLACEHOLDER PARA FIGURA COM SCREENSHOT DO MENU TUTORIALS]
-
-Os tutorias estão disponíveis no repositório público do LIneA no GitHub [jupyterhub-tutorial](https://github.com/linea-it/jupyterhub-tutorial), e são atualizados regularmente para incluir novos exemplos de uso e cobrir as dúvidas mais frequentes dos usuários. 
-
-[PLACEHOLDER PARA DESCRIÇÃO DO COMPORTAMENTO QUANDO A PESSOA FAZ LOGIN E O SISTEMA FAZ UMA CÓPIA DOS NOTEBOOKS, O QUE ACONTECE QUANDO ELA ALTERA O NOTEBOOK?]
+<font color="red"> [PLACEHOLDER PARA FIGURA COM SCREENSHOT DO MENU TUTORIALS] </font>
 
 
 
-## Assistente de IA 
+Os tutorias estão disponíveis no repositório público do LIneA no GitHub [jupyterhub-tutorial](https://github.com/linea-it/jupyterhub-tutorial), e são atualizados regularmente para incluir novos exemplos de uso e cobrir as dúvidas mais frequentes dos usuários. Ao clicar em um tutorial específico, o sistema faz uma cópia do notebook para o diretório atual na área do usuário, garantindo que cada pessoa possa executar e fazer alterações na(s) sua(s) cópia(s). 
 
-O LIneA JupyterHub conta com um assistente de IA integrado, que pode ser acessado a partir do menu lateral esquerdo do Jupyter Lab. 
-[PLACEHOLDER PARA FIGURA COM SCREENSHOT DO MENU LATERAL E ÍCONE DO ASSISTENTE DE IA] 
+Ao logar no JupyterHub, o sistema cria uma cópia de todos os notebooks de tutoriais para um diretório `$HOME/notebooks/tutorials/` na área do usuário. Não recomenda-se a alteração dos arquivos originais, para evitar que as atualizações futuras sejam perdidas. Caso queira manter uma cópia personalizada, recomendamos usar sempre o menu `Tutorials` para criar uma nova cópia atualizada no diretório atual de trabalho.  
 
-[PLACEHOLDER PARA EXPLICAÇÃO SOBRE OS LLMs TREINADOS E COMO UTILIZAR] 
+
+
+## Assistente de IA (experimental)
+
+As imagens pré-configuradas possuem um assistente de IA integrado ao JupyterLab treinado com modelos de linguagem específicos para auxiliar na produção de código científico. Esta implementação ainda está em fase experimental e todo feedback dos usuários é bem-vindo. Para acessar o serviço, clique no ícone de chat no menu lateral.
+
+
+<font color="red"> [PLACEHOLDER PARA FIGURA COM SCREENSHOT DO MENU LATERAL E ÍCONE DO ASSISTENTE DE IA] </font>
+
+
+
+<font color="red">[PLACEHOLDER PARA EXPLICAÇÃO SOBRE OS LLMs TREINADOS E COMO UTILIZAR] </font>
+
+
