@@ -142,9 +142,9 @@ El directorio `home` es un área donde los usuarios almacenan sus archivos perso
 
 | perfil                | bsoft  | bhard  | isoft   | ihard   | grace period |
 | --------------------- | ------ | ------ | ------- | ------- | ------------ |
-| público general       | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
-| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| colaboración LSST     | 35 GB  | 40 GB  | 1000000 | 1200000 | 7 days       |
+| público general       | 5 GB   | 7 GB   | 7000    | 10000   | 7 días       |
+| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 días       |
+| colaboración LSST     | 35 GB  | 40 GB  | 1000000 | 1200000 | 7 días       |
 
 !!! tip
     Para comprobar los valores de cuota configurados, simplemente use el comando:`quota -s -u <username> /home`.
@@ -156,28 +156,32 @@ Nota: El directorio `/home` **no** se ve afectado por el proceso de limpieza aut
 a) ¿Cómo consultar mi cuota disponible?
 
     show_quota
+
+b) ¿Cómo consultar la cuota de un proyecto?
     
-b) ¿Cómo consultar mis archivos creados hace más de 30 días?
+    show_proj_quota <projeto>
+    
+c) ¿Cómo consultar mis archivos creados hace más de 30 días?
 
     lfs find $SCRATCH --uid $UID -mtime +30 --print
 
-c) ¿Cómo consultar mis archivos creados hace menos de 30 días?
+d) ¿Cómo consultar mis archivos creados hace menos de 30 días?
 
     lfs find $SCRATCH --uid $UID -mtime -30 --print
     
-d) ¿Cómo listar los OSTs de *Lustre*?
+e) ¿Cómo listar los OSTs de *Lustre*?
 
     lfs osts $SCRATCH
 
-e) ¿Cómo listar archivos mayores a 30 días en un OST específico?
+f) ¿Cómo listar archivos mayores a 30 días en un OST específico?
 
     lfs find $SCRATCH -mtime +30 --print --obd t0-OST0002_UUID
     
-f) ¿Cómo configurar striping en un directorio para "dividir" archivos y distribuir "trozos" en 10 OSTs?
+g) ¿Cómo configurar striping en un directorio para "dividir" archivos y distribuir "trozos" en 10 OSTs?
 
     lfs setstripe -c 10 $SCRATCH/mis_archivos_grandes
     
-g) ¿Cómo consultar el striping de archivos/directorios?
+h) ¿Cómo consultar el striping de archivos/directorios?
 
     lfs getstripe $SCRATCH/mis_archivos_grandes
 
@@ -196,18 +200,17 @@ Características actuales:
 | SGI        | IS5600               | 240TB     | Jul-2014  | En uso          |
 | HPE        | APOLO 4510           | 1.2 PB    | Apr-2025  | En uso          |
 
-<sup>[1]</sup> _este equipo fue desactivado en Jun/2023 por problemas físicos._
-
 ## Backup
 
-| áreas    | frecuencia | tipo        | retención |
-| -------- | ---------- | ----------- | --------- |
-| /home    | diario     | incremental | 30 días   |
-| /home    | semanal    | diferencial | 30 días   |
-| /home    | mensual    | completo    | 90 días   |
-| /archive | -          | -           | -         |
-| /scratch | -          | -           | -         |
-| /scripts | -          | -           | -         |
+| áreas    | copia incremental (diaria)  | copia completa (mensual)  | retención |
+| -------- | :-------------------------: | :-----------------------: | :-------: |
+| /home    | :heavy_check_mark:          | :heavy_check_mark:        | 90 días   |
+| /data    | :x:                         | :x:                       | -         |
+| /scratch | :x:                         | :x:                       | -         |
+| /scripts | :x:                         | :x:                       | -         |
+
+!!! info
+    Aunque no dispone de un programa de copias de seguridad, el volumen /data está compuesto por un sólido sistema de redundancia de disco que preserva la integridad de sus datos.
 
 ## Referencias
 

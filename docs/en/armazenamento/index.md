@@ -161,27 +161,31 @@ a) How to check my available quota?
 
     show_quota
     
-b) How to find my files created more than 30 days ago?
+b) How to check a project's available quota?
+    
+    show_proj_quota <projeto>
+
+c) How to find my files created more than 30 days ago?
 
     lfs find $SCRATCH --uid $UID -mtime +30 --print
 
-c) How to find my files created less than 30 days ago?
+d) How to find my files created less than 30 days ago?
 
     lfs find $SCRATCH --uid $UID -mtime -30 --print
     
-d) How to list *Lustre* OSTs?
+e) How to list *Lustre* OSTs?
 
     lfs osts $SCRATCH
    
-e) How to list files older than 30 days on a specific *Lustre* OST?
+f) How to list files older than 30 days on a specific *Lustre* OST?
 
     lfs find $SCRATCH -mtime +30 --print --obd t0-OST0002_UUID
     
-f) How to configure striping on a directory to "split" files and distribute "chunks" across 10 OSTs?
+g) How to configure striping on a directory to "split" files and distribute "chunks" across 10 OSTs?
 
     lfs setstripe -c 10 $SCRATCH/my_large_files
     
-g) How to check file/directory striping?
+h) How to check file/directory striping?
 
     lfs getstripe $SCRATCH/my_large_files
 
@@ -202,17 +206,17 @@ Current specifications:
 | SGI          | IS5600         | 240TB        |  Jul-2014  | Available    |
 | HPE          | APOLO 4510     | 1.2 PB       | Apr-2025   | Available    |
 
-<sup>[1]</sup> _this equipment was decommissioned in Jun/2023 due to physical issues._
-
 ## Backup
-| areas    | frequency | type         | retention |
-| -------- | --------- | ------------ | --------- |
-| /home    | daily     | incremental  | 30 days   |
-| /home    | weekly    | differential | 30 days   |
-| /home    | monthly   | full         | 90 days   |
-| /archive | -         | -            | -         |
-| /scratch | -         | -            | -         |
-| /scripts | -         | -            | -         |
+
+| areas    | incremental backup (daily)  | full backup (mothly)      | retention |
+| -------- | :-------------------------: | :-----------------------: | :-------: |
+| /home    | :heavy_check_mark:          | :heavy_check_mark:        | 90 days   |
+| /data    | :x:                         | :x:                       | -         |
+| /scratch | :x:                         | :x:                       | -         |
+| /scripts | :x:                         | :x:                       | -         |
+
+!!! info
+    Although it does not have a backup schedule, the /data volume is composed of a robust disk redundancy system that preserves the integrity of your data.
 
 ## References
 

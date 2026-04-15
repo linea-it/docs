@@ -145,11 +145,11 @@ O diretório `home` é uma área para os usuários armazenarem seus arquivos pes
 
 **A quota padrão do homedir de cada usuário, segundo o seu perfil, é apresentada abaixo:**
 
-| profile               | bsoft  | bhard  | isoft   | ihard   | grace period |
+| perfil                | bsoft  | bhard  | isoft   | ihard   | grace period |
 | --------------------- | ------ | ------ | ------- | ------- | ------------ |
-| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
-| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| colaboração LSST      | 35 GB  | 40 GB  | 1000000 | 1200000 | 7 days       |
+| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 dias       |
+| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 dias       |
+| colaboração LSST      | 35 GB  | 40 GB  | 1000000 | 1200000 | 7 dias       |
 
 !!! tip
     Para verificar os valores de quota configurado basta utilizar o comando: `quota -s -u <username> /home`.
@@ -161,28 +161,31 @@ Observação: O diretório `/home` do usuário **não** é afetado pelo processo
 a) Como verificar minha quota disponível?
    
     show_quota 
+b) Como verificar a quota de um projeto?
     
-b) Como consultar os meus arquivos criados há _mais_ de 30 dias? 
+    show_proj_quota <projeto>
+    
+c) Como consultar os meus arquivos criados há _mais_ de 30 dias? 
 
     lfs find $SCRATCH --uid $UID -mtime +30 --print
 
-c) Como consultar os meus arquivos criados há _menos_ de 30 dias? 
+d) Como consultar os meus arquivos criados há _menos_ de 30 dias? 
 
     lfs find $SCRATCH --uid $UID -mtime -30 --print
     
-d) Como listar os OSTs do Lustre?
+e) Como listar os OSTs do Lustre?
 
     lfs osts $SCRATCH
 
-e) Como listar os arquivos armazenados há mais de 30 dias em um determinado OST do Lustre?
+f) Como listar os arquivos armazenados há mais de 30 dias em um determinado OST do Lustre?
 
     lfs find $SCRATCH -mtime +30 --print --obd t0-OST0002_UUID
     
-f) Como configurar o striping em diretório de modo a "quebrar" os arquivos e distribuir esses "pedaços" em 10 OSTs?
+g) Como configurar o striping em diretório de modo a "quebrar" os arquivos e distribuir esses "pedaços" em 10 OSTs?
 
     lfs setstripe -c 10 $SCRATCH/meus_arquivos_grandes
     
-g) Como consultar o striping de arquivos/diretórios?
+h) Como consultar o striping de arquivos/diretórios?
 
     lfs setstripe -c $SCRATCH/meus_arquivos_grandes
 
@@ -204,15 +207,15 @@ Características atuais:
 
 ## Backup
 
-| áreas    | frequência | tipo        | retenção |
-| -------- | ---------- | ----------- | -------- |
-| /home    | diário     | incremental | 30 dias  |
-| /home    | semanal    | diferencial | 30 dias  |
-| /home    | mensal     | completo    | 90 dias  |
-| /data    | -          | -           | -        |
-| /scratch | -          | -           | -        |
-| /scripts | -          | -           | -        |
+| áreas    | backup incremental (diário) | backup completo (mensal)  | retenção |
+| -------- | :-------------------------: | :-----------------------: | :------: |
+| /home    | :heavy_check_mark:          | :heavy_check_mark:        | 90 dias  |
+| /data    | :x:                         | :x:                       | -        |
+| /scratch | :x:                         | :x:                       | -        |
+| /scripts | :x:                         | :x:                       | -        |
 
+!!! info
+    Apesar de não possuir agendamento de backup, o volume /data é composto por um sistema robusto de redundância de discos que preserva a integridade de seus dados. 
 
 ## Referências
 
