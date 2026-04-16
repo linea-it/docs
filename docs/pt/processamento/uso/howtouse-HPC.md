@@ -96,7 +96,7 @@ Se o script estiver correto **haverá uma saída que indica o ID do job**.
 !!! warning "Acesso à internet"
     Os nós de computação **não** têm acesso à internet. Pacotes e bibliotecas devem ser instalados a partir da _loginapl01_ em sua área de scripts .
 
-## Gerenciador de pacotes EUPS
+## EUPS (gerenciador de pacotes)
 
 O [EUPS](https://github.com/RobertLuptonTheGood/eups) é um gerenciador de pacotes alternativo (e oficial do LSST) que permite carregar variáveis de ambiente e incluir o caminho para programas e bibliotecas de forma modular.
 
@@ -128,6 +128,281 @@ O [EUPS](https://github.com/RobertLuptonTheGood/eups) é um gerenciador de pacot
   ```bash
     unsetup <NOME DO PACOTE> <VERSÃO DO PACOTE>
   ```
+
+
+
+## Conda no Ambiente HPC
+
+### Visão Geral
+
+O conda está disponível de forma centralizada em todos os nós do cluster em `/opt/conda`.
+
+Os ambientes conda do sistema são mantidos pela equipe de operações e são somente leitura.
+
+*(a partir daqui chamaremos de `env` ou `envs`)*
+
+Cada usuário pode criar e gerenciar seus próprios `envs` pessoais.
+
+---
+
+### Ativando o Conda
+
+O conda já está disponível assim que você faz login. Para verificar:
+
+```bash
+conda --version
+```
+
+---
+
+### Envs Disponíveis
+
+Para listar todos os `envs` disponíveis, do sistema e os seus pessoais:
+
+```bash
+conda env list
+```
+
+Exemplo de saída:
+
+```
+# conda environments:
+base                     /opt/conda
+base-science             /opt/conda/envs/base-science
+
+meu-env                  /home/usuario/.conda/envs/meu-env
+analise-xray             /scripts/usuario/.conda/envs/analise-xray
+projeto-survey           /scripts/cl/prj/projeto-survey
+```
+
+Os `envs` em `/opt/conda/envs/` são mantidos pela equipe de suporte e não podem ser modificados.
+
+---
+
+### Ativando um `env`
+
+```bash
+conda activate base-science
+```
+
+Para voltar ao `env` base:
+
+```bash
+conda deactivate
+```
+
+---
+
+### Criando `envs` pessoais
+
+#### No home (recomendado para Jupyter e desenvolvimento)
+
+```bash
+conda create -n meu-env python=3.11
+```
+
+O `env` será criado em `~/.conda/envs/meu-env`, que é acessível tanto no cluster quanto no Jupyter.
+
+#### No /scripts (recomendado para jobs no cluster)
+
+```bash
+conda create -p /scripts/$USER/.conda/envs/meu-env python=3.11
+```
+
+#### Para um projeto compartilhado
+
+Caso não exista, solicite ao *helpdesk@linea.org.br* a criação do diretório do projeto em `/scripts/cl/prj/<projeto>`.
+
+Após a criação:
+
+```bash
+conda create -p /scripts/cl/prj/<projeto> python=3.11
+```
+
+!!! warning "ATENÇÃO"
+    **Atenção:** `/scripts` não possui garantia de backup. Mantenha seus arquivos de definição de `env` (`environment.yml`) versionados no git.
+
+---
+
+### Removendo um `env`
+
+```bash
+conda env remove -n meu-env
+```
+
+Ou pelo path completo:
+
+```bash
+conda env remove -p /scripts/$USER/.conda/envs/meu-env
+```
+
+---
+
+### Instalando Pacotes
+
+Sempre ative o `env` antes de instalar:
+
+```bash
+conda activate meu-env
+conda install numpy scipy matplotlib
+```
+
+Para instalar de um canal específico:
+
+```bash
+conda install -c conda-forge astropy
+```
+
+Para instalar via pip dentro do `env`:
+
+```bash
+pip install meu-pacote
+```
+
+!!! warning "ATENÇÃO"
+    **Atenção:** prefira sempre `conda install` antes de recorrer ao `pip`, para evitar conflitos de dependências.
+
+---
+
+### Removendo Pacotes
+
+```bash
+conda activate meu-env
+conda remove numpy
+```
+
+---
+
+### Exportando e Reproduzindo `envs`
+
+Para exportar a definição do **env**:
+
+```bash
+conda activate meu-env
+conda env export > environment.yml
+```
+
+Para recriar o `env` a partir do arquivo:
+
+```bash
+conda env create -f environment.yml
+```
+
+!!! info
+    Recomendamos versionar o `environment.yml` no git para garantir a reprodutibilidade dos seus experimentos.
+
+---
+
+### Usando o `env` em Jobs
+
+Em jobs submetidos ao scheduler, ative o conda explicitamente no script:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=meu-job
+#SBATCH --ntasks=1
+
+source /etc/profile.d/conda.sh
+conda activate meu-env
+
+python meu_script.py
+```
+
+!!! info
+    O `env` ativado no seu shell **não** é herdado automaticamente pelo job. O `source` e o `conda activate` são obrigatórios no script.
+
+---
+
+### Boas Práticas
+
+- **Não instale conda no `/scratch`** — o scratch é para dados temporários de I/O, não para ambientes. Ambientes lá serão perdidos.
+- **Não instale conda no `/scripts/<username>` diretamente** - use sempre o subdiretório `.conda/envs` dentro do seu diretório em `/scripts`.
+- **Mantenha o `environment.yml` no git** - é a única garantia de reprodutibilidade do seu `env`.
+- **Use `mamba` no lugar de `conda`** para instalar pacotes - é mais rápido na resolução de dependências:
+  ```bash
+  mamba install numpy scipy
+  ```
+- **Ambientes grandes** podem impactar a performance do filesystem. Se o seu job faz uso intensivo de muitos pacotes, considere falar com o *helpdesk* sobre o uso de `conda-pack`.
+
+---
+
+### Onde os `envs` são criados
+
+| Contexto | Path padrão | Persistente |
+|---|---|---|
+| `conda create -n nome` | `~/.conda/envs/` | ✅ sim |
+| Jupyter (k8s) | `~/.conda/envs/` | ✅ sim |
+| Job no cluster | `/scripts/$USER/.conda/envs/` | ⚠️ sem backup |
+| Projeto compartilhado | `/scripts/cl/prj/<projeto>` | ⚠️ sem backup |
+
+---
+
+### Usando conda-pack em Jobs de Larga Escala
+
+O `conda-pack` empacota um `env` conda inteiro num arquivo `.tar.gz` que pode ser
+descompactado e usado diretamente no nó de compute, sem acesso ao NFS durante a execução.
+
+Isso é recomendado para jobs que rodam em muitos nós simultaneamente, evitando uma
+rajada de acessos ao `/opt/conda` via NFS no momento da ativação.
+
+Os `envs` do sistema já estão disponíveis empacotados em `/opt/conda/packed/`:
+
+```
+/opt/conda/packed/
+└── base-science.tar.gz
+```
+
+#### Usando no job script
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=meu-job
+
+# Descompacta o env no scratch local do nó
+mkdir -p /scratch/$USER/envs/base-science
+tar -xzf /opt/conda/packed/base-science.tar.gz -C /scratch/$USER/envs/base-science
+
+# Ativa o env localmente, sem depender do NFS
+source /scratch/$USER/envs/base-science/bin/activate
+
+# Roda normalmente
+python meu_script.py
+
+# Limpa o env ao final do job
+rm -rf /scratch/$USER/envs/base-science
+```
+
+#### Empacotando um `env` pessoal
+
+Caso queira usar `conda-pack` com um `env` pessoal:
+
+```bash
+conda activate meu-env
+conda pack -o /scratch/$USER/meu-env.tar.gz
+```
+
+!!! info
+    **Atenção:** o arquivo `.tar.gz` pode ser grande dependendo do env.
+
+
+#### Quando usar
+
+| Situação | Recomendado |
+|---|---|
+| Desenvolvimento interativo no login | ❌ |
+| Jupyter (k8s) | ❌ |
+| Jobs curtos em poucos nós | ⚠️ opcional |
+| Jobs longos ou com muitos nós simultâneos | ✅ |
+| Ambientes com muitos pacotes | ✅ |
+
+---
+
+### Suporte
+
+Em caso de dúvidas ou para solicitar a criação de `envs` do sistema, abra um chamado com o *helpdesk*.
+
+
+---
 
 ## Comandos úteis do Slurm  
 Para aprender sobre todas as opções disponíveis para cada comando, insira `man <comando>` enquanto estiver conectado ao ambiente do Cluster.

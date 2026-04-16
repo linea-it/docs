@@ -10,7 +10,7 @@ In the years preceding LSST operations, IDAC-Brazil services already provide acc
 Data access services with various tools for processing, exploring, visualising, and analysing public and private data.
 
 #### &nbsp;&nbsp;&nbsp;&nbsp; [JupyterHub](jupyter.md)
-#### &nbsp;&nbsp;&nbsp;&nbsp; [OnDemand](ondemand.md)
+#### &nbsp;&nbsp;&nbsp;&nbsp; [Ondemand](ondemand.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [User Query](user_query.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [TAP Service](user_query.md#tap-service)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Sky Viewer](sky_viewer.md)

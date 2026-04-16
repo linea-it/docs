@@ -14,7 +14,7 @@ Nos anos que antecedem a operação do LSST, os serviços do IDAC-Brasil já dis
 Serviços de acesso a dados com ferramentas diversas para processamento, exploração, visualização e análise de dados públicos e privados.   
 
 #### &nbsp;&nbsp;&nbsp;&nbsp; [JupyterHub](jupyter.md)
-#### &nbsp;&nbsp;&nbsp;&nbsp; [OnDemand](ondemand.md)
+#### &nbsp;&nbsp;&nbsp;&nbsp; [Ondemand](ondemand.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [User Query](user_query.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [TAP Service](user_query.md#tap-service)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Sky Viewer](sky_viewer.md)
