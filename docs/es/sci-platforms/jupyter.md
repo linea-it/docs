@@ -489,8 +489,309 @@ Al iniciar sesión en JupyterHub, el sistema crea una copia de todos los noteboo
 
 ## Asistente de IA (Experimental)
 
-Las imágenes preconfiguradas incluyen un asistente de IA integrado en JupyterLab, entrenado con modelos de lenguaje específicos para ayudar en la producción de código científico. Esta implementación aún se encuentra en fase experimental y se agradece cualquier comentario de los usuarios. Para acceder al servicio, haga clic en el icono de chat en el menú lateral.
+El asistente de IA en JupyterLab es proporcionado por la extensión **Jupyter AI (v2)** y admite los *magic commands* `%ai` y `%%ai`.
 
-<font color="red"> [PLACEHOLDER PARA UNA FIGURA CON UNA CAPTURA DE PANTALLA DEL MENÚ LATERAL Y EL ICONO DEL ASISTENTE DE IA] </font>
+### Uso rápido (flujo mínimo)
 
-<font color="red"> [PLACEHOLDER PARA UNA EXPLICACIÓN SOBRE LOS LLMs ENTRENADOS Y CÓMO UTILIZARLOS] </font>
+```python
+%load_ext jupyter_ai_magics
+```
+
+```python
+%ai list
+```
+
+```python
+%%ai coder1b
+Describe el teorema de Pitágoras
+```
+
+Opcional (para un contexto mayor, en el chat):
+
+```text
+/learn *.ipynb
+```
+
+```text
+/ask Resume este notebook.
+```
+
+### 1) Chat Jupyternaut
+
+En JupyterLab, abra el panel lateral de Jupyternaut (icono de chat). Después de configurar el modelo/las claves, puede usar comandos con barra (`/`) directamente en el chat:
+
+- `/learn <ruta|patrón>`: indexa archivos locales para usarlos como contexto.
+- `/ask <pregunta>`: pregunta específicamente sobre el contenido aprendido con `/learn`.
+- `/learn -d`: limpia la base local de conocimiento creada por `/learn`.
+- `/fix`: ayuda a corregir una celda con error (el chat le pide seleccionar la celda con error).
+- `/export [archivo.md]`: exporta el historial de la conversación a Markdown.
+- `/clear`: inicia una nueva conversación y limpia el contexto actual del chat.
+
+#### Uso práctico de `/learn` (diferencial)
+
+En LIneA, `/learn` usa **embeddings locales** (modelo predeterminado: `nomic-embed-text`).
+
+El contenido se procesa en partes (*chunks*) y se convierte en embeddings locales.  
+Estos datos se usan para la recuperación de contexto (RAG) durante el chat.
+
+Características:
+
+- no cambia el modelo;
+- no es memoria permanente (puede limpiarse con `/learn -d`);
+- es ideal para documentación, notebooks y código;
+- dónde se almacena: base vectorial local de Jupyter AI en `~/.local/share/jupyter/jupyter_ai`;
+- el chunking en LIneA está controlado por `LINEA_CHUNK_SIZE` (predeterminado 1200) y `LINEA_CHUNK_OVERLAP` (predeterminado 240). Por eso, los parámetros `-c/-o` pueden ser sobrescritos por el entorno o la política configurada;
+- por defecto ignora `node_modules`, `lib`, `build` y archivos ocultos (use `-a` para incluir todo).
+
+Cuándo usar cada comando:
+
+- `/ask`: cuando la pregunta depende de los archivos indexados por `/learn` (pregunta contextual sobre documentación/código local).
+- **Chat normal**: cuando la pregunta es general y no depende del contenido local indexado.
+
+Ejemplo real:
+
+```text
+/learn docs/
+```
+
+```text
+/ask ¿Cuáles son los endpoints de la API?
+```
+
+#### Chat vs Magic Commands: cuándo usar cada uno
+
+| Herramienta        | Uso recomendado                                        |
+| ------------------ | ------------------------------------------------------ |
+| Chat (Jupyternaut) | exploración, preguntas generales, uso con `/learn`    |
+| `%%ai`             | ejecución estructurada dentro del notebook             |
+| `%ai`              | comandos auxiliares (listar modelos, reset, alias, etc.) |
+
+### 2) Magic commands
+
+Antes de usar los comandos:
+
+```python
+%load_ext jupyter_ai_magics
+```
+
+Comandos principales:
+
+- `%%ai <proveedor:modelo>` (o alias): envía un prompt en una celda a un modelo.  
+Ejemplo:
+  ```python
+  %%ai coder1b
+  Resume los puntos principales de este análisis.
+  ```
+- `%ai help` y `%%ai help`: ayuda de sintaxis y opciones.
+- `%ai list [proveedor]`: lista los modelos disponibles (general o por proveedor).
+- `%ai reset`: limpia el historial usado como contexto en las próximas llamadas.
+- `%ai error <proveedor:modelo>`: explica el error más reciente del notebook.
+- `%ai register <alias> <proveedor:modelo>`: crea un alias de modelo.
+- `%ai update <alias> <nuevo-proveedor:modelo>`: actualiza un alias.
+- `%ai delete <alias>`: elimina un alias.
+
+Recursos útiles de `%%ai`:
+
+- formato de salida con `-f/--format` (`code`, `markdown`, `math`, `html`, `json`, `text`, `image`);
+- interpolación de variables con `{variable}` en el prompt;
+- definición del modelo predeterminado:
+  ```python
+  %config AiMagics.default_language_model = "linea:qwen2.5-coder:1.5b"
+  ```
+
+!!! info "Alcance de `%%ai`:"
+    Los comandos `%%ai` **no tienen acceso automático al contenido de otras celdas del notebook**.
+
+    Por defecto, el modelo recibe solo:
+
+    - el texto de la celda actual;
+    - variables interpoladas explícitamente en el prompt (por ejemplo, `{variable}`).
+
+    Ejemplo que **no funciona como se espera**:
+
+    ```python
+        %%ai coder1b
+        Explica cómo está organizado este notebook.
+    ```
+
+    En este caso, el modelo no recibe el resto del notebook y la respuesta tiende a ser genérica.
+
+    #### Cómo proporcionar contexto correctamente
+
+    1. **Interpolar variables de Python:**
+
+    ```python
+    contenido = "texto de otra celda o análisis"
+    ```
+
+    ```python
+    %%ai coder1b
+    Explica:
+    {contenido}
+    ```
+
+    2. **Usar `/learn` para múltiples archivos o notebooks (en el chat):**
+
+    ```text
+    /learn *.ipynb
+    ```
+
+    ```text
+    /ask ¿Cómo está organizado este notebook?
+    ```
+
+    En este modo, el asistente usa embeddings para recuperar automáticamente los fragmentos relevantes.
+
+### 3) Modelos externos (configuración)
+
+Hay dos escenarios de uso:
+
+- **Local (LIneA):** funciona *out of the box*, sin clave de API. Sin embargo, los modelos son más pequeños y más propensos a alucinaciones.
+- **Externo (proveedores de terceros):** requiere configurar credenciales y, en algunos casos, dependencias adicionales.
+
+Flujo para un proveedor externo:
+
+1. configure las credenciales (variables de entorno o panel de configuración del chat);
+2. confirme con `%ai list` si el modelo está disponible.
+
+#### Claves persistentes (`~/.linea/apikeys.env`)
+
+El entorno de LIneA puede mantener sus credenciales en un archivo dentro de su `HOME`:
+
+- `~/.linea/apikeys.env`
+
+Este archivo contiene variables como `OPENAI_API_KEY`, `GROQ_API_KEY`, `NVIDIA_API_KEY`, `ANTHROPIC_API_KEY` y `GOOGLE_API_KEY`.
+
+Para que los cambios tengan efecto, reinicie el kernel/la sesión (o reinicie JupyterLab) después de editar este archivo.
+
+#### Proveedor local de LIneA
+
+Además de los proveedores externos, el entorno también expone:
+
+- proveedor `linea` (chat local vía Ollama, sin clave de API);
+- proveedor `linea` para embeddings (mostrado en el selector como **LIneA (embeddings)**).
+
+Modelos de chat locales disponibles en el proveedor `linea`:
+
+- `qwen2.5-coder:0.5b`
+- `qwen2.5-coder:1.5b`
+- `qwen2.5-coder:3b`
+- `qwen2.5-coder:7b`
+
+!!! attention "Atención"
+    Los modelos Qwen2.5-Coder están optimizados para tareas de programación, con tamaños que van de 0.5B a 7B parámetros para diferentes compromisos entre velocidad y calidad. Use los modelos más pequeños (0.5B-1.5B) para tareas simples y respuestas rápidas en entornos con recursos limitados, y los más grandes (3B-7B) para problemas más complejos. Tenga cuidado al usar modelos pequeños para lógica intrincada o requisitos críticos de seguridad, ya que tienden a alucinar y cometer errores. Recuerde también que **no tienen acceso automático al contexto completo del notebook**, así que interpole variables o incluya explícitamente el contenido relevante en el prompt para obtener mejores resultados.
+
+Ejemplos:
+
+```python
+%load_ext jupyter_ai_magics
+```
+
+```python
+%ai list linea
+```
+
+```python
+%%ai coder1b
+Escribe una función de Python para leer un CSV usando numpy.
+```
+
+Por defecto, el entorno ya incluye alias para el proveedor `linea`.
+Para usar solo el modelo de 1.5b, utilice `coder1b` (equivale a `linea:qwen2.5-coder:1.5b`):
+
+```python
+%%ai linea:qwen2.5-coder:1.5b
+Escribe una función de Python para leer un CSV usando numpy.
+```
+
+Para modelos más potentes y acceso gratuito, busque proveedores que ofrezcan algún nivel de acceso gratuito. Proveedores como la startup `groq` (https://console.groq.com/home) o `nvidia` (https://build.nvidia.com/) ofrecen capas de acceso gratuito mediante claves API.
+
+Proveedor `groq`:
+
+- autenticación: informe la clave en el campo `GROQ_API_KEY` en la configuración de Jupyter AI.
+
+Ejemplo de uso con proveedor externo (Groq):
+
+```python
+%env GROQ_API_KEY=SU_CLAVE_GROQ
+```
+
+```python
+%ai list groq
+```
+
+```python
+%%ai groq:<SU_MODEL_ID>
+Resume los puntos principales de este notebook.
+```
+
+Proveedor `nvidia`:
+
+- autenticación: informe la clave en el campo `NVIDIA_API_KEY` en la configuración de Jupyter AI.
+
+Ejemplo de uso con proveedor externo (NVIDIA):
+
+```python
+%env NVIDIA_API_KEY=SU_CLAVE_NVIDIA
+```
+```python
+%ai list nvidia
+```
+
+```python
+%%ai nvidia:<SU_MODEL_ID>
+Resume los puntos principales de este notebook.
+```
+
+!!! info "`%env` vs `export` (cuándo definir claves)"
+    Cuando un proveedor requiera una clave (por ejemplo, `groq`):
+
+    - `%env GROQ_API_KEY=...` (o `NVIDIA_API_KEY=...`): se aplica al **kernel actual** (efecto inmediato para `%ai`/`%%ai`);
+    - `export GROQ_API_KEY=...` (o `export NVIDIA_API_KEY=...`): se aplica al **shell**, pero no necesariamente a los kernels iniciados después. Es necesario importar la variable de entorno dentro del código. Para persistencia, use [claves persistentes](#claves-persistentes-lineaapikeysenv).
+
+Ejemplo rápido con modelo local de LIneA (sin clave):
+
+```python
+%load_ext jupyter_ai_magics
+```
+
+```python
+%config AiMagics.default_language_model = "linea:qwen2.5-coder:1.5b"
+```
+
+```python
+%%ai
+Explica este error de Python y propón una corrección.
+```
+
+> Importante: los proveedores externos pueden generar costos por uso de API. Revise precios y políticas de privacidad antes de enviar datos sensibles.
+
+#### Solución básica de problemas
+
+**1) El modelo no aparece en `%ai list`**
+
+- confirme si el proveedor es correcto (por ejemplo, `%ai list linea` o `%ai list groq`);
+- para un proveedor externo, verifique si las dependencias y credenciales fueron configuradas;
+- recargue la extensión en el notebook:
+
+```python
+%load_ext jupyter_ai_magics
+```
+
+```python
+%ai list
+```
+
+**2) Error de autenticación**
+
+- para `groq`, confirme si `GROQ_API_KEY` fue definido en el kernel actual (`%env GROQ_API_KEY=...`);
+- si la clave fue definida con `export` después de abrir el notebook, reinicie el kernel/la sesión;
+- verifique que no haya espacios extra ni valor truncado en la clave.
+
+**3) El kernel no reconoce `%ai` o `%%ai`**
+
+- cargue la extensión: `%load_ext jupyter_ai_magics`;
+- si persiste, reinicie el kernel y ejecútelo nuevamente;
+- en kernels remotos, instale el paquete en el propio kernel con `%pip install jupyter_ai_magics`.
+
+**Referencia oficial:** [Jupyter AI v2 Documentation](https://jupyter-ai.readthedocs.io/en/v2/)
