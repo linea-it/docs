@@ -2,7 +2,7 @@
 
 El entorno del *Cluster Apollo* cuenta con un sistema de archivos de alto rendimiento [*Lustre*](https://www.lustre.org/) con dos niveles (tiers) de almacenamiento: uno en SSD con ~70 TB (T0) y otro en HDD con ~500 TB (T1), ambos conectados a una red Infiniband EDR de 100 Gb/s. Los dos niveles de almacenamiento están disponibles en `/scratch` y `/data`.
 
-### Área de scratch y cuota
+### Área /scratch y cuota
 
 Los usuarios pueden acceder a su directorio scratch mediante una variable de entorno o accediendo al directorio con la ruta completa.
 ```Bash
@@ -16,7 +16,7 @@ cd /scratch/users/<username>
 !!! danger "ATENCIÓN"
     ¡Esta área NO tendrá respaldo!
 
-Los archivos que no se hayan modificado en los últimos 60 días se eliminarán automáticamente, lo que hará que el almacenamiento en esta área sea temporal.
+Los archivos que no se hayan modificado en los últimos 30 días se eliminarán automáticamente, lo que hará que el almacenamiento en esta área sea temporal.
 Se recomienda a los usuarios transferir los archivos importantes de `$SCRATCH` a su directorio personal.
 
 !!! warning
@@ -27,7 +27,7 @@ Se recomienda a los usuarios transferir los archivos importantes de `$SCRATCH` a
 
 | area     | bsoft  | bhard  | isoft  | ihard  | grace period |
 | -------- | ------ | ------ | ------ | ------ | ------------ |
-| /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
+| /scratch | 35 GB  | 40 GB  | 100000 | 120000 | 7 days       |
 
 
 ### Buenas prácticas
@@ -113,7 +113,7 @@ El software generalmente consiste en muchos archivos pequeños, y como se mencio
 
 Además, bajo alta carga, el acceso a *Lustre* puede bloquearse. Si los ejecutables están en *Lustre* y el acceso falla, pueden colapsar. Por lo tanto, es mejor copiar los ejecutables al `/tmp` de los nodos.
 
-## Área de scripts
+## Área /scripts
 
 Los usuarios podrán acceder a su directorio de scripts a través de la variable de entorno o accediendo al directorio con la ruta completa.
 ```Bash
@@ -142,9 +142,9 @@ El directorio `home` es un área donde los usuarios almacenan sus archivos perso
 
 | perfil                | bsoft  | bhard  | isoft   | ihard   | grace period |
 | --------------------- | ------ | ------ | ------- | ------- | ------------ |
-| público general       | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
-| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| colaboración          | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+| público general       | 5 GB   | 7 GB   | 7000    | 10000   | 7 días       |
+| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 días       |
+| colaboración LSST     | 35 GB  | 40 GB  | 1000000 | 1200000 | 7 días       |
 
 !!! tip
     Para comprobar los valores de cuota configurados, simplemente use el comando:`quota -s -u <username> /home`.
@@ -156,28 +156,32 @@ Nota: El directorio `/home` **no** se ve afectado por el proceso de limpieza aut
 a) ¿Cómo consultar mi cuota disponible?
 
     show_quota
+
+b) ¿Cómo consultar la cuota de un proyecto?
     
-b) ¿Cómo consultar mis archivos creados hace más de 60 días?
-
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
-
-c) ¿Cómo consultar mis archivos creados hace menos de 60 días?
-
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
+    show_proj_quota <projeto>
     
-d) ¿Cómo listar los OSTs de *Lustre*?
+c) ¿Cómo consultar mis archivos creados hace más de 30 días?
+
+    lfs find $SCRATCH --uid $UID -mtime +30 --print
+
+d) ¿Cómo consultar mis archivos creados hace menos de 30 días?
+
+    lfs find $SCRATCH --uid $UID -mtime -30 --print
+    
+e) ¿Cómo listar los OSTs de *Lustre*?
 
     lfs osts $SCRATCH
 
-e) ¿Cómo listar archivos mayores a 60 días en un OST específico?
+f) ¿Cómo listar archivos mayores a 30 días en un OST específico?
 
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
+    lfs find $SCRATCH -mtime +30 --print --obd t0-OST0002_UUID
     
-f) ¿Cómo configurar striping en un directorio para "dividir" archivos y distribuir "trozos" en 10 OSTs?
+g) ¿Cómo configurar striping en un directorio para "dividir" archivos y distribuir "trozos" en 10 OSTs?
 
     lfs setstripe -c 10 $SCRATCH/mis_archivos_grandes
     
-g) ¿Cómo consultar el striping de archivos/directorios?
+h) ¿Cómo consultar el striping de archivos/directorios?
 
     lfs getstripe $SCRATCH/mis_archivos_grandes
 
@@ -191,23 +195,22 @@ Los sistemas NAS se usan para almacenamiento a largo plazo y no son accesibles d
 
 Características actuales:
 
-| Fabricante | Modelo               | Capacidad | Instalado |
-| ---------- | -------------------- | --------- | --------- |
-| SGI        | IS5500<sup>[1]</sup> | 540TB     | Dic-2011  |
-| SGI        | IS5600               | 240TB     | Jul-2014  |
-
-<sup>[1]</sup> _este equipo fue desactivado en Jun/2023 por problemas físicos._
+| Fabricante | Modelo               | Capacidad | Instalado | Disponibilidad  |
+| ---------- | -------------------- | --------- | --------- | --------------- |
+| SGI        | IS5600               | 240TB     | Jul-2014  | En uso          |
+| HPE        | APOLO 4510           | 1.2 PB    | Apr-2025  | En uso          |
 
 ## Backup
 
-| áreas    | frecuencia | tipo        | retención |
-| -------- | ---------- | ----------- | --------- |
-| /home    | diario     | incremental | 30 días   |
-| /home    | semanal    | diferencial | 30 días   |
-| /home    | mensual    | completo    | 90 días   |
-| /archive | -          | -           | -         |
-| /scratch | -          | -           | -         |
-| /scripts | -          | -           | -         |
+| áreas    | copia incremental (diaria)  | copia completa (mensual)  | retención |
+| -------- | :-------------------------: | :-----------------------: | :-------: |
+| /home    | :heavy_check_mark:          | :heavy_check_mark:        | 90 días   |
+| /data    | :x:                         | :x:                       | -         |
+| /scratch | :x:                         | :x:                       | -         |
+| /scripts | :x:                         | :x:                       | -         |
+
+!!! info
+    Aunque no dispone de un programa de copias de seguridad, el volumen /data está compuesto por un sólido sistema de redundancia de disco que preserva la integridad de sus datos.
 
 ## Referencias
 

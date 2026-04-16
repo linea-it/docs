@@ -2,7 +2,7 @@
 
 The *Apollo cluster* environment features a high-performance [*Lustre*](https://www.lustre.org/) filesystem with two storage tiers: SSD with ~70TB (T0) and HDD with ~500TB (T1), both connected to a 100Gb/s EDR Infiniband network. Both storage tiers are available at `/scratch` and `/data`.
 
-### Scratch area and quota
+### /scratch area and quota
 
 Users will be able to access their Scratch directory through the environment variable, or accessing the directory with the full path.
 ```Bash
@@ -16,7 +16,7 @@ cd /scratch/users/<username>
 !!! danger "ATTENTION"
     There is no backup of /scratch!
 
-Files that have not been modified in the last 60 days will be automatically removed, which makes file storage temporary in this area.
+Files that have not been modified in the last 30 days will be automatically removed, which makes file storage temporary in this area.
 It is recommended that users will transfer the important `$SCRATCH` files to their `homedir`.
 
 !!! warning
@@ -27,7 +27,7 @@ It is recommended that users will transfer the important `$SCRATCH` files to the
 
 | area     | bsoft  | bhard  | isoft  | ihard  | grace period |
 | -------- | ------ | ------ | ------ | ------ | ------------ |
-| /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
+| /scratch | 35 GB  | 40 GB  | 100000 | 120000 | 7 days       |
 
 
 ### Best Practices
@@ -116,7 +116,7 @@ Software typically consists of many small files, and as mentioned earlier, acces
 Additionally, under high load, I/O access to *Lustre* filesystems may be blocked. If executables are stored on *Lustre* and filesystem access fails, executables may crash. Therefore, whenever possible, it's better to copy executables to cluster nodes' `/tmp`.
 
 
-## Scripts area
+## /scripts area
 
 Users will be able to access their script directory through the environment variable, or accessing the directory with the full path.
 ```Bash
@@ -147,7 +147,7 @@ The `Home` directory is an area for users to store their personal files and is a
 | -------------------- | ------ | ------ | ------- | ------- | ------------ |
 | public general       | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
 | public institutional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| collaboration        | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+| LSST collaboration   | 35 GB  | 40 GB  | 1000000 | 1200000 | 7 days       |
 
 !!! tip
     To check the quota values ​​configured simply use the command: `quota -s -u <username> /home`.
@@ -161,27 +161,31 @@ a) How to check my available quota?
 
     show_quota
     
-b) How to find my files created more than 60 days ago?
-
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
-
-c) How to find my files created less than 60 days ago?
-
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
+b) How to check a project's available quota?
     
-d) How to list *Lustre* OSTs?
+    show_proj_quota <projeto>
+
+c) How to find my files created more than 30 days ago?
+
+    lfs find $SCRATCH --uid $UID -mtime +30 --print
+
+d) How to find my files created less than 30 days ago?
+
+    lfs find $SCRATCH --uid $UID -mtime -30 --print
+    
+e) How to list *Lustre* OSTs?
 
     lfs osts $SCRATCH
    
-e) How to list files older than 60 days on a specific *Lustre* OST?
+f) How to list files older than 30 days on a specific *Lustre* OST?
 
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
+    lfs find $SCRATCH -mtime +30 --print --obd t0-OST0002_UUID
     
-f) How to configure striping on a directory to "split" files and distribute "chunks" across 10 OSTs?
+g) How to configure striping on a directory to "split" files and distribute "chunks" across 10 OSTs?
 
     lfs setstripe -c 10 $SCRATCH/my_large_files
     
-g) How to check file/directory striping?
+h) How to check file/directory striping?
 
     lfs getstripe $SCRATCH/my_large_files
 
@@ -197,22 +201,22 @@ NAS storage systems are used for long-term storage and are not accessible throug
 
 Current specifications:
 
-| Manufacturer | Model | Capacity | Installed |
-| ------- | ------ | ------------ | -----------| 
-| SGI     | IS5500<sup>[1]</sup> | 540TB        |  Dec-2011  |
-| SGI     | IS5600 | 240TB        |  Jul-2014  |
-
-<sup>[1]</sup> _this equipment was decommissioned in Jun/2023 due to physical issues._
+| Manufacturer | Model          | Capacity     | Installed  | Availability |
+| ------------ | ---------------| ------------ | -----------| -------------|
+| SGI          | IS5600         | 240TB        |  Jul-2014  | Available    |
+| HPE          | APOLO 4510     | 1.2 PB       | Apr-2025   | Available    |
 
 ## Backup
-| areas    | frequency | type         | retention |
-| -------- | --------- | ------------ | --------- |
-| /home    | daily     | incremental  | 30 days   |
-| /home    | weekly    | differential | 30 days   |
-| /home    | monthly   | full         | 90 days   |
-| /archive | -         | -            | -         |
-| /scratch | -         | -            | -         |
-| /scripts | -         | -            | -         |
+
+| areas    | incremental backup (daily)  | full backup (mothly)      | retention |
+| -------- | :-------------------------: | :-----------------------: | :-------: |
+| /home    | :heavy_check_mark:          | :heavy_check_mark:        | 90 days   |
+| /data    | :x:                         | :x:                       | -         |
+| /scratch | :x:                         | :x:                       | -         |
+| /scripts | :x:                         | :x:                       | -         |
+
+!!! info
+    Although it does not have a backup schedule, the /data volume is composed of a robust disk redundancy system that preserves the integrity of your data.
 
 ## References
 

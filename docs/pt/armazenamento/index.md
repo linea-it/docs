@@ -2,7 +2,7 @@
 
 O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [Lustre](https://www.lustre.org/) com dois níveis (_tiers_) de armazenamento, um em SSD com ~70 TB (_T0_) e outro em HDD com ~500 TB (_T1_), ambos conectados a uma rede infiniband EDR de 100 Gb/s. Os dois níveis de armazenamento estão disponíveis em `/scratch` e `/data`. 
 
-### Área de scratch e quota
+### Área /scratch e quota
 
 Os usuários poderão acessar seu diretório de scratch através da variável de ambiente, ou acessando o diretório com o caminho completo.
 ```Bash
@@ -16,7 +16,7 @@ cd /scratch/users/<username>
 !!! danger "ATENÇÃO"
     Essa área NÃO sofrerá backup!
 
-Os arquivos que não foram modificados nos últimos 60 dias serão automaticamente removidos, o que torna temporário o armazenamento de arquivos nessa área.
+Os arquivos que não foram modificados nos últimos 30 dias serão automaticamente removidos, o que torna temporário o armazenamento de arquivos nessa área.
 Recomenda-se que os usuários realizem a transferência dos arquivos importantes do `$SCRATCH`  para o seu `homedir`. 
 
 !!! warning
@@ -27,7 +27,7 @@ Recomenda-se que os usuários realizem a transferência dos arquivos importantes
 
 | area     | bsoft  | bhard  | isoft  | ihard  | grace period |
 | -------- | ------ | ------ | ------ | ------ | ------------ |
-| /scratch | 100 GB | 120 GB | 100000 | 120000 | 7 days       |
+| /scratch | 35 GB  | 40 GB  | 100000 | 120000 | 7 days       |
 
 
 
@@ -118,7 +118,7 @@ Um software geralmente é composto de muitos arquivos pequenos e, como mencionad
 
 Além disso, sob alta carga, o acesso de E/S aos sistemas de arquivos Lustre pode ser bloqueado. Se os executáveis ​​forem armazenados no Lustre e o acesso ao sistema de arquivos falhar, os executáveis ​​poderão travar. Portanto, sempre que possível, é melhor copiar os executáveis ​​para o `/tmp` dos nós do cluster.
 
-## Área de scripts
+## Área /scripts
 
 Os usuários poderão acessar seu diretório de scripts através da variável de ambiente, ou acessando o diretório com o caminho completo. 
 ```Bash
@@ -145,11 +145,11 @@ O diretório `home` é uma área para os usuários armazenarem seus arquivos pes
 
 **A quota padrão do homedir de cada usuário, segundo o seu perfil, é apresentada abaixo:**
 
-| profile               | bsoft  | bhard  | isoft   | ihard   | grace period |
+| perfil                | bsoft  | bhard  | isoft   | ihard   | grace period |
 | --------------------- | ------ | ------ | ------- | ------- | ------------ |
-| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 days       |
-| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 days       |
-| colaboração           | 100 GB | 120 GB | 1000000 | 1200000 | 7 days       |
+| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 dias       |
+| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 dias       |
+| colaboração LSST      | 35 GB  | 40 GB  | 1000000 | 1200000 | 7 dias       |
 
 !!! tip
     Para verificar os valores de quota configurado basta utilizar o comando: `quota -s -u <username> /home`.
@@ -161,28 +161,31 @@ Observação: O diretório `/home` do usuário **não** é afetado pelo processo
 a) Como verificar minha quota disponível?
    
     show_quota 
+b) Como verificar a quota de um projeto?
     
-b) Como consultar os meus arquivos criados há _mais_ de 60 dias? 
-
-    lfs find $SCRATCH --uid $UID -mtime +60 --print
-
-c) Como consultar os meus arquivos criados há _menos_ de 60 dias? 
-
-    lfs find $SCRATCH --uid $UID -mtime -60 --print
+    show_proj_quota <projeto>
     
-d) Como listar os OSTs do Lustre?
+c) Como consultar os meus arquivos criados há _mais_ de 30 dias? 
+
+    lfs find $SCRATCH --uid $UID -mtime +30 --print
+
+d) Como consultar os meus arquivos criados há _menos_ de 30 dias? 
+
+    lfs find $SCRATCH --uid $UID -mtime -30 --print
+    
+e) Como listar os OSTs do Lustre?
 
     lfs osts $SCRATCH
 
-e) Como listar os arquivos armazenados há mais de 60 dias em um determinado OST do Lustre?
+f) Como listar os arquivos armazenados há mais de 30 dias em um determinado OST do Lustre?
 
-    lfs find $SCRATCH -mtime +60 --print --obd t0-OST0002_UUID
+    lfs find $SCRATCH -mtime +30 --print --obd t0-OST0002_UUID
     
-f) Como configurar o striping em diretório de modo a "quebrar" os arquivos e distribuir esses "pedaços" em 10 OSTs?
+g) Como configurar o striping em diretório de modo a "quebrar" os arquivos e distribuir esses "pedaços" em 10 OSTs?
 
     lfs setstripe -c 10 $SCRATCH/meus_arquivos_grandes
     
-g) Como consultar o striping de arquivos/diretórios?
+h) Como consultar o striping de arquivos/diretórios?
 
     lfs setstripe -c $SCRATCH/meus_arquivos_grandes
 
@@ -197,26 +200,22 @@ Os sistemas de armazenamento NAS são utilizados para armazenamento de longo pra
 
 Características atuais: 
 
-| Fabricante | Modelo               | Capacidade | Instalado em | Disponibilidade |     |
-| ---------- | -------------------- | ---------- | ------------ | --------------- | --- |
-| SGI        | IS5500<sup>[1]</sup> | 540TB      | Dez-2011     | Fora de serviço |     |
-| SGI        | IS5600               | 240TB      | Jul-2014     | Em uso          |     |
-| HPE        | APOLO 4510           | 1.2 PB     | Apr-2025     | Em uso          |     |
-
-
-<sup>[1]</sup> _este equipamento foi desativado em Jun/2023 devido a problemas físicos._
+| Fabricante | Modelo               | Capacidade | Instalado em | Disponibilidade |
+| ---------- | -------------------- | ---------- | ------------ | --------------- |
+| SGI        | IS5600               | 240TB      | Jul-2014     | Em uso          |
+| HPE        | APOLO 4510           | 1.2 PB     | Apr-2025     | Em uso          |
 
 ## Backup
 
-| áreas    | frequência | tipo        | retenção |
-| -------- | ---------- | ----------- | -------- |
-| /home    | diário     | incremental | 30 dias  |
-| /home    | semanal    | diferencial | 30 dias  |
-| /home    | mensal     | completo    | 90 dias  |
-| /data    | -          | -           | -        |
-| /scratch | -          | -           | -        |
-| /scripts | -          | -           | -        |
+| áreas    | backup incremental (diário) | backup completo (mensal)  | retenção |
+| -------- | :-------------------------: | :-----------------------: | :------: |
+| /home    | :heavy_check_mark:          | :heavy_check_mark:        | 90 dias  |
+| /data    | :x:                         | :x:                       | -        |
+| /scratch | :x:                         | :x:                       | -        |
+| /scripts | :x:                         | :x:                       | -        |
 
+!!! info
+    Apesar de não possuir agendamento de backup, o volume /data é composto por um sistema robusto de redundância de discos que preserva a integridade de seus dados. 
 
 ## Referências
 
