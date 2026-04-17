@@ -1,6 +1,7 @@
 
-O LIneA oferece cursos de treinamento nas principais ferramentas utilizadas pelos projetos. As gravações e o material didático de todos os cursos já oferecidos se encontram disponíveis no Google Classroom. Acesse a [**página de cursos no site do LIneA**](https://www.linea.org.br/cursos) para mais detalhes. 
+O LIneA oferece cursos de treinamento nas principais ferramentas utilizadas pelos projetos. As gravações e o material didático de todos os cursos já oferecidos se encontram disponíveis no Google Classroom. Acesse a [**página de cursos no site do LIneA**](https://classroom.google.com/c/NDkzMTA0MzEyODA1?cjc=kl5jjnd) para mais detalhes. 
 
+[![Google Classroom](../images/classroom.png)](https://classroom.google.com/c/NDkzMTA0MzEyODA1?cjc=kl5jjnd)
 
 
 ### Vídeos Tutoriais
