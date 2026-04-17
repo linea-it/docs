@@ -218,6 +218,14 @@ Current specifications:
 !!! info
     Although it does not have a backup schedule, the /data volume is composed of a robust disk redundancy system that preserves the integrity of your data.
 
+
+## Overview of storage areas
+
+<div style="text-align: center;">
+  <img src="../../images/storages_diagram.png"
+       style="width: 100%; max-width: 1200px; height: auto; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
+</div>
+
 ## References
 
 These best practices were compiled from LIneA team experience and the following sources:
