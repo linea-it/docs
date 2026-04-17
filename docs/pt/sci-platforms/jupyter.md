@@ -7,6 +7,12 @@ Como parte do [LIneA Science Platform](./index.md), o LIneA JupyterHub está int
 Ao clicar no *card* "JupyterHub" dentro do LIneA Science Platform (ou acessando diretamente no endereço [jupyter.linea.org.br](https://jupyter.linea.org.br)), você será direcionado para a página de *login* e em seguida para a página inicial que mostra as diferentes opções de configuração para o servidor Jupyter.
 
 
+<div style="text-align: center;">
+  <img src="../../images/jupyterhub-launcher.png"
+       width="500"
+       style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
+</div>
+
 
 ### Configurações disponíveis
 
