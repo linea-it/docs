@@ -22,7 +22,7 @@ En inglés:
  
 En español:
 
-> _“Este trabajo fue desarrollado con el apoyo del Laboratório Interinstitucional de e-Astronomia (LIneA), responsable de la contribución en especie (in-kind) de BRA-LIN al Observatorio Vera C. Rubin. Las actividades de LIneA fueron financiadas por FINEP mediante las subvenciones n.º 0311/16 y n.º 0883/24, y por el programa INCT do e-Universo, con financiamiento del CNPq (subvención n.º 465376/2014-2) y de la FAPERJ (subvenciones n.º E-26/200.965/2018, E-26/201.681/2019, E-26/210.010/2018 y E-26/211.013/2019).”_
+> _“Este trabajo fue desarrollado con el apoyo del Laboratório Interinstitucional de e-Astronomia (LIneA), responsable de la contribución in-kind BRA-LIN al Observatorio Vera C. Rubin. Las actividades de LIneA fueron financiadas por FINEP mediante las subvenciones n.º 0311/16 y n.º 0883/24, y por el programa INCT do e-Universo, con financiamiento del CNPq (subvención n.º 465376/2014-2) y de la FAPERJ (subvenciones n.º E-26/200.965/2018, E-26/201.681/2019, E-26/210.010/2018 y E-26/211.013/2019).”_
 
 ## Incidentes de seguridad
 

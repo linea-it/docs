@@ -7,6 +7,12 @@ Como parte do [LIneA Science Platform](./index.md), o LIneA JupyterHub está int
 Ao clicar no *card* "JupyterHub" dentro do LIneA Science Platform (ou acessando diretamente no endereço [jupyter.linea.org.br](https://jupyter.linea.org.br)), você será direcionado para a página de *login* e em seguida para a página inicial que mostra as diferentes opções de configuração para o servidor Jupyter.
 
 
+<div style="text-align: center;">
+  <img src="../../images/jupyterhub-launcher.png"
+       width="500"
+       style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
+</div>
+
 
 ### Configurações disponíveis
 
@@ -20,82 +26,268 @@ A instalação padrão do LIneA JupyterHub é baseada em *Docker containers* com
 - **IRAF Data Reduction** – uma imagem customizada para auxiliar tarefas que dependem de redução e manipulação de imagens astronômicas com ferramentas tradicionais como IRAF e DS9 (ferramentas mais modernas como o Astropy CCDProc, Photutils e Reproject estão disponíveis na imagem **Astronomy**).
 
 ??? info "Confira aqui a lista com as principais bibliotecas incluídas nos ambientes e links para as suas respectivas documentações."  
-    
-    Categoria Biblioteca Para que serve Doc
-    
-    
-    **Ciência**  
-**de Dados**  
-**e ML** [corner](https://corner.readthedocs.io) Visualização de distribuições posteriores. [doc](https://corner.readthedocs.io/en/latest/)
-    [dynesty](https://dynesty.readthedocs.io) Nested sampling bayesiano. [doc](https://dynesty.readthedocs.io/en/latest/)
-    [emcee](https://emcee.readthedocs.io) Amostragem MCMC. [doc](https://emcee.readthedocs.io/en/stable/)
-    [lmfit](https://lmfit.github.io/lmfit-py/) Ajuste de modelos não lineares. [doc](https://lmfit.github.io/lmfit-py/)
-    [NumPy](https://numpy.org) Operações numéricas e arrays multidimensionais. [doc](https://numpy.org/doc)
-    [Pandas](https://pandas.pydata.org) Análise de tabelas e manipulação de dados. [doc](https://pandas.pydata.org/docs/)
-    [scikit-image](https://scikit-image.org) Processamento de imagens. [doc](https://scikit-image.org/docs/stable/)
-    [scikit-learn](https://scikit-learn.org) Machine learning e modelos preditivos. [doc](https://scikit-learn.org/stable/documentation.html)
-    [SciPy](https://scipy.org) Funções científicas avançadas e métodos numéricos. [doc](https://docs.scipy.org/doc/scipy/)  
-    
-    **Visualização** [Bokeh](https://bokeh.org) Visualizações interativas para web. [doc](https://docs.bokeh.org/)
-    [Datashader](https://datashader.org) Renderização de grandes volumes de dados. [doc](https://datashader.org)
-    [HoloViews](https://holoviews.org) Visualização declarativa de dados. [doc](https://holoviews.org/reference/index.html)
-    [hvPlot](https://hvplot.holoviz.org) API de alto nível para visualização. [doc](https://hvplot.holoviz.org)
-    [Matplotlib](https://matplotlib.org) Visualização científica 2D/3D. [doc](https://matplotlib.org/stable/contents.html)
-    [Plotly](https://plotly.com/python/) Gráficos interativos e dashboards. [doc](https://plotly.com/python/)
-    [Seaborn](https://seaborn.pydata.org) Visualizações estatísticas de alto nível. [doc](https://seaborn.pydata.org/tutorial.html)
-    
-    **Banco de Dados, **  
-**Jupyter e**  
-**Utilitários** [psycopg2](https://www.psycopg.org/) Conector PostgreSQL para Python. [doc](https://www.psycopg.org/docs/)
-    [SQLAlchemy](https://www.sqlalchemy.org/) ORM e toolkit SQL para manipulação de bancos de dados. [doc](https://docs.sqlalchemy.org/)
-    [pooch](https://www.fatiando.org/pooch/latest/) Gerenciamento de download de datasets. [doc](https://www.fatiando.org/pooch/latest/)
-    [Dask](https://dask.org) Paralelização e computação distribuída. [doc](https://docs.dask.org)
-    [IPykernel](https://ipykernel.readthedocs.io) Kernel Python para notebooks. [doc](https://ipykernel.readthedocs.io/en/latest/)
-    
-    **Astronomia** [astrocut](https://astrocut.readthedocs.io) Recorte de imagens astronômicas. [doc](https://astrocut.readthedocs.io/en/latest/)
-    [astroML](https://www.astroml.org) Machine learning aplicado à astronomia. [doc](https://www.astroml.org/user_guide.html)
-    [Astropy](https://www.astropy.org) Núcleo de ferramentas astronômicas. [doc](https://docs.astropy.org)
-    [Astroquery](https://astroquery.readthedocs.io) Consultas a arquivos e catálogos astronômicos online. [doc](https://astroquery.readthedocs.io/en/latest/)
-    [Cartopy](https://scitools.org.uk/cartopy/docs/latest/) Mapas e projeções geoespaciais. [doc](https://scitools.org.uk/cartopy/docs/latest/)
-    [Dustmaps](https://dustmaps.readthedocs.io) Mapas de extinção da Via Láctea. [doc](https://dustmaps.readthedocs.io/en/latest/)
-    [HATS Import](https://hats-import.readthedocs.io) Conversão de catálogos para formato HATS. [doc](https://hats-import.readthedocs.io/en/stable/)
-    [Healpy](https://healpy.readthedocs.io) Manipulação de mapas HEALPix. [doc](https://healpy.readthedocs.io/en/latest/)
-    [ipyaladin](https://ipyaladin.readthedocs.io) Visualização interativa do céu (Aladin Lite no Jupyter). [doc](https://ipyaladin.readthedocs.io/en/latest/)
-    [lineassp](https://pypi.org/project/lineaSSP/) API do LIneA Solar System Portal. [doc](https://pypi.org/project/lineaSSP/)
-    [lightkurve](https://docs.lightkurve.org) Análise de curvas de luz (Kepler/TESS). [doc](https://docs.lightkurve.org)
-    [LSDB](https://lsdb.readthedocs.io) Análise escalável de catálogos. [doc](https://lsdb.readthedocs.io/en/stable/)
-    [Photutils](https://photutils.readthedocs.io) Fotometria e detecção de fontes. [doc](https://photutils.readthedocs.io/en/latest/)
-    [pyspeckit](https://pyspeckit.readthedocs.io) Ajuste e análise de espectros. [doc](https://pyspeckit.readthedocs.io/en/latest/)
-    [pyspac](https://github.com/rcboufleur/pySPAC) Análise e Caracterização da Curva de Fase Solar [doc](https://rcboufleur.github.io/pySPAC/)
-    [PyVO](https://pyvo.readthedocs.io) Acesso a serviços do Virtual Observatory. [doc](https://pyvo.readthedocs.io/en/latest/)
-    [pzserver](https://github.com/linea-it/pzserver) Acesso a dados e execução de pipelines do PZ Server de forma remota. [doc](https://linea-it.github.io/pzserver/)
-    [rail](https://pypi.org/project/pz-rail/) Pipeline de redshift fotométrico. [doc](https://rail-hub.readthedocs.io/en/latest/)
-    [Regions](https://astropy-regions.readthedocs.io) Manipulação de regiões no céu. [doc](https://astropy-regions.readthedocs.io/en/latest/)
-    [Reproject](https://reproject.readthedocs.io) Reprojeção de imagens astronômicas. [doc](https://reproject.readthedocs.io/en/stable/)
-    [specutils](https://specutils.readthedocs.io) Análise espectral astronômica. [doc](https://specutils.readthedocs.io/en/stable/)
-    **Sistema**  
-**Solar** [rebound](https://rebound.readthedocs.io) Simulações N-corpos. [doc](https://rebound.readthedocs.io/en/latest/)
-    [reboundx](https://reboundx.readthedocs.io) Extensões para REBOUND. [doc](https://reboundx.readthedocs.io/en/latest/)
+        
+    <table>
+    <thead>
+    <tr>
+    <th>Categoria</th>
+    <th>Biblioteca</th>
+    <th>Para que serve</th>
+    <th>Doc</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Data Science -->
+    <tr>
+    <td rowspan="9"><b>Ciência<br>de Dados<br>e ML</b></td>
+    <td><a href="https://corner.readthedocs.io">corner</a></td>
+    <td>Visualização de distribuições posteriores.</td>
+    <td><a href="https://corner.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://dynesty.readthedocs.io">dynesty</a></td>
+    <td>Nested sampling bayesiano.</td>
+    <td><a href="https://dynesty.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://emcee.readthedocs.io">emcee</a></td>
+    <td>Amostragem MCMC.</td>
+    <td><a href="https://emcee.readthedocs.io/en/stable/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://lmfit.github.io/lmfit-py/">lmfit</a></td>
+    <td>Ajuste de modelos não lineares.</td>
+    <td><a href="https://lmfit.github.io/lmfit-py/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://numpy.org">NumPy</a></td>
+    <td>Operações numéricas e arrays multidimensionais.</td>
+    <td><a href="https://numpy.org/doc">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://pandas.pydata.org">Pandas</a></td>
+    <td>Análise de tabelas e manipulação de dados.</td>
+    <td><a href="https://pandas.pydata.org/docs/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://scikit-image.org">scikit-image</a></td>
+    <td>Processamento de imagens.</td>
+    <td><a href="https://scikit-image.org/docs/stable/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://scikit-learn.org">scikit-learn</a></td>
+    <td>Machine learning e modelos preditivos.</td>
+    <td><a href="https://scikit-learn.org/stable/documentation.html">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://scipy.org">SciPy</a></td>
+    <td>Funções científicas avançadas e métodos numéricos.</td>
+    <td><a href="https://docs.scipy.org/doc/scipy/">doc</a></td>
+    </tr>  
+    <!-- Visualization -->
+    <tr>
+    <td rowspan="7"><b>Visualização</b></td>
+    <td><a href="https://bokeh.org">Bokeh</a></td>
+    <td>Visualizações interativas para web.</td>
+    <td><a href="https://docs.bokeh.org/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://datashader.org">Datashader</a></td>
+    <td>Renderização de grandes volumes de dados.</td>
+    <td><a href="https://datashader.org">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://holoviews.org">HoloViews</a></td>
+    <td>Visualização declarativa de dados.</td>
+    <td><a href="https://holoviews.org/reference/index.html">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://hvplot.holoviz.org">hvPlot</a></td>
+    <td>API de alto nível para visualização.</td>
+    <td><a href="https://hvplot.holoviz.org">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://matplotlib.org">Matplotlib</a></td>
+    <td>Visualização científica 2D/3D.</td>
+    <td><a href="https://matplotlib.org/stable/contents.html">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://plotly.com/python/">Plotly</a></td>
+    <td>Gráficos interativos e dashboards.</td>
+    <td><a href="https://plotly.com/python/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://seaborn.pydata.org">Seaborn</a></td>
+    <td>Visualizações estatísticas de alto nível.</td>
+    <td><a href="https://seaborn.pydata.org/tutorial.html">doc</a></td>
+    </tr>
+    <!-- Others -->
+    <tr>
+    <td rowspan="5"><b>Banco de Dados, <br>Jupyter e<br>Utilitários</b></td>
+    <td><a href="https://www.psycopg.org/">psycopg2</a></td>
+    <td>Conector PostgreSQL para Python.</td>
+    <td><a href="https://www.psycopg.org/docs/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://www.sqlalchemy.org/">SQLAlchemy</a></td>
+    <td>ORM e toolkit SQL para manipulação de bancos de dados.</td>
+    <td><a href="https://docs.sqlalchemy.org/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://www.fatiando.org/pooch/latest/">pooch</a></td>
+    <td>Gerenciamento de download de datasets.</td>
+    <td><a href="https://www.fatiando.org/pooch/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://dask.org">Dask</a></td>
+    <td>Paralelização e computação distribuída.</td>
+    <td><a href="https://docs.dask.org">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://ipykernel.readthedocs.io">IPykernel</a></td>
+    <td>Kernel Python para notebooks.</td>
+    <td><a href="https://ipykernel.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <!-- Astronomy -->
+    <tr>
+    <td rowspan="21"><b>Astronomia</b></td>
+    <td><a href="https://astrocut.readthedocs.io">astrocut</a></td>
+    <td>Recorte de imagens astronômicas.</td>
+    <td><a href="https://astrocut.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://www.astroml.org">astroML</a></td>
+    <td>Machine learning aplicado à astronomia.</td>
+    <td><a href="https://www.astroml.org/user_guide.html">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://www.astropy.org">Astropy</a></td>
+    <td>Núcleo de ferramentas astronômicas.</td>
+    <td><a href="https://docs.astropy.org">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://astroquery.readthedocs.io">Astroquery</a></td>
+    <td>Consultas a arquivos e catálogos astronômicos online.</td>
+    <td><a href="https://astroquery.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://scitools.org.uk/cartopy/docs/latest/">Cartopy</a></td>
+    <td>Mapas e projeções geoespaciais.</td>
+    <td><a href="https://scitools.org.uk/cartopy/docs/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://dustmaps.readthedocs.io">Dustmaps</a></td>
+    <td>Mapas de extinção da Via Láctea.</td>
+    <td><a href="https://dustmaps.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://hats-import.readthedocs.io">HATS Import</a></td>
+    <td>Conversão de catálogos para formato HATS.</td>
+    <td><a href="https://hats-import.readthedocs.io/en/stable/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://healpy.readthedocs.io">Healpy</a></td>
+    <td>Manipulação de mapas HEALPix.</td>
+    <td><a href="https://healpy.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://ipyaladin.readthedocs.io">ipyaladin</a></td>
+    <td>Visualização interativa do céu (Aladin Lite no Jupyter).</td>
+    <td><a href="https://ipyaladin.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://pypi.org/project/lineaSSP/">lineassp</a></td>
+    <td>API do LIneA Solar System Portal.</td>
+    <td><a href="https://pypi.org/project/lineaSSP/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://docs.lightkurve.org">lightkurve</a></td>
+    <td>Análise de curvas de luz (Kepler/TESS).</td>
+    <td><a href="https://docs.lightkurve.org">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://lsdb.readthedocs.io">LSDB</a></td>
+    <td>Análise escalável de catálogos.</td>
+    <td><a href="https://lsdb.readthedocs.io/en/stable/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://photutils.readthedocs.io">Photutils</a></td>
+    <td>Fotometria e detecção de fontes.</td>
+    <td><a href="https://photutils.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://pyspeckit.readthedocs.io">pyspeckit</a></td>
+    <td>Ajuste e análise de espectros.</td>
+    <td><a href="https://pyspeckit.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://github.com/rcboufleur/pySPAC">pyspac</a></td>
+    <td>Análise e Caracterização da Curva de Fase Solar</td>
+    <td><a href="https://rcboufleur.github.io/pySPAC/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://pyvo.readthedocs.io">PyVO</a></td>
+    <td>Acesso a serviços do Virtual Observatory.</td>
+    <td><a href="https://pyvo.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://github.com/linea-it/pzserver">pzserver</a></td>
+    <td>Acesso a dados e execução de pipelines do PZ Server de forma remota.</td>
+    <td><a href="https://linea-it.github.io/pzserver/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://pypi.org/project/pz-rail/">rail</a></td>
+    <td>Pipeline de redshift fotométrico.</td>
+    <td><a href="https://rail-hub.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://astropy-regions.readthedocs.io">Regions</a></td>
+    <td>Manipulação de regiões no céu.</td>
+    <td><a href="https://astropy-regions.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://reproject.readthedocs.io">Reproject</a></td>
+    <td>Reprojeção de imagens astronômicas.</td>
+    <td><a href="https://reproject.readthedocs.io/en/stable/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://specutils.readthedocs.io">specutils</a></td>
+    <td>Análise espectral astronômica.</td>
+    <td><a href="https://specutils.readthedocs.io/en/stable/">doc</a></td>
+    </tr>
+    <tr>
+    <td rowspan="5"><b>Sistema<br>Solar</b></td>
+    <td><a href="https://rebound.readthedocs.io">rebound</a></td>
+    <td>Simulações N-corpos.</td>
+    <td><a href="https://rebound.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://reboundx.readthedocs.io">reboundx</a></td>
+    <td>Extensões para REBOUND.</td>
+    <td><a href="https://reboundx.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
 
-```
-<tr>
-  <td><a href="https://sbpy.readthedocs.io">sbpy</a></td>
-  <td>Ferramentas para ciência de pequenos corpos.</td>
-  <td><a href="https://sbpy.readthedocs.io/en/latest/">doc</a></td>
-</tr>
-<tr>
-  <td><a href="https://spiceypy.readthedocs.io">spiceypy</a></td>
-  <td>Interface Python para SPICE (NASA).</td>
-  <td><a href="https://spiceypy.readthedocs.io/en/main/">doc</a></td>
-</tr>
-<tr>
-  <td><a href="https://pypi.org/project/sora-astro/">sora-astro</a></td>
-  <td>Análise de ocultações estelares.</td>
-  <td><a href="https://sora.readthedocs.io/latest/">doc</a></td>
-</tr>
-</tbody>
-</table>
-```
+    <tr>
+    <td><a href="https://sbpy.readthedocs.io">sbpy</a></td>
+    <td>Ferramentas para ciência de pequenos corpos.</td>
+    <td><a href="https://sbpy.readthedocs.io/en/latest/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://spiceypy.readthedocs.io">spiceypy</a></td>
+    <td>Interface Python para SPICE (NASA).</td>
+    <td><a href="https://spiceypy.readthedocs.io/en/main/">doc</a></td>
+    </tr>
+    <tr>
+    <td><a href="https://pypi.org/project/sora-astro/">sora-astro</a></td>
+    <td>Análise de ocultações estelares.</td>
+    <td><a href="https://sora.readthedocs.io/latest/">doc</a></td>
+    </tr>
+    </tbody>
+    </table>  
+  
+
+
+
 
 ### Recursos computacionais
 
@@ -284,7 +476,13 @@ No menu `Tutorials` na barra superior do Jupyter lab você encontra modelos de n
 - Customizar o seu ambiente com bibliotecas e versões específicas  
 - Acessar os dados hospedados no LIneA diretamente a partir de um notebook
 
-[PLACEHOLDER PARA FIGURA COM SCREENSHOT DO MENU TUTORIALS]
+
+
+<div style="text-align: center;">
+  <img src="../../images/tutorials-menu-PT.png"
+       width="500"
+       style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
+</div>
 
 Os tutorias estão disponíveis no repositório público do LIneA no GitHub [jupyterhub-tutorial](https://github.com/linea-it/jupyterhub-tutorial), e são atualizados regularmente para incluir novos exemplos de uso e cobrir as dúvidas mais frequentes dos usuários. Ao clicar em um tutorial específico, o sistema faz uma cópia do notebook para o diretório atual na área do usuário, garantindo que cada pessoa possa executar e fazer alterações na(s) sua(s) cópia(s). 
 
