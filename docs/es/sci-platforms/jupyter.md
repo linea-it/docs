@@ -481,7 +481,13 @@ En el menú `Tutorials` de la barra superior de JupyterLab encontrará plantilla
 * Personalizar su entorno con bibliotecas y versiones específicas
 * Acceder a los datos alojados en LIneA directamente desde un notebook
 
-<font color="red"> [PLACEHOLDER PARA UNA FIGURA CON UNA CAPTURA DE PANTALLA DEL MENÚ TUTORIALS] </font>
+
+<div style="text-align: center;">
+  <img src="../../images/tutorials-menu-ES.png"
+       width="500"
+       style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
+</div>
+
 
 Los tutoriales están disponibles en el repositorio público de LIneA en GitHub, [jupyterhub-tutorial](https://github.com/linea-it/jupyterhub-tutorial), y se actualizan periódicamente para incluir nuevos ejemplos de uso y abordar las dudas más frecuentes de los usuarios. Al hacer clic en un tutorial específico, el sistema crea una copia del notebook en el directorio actual del área del usuario, garantizando que cada persona pueda ejecutarlo y realizar modificaciones en su(s) propia(s) copia(s).
 

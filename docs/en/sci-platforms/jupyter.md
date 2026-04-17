@@ -480,7 +480,16 @@ In the `Tutorials` menu on the top bar of JupyterLab, you will find notebook tem
 * Customize your environment with specific libraries and versions
 * Access data hosted at LIneA directly from a notebook
 
-<font color="red"> [PLACEHOLDER FOR A FIGURE WITH A SCREENSHOT OF THE TUTORIALS MENU] </font>
+
+
+
+<div style="text-align: center;">
+  <img src="../../images/tutorials-menu-EN.png"
+       width="500"
+       style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
+</div>
+
+
 
 The tutorials are available in LIneA’s public GitHub repository, [jupyterhub-tutorial](https://github.com/linea-it/jupyterhub-tutorial), and are regularly updated to include new use cases and address the most frequently asked questions from users. When clicking on a specific tutorial, the system creates a copy of the notebook in the current directory within the user's workspace, ensuring that each user can run and modify their own copy.
 
