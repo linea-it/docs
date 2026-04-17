@@ -217,6 +217,14 @@ Características atuais:
 !!! info
     Apesar de não possuir agendamento de backup, o volume /data é composto por um sistema robusto de redundância de discos que preserva a integridade de seus dados. 
 
+
+## Visão geral das áreas de armazenamento
+
+<div style="text-align: center;">
+  <img src="../../images/storages_diagram.png"
+       style="width: 100%; max-width: 1200px; height: auto; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
+</div>
+
 ## Referências
 
 Estas melhores práticas foram compiladas a partir da experiência do time do LIneA e das seguintes fontes:

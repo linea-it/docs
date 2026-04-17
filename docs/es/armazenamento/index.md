@@ -212,6 +212,14 @@ Características actuales:
 !!! info
     Aunque no dispone de un programa de copias de seguridad, el volumen /data está compuesto por un sólido sistema de redundancia de disco que preserva la integridad de sus datos.
 
+
+## Visión general de las áreas de almacenamiento
+
+<div style="text-align: center;">
+  <img src="../../images/storages_diagram.png"
+       style="width: 100%; max-width: 1200px; height: auto; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
+</div>
+
 ## Referencias
 
 Estas mejores prácticas fueron compiladas de la experiencia del equipo de LIneA y las siguientes fuentes:
