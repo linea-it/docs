@@ -96,29 +96,18 @@ When opening a [**terminal within JupyterLab**](../img/OOD14.png) via Open OnDem
 
 Follow these commands:
 
-1. Go to your SCRIPTS area, install and load Miniconda:
-
+1. Go to your SCRIPTS area, create, activate a conda venv and install _ipykernel_:
 ```bash
+
     cd $SCRIPTS
-    curl -L -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    chmod +x Miniconda3-latest-Linux-x86_64.sh
-    ./Miniconda3-latest-Linux-x86_64.sh -p $SCRIPTS/miniconda
-    
-    source miniconda/bin/activate 
-    conda deactivate #Required to deactivate "base" env
-```
 
-2. Create, activate a conda venv and install _ipykernel_:
-
-```bash
     conda create -p $SCRIPTS/kernelname
     conda activate kernelname/
     
     conda install -c anaconda ipykernel
 ```
 
-3. Configure JUPYTER_PATH (must be this exact path):
-
+2. Configure JUPYTER_PATH (must be this exact path):
 ```bash
     JUPYTER_PATH=$SCRATCH/.local
     echo $JUPYTER_PATH
@@ -126,7 +115,7 @@ Follow these commands:
     python -m ipykernel install --prefix=$JUPYTER_PATH --name 'kernelname'
 ```
 
-4. Open a Jupyter Notebook session.
+2. Open a Jupyter Notebook session.
 
 ???+ success "The last command's output should be:"
 

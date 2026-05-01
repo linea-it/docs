@@ -48,30 +48,31 @@ These storage areas should be used as follows:
 
 ### Available Partitions
 
-The Apollo cluster is organized into different partitions (machine subsets) to meet different needs, such as guaranteeing maximum priority for LSST project users on machines dedicated to IDAC-Brazil.
+The Apollo cluster is organized into different partitions (machine subsets) to meet different needs.
 
 |PARTITION   |TIMELIMIT  |NODES  |NODELIST  |
 |------------|-----------|-------|----------|
 |cpu_dev     |30:00      |28     |apl[01-28]|
-|cpu_small   |3-00:00:00 |28     |apl[01-28]|
-|cpu         |5-00:00:00 |28     |apl[01-28]|
-|cpu_long    |31-00:00:0 |28     |apl[01-28]|
-|lsst_cpu_dev     |30:00      |12     |apl[17-28]|
-|lsst_cpu_small   |3-00:00:00 |12     |apl[17-28]|
-|lsst_cpu         |5-00:00:00 |12   |apl[17-28]|
-|lsst_cpu_long    |10-00:00:0 |12     |apl[17-28]|
+|cpu_small   |03:00:00   |28     |apl[01-28]|
+|cpu         |12:00:00   |28     |apl[01-28]|
+|cpu_long    |30-00:00:0 |23     |apl[01-23]|
+|cpu_bpglsst |12:00:00   |12     |apl[17-28]|
+
+!!! warning "Special features of processing nodes: apl26 and apl27"
+    Nodes apl26 and apl27 have **priority use** for executing pipelines (apl26) and Jupyter Notebooks (apl27). 
+    Therefore, any jobs running on these nodes are **subject to interruption** at any time to meet these demands.
+
 
 ### Available Accounts
 
-|ACCOUNT     |PRIORITY   |GROUPS                        |          |
-|------------|-----------|------------------------------|----------|
-|hpc-public  |Low        |Users granted access          |apl[01-28]|
-|hpc-collab  |Medium     |DES, DESI, SDSS e TON members |apl[01-28]|
-|hpc-lsst*   |High       |LSST members                  |apl[17-28]|
-|hpc-bpglsst |High       |BPG members                   |apl[01-28]|
+|ACCOUNT     |GROUPS                        |          |
+|------------|------------------------------|----------|
+|hpc-public  |Users granted access          |apl[01-28]|
+|hpc-bpglsst* |BPG members                   |apl[17-28]|
 
 
-\*Only the *hpc-lsst* account will be able to submit jobs in partitions with the "lsst" prefix.
+!!! danger "Account and Partition for BPG LSST"
+    \*Only the **`hpc-bpglsst`** account will be able to submit jobs on the **`cpu_bpglsst`** partition.
 
 !!! warning "Attention"
     As part of the BRA-LIN in-kind contribution program, IDAC Brazil is committed to generating photometric redshifts annually for the LSST survey, always preceding official data releases. During these periods, the *Apollo Cluster* will be fully occupied for this purpose for an estimated duration of several hours, potentially extending to several days. Users will be notified in advance via email about cluster unavailability. [Click here](https://linea-it.github.io/pz-lsst-inkind-doc/) to learn more about photometric redshift production and the BRA-LIN in-kind contribution program.

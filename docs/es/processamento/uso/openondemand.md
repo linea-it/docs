@@ -93,29 +93,18 @@ Al abrir un [**terminal dentro de *JupyterLab***](../img/OOD14.png) vía *Open O
 
 Siga estos comandos:
 
-1. Vaya a su área SCRIPTS, instale y cargue *Miniconda*:
-
+1. Vaya a su área SCRIPTS, cree y active un venv *conda* e instale _ipykernel_:
 ```bash
+
     cd $SCRIPTS
-    curl -L -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    chmod +x Miniconda3-latest-Linux-x86_64.sh
-    ./Miniconda3-latest-Linux-x86_64.sh -p $SCRIPTS/miniconda
-    
-    source miniconda/bin/activate 
-    conda deactivate #Necesario para desactivar el env "base"
-```
 
-2. Cree y active un venv *conda* e instale _ipykernel_:
-
-```bash
     conda create -p $SCRIPTS/kernelname
     conda activate kernelname/
     
     conda install -c anaconda ipykernel
 ```
 
-3. Configure JUPYTER_PATH (debe ser exactamente esta ruta):
-
+2. Configure JUPYTER_PATH (debe ser exactamente esta ruta):
 ```bash
     JUPYTER_PATH=$SCRATCH/.local
     echo $JUPYTER_PATH
@@ -123,7 +112,7 @@ Siga estos comandos:
     python -m ipykernel install --prefix=$JUPYTER_PATH --name 'kernelname'
 ```
 
-4. Abra una sesión de *Jupyter Notebook*.
+3. Abra una sesión de *Jupyter Notebook*.
 
 ???+ success "La salida del último comando debe ser:"
 

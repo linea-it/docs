@@ -84,33 +84,24 @@ Ao abrir um [**terminal dentro do JupyterLab**](../img/OOD14.png) via Open OnDem
 
 Siga os comandos abaixo:
 
-1. Vá para sua área SCRIPTS, Instale e carregue o Miniconda:
+1. Vá para sua área SCRIPTS, crie, ative um venv conda e instale o _ipykernel_:
 ``` bash
-	cd $SCRIPTS
 
-    curl -L -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-    chmod +x Miniconda3-latest-Linux-x86_64.sh
-    ./Miniconda3-latest-Linux-x86_64.sh -p $SCRIPTS/miniconda
+    cd $SCRIPTS
     
-    source miniconda/bin/activate 
-
-    conda deactivate #Necessário para desativar o env "base"
-```
-2. Crie, ative um venv conda e instale o _ipykernel_:
-``` bash
 	conda create -p $SCRIPTS/kernelname
     conda activate kernelname/
     
     conda install -c anaconda ipykernel
 ```
-3. Configure o JUPYTER_PATH (obrigatório ser esse caminho abaixo):
+2. Configure o JUPYTER_PATH (obrigatório ser esse caminho abaixo):
 ```bash
 	JUPYTER_PATH=$SCRATCH/.local
 	echo $JUPYTER_PATH
     
    python -m ipykernel install --prefix=$JUPYTER_PATH --name 'kernelname'
 ```
-4. Abra uma sessão do Jupyter Notebook.
+3. Abra uma sessão do Jupyter Notebook.
 
 ???+ success "O output do último comando deve ser:"
 

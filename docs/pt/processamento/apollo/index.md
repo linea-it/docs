@@ -49,30 +49,32 @@ Slurm é um sistema de gerenciamento de cluster e agendamento de tarefas de cód
 
 ### Partições disponíveis
 
-O cluster Apollo é organizado em diferentes partições (subconjunto de máquinas) para atender a diferentes necessidades, por exemplo, a garantia da prioridade máxima dos usuários do projeto LSST na utilização das máquinas dedicadas ao IDAC-Brasil. 
+O cluster Apollo é organizado em diferentes partições (subconjunto de máquinas) para atender a diferentes necessidades.
 
 |PARTITION   |TIMELIMIT  |NODES  |NODELIST  |
 |------------|-----------|-------|----------|
 |cpu_dev     |30:00      |28     |apl[01-28]|
-|cpu_small   |3-00:00:00 |28     |apl[01-28]|
-|cpu         |5-00:00:00 |28     |apl[01-28]|
-|cpu_long    |31-00:00:0 |28     |apl[01-28]|
-|lsst_cpu_dev     |30:00      |12     |apl[17-28]|
-|lsst_cpu_small   |3-00:00:00 |12     |apl[17-28]|
-|lsst_cpu         |5-00:00:00 |12   |apl[17-28]|
-|lsst_cpu_long    |10-00:00:0 |12     |apl[17-28]|
+|cpu_small   |03:00:00   |28     |apl[01-28]|
+|cpu         |12:00:00   |28     |apl[01-28]|
+|cpu_long    |30-00:00:0 |23     |apl[01-23]|
+|cpu_bpglsst |12:00:00   |12     |apl[17-28]|
+
+
+!!! warning "Particularidade dos nós de processamento: apl26 e apl27"
+    Os nós apl26 e apl27 possuem **uso prioritário** para execução de pipelines (apl26) e Jupyter Notebooks (apl27). 
+    Dessa forma, quaisquer jobs em execução nesses nós estão **sujeitos à interrupção** a qualquer momento para atendimento dessas demandas.
+    
 
 
 ### Accounts disponíveis 
-|ACCOUNT     |PRIORIDADE |GRUPO                         |          |
-|------------|-----------|------------------------------|----------|
-|hpc-public  |Baixa      |Usuários com acesso concedido |apl[01-28]|
-|hpc-collab  |Média      |DES, DESI, SDSS e TON members |apl[01-28]|
-|hpc-lsst*   |Alta       |LSST members                  |apl[17-28]|
-|hpc-bpglsst |Alta       |BPG members                   |apl[01-28]|
+|ACCOUNT     |GRUPO                         |          |
+|------------|------------------------------|----------|
+|hpc-public  |Usuários com acesso concedido |apl[01-28]|
+|hpc-bpglsst*|BPG LSST members              |apl[17-28]|
 
 
-\*Somente a account *hpc-lsst* poderá submeter jobs nas partições de prefixo "lsst".
+!!! danger "Account e Partition para o BPG LSST"
+    \*Somente a account **`hpc-bpglsst`** poderá submeter jobs na partition **`cpu_bpglsst`**.
 
 !!! warning "Atenção"
 	Como parte do programa de contribuição in-kind BRA-LIN, o IDAC Brasil possui o compromisso de gerar _redshifts_ fotométricos anualmente para o levantamento LSST, sempre na época que antecede as liberações oficiais dos dados. Nestes períodos, o Cluster Apollo será totalmente ocupado para este propósito por um tempo estimado de algumas horas, mas podendo se estender a alguns dias. Na ocasião, os usuários serão informados com antecência sobre a indisponibilidade do cluster por e-mail. [Clique aqui](https://linea-it.github.io/pz-lsst-inkind-doc/) para saber mais sobre a produção de medidas de _redshift_ e o programa de contribuição in-kind BRA-LIN. 

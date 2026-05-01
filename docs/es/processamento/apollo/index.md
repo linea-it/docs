@@ -48,30 +48,31 @@ Estas áreas de almacenamiento deben utilizarse de la siguiente forma:
 
 ### Particiones disponibles
 
-El cluster Apollo está organizado en diferentes particiones (subconjuntos de máquinas) para atender diversas necesidades, por ejemplo, garantizar la prioridad máxima de los usuarios del proyecto LSST en el uso de las máquinas dedicadas a IDAC-Brasil.
+El cluster Apollo está organizado en diferentes particiones (subconjuntos de máquinas) para atender diversas necesidades.
 
 |PARTICIÓN   |LÍMITE TIEMPO  |NODES  |LISTA NODOS  |
 |------------|-----------|-------|----------|
 |cpu_dev     |30:00      |28     |apl[01-28]|
-|cpu_small   |3-00:00:00 |28     |apl[01-28]|
-|cpu         |5-00:00:00 |28     |apl[01-28]|
-|cpu_long    |31-00:00:0 |28     |apl[01-28]|
-|lsst_cpu_dev     |30:00      |12     |apl[17-28]|
-|lsst_cpu_small   |3-00:00:00 |12     |apl[17-28]|
-|lsst_cpu         |5-00:00:00 |12   |apl[17-28]|
-|lsst_cpu_long    |10-00:00:0 |12     |apl[17-28]|
+|cpu_small   |03:00:00   |28     |apl[01-28]|
+|cpu         |12:00:00   |28     |apl[01-28]|
+|cpu_long    |30-00:00:0 |23     |apl[01-23]|
+|cpu_bpglsst |12:00:00   |12     |apl[17-28]|
+
+
+!!! warning "Particularidad de los nodos de procesamiento: apl26 y apl27"
+    Los nodos apl26 y apl27 tienen **uso prioritario** para ejecutar canalizaciones (apl26) y Jupyter Notebooks (apl27). 
+    Por lo tanto, cualquier trabajo que se ejecute en estos nodos está **sujeto a interrupción** en cualquier momento para satisfacer estas demandas.
+
 
 ### Cuentas disponibles
 
-|ACCOUNT     |PRIORIDADE |GRUPO                         |          |
-|------------|-----------|----------------------------- |----------|
-|hpc-public  |Baixa      |Usuarios con acceso autorizado|apl[01-28]|
-|hpc-collab  |Média      |DES, DESI, SDSS e TON members |apl[01-28]|
-|hpc-lsst*   |Alta       |LSST members                  |apl[17-28]|
-|hpc-bpglsst |Alta       |BPG members                   |apl[01-28]|
+|ACCOUNT     |GRUPO                         |          |
+|------------|----------------------------- |----------|
+|hpc-public  |Usuarios con acceso autorizado|apl[01-28]|
+|hpc-bpglsst* |BPG members                   |apl[17-28]|
 
-
-\*Sólo la cuenta **hpc-lsst** podrá enviar trabajos en particiones con el prefijo "lsst".
+!!! danger "Cuenta y partición para BPG LSST"
+    \*Solo la cuenta **`hpc-bpglsst`** podrá enviar trabajos a la partición **`cpu_bpglsst`**.
 
 !!! warning "Atención"
     Como parte del programa de contribución in-kind BRA-LIN, IDAC Brasil tiene el compromiso de generar redshifts fotométricos anualmente para el relevamiento LSST, siempre en el período previo a las liberaciones oficiales de datos. En estos períodos, el *Cluster Apollo* estará completamente ocupado para este propósito por un tiempo estimado de varias horas, pudiendo extenderse a varios días. Los usuarios serán informados con anticipación por correo sobre la indisponibilidad del cluster. [Haga clic aquí](https://linea-it.github.io/pz-lsst-inkind-doc/) para conocer más sobre la producción de redshifts fotométricos y el programa de contribución in-kind BRA-LIN.
