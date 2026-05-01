@@ -1,0 +1,2144 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="LIneA team">
+      
+      
+        <link rel="canonical" href="https://docs.linea.org.br/en/sci-platforms/jupyter.html">
+      
+      <link rel="icon" href="../../images/linea_favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>JupyterHub - User Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+
+<script async src="https://siteimproveanalytics.com/js/siteanalyze_6025767.js"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto,+Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto, Arial";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#home-screen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="User Documentation" class="md-header__button md-logo" aria-label="User Documentation" data-md-component="logo">
+      
+  <img src="../../images/linea.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            User Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JupyterHub
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="../../sci-platforms/jupyter.html" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="jupyter.html" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../es/sci-platforms/jupyter.html" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linea-it/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linea-it/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="User Documentation" class="md-nav__button md-logo" aria-label="User Documentation" data-md-component="logo">
+      
+  <img src="../../images/linea.png" alt="logo">
+
+    </a>
+    User Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linea-it/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linea-it/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeiros_passos.html" class="md-nav__link">
+        User Registration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsst_member_registration.html" class="md-nav__link">
+        LSST Member Registration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="index.html">Scientific Platforms</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Scientific Platforms" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Scientific Platforms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          JupyterHub
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="jupyter.html" class="md-nav__link md-nav__link--active">
+        JupyterHub
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#home-screen" class="md-nav__link">
+    Home Screen
+  </a>
+  
+    <nav class="md-nav" aria-label="Home Screen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-configurations" class="md-nav__link">
+    Available Configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computational-resources" class="md-nav__link">
+    Computational Resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-management" class="md-nav__link">
+    Environment Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-create-a-custom-environment" class="md-nav__link">
+    How to Create a Custom Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-register-the-environment-as-a-jupyter-kernel" class="md-nav__link">
+    How to Register the Environment as a Jupyter Kernel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-access" class="md-nav__link">
+    Data Access
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsdb" class="md-nav__link">
+    LSDB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials-in-jupyter-notebooks" class="md-nav__link">
+    Tutorials in Jupyter Notebooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-assistant-experimental" class="md-nav__link">
+    AI Assistant (Experimental)
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Assistant (Experimental)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-start-minimal-flow" class="md-nav__link">
+    Quick start (minimal flow)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-jupyternaut-chat" class="md-nav__link">
+    1) Jupyternaut chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-magic-commands" class="md-nav__link">
+    2) Magic commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-external-models-configuration" class="md-nav__link">
+    3) External models (configuration)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ondemand.html" class="md-nav__link">
+        Ondemand
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_query.html" class="md-nav__link">
+        User Query
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_query.html#tap-service" class="md-nav__link">
+        TAP Service
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sky_viewer.html" class="md-nav__link">
+        Sky Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="target_viewer.html" class="md-nav__link">
+        Target Viewer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sci_server.html" class="md-nav__link">
+        DES Science Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="linea-occulation-prediction-database.html" class="md-nav__link">
+        Occultation Predictions Database
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sdss_sky_server.html" class="md-nav__link">
+        SDSS Sky Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pz_server.html" class="md-nav__link">
+        LSST Photo-z Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="des.html" class="md-nav__link">
+        DES Science Portal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="solar-system-portal.html" class="md-nav__link">
+        Solar System Portal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="manga.html" class="md-nav__link">
+        MaNGA Portal
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../processamento/index.html">Processing (HPC)</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Processing (HPC)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Processing (HPC)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../processamento/apollo/index.html">Apollo Cluster</a>
+          
+            <label for="__nav_4_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Apollo Cluster" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Apollo Cluster
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/howtouse-HPC.html" class="md-nav__link">
+        How to Use
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/apptainer-uso.html" class="md-nav__link">
+        Apptainer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/howtouse-HPC.html#eups-package-manager" class="md-nav__link">
+        EUPS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/howtouse-HPC.html#conda-in-the-hpc-environment" class="md-nav__link">
+        Conda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/openondemand.html#jupyterlab" class="md-nav__link">
+        JupyterLab (OnDemand)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/openondemand.html" class="md-nav__link">
+        Ondemand
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/apollo/index.html#slurm" class="md-nav__link">
+        Slurm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/templates-jobs.html" class="md-nav__link">
+        Job Script (examples)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../armazenamento/index.html">Storage</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Storage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../data/index.html">Data</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Data" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../politicas.html" class="md-nav__link">
+        Policies
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cursos.html" class="md-nav__link">
+        Courses and Tutorials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossario.html" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../suporte.html" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#home-screen" class="md-nav__link">
+    Home Screen
+  </a>
+  
+    <nav class="md-nav" aria-label="Home Screen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-configurations" class="md-nav__link">
+    Available Configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computational-resources" class="md-nav__link">
+    Computational Resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-management" class="md-nav__link">
+    Environment Management
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-create-a-custom-environment" class="md-nav__link">
+    How to Create a Custom Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-register-the-environment-as-a-jupyter-kernel" class="md-nav__link">
+    How to Register the Environment as a Jupyter Kernel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-access" class="md-nav__link">
+    Data Access
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsdb" class="md-nav__link">
+    LSDB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials-in-jupyter-notebooks" class="md-nav__link">
+    Tutorials in Jupyter Notebooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-assistant-experimental" class="md-nav__link">
+    AI Assistant (Experimental)
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Assistant (Experimental)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-start-minimal-flow" class="md-nav__link">
+    Quick start (minimal flow)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-jupyternaut-chat" class="md-nav__link">
+    1) Jupyternaut chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-magic-commands" class="md-nav__link">
+    2) Magic commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-external-models-configuration" class="md-nav__link">
+    3) External models (configuration)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/linea-it/docs/edit/main/docs/en/sci-platforms/jupyter.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+  <h1>JupyterHub</h1>
+
+<p><a href="https://jupyter.org/hub">JupyterHub</a> is a multi-user development environment based on <em>IPython Notebooks</em> that provides access to shared computational resources on a remote server, without requiring installation or maintenance by users. The only prerequisites for accessing JupyterHub are: having a user account at LIneA (see <a href="../primeiros_passos.html">here</a> for instructions on how to create your account) and a web browser with Internet access. The so-called <a href="https://docs.jupyter.org/en/latest/">Jupyter Notebooks</a> allow users to combine interactive code, execution results, explanatory text, and multimedia resources within a single document.</p>
+<p>As part of the <a href="index.html">LIneA Science Platform</a>, the LIneA JupyterHub is integrated with other data visualization and access tools. In this way, all data analysis can be performed <em>online</em> within the platform—from data ingestion, visualization, and processing to the analysis of results—without the need to <em>download</em> the data to the user's personal computer.</p>
+<h2 id="home-screen">Home Screen<a class="headerlink" href="#home-screen" title="Permanent link">&para;</a></h2>
+<p>By clicking on the "JupyterHub" card within the LIneA Science Platform (or by accessing it directly at <a href="https://jupyter.linea.org.br">jupyter.linea.org.br</a>), you will be redirected to the login page and then to the home screen, which displays the different configuration options for the Jupyter server.</p>
+<div style="text-align: center;">
+  <img src="../../images/jupyterhub-launcher.png"
+       width="500"
+       style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
+</div>
+
+<h3 id="available-configurations">Available Configurations<a class="headerlink" href="#available-configurations" title="Permanent link">&para;</a></h3>
+<h4 id="pre-configured-docker-images">Pre-configured Docker Images<a class="headerlink" href="#pre-configured-docker-images" title="Permanent link">&para;</a></h4>
+<p>The default installation of LIneA JupyterHub is based on <em>Docker containers</em> with pre-configured environments designed to meet most user needs. Four <em>Docker images</em> are available:</p>
+<ul>
+<li><strong>DataScience</strong> – the <a href="https://jupyter-docker-stacks.readthedocs.io/">Jupyter Data Science Notebook</a> stack, including popular <em>data science</em> libraries such as Pandas, NumPy, Matplotlib, SciPy, and Scikit-learn.  </li>
+<li><strong>Astronomy</strong> – the generic astronomy stack, which includes the main <em>data science</em> libraries as well as widely used domain-specific packages such as Astropy, Astroquery, Healpy, Photutils, PyVO, Dustmaps, LSDB, and AstroML, among others.  </li>
+<li><strong>SolarSystem</strong> – a stack tailored for Solar System studies, including the main libraries from the <strong>DataScience</strong> and <strong>Astronomy</strong> images, as well as specialized packages such as sbpy, spiceypy, rebound, sora-astro, reboundx, among others.  </li>
+<li><strong>IRAF Data Reduction</strong> – a customized image designed to support tasks that depend on the reduction and manipulation of astronomical images using traditional tools such as IRAF and DS9 (more modern tools such as Astropy CCDProc, Photutils, and Reproject are available in the <strong>Astronomy</strong> image).</li>
+</ul>
+<details class="info">
+<summary>Check here the list of the main libraries included in the environments and links to their respective documentation.</summary>
+<p><table>
+<thead>
+<tr>
+  <th>Category</th>
+  <th>Library</th>
+  <th>Purpose</th>
+  <th>Doc</th>
+</tr>
+</thead>
+<tbody>
+<!-- Data Science -->
+<tr>
+  <td rowspan="9"><b>Data<br>Science<br>and ML</b></td>
+  <td><a href="https://corner.readthedocs.io">corner</a></td>
+  <td>Visualization of posterior distributions.</td>
+  <td><a href="https://corner.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://dynesty.readthedocs.io">dynesty</a></td>
+  <td>Bayesian nested sampling.</td>
+  <td><a href="https://dynesty.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://emcee.readthedocs.io">emcee</a></td>
+  <td>MCMC sampling.</td>
+  <td><a href="https://emcee.readthedocs.io/en/stable/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://lmfit.github.io/lmfit-py/">lmfit</a></td>
+  <td>Nonlinear model fitting.</td>
+  <td><a href="https://lmfit.github.io/lmfit-py/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://numpy.org">NumPy</a></td>
+  <td>Numerical operations and multidimensional arrays.</td>
+  <td><a href="https://numpy.org/doc">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://pandas.pydata.org">Pandas</a></td>
+  <td>Table analysis and data manipulation.</td>
+  <td><a href="https://pandas.pydata.org/docs/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://scikit-image.org">scikit-image</a></td>
+  <td>Image processing.</td>
+  <td><a href="https://scikit-image.org/docs/stable/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://scikit-learn.org">scikit-learn</a></td>
+  <td>Machine learning and predictive models.</td>
+  <td><a href="https://scikit-learn.org/stable/documentation.html">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://scipy.org">SciPy</a></td>
+  <td>Advanced scientific functions and numerical methods.</td>
+  <td><a href="https://docs.scipy.org/doc/scipy/">doc</a></td>
+</tr></p>
+<p><!-- Visualization -->
+<tr>
+  <td rowspan="7"><b>Visualization</b></td>
+  <td><a href="https://bokeh.org">Bokeh</a></td>
+  <td>Interactive visualizations for the web.</td>
+  <td><a href="https://docs.bokeh.org/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://datashader.org">Datashader</a></td>
+  <td>Rendering of large-scale datasets.</td>
+  <td><a href="https://datashader.org">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://holoviews.org">HoloViews</a></td>
+  <td>Declarative data visualization.</td>
+  <td><a href="https://holoviews.org/reference/index.html">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://hvplot.holoviz.org">hvPlot</a></td>
+  <td>High-level visualization API.</td>
+  <td><a href="https://hvplot.holoviz.org">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://matplotlib.org">Matplotlib</a></td>
+  <td>2D/3D scientific visualization.</td>
+  <td><a href="https://matplotlib.org/stable/contents.html">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://plotly.com/python/">Plotly</a></td>
+  <td>Interactive plots and dashboards.</td>
+  <td><a href="https://plotly.com/python/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://seaborn.pydata.org">Seaborn</a></td>
+  <td>High-level statistical visualizations.</td>
+  <td><a href="https://seaborn.pydata.org/tutorial.html">doc</a></td>
+</tr>
+<!-- Others -->
+<tr>
+  <td rowspan="5"><b>Databases,<br>Jupyter and<br>Utilities</b></td>
+  <td><a href="https://www.psycopg.org/">psycopg2</a></td>
+  <td>PostgreSQL connector for Python.</td>
+  <td><a href="https://www.psycopg.org/docs/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://www.sqlalchemy.org/">SQLAlchemy</a></td>
+  <td>ORM and SQL toolkit for database manipulation.</td>
+  <td><a href="https://docs.sqlalchemy.org/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://www.fatiando.org/pooch/latest/">pooch</a></td>
+  <td>Dataset download management.</td>
+  <td><a href="https://www.fatiando.org/pooch/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://dask.org">Dask</a></td>
+  <td>Parallel and distributed computing.</td>
+  <td><a href="https://docs.dask.org">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://ipykernel.readthedocs.io">IPykernel</a></td>
+  <td>Python kernel for notebooks.</td>
+  <td><a href="https://ipykernel.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<!-- Astronomy -->
+<tr>
+  <td rowspan="21"><b>Astronomy</b></td>
+  <td><a href="https://astrocut.readthedocs.io">astrocut</a></td>
+  <td>Astronomical image cutouts.</td>
+  <td><a href="https://astrocut.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://www.astroml.org">astroML</a></td>
+  <td>Machine learning applied to astronomy.</td>
+  <td><a href="https://www.astroml.org/user_guide.html">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://www.astropy.org">Astropy</a></td>
+  <td>Core astronomy tools.</td>
+  <td><a href="https://docs.astropy.org">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://astroquery.readthedocs.io">Astroquery</a></td>
+  <td>Queries to online astronomical archives and catalogs.</td>
+  <td><a href="https://astroquery.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://scitools.org.uk/cartopy/docs/latest/">Cartopy</a></td>
+  <td>Geospatial maps and projections.</td>
+  <td><a href="https://scitools.org.uk/cartopy/docs/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://dustmaps.readthedocs.io">Dustmaps</a></td>
+  <td>Milky Way extinction maps.</td>
+  <td><a href="https://dustmaps.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://hats-import.readthedocs.io">HATS Import</a></td>
+  <td>Catalog conversion to HATS format.</td>
+  <td><a href="https://hats-import.readthedocs.io/en/stable/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://healpy.readthedocs.io">Healpy</a></td>
+  <td>HEALPix map manipulation.</td>
+  <td><a href="https://healpy.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://ipyaladin.readthedocs.io">ipyaladin</a></td>
+  <td>Interactive sky visualization (Aladin Lite in Jupyter).</td>
+  <td><a href="https://ipyaladin.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://pypi.org/project/lineaSSP/">lineassp</a></td>
+  <td>LIneA Solar System Portal API.</td>
+  <td><a href="https://pypi.org/project/lineaSSP/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://docs.lightkurve.org">lightkurve</a></td>
+  <td>Light curve analysis (Kepler/TESS).</td>
+  <td><a href="https://docs.lightkurve.org">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://lsdb.readthedocs.io">LSDB</a></td>
+  <td>Scalable catalog analysis.</td>
+  <td><a href="https://lsdb.readthedocs.io/en/stable/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://photutils.readthedocs.io">Photutils</a></td>
+  <td>Photometry and source detection.</td>
+  <td><a href="https://photutils.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://pyspeckit.readthedocs.io">pyspeckit</a></td>
+  <td>Spectral fitting and analysis.</td>
+  <td><a href="https://pyspeckit.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/rcboufleur/pySPAC">pyspac</a></td>
+  <td>Solar phase curve analysis and characterization.</td>
+  <td><a href="https://rcboufleur.github.io/pySPAC/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://pyvo.readthedocs.io">PyVO</a></td>
+  <td>Access to Virtual Observatory services.</td>
+  <td><a href="https://pyvo.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://github.com/linea-it/pzserver">pzserver</a></td>
+  <td>Remote access to data and execution of PZ Server pipelines.</td>
+  <td><a href="https://linea-it.github.io/pzserver/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://pypi.org/project/pz-rail/">rail</a></td>
+  <td>Photometric redshift pipeline.</td>
+  <td><a href="https://rail-hub.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://astropy-regions.readthedocs.io">Regions</a></td>
+  <td>Sky region manipulation.</td>
+  <td><a href="https://astropy-regions.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://reproject.readthedocs.io">Reproject</a></td>
+  <td>Reprojection of astronomical images.</td>
+  <td><a href="https://reproject.readthedocs.io/en/stable/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://specutils.readthedocs.io">specutils</a></td>
+  <td>Astronomical spectral analysis.</td>
+  <td><a href="https://specutils.readthedocs.io/en/stable/">doc</a></td>
+</tr></p>
+<p><tr>
+  <td rowspan="5"><b>Solar<br>System</b></td>
+  <td><a href="https://rebound.readthedocs.io">rebound</a></td>
+  <td>N-body simulations.</td>
+  <td><a href="https://rebound.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://reboundx.readthedocs.io">reboundx</a></td>
+  <td>Extensions for REBOUND.</td>
+  <td><a href="https://reboundx.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://sbpy.readthedocs.io">sbpy</a></td>
+  <td>Tools for small-body science.</td>
+  <td><a href="https://sbpy.readthedocs.io/en/latest/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://spiceypy.readthedocs.io">spiceypy</a></td>
+  <td>Python interface for SPICE (NASA).</td>
+  <td><a href="https://spiceypy.readthedocs.io/en/main/">doc</a></td>
+</tr>
+<tr>
+  <td><a href="https://pypi.org/project/sora-astro/">sora-astro</a></td>
+  <td>Stellar occultation analysis.</td>
+  <td><a href="https://sora.readthedocs.io/latest/">doc</a></td>
+</tr>
+</tbody>
+</table></p>
+</details>
+<h3 id="computational-resources">Computational Resources<a class="headerlink" href="#computational-resources" title="Permanent link">&para;</a></h3>
+<p><strong>Server Configuration of the K8S Environment</strong></p>
+<p>The JupyterHub platform runs on a Kubernetes (K8S) cluster and includes 12 dedicated physical servers. Each machine is equipped with the following computational resources:</p>
+<table>
+<thead>
+<tr>
+<th>Kubernetes Node Configuration</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RAM</strong></td>
+<td>64 GB</td>
+</tr>
+<tr>
+<td><strong>Threads per core</strong></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Cores per socket</strong></td>
+<td>6</td>
+</tr>
+<tr>
+<td><strong>Sockets</strong></td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Available Configurations for Users</strong></p>
+<p>On the home page, a menu on the right displays up to three computational resource options that will be reserved simultaneously for each user's Jupyter server. The available options are:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Size</strong></th>
+<th><strong>CPUs</strong></th>
+<th><strong>RAM</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Small</strong></td>
+<td>1.0</td>
+<td>4 GiB</td>
+</tr>
+<tr>
+<td><strong>Medium</strong></td>
+<td>2.0</td>
+<td>8 GiB</td>
+</tr>
+<tr>
+<td><strong>Large</strong></td>
+<td>4.0</td>
+<td>16 GiB</td>
+</tr>
+</tbody>
+</table>
+<p>Options offering more than one CPU allow parallel code execution, which is useful for tasks that benefit from multiple cores, such as numerical simulations or machine learning model training. However, the K8S-based JupyterHub is designed as a lightweight and interactive development environment and is not optimized for CPU- or memory-intensive workloads. For more demanding tasks—such as large-scale data processing or complex model training—it is recommended to use the alternative Jupyter service available on the Ondemand platform, which provides direct access to LIneA's HPC infrastructure.</p>
+<div class="admonition info">
+<p class="admonition-title">Jupyter over K8S vs Jupyter over HPC</p>
+<p>LIneA provides two separate Jupyter Notebook environments. The first runs in containers on the Kubernetes (K8S) platform and is integrated with the PostgreSQL database and file system. The second is available on the <a href="../processamento/uso/openondemand.html">Ondemand platform</a> and provides direct access to the HPC infrastructure.</p>
+</div>
+<h2 id="environment-management">Environment Management<a class="headerlink" href="#environment-management" title="Permanent link">&para;</a></h2>
+<p>If your work requires additional libraries or specific version pinning, we recommend using the <a href="https://docs.conda.io/projects/conda/en/stable/index.html">Conda</a> package manager. To learn more, visit the official Conda <a href="https://bit.ly/tryconda">tutorial</a> and the project's <a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf"><em>Cheat Sheet</em></a>, which provides a list of the most useful commands.</p>
+<h3 id="how-to-create-a-custom-environment">How to Create a Custom Environment<a class="headerlink" href="#how-to-create-a-custom-environment" title="Permanent link">&para;</a></h3>
+<p>For example, let us create an environment with Python 3.12 named <code>myenv</code>. To open a Terminal, click on the JupyterLab top menu:</p>
+<p><code>File &gt; New &gt; Terminal</code></p>
+<p>Let us begin by checking the available environments.</p>
+<div class="highlight"><pre><span></span><code>conda env list
+</code></pre></div>
+<p>If this is your first time accessing the platform, you should see only the <em>base</em> environment available.</p>
+<p>Creating the new environment:</p>
+<div class="highlight"><pre><span></span><code>conda create -n myenv <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.12
+</code></pre></div>
+<h4 id="activate-the-environment">Activate the Environment<a class="headerlink" href="#activate-the-environment" title="Permanent link">&para;</a></h4>
+<p>To activate the environment:</p>
+<div class="highlight"><pre><span></span><code>conda activate myenv
+</code></pre></div>
+<p>After that, you can install packages normally using Conda or Pip. For example:</p>
+<div class="highlight"><pre><span></span><code>conda install <span class="nv">numpy</span><span class="o">=</span><span class="m">1</span>.26
+pip install <span class="nv">astropy</span><span class="o">=</span><span class="m">7</span>.1
+</code></pre></div>
+<p>To make the new environment available for use in a notebook, it must be registered as a <em>kernel</em>.</p>
+<h3 id="how-to-register-the-environment-as-a-jupyter-kernel">How to Register the Environment as a Jupyter Kernel<a class="headerlink" href="#how-to-register-the-environment-as-a-jupyter-kernel" title="Permanent link">&para;</a></h3>
+<h4 id="create-a-new-kernel">Create a New Kernel<a class="headerlink" href="#create-a-new-kernel" title="Permanent link">&para;</a></h4>
+<p>Creating a new <em>kernel</em> from a Conda environment is done using the <code>ipykernel</code> library. It is already available in the <em>base</em> environment.</p>
+<div class="highlight"><pre><span></span><code>python -m ipykernel install --user --name myenv --display-name <span class="s2">&quot;MyEnv&quot;</span>
+</code></pre></div>
+<p>Once created, kernels are available for launching new notebooks in the "<em>Launcher</em>" tab or can be selected from the menu in the upper-right corner of a notebook. To list existing kernels:</p>
+<div class="highlight"><pre><span></span><code>jupyter kernelspec list
+</code></pre></div>
+<h4 id="remove-the-kernel">Remove the Kernel<a class="headerlink" href="#remove-the-kernel" title="Permanent link">&para;</a></h4>
+<p>To remove a <em>kernel</em>:</p>
+<div class="highlight"><pre><span></span><code>jupyter kernelspec remove myenv
+</code></pre></div>
+<h4 id="remove-the-environment">Remove the Environment<a class="headerlink" href="#remove-the-environment" title="Permanent link">&para;</a></h4>
+<p>If you wish to remove the environment:</p>
+<div class="highlight"><pre><span></span><code>conda env remove --name myenv
+</code></pre></div>
+<h2 id="data-access">Data Access<a class="headerlink" href="#data-access" title="Permanent link">&para;</a></h2>
+<h3 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h3>
+<p>LIneA provides a database dedicated to the storage of tabular astronomical data, managed by the Postgres system. This database stores catalogs, maps, and auxiliary tables released by astronomical surveys, as well as tables created by users as results of queries or uploads. Access to data hosted in the database from a notebook in JupyterHub is performed using the <code>pyvo</code> library through the <a href="https://www.ivoa.net/documents/TAP/">TAP</a> service, with programmatic queries written in <strong>SQL</strong> or <strong>ADQL</strong>.</p>
+<p><strong>Setup</strong></p>
+<p>To connect to the LIneA TAP service API, we will use the <a href="https://docs.python-requests.org/en/latest/">requests</a> and <a href="https://pyvo.readthedocs.io/en/latest/">PyVO</a> libraries. PyVO is an Astropy-affiliated package that enables remote queries of astronomical data from repositories compliant with IVOA service protocol standards.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pyvo</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+</code></pre></div>
+<p>The first step is to establish a connection with the LIneA TAP service:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">tap_session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">tap_url</span> <span class="o">=</span> <span class="s2">&quot;https://userquery.linea.org.br/tap&quot;</span>
+<span class="n">tap_service</span> <span class="o">=</span> <span class="n">pyvo</span><span class="o">.</span><span class="n">dal</span><span class="o">.</span><span class="n">TAPService</span><span class="p">(</span><span class="n">tap_url</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="n">tap_session</span><span class="p">)</span>
+</code></pre></div>
+Next, we can perform queries using the SQL or ADQL language. For example, to query the <code>gaia_dr3.gaia_source</code> table and retrieve the first 10 rows:</p>
+<div class="highlight"><pre><span></span><code><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT TOP 10 * FROM gaia_dr3.gaia_source&quot;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">tap_service</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>    
+</code></pre></div>
+<p>The result of the query is returned as an object of type <code>pyvo.dal.TAPResults</code>, which can be converted into an <code>astropy.table.Table</code>. This, in turn, can be optionally converted into a Pandas DataFrame to facilitate data manipulation and analysis:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">to_table</span><span class="p">())</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
+</code></pre></div>
+<p>Access the complete documentation on how to query the LIneA Postgres database using the <code>pyvo</code> library here: <a href="../sci-platforms/user_query.html#tap-service">TAP Service</a></p>
+<h3 id="lsdb">LSDB<a class="headerlink" href="#lsdb" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://docs.lsdb.io/en/stable/">Large Scale Database (LSDB)</a> is a Python library developed by the LSST Interdisciplinary Network for Collaboration and Computing (LINCC) as part of the Legacy Survey of Space and Time (LSST). It is designed to facilitate access to and analysis of large astronomical datasets. A vast collection of public data is made available by the project on the LSDB.io website.</p>
+<p>LIneA hosts a local copy of these datasets, integrating with the international LSDB.io ecosystem. This infrastructure provides greater efficiency in data transfer for users geographically close to Brazil and enables the Brazilian astronomical community to access and analyze these datasets in an optimized manner using high-performance computing (HPC) resources.</p>
+<p>Access to LSDB data from JupyterHub is performed using the <code>lsdb</code> library, which provides a Python interface for querying and manipulating data stored in LSDB. Although LSDB is optimized for handling large data volumes, it can also be useful for small queries. Visit the <a href="https://docs.lsdb.io/en/latest/tutorials.html">tutorial list on the official LSDB website</a> to learn how to take full advantage of this powerful tool.</p>
+<p>To perform a simple query, simply import the library and open a specific catalog. For example, to access the DES DR2 object catalog hosted in LIneA's LSDB:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">lsdb</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+</code></pre></div>
+LSDB uses the "lazy" computation methodology, in which commands are planned in advance and operations are executed only at the end of the process.</p>
+<p>The command below does not yet load the data into local memory; it only plans to retrieve these columns from the catalog located at the specified URL.</p>
+<div class="highlight"><pre><span></span><code><span class="n">cat</span> <span class="o">=</span> <span class="n">lsdb</span><span class="o">.</span><span class="n">open_catalog</span><span class="p">(</span><span class="s2">&quot;https://linea.data.lsdb.io/hats/des/des_dr2&quot;</span><span class="p">,</span> 
+                        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;COADD_OBJECT_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;RA&quot;</span><span class="p">,</span> <span class="s2">&quot;DEC&quot;</span><span class="p">,</span> <span class="s2">&quot;MAG_AUTO_G_DERED&quot;</span><span class="p">,</span> <span class="s2">&quot;MAG_AUTO_R_DERED&quot;</span><span class="p">,</span> 
+                                 <span class="s2">&quot;EXTENDED_CLASS_COADD&quot;</span><span class="p">,</span> <span class="s2">&quot;FLAGS_G&quot;</span><span class="p">,</span> <span class="s2">&quot;FLAGS_R&quot;</span><span class="p">])</span>
+</code></pre></div>
+<p>The variable <code>cat</code> stores an object of type <code>Catalog</code>, which contains methods and attributes to be used—also lazily—without performing computations. For example, let us perform a spatial query in the region of the Sculptor star cluster with a radius of 0.5 degrees:</p>
+<div class="highlight"><pre><span></span><code><span class="n">sculptor_stars</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">cone_search</span><span class="p">(</span><span class="n">ra</span><span class="o">=</span><span class="mf">15.03875</span><span class="p">,</span> <span class="n">dec</span><span class="o">=-</span><span class="mf">33.70916667</span><span class="p">,</span> <span class="n">radius_arcsec</span><span class="o">=</span><span class="mf">0.5</span> <span class="o">*</span> <span class="mi">3600</span><span class="p">)</span> 
+</code></pre></div>
+<p>After defining the columns and the region of interest, we can execute the query using the <code>compute()</code> method and finally load the data into a Pandas DataFrame:</p>
+<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">sculptor_stars</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="tutorials-in-jupyter-notebooks">Tutorials in Jupyter Notebooks<a class="headerlink" href="#tutorials-in-jupyter-notebooks" title="Permanent link">&para;</a></h2>
+<p>In the <code>Tutorials</code> menu on the top bar of JupyterLab, you will find notebook templates containing usage examples to learn how to:</p>
+<ul>
+<li>Use a Jupyter Notebook (if you are a beginner)</li>
+<li>Customize your environment with specific libraries and versions</li>
+<li>Access data hosted at LIneA directly from a notebook</li>
+</ul>
+<div style="text-align: center;">
+  <img src="../../images/tutorials-menu-EN.png"
+       width="500"
+       style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
+</div>
+
+<p>The tutorials are available in LIneA’s public GitHub repository, <a href="https://github.com/linea-it/jupyterhub-tutorial">jupyterhub-tutorial</a>, and are regularly updated to include new use cases and address the most frequently asked questions from users. When clicking on a specific tutorial, the system creates a copy of the notebook in the current directory within the user's workspace, ensuring that each user can run and modify their own copy.</p>
+<p>Upon logging into JupyterHub, the system creates a copy of all tutorial notebooks in the <code>$HOME/notebooks/tutorials/</code> directory in the user's workspace. Modifying the original files is not recommended, as future updates may be lost. If you wish to maintain a customized version, we recommend always using the <code>Tutorials</code> menu to create a new, updated copy in the current working directory.</p>
+<h2 id="ai-assistant-experimental">AI Assistant (Experimental)<a class="headerlink" href="#ai-assistant-experimental" title="Permanent link">&para;</a></h2>
+<p>The AI assistant in JupyterLab is provided by the <strong>Jupyter AI (v2)</strong> extension and supports the <code>%ai</code> and <code>%%ai</code> <em>magic commands</em>.</p>
+<h3 id="quick-start-minimal-flow">Quick start (minimal flow)<a class="headerlink" href="#quick-start-minimal-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">load_ext</span> <span class="n">jupyter_ai_magics</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">ai</span> <span class="nb">list</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">ai</span> <span class="n">coder1b</span>
+<span class="n">Describe</span> <span class="n">the</span> <span class="n">Pythagorean</span> <span class="n">theorem</span>
+</code></pre></div>
+<p>Optional (for larger context, in chat):</p>
+<div class="highlight"><pre><span></span><code>/learn *.ipynb
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>/ask Summarize this notebook.
+</code></pre></div>
+<h3 id="1-jupyternaut-chat">1) Jupyternaut chat<a class="headerlink" href="#1-jupyternaut-chat" title="Permanent link">&para;</a></h3>
+<p>In JupyterLab, open the Jupyternaut side panel (chat icon). After configuring the model/keys, you can use slash (<code>/</code>) commands directly in the chat:</p>
+<ul>
+<li><code>/learn &lt;path|pattern&gt;</code>: indexes local files for use as context.</li>
+<li><code>/ask &lt;question&gt;</code>: asks specifically about the content learned with <code>/learn</code>.</li>
+<li><code>/learn -d</code>: clears the local knowledge base created by <code>/learn</code>.</li>
+<li><code>/fix</code>: helps fix a cell with an error (the chat asks you to select the faulty cell).</li>
+<li><code>/export [file.md]</code>: exports the conversation history to Markdown.</li>
+<li><code>/clear</code>: starts a new conversation and clears the current chat context.</li>
+</ul>
+<h4 id="practical-use-of-learn-key-differentiator">Practical use of <code>/learn</code> (key differentiator)<a class="headerlink" href="#practical-use-of-learn-key-differentiator" title="Permanent link">&para;</a></h4>
+<p>At LIneA, <code>/learn</code> uses <strong>local embeddings</strong> (default model: <code>nomic-embed-text</code>).</p>
+<p>The content is processed in chunks and converted into local embeddings.<br />
+These data are used for context retrieval (RAG) during chat.</p>
+<p>Characteristics:</p>
+<ul>
+<li>it does not change the model;</li>
+<li>it is not permanent memory (it can be cleared with <code>/learn -d</code>);</li>
+<li>it is ideal for documentation, notebooks, and code;</li>
+<li>where it is stored: Jupyter AI local vector database at <code>~/.local/share/jupyter/jupyter_ai</code>;</li>
+<li>chunking at LIneA is controlled by <code>LINEA_CHUNK_SIZE</code> (default 1200) and <code>LINEA_CHUNK_OVERLAP</code> (default 240). Therefore, the <code>-c/-o</code> parameters may be overridden by the environment/policy;</li>
+<li>by default it ignores <code>node_modules</code>, <code>lib</code>, <code>build</code>, and hidden files (use <code>-a</code> to include everything).</li>
+</ul>
+<p>When to use each command:</p>
+<ul>
+<li><code>/ask</code>: when the question depends on files indexed by <code>/learn</code> (contextual questions about local documentation/code).</li>
+<li><strong>Regular chat</strong>: when the question is general and does not depend on indexed local content.</li>
+</ul>
+<p>Real example:</p>
+<div class="highlight"><pre><span></span><code>/learn docs/
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>/ask What are the API endpoints?
+</code></pre></div>
+<h4 id="chat-vs-magic-commands-when-to-use-each-one">Chat vs Magic Commands: when to use each one<a class="headerlink" href="#chat-vs-magic-commands-when-to-use-each-one" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Recommended usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chat (Jupyternaut)</td>
+<td>exploration, general questions, use with <code>/learn</code></td>
+</tr>
+<tr>
+<td><code>%%ai</code></td>
+<td>structured execution inside the notebook</td>
+</tr>
+<tr>
+<td><code>%ai</code></td>
+<td>helper commands (list models, reset, aliases, etc.)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-magic-commands">2) Magic commands<a class="headerlink" href="#2-magic-commands" title="Permanent link">&para;</a></h3>
+<p>Before using the commands:</p>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">load_ext</span> <span class="n">jupyter_ai_magics</span>
+</code></pre></div>
+<p>Main commands:</p>
+<ul>
+<li><code>%%ai &lt;provider:model&gt;</code> (or alias): sends a cell prompt to a model.<br />
+Example:
+  <div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">ai</span> <span class="n">coder1b</span>
+<span class="n">Summarize</span> <span class="n">the</span> <span class="n">main</span> <span class="n">points</span> <span class="n">of</span> <span class="n">this</span> <span class="n">analysis</span><span class="o">.</span>
+</code></pre></div></li>
+<li><code>%ai help</code> and <code>%%ai help</code>: syntax and options help.</li>
+<li><code>%ai list [provider]</code>: lists available models (all providers or a specific one).</li>
+<li><code>%ai reset</code>: clears the history used as context in upcoming calls.</li>
+<li><code>%ai error &lt;provider:model&gt;</code>: explains the most recent notebook error.</li>
+<li><code>%ai register &lt;alias&gt; &lt;provider:model&gt;</code>: creates a model alias.</li>
+<li><code>%ai update &lt;alias&gt; &lt;new-provider:model&gt;</code>: updates an alias.</li>
+<li><code>%ai delete &lt;alias&gt;</code>: removes an alias.</li>
+</ul>
+<p>Useful <code>%%ai</code> features:</p>
+<ul>
+<li>output format with <code>-f/--format</code> (<code>code</code>, <code>markdown</code>, <code>math</code>, <code>html</code>, <code>json</code>, <code>text</code>, <code>image</code>);</li>
+<li>variable interpolation with <code>{variable}</code> in the prompt;</li>
+<li>default model configuration:
+  <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">config</span> <span class="n">AiMagics</span><span class="o">.</span><span class="n">default_language_model</span> <span class="o">=</span> <span class="s2">&quot;linea:qwen2.5-coder:1.5b&quot;</span>
+</code></pre></div></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Scope of <code>%%ai</code>:</p>
+<p><code>%%ai</code> commands <strong>do not automatically have access to the content of other notebook cells</strong>.</p>
+<p>By default, the model receives only:</p>
+<ul>
+<li>the text in the current cell;</li>
+<li>variables explicitly interpolated in the prompt (for example, <code>{variable}</code>).</li>
+</ul>
+<p>Example that <strong>does not work as expected</strong>:</p>
+<div class="highlight"><pre><span></span><code>    <span class="o">%%</span><span class="n">ai</span> <span class="n">coder1b</span>
+    <span class="n">Explain</span> <span class="n">how</span> <span class="n">this</span> <span class="n">notebook</span> <span class="ow">is</span> <span class="n">organized</span><span class="o">.</span>
+</code></pre></div>
+<p>In this case, the model does not receive the rest of the notebook, so the answer tends to be generic.</p>
+<h4 id="how-to-provide-context-correctly">How to provide context correctly<a class="headerlink" href="#how-to-provide-context-correctly" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Interpolate Python variables:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">content</span> <span class="o">=</span> <span class="s2">&quot;text from another cell or analysis&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">ai</span> <span class="n">coder1b</span>
+<span class="n">Explain</span><span class="p">:</span>
+<span class="p">{</span><span class="n">content</span><span class="p">}</span>
+</code></pre></div>
+<ol>
+<li><strong>Use <code>/learn</code> for multiple files or notebooks (in chat):</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code>/learn *.ipynb
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>/ask How is this notebook organized?
+</code></pre></div>
+<p>In this mode, the assistant uses embeddings to automatically retrieve relevant snippets.</p>
+</div>
+<h3 id="3-external-models-configuration">3) External models (configuration)<a class="headerlink" href="#3-external-models-configuration" title="Permanent link">&para;</a></h3>
+<p>There are two usage scenarios:</p>
+<ul>
+<li><strong>Local (LIneA):</strong> works <em>out of the box</em>, with no API key. However, the models are smaller and more prone to hallucinations.</li>
+<li><strong>External (third-party providers):</strong> requires credential setup and, in some cases, additional dependencies.</li>
+</ul>
+<p>Flow for an external provider:</p>
+<ol>
+<li>configure credentials (environment variables or the chat settings panel);</li>
+<li>confirm with <code>%ai list</code> that the model is available.</li>
+</ol>
+<h4 id="persistent-keys-lineaapikeysenv">Persistent keys (<code>~/.linea/apikeys.env</code>)<a class="headerlink" href="#persistent-keys-lineaapikeysenv" title="Permanent link">&para;</a></h4>
+<p>The LIneA environment can keep your credentials in a file under your <code>HOME</code>:</p>
+<ul>
+<li><code>~/.linea/apikeys.env</code></li>
+</ul>
+<p>This file contains variables such as <code>OPENAI_API_KEY</code>, <code>GROQ_API_KEY</code>, <code>NVIDIA_API_KEY</code>, <code>ANTHROPIC_API_KEY</code>, and <code>GOOGLE_API_KEY</code>.</p>
+<p>For changes to take effect, restart the kernel/session (or restart JupyterLab) after editing this file.</p>
+<h4 id="local-linea-provider">Local LIneA provider<a class="headerlink" href="#local-linea-provider" title="Permanent link">&para;</a></h4>
+<p>In addition to external providers, the environment also exposes:</p>
+<ul>
+<li><code>linea</code> provider (local chat via Ollama, no API key required);</li>
+<li><code>linea</code> provider for embeddings (shown in the selector as <strong>LIneA (embeddings)</strong>).</li>
+</ul>
+<p>Local chat models available in the <code>linea</code> provider:</p>
+<ul>
+<li><code>qwen2.5-coder:0.5b</code></li>
+<li><code>qwen2.5-coder:1.5b</code></li>
+<li><code>qwen2.5-coder:3b</code></li>
+<li><code>qwen2.5-coder:7b</code></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Qwen2.5-Coder models are optimized for programming tasks, with sizes ranging from 0.5B to 7B parameters for different speed/quality trade-offs. Use the smaller models (0.5B-1.5B) for simple tasks and fast responses in resource-constrained environments, and the larger ones (3B-7B) for more complex problems. Be careful when using small models for intricate logic or critical security requirements, as they tend to hallucinate and make mistakes. Also remember that they <strong>do not automatically have access to the full notebook context</strong>, so interpolate variables or explicitly include relevant content in the prompt for better results.</p>
+</div>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">load_ext</span> <span class="n">jupyter_ai_magics</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">ai</span> <span class="nb">list</span> <span class="n">linea</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">ai</span> <span class="n">coder1b</span>
+<span class="n">Write</span> <span class="n">a</span> <span class="n">Python</span> <span class="n">function</span> <span class="n">to</span> <span class="n">read</span> <span class="n">a</span> <span class="n">CSV</span> <span class="n">using</span> <span class="n">numpy</span><span class="o">.</span>
+</code></pre></div>
+<p>By default, the environment already includes aliases for the <code>linea</code> provider.
+To use only the 1.5b model, use <code>coder1b</code> (equivalent to <code>linea:qwen2.5-coder:1.5b</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">ai</span> <span class="n">linea</span><span class="p">:</span><span class="n">qwen2</span><span class="mf">.5</span><span class="o">-</span><span class="n">coder</span><span class="p">:</span><span class="mf">1.5</span><span class="n">b</span>
+<span class="n">Write</span> <span class="n">a</span> <span class="n">Python</span> <span class="n">function</span> <span class="n">to</span> <span class="n">read</span> <span class="n">a</span> <span class="n">CSV</span> <span class="n">using</span> <span class="n">numpy</span><span class="o">.</span>
+</code></pre></div>
+<p>For more capable models and free access, look for providers that offer some level of free-tier access. Providers such as the startup <code>groq</code> (<a href="https://console.groq.com/home">https://console.groq.com/home</a>) or <code>nvidia</code> (<a href="https://build.nvidia.com/">https://build.nvidia.com/</a>) offer free access tiers via API keys.</p>
+<p><code>groq</code> provider:</p>
+<ul>
+<li>authentication: enter the key in the <code>GROQ_API_KEY</code> field in the Jupyter AI settings.</li>
+</ul>
+<p>Example using an external provider (Groq):</p>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">env</span> <span class="n">GROQ_API_KEY</span><span class="o">=</span><span class="n">YOUR_GROQ_KEY</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">ai</span> <span class="nb">list</span> <span class="n">groq</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">ai</span> <span class="n">groq</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_MODEL_ID</span><span class="o">&gt;</span>
+<span class="n">Summarize</span> <span class="n">the</span> <span class="n">main</span> <span class="n">points</span> <span class="n">of</span> <span class="n">this</span> <span class="n">notebook</span><span class="o">.</span>
+</code></pre></div>
+<p><code>nvidia</code> provider:</p>
+<ul>
+<li>authentication: enter the key in the <code>NVIDIA_API_KEY</code> field in the Jupyter AI settings.</li>
+</ul>
+<p>Example using an external provider (NVIDIA):</p>
+<p><div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">env</span> <span class="n">NVIDIA_API_KEY</span><span class="o">=</span><span class="n">YOUR_NVIDIA_KEY</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">ai</span> <span class="nb">list</span> <span class="n">nvidia</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">ai</span> <span class="n">nvidia</span><span class="p">:</span><span class="o">&lt;</span><span class="n">YOUR_MODEL_ID</span><span class="o">&gt;</span>
+<span class="n">Summarize</span> <span class="n">the</span> <span class="n">main</span> <span class="n">points</span> <span class="n">of</span> <span class="n">this</span> <span class="n">notebook</span><span class="o">.</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title"><code>%env</code> vs <code>export</code> (when setting keys)</p>
+<p>When a provider requires a key (for example, <code>groq</code>):</p>
+<ul>
+<li><code>%env GROQ_API_KEY=...</code> (or <code>NVIDIA_API_KEY=...</code>): applies to the <strong>current kernel</strong> (immediate effect for <code>%ai</code>/<code>%%ai</code>);</li>
+<li><code>export GROQ_API_KEY=...</code> (or <code>export NVIDIA_API_KEY=...</code>): applies to the <strong>shell</strong> but does not necessarily apply to kernels started later. You need to import the environment variable into the code. For persistence, use <a href="#persistent-keys-lineaapikeysenv">persistent keys</a>.</li>
+</ul>
+</div>
+<p>Quick example with a local LIneA model (no key required):</p>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">load_ext</span> <span class="n">jupyter_ai_magics</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">config</span> <span class="n">AiMagics</span><span class="o">.</span><span class="n">default_language_model</span> <span class="o">=</span> <span class="s2">&quot;linea:qwen2.5-coder:1.5b&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">%%</span><span class="n">ai</span>
+<span class="n">Explain</span> <span class="n">this</span> <span class="n">Python</span> <span class="n">error</span> <span class="ow">and</span> <span class="n">propose</span> <span class="n">a</span> <span class="n">fix</span><span class="o">.</span>
+</code></pre></div>
+<blockquote>
+<p>Important: external providers may generate API usage costs. Review pricing and privacy policies before sending sensitive data.</p>
+</blockquote>
+<h4 id="basic-troubleshooting">Basic troubleshooting<a class="headerlink" href="#basic-troubleshooting" title="Permanent link">&para;</a></h4>
+<p><strong>1) Model does not appear in <code>%ai list</code></strong></p>
+<ul>
+<li>confirm that the provider is correct (for example, <code>%ai list linea</code> or <code>%ai list groq</code>);</li>
+<li>for an external provider, verify that dependencies and credentials were configured;</li>
+<li>reload the extension in the notebook:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">load_ext</span> <span class="n">jupyter_ai_magics</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">ai</span> <span class="nb">list</span>
+</code></pre></div>
+<p><strong>2) Authentication error</strong></p>
+<ul>
+<li>for <code>groq</code>, confirm that <code>GROQ_API_KEY</code> was defined in the current kernel (<code>%env GROQ_API_KEY=...</code>);</li>
+<li>if the key was defined with <code>export</code> after opening the notebook, restart the kernel/session;</li>
+<li>make sure there are no extra spaces or a truncated value in the key.</li>
+</ul>
+<p><strong>3) Kernel does not recognize <code>%ai</code> or <code>%%ai</code></strong></p>
+<ul>
+<li>load the extension: <code>%load_ext jupyter_ai_magics</code>;</li>
+<li>if the issue persists, restart the kernel and run it again;</li>
+<li>on remote kernels, install the package in the kernel itself with <code>%pip install jupyter_ai_magics</code>.</li>
+</ul>
+<p><strong>Official reference:</strong> <a href="https://jupyter-ai.readthedocs.io/en/v2/">Jupyter AI v2 Documentation</a></p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 1, 2026 04:06:54">May 1, 2026</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <div>
+        <a href="https://linea.org.br/" title="LIneA" target="_blank">
+          <img alt=LIneA" src="/images/linea-dark-invert.png" height="70" width="90"
+            style="padding: 10px; height: 70px;">
+        </a>
+        <a href="https://linea.org.br/010-ciencia/3-inct-do-e-universo-2/" title="INCT do e-Universo" target="_blank">
+          <img alt="INCT do e-Universo" src="/images/inct_euniverso_logo.png" height="70" style="padding: 10px; height: 70px;">
+        </a>
+        <img alt="IDAC" src="/images/idac.png" height="70" style="height: 70px;">
+      </div>
+
+      <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linea.org.br" target="_blank" rel="noopener" title="www.linea.org.br" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.07 4.93C17.22 3 14.66 1.96 12 2c-2.66-.04-5.21 1-7.06 2.93C3 6.78 1.96 9.34 2 12c-.04 2.66 1 5.21 2.93 7.06C6.78 21 9.34 22.04 12 22c2.66.04 5.21-1 7.06-2.93C21 17.22 22.04 14.66 22 12c.04-2.66-1-5.22-2.93-7.07M17 12v6h-3.5v-5h-3v5H7v-6H5l7-7 7.5 7H17Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/linea-it" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/linea_org" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://instagram.com/linea_org" target="_blank" rel="noopener" title="instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://facebook.com/linea.org" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://youtube.com/@linea_org" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73Z"/></svg>
+    </a>
+  
+</div>
+
+    </div>
+  </div>
+  <footer>
+    
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script>
+      var __search = {
+        transform: function (query) {
+          return query
+        }
+      }
+    </script>
+
+    <!-- Force external links to open in a new tab -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select all links inside the documentation
+        document.querySelectorAll("a[href]").forEach(function (link) {
+          // Skip internal anchors and same-origin links
+          const href = link.getAttribute("href");
+          if (
+            href.startsWith("#") ||
+            href.startsWith("/") ||
+            href.startsWith(".") ||
+            link.hostname === window.location.hostname
+          ) {
+            return;
+          }
+          // Set to open in new tab
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener noreferrer");
+        });
+      });
+    </script>
+    
+    
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
