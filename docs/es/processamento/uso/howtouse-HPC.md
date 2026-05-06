@@ -309,7 +309,7 @@ En jobs enviados al scheduler, active conda explícitamente en el script:
 #SBATCH --job-name=mi-job
 #SBATCH --ntasks=1
 
-source /etc/profile.d/conda.sh
+source /opt/conda/etc/profile.d/conda.sh
 conda activate mi-env
 
 python mi_script.py

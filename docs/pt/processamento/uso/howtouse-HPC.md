@@ -302,7 +302,7 @@ Em jobs submetidos ao scheduler, ative o conda explicitamente no script:
 #SBATCH --job-name=meu-job
 #SBATCH --ntasks=1
 
-source /etc/profile.d/conda.sh
+source /opt/conda/etc/profile.d/conda.sh
 conda activate meu-env
 
 python meu_script.py
