@@ -40,9 +40,6 @@ In this script you need to specify the **queue name (Partition)** to be used, th
 
 ## Parallel Submit Job Script
 
-#### OpenMP
-
-
 #### MPI
 
 ```bash
@@ -66,5 +63,6 @@ In this script you need to specify the **queue name (Partition)** to be used, th
   setup openmpi 5.0.8+0
 
   #Execute with srun or mpirun
-  mpirun /path/to/code
+  export PMIX_MCA_psec=native
+  srun --mpi=pmix_v3 /path/to/code
 ```

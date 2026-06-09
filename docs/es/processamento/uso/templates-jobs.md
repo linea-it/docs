@@ -40,9 +40,6 @@ En este script debe especificar el **nombre de la cola (Partition)** a usar, el 
 
 ## Script de Envío Paralelo
 
-#### OpenMP
-
-
 #### MPI
 ```bash
   #!/bin/bash
@@ -64,5 +61,6 @@ En este script debe especificar el **nombre de la cola (Partition)** a usar, el 
   setup openmpi 5.0.8+0
 
   #Ejecutar mediante srun o mpirun
-  mpirun /path/to/code
+  export PMIX_MCA_psec=native
+  srun --mpi=pmix_v3 /path/to/code
 ```

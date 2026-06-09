@@ -39,9 +39,6 @@ Nesse script é preciso especificar o **nome da fila (Partition)** que será usa
 
 ## Parallel Submit Job Script
 
-#### OpenMP 
-
-
 #### MPI
 ```bash
   #!/bin/bash
@@ -63,6 +60,7 @@ Nesse script é preciso especificar o **nome da fila (Partition)** que será usa
   
   setup openmpi 5.0.8+0
 
-  #Executar via srun ou mpirun
-  mpirun /path/to/code
+  #Executar via srun
+  export PMIX_MCA_psec=native
+  srun --mpi=pmix_v3 /path/to/code
 ```
