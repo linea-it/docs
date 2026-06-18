@@ -53,28 +53,20 @@ O cluster Apollo é organizado em diferentes partições (subconjunto de máquin
 
 |PARTITION   |TIMELIMIT  |NODES  |NODELIST  |
 |------------|-----------|-------|----------|
-|cpu_dev     |30:00      |28     |apl[01-28]|
-|cpu_small   |03:00:00   |28     |apl[01-28]|
-|cpu         |12:00:00   |28     |apl[01-28]|
-|cpu_long    |30-00:00:0 |23     |apl[01-23]|
-|cpu_bpglsst |12:00:00   |12     |apl[17-28]|
+|cpu_dev     |30:00      |25     |apl[01-25]|
+|cpu_small   |03:00:00   |25     |apl[01-25]|
+|cpu         |12:00:00   |25     |apl[01-25]|
+|cpu_long    |30-00:00:0 |25     |apl[01-25]|
+|cpu_bpglsst |12:00:00   |09     |apl[17-25]|
 
 
-!!! warning "Particularidade dos nós de processamento: apl26 e apl27"
-    Os nós apl26 e apl27 possuem **uso prioritário** para execução de pipelines (apl26) e Jupyter Notebooks (apl27). 
-    Dessa forma, quaisquer jobs em execução nesses nós estão **sujeitos à interrupção** a qualquer momento para atendimento dessas demandas.
-    
+!!! warning "Particularidade dos nós de processamento: apl26, apl27 e apl28"
+    Os nós apl26, apl27 e apl28 possuem atualmente **uso exclusivo** para execução de Jupyter Notebooks e pipelines de outras plataformas do LIneA e por isso não estão disponíveis nas partitions padrão.    
 
+!!! danger "Partition para o BPG LSST"
+    A partition **`cpu_bpglsst`** possui prioridade sobre as demais na fila de execução, porém com acesso a uma quantidade menor de nós.
 
-### Accounts disponíveis 
-|ACCOUNT     |GRUPO                         |          |
-|------------|------------------------------|----------|
-|hpc-public  |Usuários com acesso concedido |apl[01-28]|
-|hpc-bpglsst*|BPG LSST members              |apl[17-28]|
-
-
-!!! danger "Account e Partition para o BPG LSST"
-    \*Somente a account **`hpc-bpglsst`** poderá submeter jobs na partition **`cpu_bpglsst`**.
+    Somente membros do BPG LSST poderão submeter jobs na partition **`cpu_bpglsst`**.
 
 !!! warning "Atenção"
 	Como parte do programa de contribuição in-kind BRA-LIN, o IDAC Brasil possui o compromisso de gerar _redshifts_ fotométricos anualmente para o levantamento LSST, sempre na época que antecede as liberações oficiais dos dados. Nestes períodos, o Cluster Apollo será totalmente ocupado para este propósito por um tempo estimado de algumas horas, mas podendo se estender a alguns dias. Na ocasião, os usuários serão informados com antecência sobre a indisponibilidade do cluster por e-mail. [Clique aqui](https://linea-it.github.io/pz-lsst-inkind-doc/) para saber mais sobre a produção de medidas de _redshift_ e o programa de contribuição in-kind BRA-LIN. 

@@ -50,29 +50,23 @@ Estas áreas de almacenamiento deben utilizarse de la siguiente forma:
 
 El cluster Apollo está organizado en diferentes particiones (subconjuntos de máquinas) para atender diversas necesidades.
 
-|PARTICIÓN   |LÍMITE TIEMPO  |NODES  |LISTA NODOS  |
+|PARTITION   |TIMELIMIT  |NODES  |NODELIST  |
 |------------|-----------|-------|----------|
-|cpu_dev     |30:00      |28     |apl[01-28]|
-|cpu_small   |03:00:00   |28     |apl[01-28]|
-|cpu         |12:00:00   |28     |apl[01-28]|
-|cpu_long    |30-00:00:0 |23     |apl[01-23]|
-|cpu_bpglsst |12:00:00   |12     |apl[17-28]|
+|cpu_dev     |30:00      |25     |apl[01-25]|
+|cpu_small   |03:00:00   |25     |apl[01-25]|
+|cpu         |12:00:00   |25     |apl[01-25]|
+|cpu_long    |30-00:00:0 |25     |apl[01-25]|
+|cpu_bpglsst |12:00:00   |09     |apl[17-25]|
 
 
-!!! warning "Particularidad de los nodos de procesamiento: apl26 y apl27"
-    Los nodos apl26 y apl27 tienen **uso prioritario** para ejecutar canalizaciones (apl26) y Jupyter Notebooks (apl27). 
-    Por lo tanto, cualquier trabajo que se ejecute en estos nodos está **sujeto a interrupción** en cualquier momento para satisfacer estas demandas.
+!!! warning "Particularidad de los nodos de procesamiento: apl26, apl27 y apl28"
+    Los nodos apl26, apl27 y apl28 se utilizan actualmente **exclusivamente** para ejecutar Jupyter Notebooks y pipelines de otras plataformas LIneA y, por lo tanto, no están disponibles en las particiones estándar.
 
 
-### Cuentas disponibles
+!!! danger "Partición para BPG LSST"
+    La partición **`cpu_bpglsst`** tiene prioridad sobre las demás en la cola de ejecución, pero tiene acceso a un número menor de nodos.
 
-|ACCOUNT     |GRUPO                         |          |
-|------------|----------------------------- |----------|
-|hpc-public  |Usuarios con acceso autorizado|apl[01-28]|
-|hpc-bpglsst* |BPG members                   |apl[17-28]|
-
-!!! danger "Cuenta y partición para BPG LSST"
-    \*Solo la cuenta **`hpc-bpglsst`** podrá enviar trabajos a la partición **`cpu_bpglsst`**.
+    Solo los miembros de BPG LSST pueden enviar trabajos a la partición **`cpu_bpglsst`**.
 
 !!! warning "Atención"
     Como parte del programa de contribución in-kind BRA-LIN, IDAC Brasil tiene el compromiso de generar redshifts fotométricos anualmente para el relevamiento LSST, siempre en el período previo a las liberaciones oficiales de datos. En estos períodos, el *Cluster Apollo* estará completamente ocupado para este propósito por un tiempo estimado de varias horas, pudiendo extenderse a varios días. Los usuarios serán informados con anticipación por correo sobre la indisponibilidad del cluster. [Haga clic aquí](https://linea-it.github.io/pz-lsst-inkind-doc/) para conocer más sobre la producción de redshifts fotométricos y el programa de contribución in-kind BRA-LIN.

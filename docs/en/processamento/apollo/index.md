@@ -52,27 +52,21 @@ The Apollo cluster is organized into different partitions (machine subsets) to m
 
 |PARTITION   |TIMELIMIT  |NODES  |NODELIST  |
 |------------|-----------|-------|----------|
-|cpu_dev     |30:00      |28     |apl[01-28]|
-|cpu_small   |03:00:00   |28     |apl[01-28]|
-|cpu         |12:00:00   |28     |apl[01-28]|
-|cpu_long    |30-00:00:0 |23     |apl[01-23]|
-|cpu_bpglsst |12:00:00   |12     |apl[17-28]|
+|cpu_dev     |30:00      |25     |apl[01-25]|
+|cpu_small   |03:00:00   |25     |apl[01-25]|
+|cpu         |12:00:00   |25     |apl[01-25]|
+|cpu_long    |30-00:00:0 |25     |apl[01-25]|
+|cpu_bpglsst |12:00:00   |09     |apl[17-25]|
 
-!!! warning "Special features of processing nodes: apl26 and apl27"
-    Nodes apl26 and apl27 have **priority use** for executing pipelines (apl26) and Jupyter Notebooks (apl27). 
-    Therefore, any jobs running on these nodes are **subject to interruption** at any time to meet these demands.
+!!! warning "Special features of processing nodes: apl26, apl27 and apl28"
 
+    Nodes apl26, apl27, and apl28 are currently **exclusively used** for running Jupyter Notebooks and pipelines from other LIneA platforms and are therefore not available in the standard partitions.
 
-### Available Accounts
+!!! danger "Partition for BPG LSST"
 
-|ACCOUNT     |GROUPS                        |          |
-|------------|------------------------------|----------|
-|hpc-public  |Users granted access          |apl[01-28]|
-|hpc-bpglsst* |BPG members                   |apl[17-28]|
+    The partition **`cpu_bpglsst`** has priority over others in the execution queue, but has access to a smaller number of nodes.
 
-
-!!! danger "Account and Partition for BPG LSST"
-    \*Only the **`hpc-bpglsst`** account will be able to submit jobs on the **`cpu_bpglsst`** partition.
+    Only BPG LSST members can submit jobs to the partition **`cpu_bpglsst`**.
 
 !!! warning "Attention"
     As part of the BRA-LIN in-kind contribution program, IDAC Brazil is committed to generating photometric redshifts annually for the LSST survey, always preceding official data releases. During these periods, the *Apollo Cluster* will be fully occupied for this purpose for an estimated duration of several hours, potentially extending to several days. Users will be notified in advance via email about cluster unavailability. [Click here](https://linea-it.github.io/pz-lsst-inkind-doc/) to learn more about photometric redshift production and the BRA-LIN in-kind contribution program.
