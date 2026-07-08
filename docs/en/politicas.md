@@ -12,11 +12,6 @@ In accordance with the Information Security Policy (ISP), LIneA also establishes
 
 To access the HPC Environment Usage Policy, click [here](https://docs.google.com/document/d/1guNonR3KK8u016o5_DVXsYQqrZdKLOIkASiOkPqBgOE/edit?tab=t.0#heading=h.kuskslbjusdl).
 
-## Acknowledgement of LIneA computing resources usage
-
-Please commit to acknowledging LIneA in your publications, using a citation such as:
-
-> _“This work was developed with the support of the Laboratório Interinstitucional de e-Astronomia (LIneA), responsible for the BRA-LIN in-kind contribution to the Vera C. Rubin Observatory. LIneA activities were supported by FINEP under grants 0311/16 and 0883/24, and by the INCT do e-Universo program, with funding from CNPq (grant 465376 2014-2) and FAPERJ (grants E-26/200.965/2018, E-26/201.681/2019, E-26/210.010/2018, and E-26/211.013/2019).”_
 
 ## Security incidents
 
