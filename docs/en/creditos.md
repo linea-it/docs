@@ -3,16 +3,16 @@
 ## Acknowledgement of LIneA computing resources usage
 
 
-Text templates suggested for acknowledging the use of LIneA computing resources in scientific publications, presentations, and other academic works. 
+Suggested text templates for acknowledging the use of LIneA data collections or computational resources in scientific publications, presentations, and other academic works.
 
-### Uso dos recursos computacionais do IDAC-BR 
+### Use of IDAC-BR resources
 
 For IDAC-BR users (members of the LSST project): 
 
 > _"This work makes use of the computing resources provided by IDAC-Brazil, made available as a contribution of the Laboratório Interinstitucional de e-Astronomia (LIneA) to the Rubin community through the Rubin In-Kind program (contribution ID BRA-LIN-S1), and was supported by FINEP under grants 0311/16 and 0883/24, by the INCT do e-Universo program with funding from CNPq (grant 465376/2014-2), and by FAPERJ (grants E-26/200.965/2018, E-26/201.681/2019, E-26/210.010/2018, and E-26/211.013/2019)."_ 
 
 
-### Acknowledgement of LIneA computing resources usage 
+### Use of LIneA resources
 
 For members of the Brazilian community with projects selected in public calls (e.g., SINCADA) and users of LIneA's free services in general: 
 
