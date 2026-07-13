@@ -12,17 +12,7 @@ De conformidad con la Política de Seguridad de la Información (PSI), LIneA tam
 
 Para acceder a la Política de Uso del Entorno de HPC, haga clic [aquí](https://docs.google.com/document/d/1guNonR3KK8u016o5_DVXsYQqrZdKLOIkASiOkPqBgOE/edit?tab=t.0#heading=h.kuskslbjusdl).
 
-## Reconocimiento del uso de los recursos computacionales de LIneA
 
-Por favor, comprométase a reconocer a LIneA en sus publicaciones, utilizando una cita como:
-
-En inglés:
-
-> _“This work was developed with the support of the Laboratório Interinstitucional de e-Astronomia (LIneA), responsible for the BRA-LIN in-kind contribution to the Vera C. Rubin Observatory. LIneA activities were supported by FINEP under grants 0311/16 and 0883/24, and by the INCT do e-Universo program, with funding from CNPq (grant 465376 2014-2) and FAPERJ (grants E-26/200.965/2018, E-26/201.681/2019, E-26/210.010/2018, and E-26/211.013/2019).”_
- 
-En español:
-
-> _“Este trabajo fue desarrollado con el apoyo del Laboratório Interinstitucional de e-Astronomia (LIneA), responsable de la contribución in-kind BRA-LIN al Observatorio Vera C. Rubin. Las actividades de LIneA fueron financiadas por FINEP mediante las subvenciones n.º 0311/16 y n.º 0883/24, y por el programa INCT do e-Universo, con financiamiento del CNPq (subvención n.º 465376/2014-2) y de la FAPERJ (subvenciones n.º E-26/200.965/2018, E-26/201.681/2019, E-26/210.010/2018 y E-26/211.013/2019).”_
 
 ## Incidentes de seguridad
 

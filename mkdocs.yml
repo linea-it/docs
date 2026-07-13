@@ -30,22 +30,13 @@ nav:
             - Ondemand: pt/processamento/uso/openondemand.md
             - Slurm: processamento/apollo/index.html#slurm
             - Job Script (exemplos): pt/processamento/uso/templates-jobs.md  
-  - Armazenamento: 
-      - Armazenamento: pt/armazenamento/index.md
- #     - Lustre: pt/armazenamento/lustre.md   
-  - Dados:
-      - Dados: pt/data/index.md
-      #- DES: pt/data/des.md
-      #- LSST: pt/data/lsst.md      
+  - Armazenamento: pt/armazenamento/index.md
+  - Cursos e Tutoriais: pt/cursos.md
+  - Glossário: pt/glossario.md  
+  - Dados: pt/data/index.md
   - Políticas: pt/politicas.md
-  #- Photoz Server: 'pt/photozserver.md'
-  #- Armazenamento: 'pt/armazenamento.md'
-  #- Monitoramento: 'pt/monitoramento.md'
-  - Cursos e Tutoriais: 'pt/cursos.md'
-  - Glossário: 'pt/glossario.md'
-  - Suporte: 'pt/suporte.md'
-  #- FAQ: 'pt/faq.md'
-  #- Mkdocs Exemplos: 'pt/exemplos/exemplos.md' #provisorio
+  - Créditos: pt/creditos.md
+  - Suporte: pt/suporte.md 
   
 
 
@@ -189,22 +180,14 @@ plugins:
                         - Ondemand: en/processamento/uso/openondemand.md
                         - Slurm: en/processamento/apollo/index.html#slurm
                         - Job Script (examples): en/processamento/uso/templates-jobs.md  
-              - Storage: 
-                  - Storage: en/armazenamento/index.md
-            #     - Lustre: en/armazenamento/lustre.md   
-              - Data:
-                  - Data: en/data/index.md
-                  #- DES: en/data/des.md
-                  #- LSST: en/data/lsst.md      
-              - Policies: en/politicas.md
-              #- Photoz Server: 'en/photozserver.md'
-              #- Storage: 'en/armazenamento.md'
-              #- Monitoring: 'en/monitoramento.md'
+              - Storage: en/armazenamento/index.md
               - Courses and Tutorials: en/cursos.md
-              - Glossary: en/glossario.md
-              - Support: en/suporte.md
-              #- FAQ: en/faq.md
-              #- Mkdocs Examples: en/exemplos/exemplos.md #temporary
+              - Glossary: en/glossario.md  
+              - Data: en/data/index.md
+              - Policies: en/politicas.md
+              - Credits: en/creditos.md
+              - Support: en/suporte.md 
+
           - locale: es
             name: Español
             build: true
@@ -241,22 +224,14 @@ plugins:
                         - Ondemand: es/processamento/uso/openondemand.md
                         - Slurm: es/processamento/apollo/index.html#slurm
                         - Scripts de Trabajo (ejemplos): es/processamento/uso/templates-jobs.md  
-              - Almacenamiento: 
-                  - Almacenamiento: es/armazenamento/index.md
-            #     - Lustre: es/armazenamento/lustre.md   
-              - Datos:
-                  - Datos: es/data/index.md
-                  #- DES: es/data/des.md
-                  #- LSST: es/data/lsst.md      
+              - Almacenamiento: es/armazenamento/index.md
+              - Cursos y Tutoriales: es/cursos.md
+              - Glosario: es/glossario.md
+              - Datos: es/data/index.md
               - Políticas: es/politicas.md
-              #- Servidor Photoz: 'es/photozserver.md'
-              #- Almacenamiento: 'es/armazenamento.md'
-              #- Monitoreo: 'es/monitoramento.md'
-              - Cursos y Tutoriales: 'es/cursos.md'
-              - Glosario: 'es/glossario.md'
-              - Soporte: 'es/suporte.md'
-              #- Preguntas Frecuentes: 'es/faq.md'
-              #- Ejemplos Mkdocs: 'es/exemplos/exemplos.md' #provisional           
+              - Créditos: es/creditos.md              
+              - Soporte: es/suporte.md
+
     - search:
         enabled: true
     - git-revision-date-localized:
