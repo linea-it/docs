@@ -33,5 +33,42 @@ Conjuntos de ferramentas desenvolvidas especificamente para cada projeto e de us
 #### &nbsp;&nbsp;&nbsp;&nbsp; [MaNGA Portal](manga.md)
 
 
+## Acesso aos Serviços e Plataformas LIneA
+
+A tabela abaixo apresenta os níveis de acesso aos serviços e plataformas do LIneA de acordo com o perfil de usuário.
+ 
+**Usuários sem Registro**: Esse perfil de usuário pode acessar algumas plataformas sem a necessidade de um registro no LIneA, porém com acesso limitado. 
+
+**Usuários com Registro no LIneA:** Ao realizar um registro em nosso ambiente, o usuário passa a ter acesso a um conjunto maior de serviços, plataformas e recursos.
+
+#### Membros do LSST
+
+Membros da colaboração LSST que realizarem o registro por meio do processo específico para esse perfil, tem acesso às plataformas e ainda aos recursos exclusivos destinados aos membros da colaboração.<br>
+Para mais informações sobre esse processo, consulte a página de **[Registro para Membros do LSST](https://docs.linea.org.br/registro_user_lsst.html)**.
+
+#### Acesso ao LIneA OnDemand (HPC)
+O acesso ao LIneA OnDemand, plataforma utilizada para acessar o ambiente de computação de alto desempenho (HPC) do LIneA, está sujeito à aprovação interna. Saiba mais na seção [Processamento](https://docs.linea.org.br/processamento/index.html).
+
+<br>
+<br>
+
+|                       |   Sem <br> Registro     |    Registro <br> LIneA   |   Membros <br> do LSST    | Restrito <br> <span style="font-size:10pt">(sujeito a aprovação)</span> | 
+|:-:                    |:---:                    |:---:                     |:---:                      |:---:                                                                    |
+| **JupyterHub**                                                           |                    |:white_check_mark:  |:white_check_mark:  |          |  
+| **LIneA OnDemand**                                                       |                    |                    |                    | :lock:   |
+| **User Query**                                                           | :white_check_mark: |:white_check_mark:  |:white_check_mark:  |          | 
+| **Sky Viewer**                                                           | :white_check_mark: |:white_check_mark:  |:white_check_mark:  |          | 
+| **Target Viewer**                                                        |                    |:white_check_mark:  |:white_check_mark:  |          |  
+| **Occultation** <br> **Prediction Database**                             | :white_check_mark: |:white_check_mark:  |:white_check_mark:  |          | 
+| **SDSS Sky Server**                                                      | :white_check_mark: |:white_check_mark:  |:white_check_mark:  |          | 
+| **PZ Server**                                                            |                    |                    |:white_check_mark:  |          | 
+| **Solar System Portal**                                                  |                    |                    |                    | :lock:   | 
+| **MaNGA Portal**                                                         | :white_check_mark: | :white_check_mark: |:white_check_mark:  |          | 
+| DES Science Server <br> <span style="font-size:10pt">(obsoleto)</span>   |                    |                    |                    | :x:      |
+| DES Science Portal <br><span style="font-size:10pt">(obsoleto)</span>    |                    |                    |                    | :x:      |
+
+
+
+
 
 

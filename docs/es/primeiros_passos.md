@@ -10,6 +10,13 @@ Para acceder a las plataformas y servicios proporcionados por LIneA, es necesari
 
 Para efectuar el registro de usuario en LIneA, debe prestar atención a las instrucciones indicadas a continuación:
 
+
+!!! danger "Método de registro versus acceso a recursos" 
+    **El método de registro que elijas define las funciones a las que tendrás acceso.** <br><br>
+    Registros realizados a través de proveedores de identidad externos (como Google, GitHub, Microsoft, ORCID, entre otros) o por el proveedor de identidad de su institución no otorgan acceso a recursos exclusivos destinados a miembros de la colaboración LSST.
+
+Obtenga más información en: **[Acceso a Servicios y Plataformas LIneA](https://docs.linea.org.br/sci-platforms/index.html#acceso-a-los-servicios-y-plataformas-de-linea)**
+
 ### Registro para público general
 
 - Público con vínculo institucional: **estudiantes de grado**, **posgrado**, **investigadores**, etc., vinculados a una institución, [regístrese aquí](https://register.linea.org.br/registry/co_petitions/start/coef:155).
