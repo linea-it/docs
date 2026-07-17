@@ -31,7 +31,7 @@ The LIneA registration process for LSST members includes specific steps that mus
 !!! danger "ATTENTION"
 	**To register with LIneA as a member of the LSST, you must have an active account on the Rubin Science Platform (RSP). Without this account, the process steps cannot be completed.**
 
-- Follow the instructions [here](./registro_user_lsst.md)
+- Follow the instructions [here](./lsst_member_registration.md)
 
 
 For any questions or issues, please contact our [Service Desk](./suporte.md).

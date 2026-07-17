@@ -67,7 +67,9 @@ Si usted:
     Este procedimiento debe realizarse **únicamente después** de cumplir con los siguientes requisitos:
 
     - Estar incluido en la lista de DRHs  
-    - Disponer de una cuenta activa en la RSP  
+    - Disponer de una cuenta activa en la RSP
+    
+    :warning: **Utilice la misma credencial institucional para registros RSP y LINEA.**  
 
     ??? success "Ya tengo una cuenta activa en la RSP y necesito crear una cuenta en LIneA/IDAC-BR"
 

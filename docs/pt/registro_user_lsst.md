@@ -69,6 +69,8 @@ Caso você:
     - Estar incluído na lista de DRHs  
     - Possuir uma conta ativa no RSP  
 
+    :warning: **Utilize a mesma credencial institucional para os registros RSP e LIneA.**
+    
     ??? success "Já possuo conta ativa no RSP e preciso criar uma conta no LIneA/IDAC-BR"
 
         **1.** Acesse:

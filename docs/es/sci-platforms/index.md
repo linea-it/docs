@@ -60,5 +60,5 @@ El acceso a LIneA OnDemand —la plataforma utilizada para acceder al entorno de
 | **PZ Server**                                                            |                    |                    |:white_check_mark:  |          | 
 | **Solar System Portal**                                                  |                    |                    |                    | :lock:   | 
 | **MaNGA Portal**                                                         | :white_check_mark: | :white_check_mark: |:white_check_mark:  |          | 
-| DES Science Server <br> <span style="font-size:10pt">(obsoleto)</span>   |                    |                    |                    | :x:      |
-| DES Science Portal <br><span style="font-size:10pt">(obsoleto)</span>    |                    |                    |                    | :x:      |
+| DES Science Server <br> <span style="font-size:10pt">(Sin soporte)</span>|                    |:white_check_mark:  |                    |          |
+| DES Science Portal <br><span style="font-size:10pt">(Sin soporte)</span> |                    |                    |                    | :lock:   |

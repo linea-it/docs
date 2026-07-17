@@ -62,6 +62,5 @@ Access to LIneA OnDemand, the platform used to access LIneA's High-Performance C
 | **PZ Server**                                                            |                    |                    |:white_check_mark:  |          | 
 | **Solar System Portal**                                                  |                    |                    |                    | :lock:   | 
 | **MaNGA Portal**                                                         | :white_check_mark: | :white_check_mark: |:white_check_mark:  |          | 
-| DES Science Server <br> <span style="font-size:10pt">(deprecated)</span> |                    |                    |                    | :x:      |
-| DES Science Portal <br><span style="font-size:10pt">(deprecated)</span>  |                    |                    |                    | :x:      |
-
+| DES Science Server <br> <span style="font-size:10pt">(end-of-life)</span> |                    |:white_check_mark: |                    |         |
+| DES Science Portal <br><span style="font-size:10pt">(end-of-life)</span>  |                    |                   |                    | :lock:  |
