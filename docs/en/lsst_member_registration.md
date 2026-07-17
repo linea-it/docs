@@ -67,7 +67,9 @@ If you:
     This procedure should only be performed **after** you meet the following requirements:
 
     - Be included in the DRHs list  
-    - Have an active RSP account  
+    - Have an active RSP account
+
+    :warning: **Use the same institutional credential for both the RSP and LIneA registrations.**  
 
     ??? success "I already have an active RSP account and need to create a LIneA/IDAC-BR account"
 
