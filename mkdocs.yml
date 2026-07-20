@@ -4,11 +4,13 @@ nav:
       - Registro de Usuários: pt/primeiros_passos.md
       - Registro para membros do LSST: pt/registro_user_lsst.md
   - Plataformas Científicas: 
-      - Plataformas Científicas: pt/sci-platforms/index.md #intro e LSP landing page
+      - LIneA Science Platform: sci-platforms/index.html#linea-science-platform
+      - IDAC-BR Science Platform: sci-platforms/index.html#idac-br-science-platform
       - JupyterHub: pt/sci-platforms/jupyter.md
       - Ondemand: pt/sci-platforms/ondemand.md
       - User Query: pt/sci-platforms/user_query.md
-      - TAP Service: sci-platforms/user_query.html#tap-service # pt/ removido para evitar conflito de links
+      - TAP Service: sci-platforms/user_query.html#tap-service # sem prefixo de idioma em links com âncora
+
       - Sky Viewer: pt/sci-platforms/sky_viewer.md
       - Target Viewer: pt/sci-platforms/target_viewer.md
       - DES Science Server: pt/sci-platforms/sci_server.md
@@ -49,7 +51,7 @@ repo_name: linea-it/docs
 repo_url: https://github.com/linea-it/docs
 edit_uri: 'edit/main/docs'
 use_directory_urls: false
-copyright: 'Copyright &copy; 2006 - 2024 LIneA'
+copyright: 'Copyright &copy; 2006 - 2026 LIneA'
 # cosmo, material-components, cerulean, journal, slate, readthedocs, readable, spacelab, united, bootstrap, simplex, flatly, yeti, psinder, amelia, cyborg, unidata, mkdocs
 
 
@@ -154,7 +156,8 @@ plugins:
                   - User Registration: en/primeiros_passos.md
                   - LSST Member Registration: en/lsst_member_registration.md                   
               - Scientific Platforms: 
-                  - Scientific Platforms: en/sci-platforms/index.md #intro and LSP landing page
+                  - LIneA Science Platform: en/sci-platforms/index.html#linea-science-platform
+                  - IDAC-BR Science Platform: en/sci-platforms/index.html#idac-br-science-platform
                   - JupyterHub: en/sci-platforms/jupyter.md
                   - Ondemand: en/sci-platforms/ondemand.md
                   - User Query: en/sci-platforms/user_query.md
@@ -198,7 +201,8 @@ plugins:
                 - Registro de usuario: es/primeiros_passos.md
                 - Registro de miembros de LSST: es/registro_user_lsst.md
               - Plataformas Científicas: 
-                - Plataformas Científicas: es/sci-platforms/index.md #intro and LSP landing page
+                - LIneA Science Platform: es/sci-platforms/index.html#linea-science-platform
+                - IDAC-BR Science Platform: es/sci-platforms/index.html#idac-br-science-platform
                 - JupyterHub: es/sci-platforms/jupyter.md
                 - Ondemand: es/sci-platforms/ondemand.md
                 - User Query: es/sci-platforms/user_query.md

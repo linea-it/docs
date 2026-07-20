@@ -1,10 +1,16 @@
 ## LIneA Science Platform
-*LIneA Science Platform* (**scienceplatform.linea.org.br**) es una plataforma en línea que agrupa un conjunto de servicios y herramientas diseñados para facilitar el acceso y análisis de datos astronómicos alojados en LIneA. La plataforma está disponible en [**scienceplatform.linea.org.br/lsp**](https://scienceplatform.linea.org.br/lsp).
 
-### IDAC Science Platform
-Durante la operación del relevamiento [LSST](https://rubinobservatory.org/), una versión reducida de la Plataforma Científica LIneA, solo con los servicios relacionados al proyecto LSST, será el principal punto de acceso a los datos alojados en el [*Brazilian Independent Data Access Center* (IDAC-Brasil)](https://www.linea.org.br/idac) para los científicos de la comunidad brasileña.
+La LIneA Science Platform (LSP) es la plataforma en línea de LIneA que reúne servicios y herramientas para el acceso, la visualización y el análisis de datos astronómicos alojados por la institución. Integra múltiples aplicaciones en un entorno unificado, facilitando el trabajo de investigadores y colaboradores en diferentes proyectos.
 
-En los años previos a la operación del LSST, los servicios del IDAC-Brasil ya proporcionan acceso a datos públicos de otros relevamientos, como el [Dark Energy Survey](https://www.darkenergysurvey.org/), para que la comunidad pueda prepararse y familiarizarse con las diversas herramientas ofrecidas.
+La plataforma está disponible en [https://scienceplatform.linea.org.br/lsp](https://scienceplatform.linea.org.br/lsp).
+
+## IDAC-BR Science Platform
+
+La IDAC-BR Science Platform es una instancia de la LIneA Science Platform dedicada al Brazilian Independent Data Access Center (IDAC-BR). Reúne los servicios específicos del proyecto LSST/Rubin y será el principal punto de acceso a los datos alojados por el IDAC brasileño para los científicos con derechos de acceso a los datos de la colaboración Rubin.
+
+La plataforma está disponible en [https://scienceplatform.linea.org.br/idac](https://scienceplatform.linea.org.br/idac).
+
+Durante la fase preparatoria para las operaciones del LSST, la plataforma ya ofrece acceso a conjuntos de datos públicos de otros estudios astronómicos, como el Dark Energy Survey (DES), lo que permite a la comunidad familiarizarse con las herramientas y los flujos de trabajo que se utilizarán durante la fase operativa del proyecto.
 
 ### Servicios
 Servicios de acceso a datos con diversas herramientas para procesamiento, exploración, visualización y análisis de datos públicos y privados.

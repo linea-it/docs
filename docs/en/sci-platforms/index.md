@@ -1,10 +1,16 @@
 ## LIneA Science Platform
-The LIneA Science Platform (**scienceplatform.linea.org.br**) is an online platform that aggregates a set of services and tools designed to facilitate access and analysis of astronomical data hosted at LIneA. The platform is available at [**scienceplatform.linea.org.br/lsp**](https://scienceplatform.linea.org.br/lsp).
 
-### IDAC Science Platform
-During the operation of the [LSST](https://rubinobservatory.org/) survey, a reduced version of the LIneA Science Platform, containing only services related to the LSST project, will be the main access point to data hosted at the [*Brazilian Independent Data Access Center* (IDAC-Brazil)](https://www.linea.org.br/idac) for scientists in the Brazilian community.
+The LIneA Science Platform (LSP) is LIneA's online platform that brings together services and tools for accessing, visualizing, and analyzing astronomical data hosted by the institution. It integrates multiple applications into a unified environment, facilitating the work of researchers and collaborators across different projects.
 
-In the years preceding LSST operations, IDAC-Brazil services already provide access to public data from other surveys, such as the *Dark Energy Survey*, so the community can prepare and familiarise themselves with the various tools offered.
+The platform is available at [https://scienceplatform.linea.org.br/lsp](https://scienceplatform.linea.org.br/lsp).
+
+## IDAC-BR Science Platform
+
+The Brazilian IDAC Science Platform is an instance of the LIneA Science Platform dedicated to the Brazilian Independent Data Access Center (IDAC-BR). It provides the services specific to the LSST/Rubin project and will serve as the primary access point to the data hosted by the Brazilian IDAC for scientists with data access rights within the Rubin collaboration.
+
+The platform is available at [https://scienceplatform.linea.org.br/idac](https://scienceplatform.linea.org.br/idac).
+
+During the preparation phase leading up to LSST operations, the platform already provides access to public datasets from other astronomical surveys, such as the Dark Energy Survey (DES), allowing the community to become familiar with the tools and workflows that will be used throughout the survey's operational phase.
 
 ### Services
 Data access services with various tools for processing, exploring, visualising, and analysing public and private data.
