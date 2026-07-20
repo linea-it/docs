@@ -49,7 +49,7 @@ A tabela abaixo apresenta os níveis de acesso aos serviços e plataformas do LI
 ### Membros do LSST
 
 Membros da colaboração LSST que realizarem o registro por meio do processo específico para esse perfil, tem acesso às plataformas e ainda aos recursos exclusivos destinados aos membros da colaboração.<br>
-Para mais informações sobre esse processo, consulte a página de **[Registro para Membros do LSST](https://docs.linea.org.br/registro_user_lsst.html)**.
+Para mais informações sobre esse processo, consulte a página de **[Registro para Membros do LSST](../lsst_registration.md)**.
 
 ### Acesso ao LIneA OnDemand (HPC)
 O acesso ao LIneA OnDemand, plataforma utilizada para acessar o ambiente de computação de alto desempenho (HPC) do LIneA, está sujeito à aprovação interna. Saiba mais na seção [Processamento](https://docs.linea.org.br/processamento/index.html).

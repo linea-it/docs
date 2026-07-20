@@ -46,7 +46,7 @@ The table below summarizes the access levels to LIneA services and platforms acc
 #### LSST Members
 
 Members of the LSST Collaboration who register through the dedicated registration process for LSST members gain access to the collaboration's platforms, as well as exclusive resources available only to LSST members.<br>
-For more information about this process, see the **[LSST Members Registration](https://docs.linea.org.br/en/registro_user_lsst.html)** page.
+For more information about this process, see the **[LSST Members Registration](../lsst_registration.md)** page.
 
 #### Access to LIneA OnDemand (HPC)
 

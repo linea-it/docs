@@ -2,7 +2,7 @@ nav:
   - Início: pt/index.md
   - Primeiros Passos: 
       - Registro de Usuários: pt/primeiros_passos.md
-      - Registro para membros do LSST: pt/registro_user_lsst.md
+      - Registro para membros do LSST: pt/lsst_registration.md
   - Plataformas Científicas: 
       - LIneA Science Platform: sci-platforms/index.html#linea-science-platform
       - IDAC-BR Science Platform: sci-platforms/index.html#idac-br-science-platform
@@ -154,7 +154,7 @@ plugins:
               - Home: en/index.md
               - Getting Started:
                   - User Registration: en/primeiros_passos.md
-                  - LSST Member Registration: en/lsst_member_registration.md                   
+                  - LSST Member Registration: en/lsst_registration.md                   
               - Scientific Platforms: 
                   - LIneA Science Platform: en/sci-platforms/index.html#linea-science-platform
                   - IDAC-BR Science Platform: en/sci-platforms/index.html#idac-br-science-platform
@@ -199,7 +199,7 @@ plugins:
               - Inicio: es/index.md
               - Primeros Pasos: 
                 - Registro de usuario: es/primeiros_passos.md
-                - Registro de miembros de LSST: es/registro_user_lsst.md
+                - Registro de miembros de LSST: es/lsst_registration.md
               - Plataformas Científicas: 
                 - LIneA Science Platform: es/sci-platforms/index.html#linea-science-platform
                 - IDAC-BR Science Platform: es/sci-platforms/index.html#idac-br-science-platform
