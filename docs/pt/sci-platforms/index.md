@@ -1,15 +1,20 @@
 
 ## LIneA Science Platform
 
-O LIneA Science Platform (**scienceplatform.linea.org.br**) é uma plataforma online que agrega um conjunto de serviços e ferramentas oferecidos para facilitar o acesso e a análise dos dados astronômicos hospedados no LIneA. A plataforma está disponível em [**scienceplatform.linea.org.br/lsp**](https://scienceplatform.linea.org.br/lsp).
+O LIneA Science Platform (LSP) é a plataforma online do LIneA que reúne serviços e ferramentas para acesso, visualização e análise de dados astronômicos hospedados pela instituição. Ela integra diferentes aplicações em um ambiente unificado, facilitando o trabalho de pesquisadores e colaboradores em diversos projetos.
 
-### IDAC Science Platform
+A plataforma está disponível em https://scienceplatform.linea.org.br/lsp.
 
-Durante a operação do levantamento [LSST](https://rubinobservatory.org/), uma versão reduzida do LIneA Science Platform, apenas com os serviços relacionados ao projeto LSST, será o principal ponto de acesso aos dados hospedados no [*Brazilian Independent Data Access Center* (IDAC-Brasil)](https://www.linea.org.br/idac) para os cientistas da comunidade brasileira.
+## IDAC-BR Science Platform
 
-Nos anos que antecedem a operação do LSST, os serviços do IDAC-Brasil já disponibilizam acesso a dados públicos de outros levantamentos, como o [Dark Energy Survey](https://www.darkenergysurvey.org/), para que a comunidade possa se preparar e se familiarizar com as diversas ferramentas oferecidas.
+A IDAC-BR Science Platform é uma instância do LIneA Science Platform dedicada ao Brazilian Independent Data Access Center (IDAC-BR). Ela reúne os serviços específicos do projeto [LSST/Rubin](https://rubinobservatory.org/) e será o principal ponto de acesso aos dados hospedados pelo IDAC brasileiro para os cientistas com direito de acesso aos dados da colaboração.
 
-### Serviços  
+A plataforma está disponível em https://scienceplatform.linea.org.br/idac.
+
+Durante a fase preparatória para as operações do LSST, a plataforma já oferece acesso a conjuntos de dados públicos de outros levantamentos astronômicos, como o [Dark Energy Survey (DES)](https://www.darkenergysurvey.org/), permitindo que a comunidade se familiarize com as ferramentas e fluxos de trabalho que serão utilizados durante a operação do levantamento.
+
+
+## Serviços  
 
 Serviços de acesso a dados com ferramentas diversas para processamento, exploração, visualização e análise de dados públicos e privados.   
 
@@ -24,7 +29,7 @@ Serviços de acesso a dados com ferramentas diversas para processamento, explora
 #### &nbsp;&nbsp;&nbsp;&nbsp; [SDSS Sky Server](sdss_sky_server.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [LSST PZ Server](pz_server.md)
 
-### Portais Científicos
+## Portais Científicos
 
 Conjuntos de ferramentas desenvolvidas especificamente para cada projeto e de uso restrito dos membros de cada colaboração científica.  
 
@@ -41,12 +46,12 @@ A tabela abaixo apresenta os níveis de acesso aos serviços e plataformas do LI
 
 **Usuários com Registro no LIneA:** Ao realizar um registro em nosso ambiente, o usuário passa a ter acesso a um conjunto maior de serviços, plataformas e recursos.
 
-#### Membros do LSST
+### Membros do LSST
 
 Membros da colaboração LSST que realizarem o registro por meio do processo específico para esse perfil, tem acesso às plataformas e ainda aos recursos exclusivos destinados aos membros da colaboração.<br>
-Para mais informações sobre esse processo, consulte a página de **[Registro para Membros do LSST](https://docs.linea.org.br/registro_user_lsst.html)**.
+Para mais informações sobre esse processo, consulte a página de **[Registro para Membros do LSST](../lsst_registration.md)**.
 
-#### Acesso ao LIneA OnDemand (HPC)
+### Acesso ao LIneA OnDemand (HPC)
 O acesso ao LIneA OnDemand, plataforma utilizada para acessar o ambiente de computação de alto desempenho (HPC) do LIneA, está sujeito à aprovação interna. Saiba mais na seção [Processamento](https://docs.linea.org.br/processamento/index.html).
 
 <br>
