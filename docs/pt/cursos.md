@@ -8,8 +8,9 @@ O LIneA oferece cursos de treinamento nas principais ferramentas utilizadas pelo
 
 #### Tutoriais de Registro de Usuários
 
-* [Registro de Usuários para Membros da Colaboração LSST](https://youtu.be/nyRN5xVRRqo)
+* [Registro de Usuários para Membros da Colaboração LSST](https://youtu.be/9YGwrCiO7I0)
 
+* [Registro de Usuários para Público Geral](https://youtu.be/NFnG-OnFZjM)
 
 #### Tutoriais de Uso do Ambiente de HPC
 
