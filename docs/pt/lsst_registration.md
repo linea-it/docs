@@ -87,7 +87,7 @@ Caso você:
         **6.** Preencha e envie o formulário de registro e aceite os termos
 
         Siga este procedimento por meio do vídeo tutorial disponível em:
-        https://youtu.be/nyRN5xVRRqo
+        https://youtu.be/9YGwrCiO7I0
 
 ---
 

@@ -87,7 +87,7 @@ If you:
         **6.** Fill out and submit the registration form and accept the terms
 
         Follow this procedure using the video tutorial available at:
-        https://youtu.be/nyRN5xVRRqo
+        https://youtu.be/9YGwrCiO7I0
 
 ---
 

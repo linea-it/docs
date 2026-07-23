@@ -33,7 +33,7 @@ El proceso de registro de LIneA para miembros de LSST incluye pasos específicos
 !!! danger "ATENCIÓN"
     **Para registrarse en LIneA como miembro de LSST, debe tener una cuenta activa en Rubin Science Platform (RSP). Sin esta cuenta, los pasos del proceso no se pueden completar.**
 
-Siga las instrucciones [aquí](./registro_user_lsst.md)
+Siga las instrucciones [aquí](./lsst_registration.md)
 
 
 Ante cualquier duda o problema, contacte con nuestro [Service Desk](suporte.md).
