@@ -74,7 +74,7 @@ Caso você:
     ??? success "Já possuo conta ativa no RSP e preciso criar uma conta no LIneA/IDAC-BR"
 
         **1.** Acesse:
-        https://scienceplatform.linea.org.br/lsp
+        https://scienceplatform.linea.org.br/idac
 
         **2.** Clique em **"Sign In"** (canto superior direito da tela)
 

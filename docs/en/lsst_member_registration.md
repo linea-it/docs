@@ -74,7 +74,7 @@ If you:
     ??? success "I already have an active RSP account and need to create a LIneA/IDAC-BR account"
 
         **1.** Access:
-        https://scienceplatform.linea.org.br/lsp
+        https://scienceplatform.linea.org.br/idac
 
         **2.** Click on **"Sign In"** (top-right corner of the page)
 
