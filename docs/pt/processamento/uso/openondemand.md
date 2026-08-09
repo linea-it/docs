@@ -85,32 +85,28 @@ Ao abrir um [**terminal dentro do JupyterLab**](../img/OOD14.png) via Open OnDem
 Siga os comandos abaixo:
 
 1. Vá para sua área SCRIPTS, crie, ative um venv conda e instale o _ipykernel_:
-``` bash
-
-    cd $SCRIPTS
-    
-	conda create -p $SCRIPTS/kernelname
-    conda activate kernelname/
-    
-    conda install -c anaconda ipykernel
+```bash
+cd $SCRIPTS
+conda create -p $SCRIPTS/kernelname
+conda activate kernelname/        # mantenha a barra final /
+conda install -c anaconda ipykernel
 ```
 2. Configure o JUPYTER_PATH (obrigatório ser esse caminho abaixo):
 ```bash
-	JUPYTER_PATH=$SCRATCH/.local
-	echo $JUPYTER_PATH
-    
-   python -m ipykernel install --prefix=$JUPYTER_PATH --name 'kernelname'
+JUPYTER_PATH=$SCRATCH/.local
+echo $JUPYTER_PATH
+python -m ipykernel install --prefix=$JUPYTER_PATH --name 'kernelname'
 ```
 3. Abra uma sessão do Jupyter Notebook.
 
 ???+ success "O output do último comando deve ser:"
 
-    ```` yaml
+```yaml
     
-    #[InstallIPythonKernelSpecApp] WARNING | Installing to /scratch/users/YOUR.USER/.local/share/jupyter/kernels, which is not in ['/scratch/users/YOUR.USER/kernelname/share/jupyter/kernels', '/home/YOUR.USER/.local/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/YOUR.USER/.ipython/kernels']. The kernelspec may not be found.
+#[InstallIPythonKernelSpecApp] WARNING | Installing to /scratch/users/YOUR.USER/.local/share/jupyter/kernels, which is not in ['/scratch/users/YOUR.USER/kernelname/share/jupyter/kernels', '/home/YOUR.USER/.local/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/YOUR.USER/.ipython/kernels']. The kernelspec may not be found.
     Installed kernelspec kernelname in /scratch/users/YOUR.USER/.local/share/jupyter/kernels/kernelname
     
-    ```` 
+```
 
 Ao final dessa execução de comandos, será possível ver o botão do kernel python criado.
 
