@@ -1,43 +1,156 @@
-## LustreFS (HPC)
+# Armazenamento
 
-O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [Lustre](https://www.lustre.org/) com dois níveis (_tiers_) de armazenamento, um em SSD com ~70 TB (_T0_) e outro em HDD com ~500 TB (_T1_), ambos conectados a uma rede infiniband EDR de 100 Gb/s. Os dois níveis de armazenamento estão disponíveis em `/scratch` e `/data`. 
+Estão disponíveis diferentes áreas de armazenamento, cada uma com uma finalidade específica. As áreas possuem características distintas de acesso, retenção e backup.
 
-### Área /scratch e quota
+## Visão geral das áreas de armazenamento
+
+<div style="text-align: center;">
+
+  <img src="../../images/storages_diagram.png"
+
+       style="width: 100%; max-width: 1200px; height: auto; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
+
+</div>
+
+| Área | Uso principal | Limpeza automática | Backup | Acesso |
+| --- | --- | --- | --- | --- |
+| `/home` | Arquivos pessoais, configurações e ambientes Python | Não | Sim | Nó de login do cluster e ambiente Jupyter |
+| `/scratch` | Dados temporários de processamento | Após 30 dias sem alteração | Não | Todos os nós do cluster |
+| `/scripts` | Scripts de submissão, ambientes Python e kernels | Não | Não | Todos os nós do cluster |
+| `/data` | Armazenamento de longo prazo | Não | Não | Todos os nós do cluster (uso restrito sob demanda) |
+
+!!! info
+    O acesso ao `/data` é disponibilizado sob demanda.
+
+## `/scratch`
+
+O `/scratch` é destinado ao armazenamento temporário de dados utilizados durante o processamento no HPC. Pode ser utilizado para arquivos de entrada, resultados intermediários e outros dados necessários durante a execução dos jobs.
 
 Os usuários poderão acessar seu diretório de scratch através da variável de ambiente, ou acessando o diretório com o caminho completo.
+
 ```Bash
+
 cd $SCRATCH
+
 ```
+
 Ou 
+
 ```Bash
+
 cd /scratch/users/<username> 
-``` 
+
+```
 
 !!! danger "ATENÇÃO"
-    Essa área NÃO sofrerá backup!
+    Essa área NÃO sofrerá backup! Seu armazenamento é volátil.
 
 Os arquivos que não foram modificados nos últimos 30 dias serão automaticamente removidos, o que torna temporário o armazenamento de arquivos nessa área.
-Recomenda-se que os usuários realizem a transferência dos arquivos importantes do `$SCRATCH`  para o seu `homedir`. 
+
+Recomenda-se que os usuários realizem a transferência dos arquivos importantes do `$SCRATCH`  para o seu `homedir`. 
 
 !!! warning
-    O script de limpeza é executado uma vez por semana, sempre nos fins de semana.  
-
+    O script de limpeza é executado uma vez por semana, sempre nos fins de semana.  
 
 **A quota padrão do `/scratch` disponibilizada para usuários com direito ao uso do Cluster é:**
 
-| area     | bsoft  | bhard  | isoft  | ihard  | grace period |
+| area     | bsoft  | bhard  | isoft  | ihard  | grace period |
 | -------- | ------ | ------ | ------ | ------ | ------------ |
-| /scratch | 35 GB  | 40 GB  | 100000 | 120000 | 7 days       |
+| /scratch | 35 GB  | 40 GB  | 100000 | 120000 | 7 days       |
+
+## `/data`
+
+O `/data` é destinado ao armazenamento de longo prazo. O acesso a essa área é disponibilizado sob demanda.
 
 
 
-### Boas práticas
+## `/home`
 
-Sistemas de arquivos distribuídos como o Lustre são ideais para ambientes HPC e HTC. Nesses ambientes, a carga de trabalho típica consiste em arquivos grandes que precisam ser acessados ​​a partir de muitos nós de computação com largura de banda muito alta e/ou baixa latência. Portanto, esses sistemas de arquivos são muito diferentes dos sistemas de arquivos usados ​​em computadores desktop ou servidores isolados. Embora sejam excelentes no manuseio de arquivos grandes, eles também apresentam fortes limitações ao lidar com arquivos pequenos e padrões de acesso mais comumente encontrados em ambientes corporativos e de desktop. As operações que podem ser extremamente rápidas em um disco local de estação de trabalho podem ser dolorosamente lentas e caras em um sistema de arquivos Lustre, afetando tanto os usuários que executam essas operações quanto, eventualmente, todos os outros usuários. Estas melhores práticas e recomendações têm como objetivo permitir um uso tranquilo do Lustre, minimizando ou evitando operações desnecessárias ou muito caras do sistema de arquivos.
+O `/home` é destinado aos arquivos pessoais e configurações do usuário. Também pode ser utilizado para armazenar ambientes Python que serão utilizados na plataforma [Jupyter Notebook](https://jupyter.linea.org.br).
+
+**A quota padrão do homedir de cada usuário, segundo o seu perfil, é apresentada abaixo:**
+
+| perfil                 | bsoft  | bhard  | isoft   | ihard    | grace period |
+| ---------------------- | ------ | ------ | ------- | -------- | ------------ |
+| público geral          | 5 GB   | 7 GB    | 7000    | 10000    | 7 dias       |
+| público institucional  | 25 GB  | 30 GB   | 40000   | 50000    | 7 dias       |
+| colaboração LSST       | 35 GB  | 40 GB   | 1000000 | 1200000  | 7 dias       |
+
+!!! tip
+    Para verificar os valores de quota configurados basta utilizar o comando: `show_quota`.
+
+Observação: O diretório `/home` do usuário **não** é afetado pelo processo de limpeza automática.
+
+## `/scripts`
+
+O `/scripts` é destinado a scripts e ambientes utilizados para executar trabalhos no HPC. É o local recomendado para scripts de submissão de jobs, ambientes Python e kernels utilizados no processamento.
+
+Os usuários poderão acessar seu diretório de scripts através da variável de ambiente, ou acessando o diretório com o caminho completo. 
+
+```Bash
+
+cd $SCRIPTS
+
+```
+
+Ou 
+
+```Bash
+
+cd /scripts/<username> 
+
+```
+
+Essa área é destinada ao armazenamento de scripts de submissão de jobs ao cluster e outros. Recomenda-se também utilizar esse caminho para a criação de ambientes (envs) Python e kernels.
+
+**A quota padrão do `/scripts` disponibilizada para usuários é:**
+
+| area     | bsoft | bhard | isoft | ihard | grace period |
+| -------- | ----- | ----- | ----- | ----- | ------------ |
+| /scripts | 10 GB | 12 GB | 100k  | 120k  | 7 days       |
+
+Observação: O diretório `/scripts` **não** é afetado pelo processo de limpeza automática.
+
+
+
+!!! info
+    Embora `/home` e `/scripts` possam armazenar ambientes Python, eles têm finalidades diferentes. Ambientes armazenados em `/home` podem ser utilizados no Jupyter, enquanto `/scripts` é o local recomendado para ambientes que serão utilizados nos nós de processamento do HPC.
+
+## NAS (NFS)
+
+Os sistemas de armazenamento NAS são utilizados para armazenamento de longo prazo e não estão acessíveis através dos nós de processamento (HPC).
+
+Características atuais: 
+
+| Fabricante | Modelo | Capacidade | Instalado em | Disponibilidade |
+| ---------- | -------------------- | ---------- | ------------ | --------------- |
+| SGI | IS5600 | 240TB | Jul-2014 | Em uso |
+| HPE | APOLO 4510 | 1.2 PB | Apr-2025 | Em uso |
+
+## Backup
+
+| áreas | backup incremental (diário) | backup completo (mensal) | retenção |
+| -------- | :-------------------------: | :-----------------------: | :------: |
+| /home | :heavy_check_mark: | :heavy_check_mark: | 90 dias |
+| /data | :x: | :x: | - |
+| /scratch | :x: | :x: | - |
+| /scripts | :x: | :x: | - |
+
+!!! info
+    Apesar de não possuir agendamento de backup, o volume /data é composto por um sistema robusto de redundância de discos que preserva a integridade de seus dados.
+
+## Uso do Lustre
+
+O ambiente do cluster Apollo conta com sistema de arquivos de alta performance [Lustre](https://www.lustre.org/) com dois níveis (*tiers*) de armazenamento, um em SSD com ~70 TB (*T0*) e outro em HDD com ~500 TB (*T1*), ambos conectados a uma rede infiniband EDR de 100 Gb/s. Os dois níveis de armazenamento estão disponíveis em `/scratch` e `/data`.
+
+### Boas práticas**
+
+Sistemas de arquivos distribuídos como o Lustre são ideais para ambientes HPC e HTC. Nesses ambientes, a carga de trabalho típica consiste em arquivos grandes que precisam ser acessados ​​a partir de muitos nós de computação com largura de banda muito alta e/ou baixa latência. Portanto, esses sistemas de arquivos são muito diferentes dos sistemas de arquivos usados em computadores desktop ou servidores isolados. Embora sejam excelentes no manuseio de arquivos grandes, eles também apresentam fortes limitações ao lidar com arquivos pequenos e padrões de acesso mais comumente encontrados em ambientes corporativos e de desktop. As operações que podem ser extremamente rápidas em um disco local de estação de trabalho podem ser dolorosamente lentas e caras em um sistema de arquivos Lustre, afetando tanto os usuários que executam essas operações quanto, eventualmente, todos os outros usuários. Estas melhores práticas e recomendações têm como objetivo permitir um uso tranquilo do Lustre, minimizando ou evitando operações desnecessárias ou muito caras do sistema de arquivos.
 
 **Evite acessar atributos de arquivos e diretórios**
 
 Acessar informações de metadados, como atributos de arquivo (por exemplo, tipo, propriedade, proteção, tamanho, datas, etc.) no Lustre consome muitos recursos e pode degradar o desempenho do sistema de arquivos, especialmente quando realizado com frequência ou em diretórios com grande quantidade de arquivos. 
+
 Minimize o uso de chamadas de sistema que acessam ou modificam esses atributos, como `stat()`, `statx()`, `open()`, `openat()`, etc.
 
 O mesmo se aplica a comandos como `ls -l`(para todo o diretório) ou `ls --color` que fazem uso das chamadas mencionadas acima. Em vez disso, use um simples `ls` ou `ls -l filename`.
@@ -45,14 +158,16 @@ O mesmo se aplica a comandos como `ls -l`(para todo o diretório) ou `ls --color
 **Evite usar comandos que acessam metadados massivamente**
 
 Evite usar comandos como `ls -R`, `find`, `locate`, `du`, `df` e similares. 
+
 Esses comandos percorrem o sistema de arquivos recursivamente e/ou executam operações pesadas de metadados. Eles são muito intensivos no acesso aos metadados do sistema de arquivos e podem degradar gravemente o desempenho geral do sistema de arquivos. Se for absolutamente necessário percorrer o sistema de arquivos recursivamente, use o comando fornecido com o Lustre `lfs find` em vez de `find`, por exemplo.
 
 **Use o comando Lustre lfs**
 
 Para minimizar o número de chamadas Lustre RPC, sempre que possível use os comandos `lfs` em vez dos comandos fornecidos pelo sistema:
 
-* `lfs df` => em vez de `df` 
-* `lfs find` => em vez de `find`
+\* `lfs df` => em vez de `df` 
+
+\* `lfs find` => em vez de `find`
 
 **Evite usar curingas**
 
@@ -110,128 +225,59 @@ Para obter o máximo desempenho, as solicitações de E/S devem ser alinhadas à
 
 Para arquivos pequenos, a distribuição (striping) deve ser desabilitada, isso pode ser conseguido definindo uma contagem de distribuição de 1. O mesmo se aplica se um arquivo grande for acessado por um único processo.
 
-`lfs setstripe -s 1m -c 1 meudiretorio/arquivospequenos/` 
+`lfs setstripe -s 1m -c 1 meudiretorio/arquivospequenos/`
 
 **Evite instalar software no Lustre** 
 
 Um software geralmente é composto de muitos arquivos pequenos e, como mencionado anteriormente, acessar muitos arquivos pequenos no Lustre pode sobrecarregar os servidores de metadados. As compilações de software em particular podem ser melhor executadas localmente copiando ou descompactando o software para /tmp/$USER/ ou para o seu `homedir`.
 
-Além disso, sob alta carga, o acesso de E/S aos sistemas de arquivos Lustre pode ser bloqueado. Se os executáveis ​​forem armazenados no Lustre e o acesso ao sistema de arquivos falhar, os executáveis ​​poderão travar. Portanto, sempre que possível, é melhor copiar os executáveis ​​para o `/tmp` dos nós do cluster.
+Além disso, sob alta carga, o acesso de E/S aos sistemas de arquivos Lustre pode ser bloqueado. Se os executáveis forem armazenados no Lustre e o acesso ao sistema de arquivos falhar, os executáveis poderão travar. Portanto, sempre que possível, é melhor copiar os executáveis ​​para o `/tmp` dos nós do cluster.
 
-## Área /scripts
-
-Os usuários poderão acessar seu diretório de scripts através da variável de ambiente, ou acessando o diretório com o caminho completo. 
-```Bash
-cd $SCRIPTS
-```
-Ou 
-```Bash
-cd /scripts/<username> 
-```
-
-Essa área é destinada ao armazenamento de scripts de submissão de jobs ao cluster e outros. Recomenda-se também utilizar esse caminho para a criação de ambientes (envs) Python e kernels.
-
-**A quota padrão do `/scripts` disponibilizada para usuários é:**
-
-| area     | bsoft | bhard | isoft | ihard | grace period |
-| -------- | ----- | ----- | ----- | ----- | ------------ |
-| /scripts | 10 GB | 12 GB | 100k  | 120k  | 7 days       |
-
-Observação: O diretório `/scripts` **não** é afetado pelo processo de limpeza automática.
-
-## Homedir
-
-O diretório `home` é uma área para os usuários armazenarem seus arquivos pessoais e é acessível através dos nós de login do cluster e também na plataforma [jupyter](.).
-
-**A quota padrão do homedir de cada usuário, segundo o seu perfil, é apresentada abaixo:**
-
-| perfil                | bsoft  | bhard  | isoft   | ihard   | grace period |
-| --------------------- | ------ | ------ | ------- | ------- | ------------ |
-| público geral         | 5 GB   | 7 GB   | 7000    | 10000   | 7 dias       |
-| público institucional | 25 GB  | 30 GB  | 40000   | 50000   | 7 dias       |
-| colaboração LSST      | 35 GB  | 40 GB  | 1000000 | 1200000 | 7 dias       |
-
-!!! tip
-    Para verificar os valores de quota configurado basta utilizar o comando: `quota -s -u <username> /home`.
-
-Observação: O diretório `/home` do usuário **não** é afetado pelo processo de limpeza automática.
-
-## Comandos úteis
+### Comandos úteis**
 
 a) Como verificar minha quota disponível?
-   
-    show_quota 
+
+`    show_quota `
+
 b) Como verificar a quota de um projeto?
-    
-    show_proj_quota <projeto>
-    
-c) Como consultar os meus arquivos criados há _mais_ de 30 dias? 
 
-    lfs find $SCRATCH --uid $UID -mtime +30 --print
+`    show_proj_quota <projeto>`
 
-d) Como consultar os meus arquivos criados há _menos_ de 30 dias? 
+c) Como consultar os meus arquivos criados há *\*mais\** de 30 dias? 
 
-    lfs find $SCRATCH --uid $UID -mtime -30 --print
-    
+`    lfs find $SCRATCH --uid $UID -mtime +30 --print`
+
+d) Como consultar os meus arquivos criados há *\*menos\** de 30 dias? 
+
+`    lfs find $SCRATCH --uid $UID -mtime -30 --print`
+
 e) Como listar os OSTs do Lustre?
 
-    lfs osts $SCRATCH
+`    lfs osts $SCRATCH`
 
 f) Como listar os arquivos armazenados há mais de 30 dias em um determinado OST do Lustre?
 
-    lfs find $SCRATCH -mtime +30 --print --obd t0-OST0002_UUID
-    
+`    lfs find $SCRATCH -mtime +30 --print --obd t0-OST0002_UUID`
+
 g) Como configurar o striping em diretório de modo a "quebrar" os arquivos e distribuir esses "pedaços" em 10 OSTs?
 
-    lfs setstripe -c 10 $SCRATCH/meus_arquivos_grandes
-    
+`    lfs setstripe -c 10 $SCRATCH/meus_arquivos_grandes`
+
 h) Como consultar o striping de arquivos/diretórios?
 
-    lfs setstripe -c $SCRATCH/meus_arquivos_grandes
-
+`    lfs setstripe -c $SCRATCH/meus_arquivos_grandes`
 
 !!! tip
     O Lustre do LIneA foi projetado para trabalhar a 100Gbps, para alcançar o máximo de performance faça uso do striping e sempre com arquivos grandes (+1GB).
-
-
-## NAS (NFS)
-
-Os sistemas de armazenamento NAS são utilizados para armazenamento de longo prazo e não estão acessíveis através dos nós de processamento (HPC).
-
-Características atuais: 
-
-| Fabricante | Modelo               | Capacidade | Instalado em | Disponibilidade |
-| ---------- | -------------------- | ---------- | ------------ | --------------- |
-| SGI        | IS5600               | 240TB      | Jul-2014     | Em uso          |
-| HPE        | APOLO 4510           | 1.2 PB     | Apr-2025     | Em uso          |
-
-## Backup
-
-| áreas    | backup incremental (diário) | backup completo (mensal)  | retenção |
-| -------- | :-------------------------: | :-----------------------: | :------: |
-| /home    | :heavy_check_mark:          | :heavy_check_mark:        | 90 dias  |
-| /data    | :x:                         | :x:                       | -        |
-| /scratch | :x:                         | :x:                       | -        |
-| /scripts | :x:                         | :x:                       | -        |
-
-!!! info
-    Apesar de não possuir agendamento de backup, o volume /data é composto por um sistema robusto de redundância de discos que preserva a integridade de seus dados. 
-
-
-## Visão geral das áreas de armazenamento
-
-<div style="text-align: center;">
-  <img src="../../images/storages_diagram.png"
-       style="width: 100%; max-width: 1200px; height: auto; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); border-radius: 6px;">
-</div>
 
 ## Referências
 
 Estas melhores práticas foram compiladas a partir da experiência do time do LIneA e das seguintes fontes:
 
 1. https://www.nas.nasa.gov/hecc/support/kb/lustre-best-practices_226.html
+
 1. https://hpcf.umbc.edu/general-productivity/lustre-best-practices/
+
 1. https://wiki.gsi.de/foswiki/bin/view/Linux/LustreFs
+
 1. https://doc.lustre.org/lustre_manual.pdf
-
-
