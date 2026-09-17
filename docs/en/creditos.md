@@ -23,7 +23,8 @@ For members of the Brazilian community with projects selected in public calls (e
 ## Logos for presentations 
 
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 800px; margin: 0 auto;">
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; max-width: 800px; margin: 0 auto;">
 
 <div style="text-align: center;">
   <img src="../images/logo-linea.fw_2.png" style="width: 100%; height: 150px; object-fit: contain;">
@@ -45,4 +46,15 @@ For members of the Brazilian community with projects selected in public calls (e
   </a>
 </div>
 
+<div style="text-align: center;">
+  <img src="../images/inct_euniverso_logo.png" style="width: 50%; height: 150px; object-fit: contain;">
+  <br>
+  <a href="../images/inct_euniverso_logo.png" 
+   download="logo-inct-euniverso.png" 
+   style="display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px;">
+   Download PNG
+  </a>
 </div>
+
+</div>
+
