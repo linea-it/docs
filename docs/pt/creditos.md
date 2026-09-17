@@ -40,7 +40,7 @@ Em português:
   <br>
   <a href="../images/logo-linea.fw_2.png" 
    download="logo-linea-azul-completo.png" 
-   style="display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px;">
+   style="display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #283663; color: white; text-decoration: none; border-radius: 4px;">
    Download PNG
   </a>
 </div>
@@ -50,7 +50,7 @@ Em português:
   <br>
   <a href="../images/04_LSST_sstidecbrasil_RGB_POSITIVA_ec.png" 
    download="logo-linea-azul.png" 
-   style="display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px;">
+   style="display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #283663; color: white; text-decoration: none; border-radius: 4px;">
    Download PNG
   </a>
 </div>
@@ -60,7 +60,7 @@ Em português:
   <br>
   <a href="../images/inct_euniverso_logo.png" 
    download="logo-inct-euniverso.png" 
-   style="display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px;">
+   style="display: inline-block; margin-top: 10px; padding: 8px 16px; background-color: #283663; color: white; text-decoration: none; border-radius: 4px;">
    Download PNG
   </a>
 </div>
