@@ -120,9 +120,7 @@ O ambiente Apollo atende também outros projetos. Para esses projetos:
 
 - Use as partições gerais (`cpu_dev`, `cpu_small`, `cpu`, `cpu_long`). A partição `cpu_bpglsst` é exclusiva de membros do BPG LSST.
 
-- Se o projeto tiver conta Slurm, informe-a na submissão (`#SBATCH --account=...`) e no Jupyter do Open OnDemand. O identificador é informado automaticamente pela aplicação.
-
-- Em alguns períodos o cluster fica indisponível para a produção de *redshifts* fotométricos do programa in-kind BRA-LIN. Os usuários são avisados por e-mail. Veja o aviso em [Cluster Apollo](./index.md).
+- Em alguns períodos o cluster fica indisponível para a produção de *redshifts* fotométricos do programa in-kind BRA-LIN. Os usuários são avisados por e-mail. 
 
 Limites de tempo, nós e os detalhes de um job estão em [Slurm](./index.md#slurm). Exemplos de script: [Job Script](../uso/templates-jobs.md).
 
