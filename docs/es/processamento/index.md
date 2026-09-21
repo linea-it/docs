@@ -7,6 +7,10 @@ LIneA ofrece acceso a recursos computacionales de alto rendimiento para **miembr
 !!! danger ""
     El incumplimiento de nuestras políticas de seguridad y uso del entorno puede resultar en el bloqueo de su cuenta sin previo aviso. Las políticas se pueden encontrar [aquí](../politicas.md).
 
+!!! info "Proyectos"
+    Si su acceso al Cluster Apollo fue concedido en el marco de un proyecto con asignación de recursos (por ejemplo, SINCADA), comience por la [guía para proyectos](./apollo/projetos.md).
+
 * [Cluster HPE Apollo 2000 (LIneA)](./apollo/index.md)
+* [Proyectos](./apollo/projetos.md)
 * [Open OnDemand](./uso/openondemand.md)
 * [JupyterLab sobre HPC](./uso/openondemand.md#interactive-apps-jupyter-notebook)

@@ -15,12 +15,13 @@ Estão disponíveis diferentes áreas de armazenamento, cada uma com uma finalid
 | Área | Uso principal | Limpeza automática | Backup | Acesso |
 | --- | --- | --- | --- | --- |
 | `/home` | Arquivos pessoais, configurações e ambientes Python | Não | Sim | Nó de login do cluster e ambiente Jupyter |
-| `/scratch` | Dados temporários de processamento | Após 30 dias sem alteração | Não | Todos os nós do cluster |
+| `/scratch` | Dados temporários de processamento (Lustre) | Após 30 dias sem alteração | Não | Todos os nós do cluster |
 | `/scripts` | Scripts de submissão, ambientes Python e kernels | Não | Não | Todos os nós do cluster |
-| `/data` | Armazenamento de longo prazo | Não | Não | Todos os nós do cluster (uso restrito sob demanda) |
+| `/data` | Dados de trabalho HPC (Lustre) | Não | Não | Todos os nós do cluster (uso restrito sob demanda) |
+| `/mnt/cl/prj/<sigla>` | Arquivo de longo prazo (NAS/NFS) | Não | Não | Nó de login, Open OnDemand e Jupyter; **não** disponível nos nós de computação |
 
 !!! info
-    O acesso ao `/data` é disponibilizado sob demanda.
+    O acesso ao `/data` (Lustre) e à área de projeto em `/mnt/cl/prj/<sigla>` (NAS) é disponibilizado sob demanda. Para o ciclo de cópia entre NAS e scratch, veja [Projetos](../processamento/apollo/projetos.md).
 
 ## `/scratch`
 
@@ -47,7 +48,7 @@ cd /scratch/users/<username>
 
 Os arquivos que não foram modificados nos últimos 30 dias serão automaticamente removidos, o que torna temporário o armazenamento de arquivos nessa área.
 
-Recomenda-se que os usuários realizem a transferência dos arquivos importantes do `$SCRATCH`  para o seu `homedir`. 
+Arquivos pessoais importantes devem ser transferidos do `$SCRATCH` para o `$HOME`. Dados de projeto devem ir para `/mnt/cl/prj/<sigla>`. 
 
 !!! warning
     O script de limpeza é executado uma vez por semana, sempre nos fins de semana.  
@@ -60,8 +61,11 @@ Recomenda-se que os usuários realizem a transferência dos arquivos importantes
 
 ## `/data`
 
-O `/data` é destinado ao armazenamento de longo prazo. O acesso a essa área é disponibilizado sob demanda.
+O `/data` é um sistema de arquivos Lustre, assim como o `/scratch`. Destina-se a **dados de trabalho do HPC** que precisam ser lidos e escritos pelos nós de computação, com I/O de alto desempenho.
 
+Não é a área recomendada para armazenamento de longo prazo e deve ser utilizada no contexto de trabalhos que exigem muita leitura e escrita de dados. O armazenamento de longo prazo dos projetos fica no NAS, em `/mnt/cl/prj/<sigla>`.
+
+O acesso ao `/data` é disponibilizado sob demanda.
 
 
 ## `/home`
@@ -118,7 +122,15 @@ Observação: O diretório `/scripts` **não** é afetado pelo processo de limpe
 
 ## NAS (NFS)
 
-Os sistemas de armazenamento NAS são utilizados para armazenamento de longo prazo e não estão acessíveis através dos nós de processamento (HPC).
+Os sistemas de armazenamento NAS são utilizados para armazenamento de longo prazo e **não** estão acessíveis através dos nós de processamento (HPC).
+
+Para projetos com alocação de espaço, a área compartilhada é:
+
+```bash
+/mnt/cl/prj/<sigla>
+```
+
+Essa área é acessível no nó de login, no Open OnDemand e no Jupyter. Consulte a quota com `show_proj_quota <sigla>`. O fluxo recomendado — copiar para `$SCRATCH`, processar, devolver o resultado ao NAS — está em [Projetos](../processamento/apollo/projetos.md).
 
 Características atuais: 
 
@@ -241,7 +253,7 @@ a) Como verificar minha quota disponível?
 
 b) Como verificar a quota de um projeto?
 
-`    show_proj_quota <projeto>`
+`    show_proj_quota <sigla>`
 
 c) Como consultar os meus arquivos criados há *\*mais\** de 30 dias? 
 

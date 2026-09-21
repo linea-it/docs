@@ -15,13 +15,14 @@ Different storage areas are available, each with a specific purpose. The areas h
 | Area       | Main use                                                | Automatic cleanup                  | Backup | Access                                       |
 | ---------- | ------------------------------------------------------- | ---------------------------------- | ------ | -------------------------------------------- |
 | `/home`    | Personal files, configurations, and Python environments | No                                 | Yes    | Cluster login node and Jupyter environment   |
-| `/scratch` | Temporary processing data                               | After 30 days without modification | No     | All cluster nodes                            |
+| `/scratch` | Temporary processing data (Lustre)                      | After 30 days without modification | No     | All cluster nodes                            |
 | `/scripts` | Submission scripts, Python environments, and kernels    | No                                 | No     | All cluster nodes                            |
-| `/data`    | Long-term storage                                       | No                                 | No     | All cluster nodes (restricted use on demand) |
+| `/data`    | HPC working data (Lustre)                               | No                                 | No     | All cluster nodes (restricted use on demand) |
+| `/mnt/cl/prj/<sigla>` | Long-term project archive (NAS/NFS)          | No                                 | No     | Login node, Open OnDemand, and Jupyter; **not** available on compute nodes |
 
 
 !!! info
-    Access to `/data` is provided on demand.
+    Access to `/data` (Lustre) and to the project area at `/mnt/cl/prj/<sigla>` (NAS) is provided on demand. For the copy cycle between NAS and scratch, see [Projects](../processamento/apollo/projetos.md).
 
 ## `/scratch`
 
@@ -48,7 +49,7 @@ cd /scratch/users/<username>
 
 Files that have not been modified in the last 30 days will be automatically removed, making this a temporary storage area.
 
-Users are advised to transfer important files from `$SCRATCH` to their `homedir`.
+Personal files that matter should be transferred from `$SCRATCH` to `$HOME`. Project data should go to `/mnt/cl/prj/<sigla>`.
 
 
 !!! warning
@@ -62,7 +63,11 @@ Users are advised to transfer important files from `$SCRATCH` to their `homedir`
 
 ## `/data`
 
-`/data` is intended for long-term storage. Access to this area is provided on demand.
+`/data` is a Lustre file system, like `/scratch`. It is intended for **HPC working data** that must be read and written by compute nodes, with high-performance I/O.
+
+It is not the recommended area for a project's permanent archive. Long-term project storage is on NAS, at `/mnt/cl/prj/<sigla>`.
+
+Access to `/data` is provided on demand.
 
 
 ## `/home`
@@ -122,7 +127,15 @@ Note: The `/scripts` directory is **not** affected by the automatic cleanup proc
 
 ## NAS (NFS)
 
-NAS storage systems are used for long-term storage and are not accessible through the processing (HPC) nodes.
+NAS storage systems are used for long-term storage and are **not** accessible through the processing (HPC) nodes.
+
+For projects with allocated space, the shared area is:
+
+```bash
+/mnt/cl/prj/<sigla>
+```
+
+This area is available on the login node, in Open OnDemand, and in Jupyter. Check the quota with `show_proj_quota <sigla>`. The recommended flow — copy to `$SCRATCH`, process, copy the result back to NAS — is in [Projects](../processamento/apollo/projetos.md).
 
 Current characteristics: 
 
@@ -245,7 +258,7 @@ a) How can I check my available quota?
 
 b) How can I check a project's quota?
 
-`    show_proj_quota <projeto>`
+`    show_proj_quota <sigla>`
 
 c) How can I list my files created more than 30 days ago?
 

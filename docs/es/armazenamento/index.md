@@ -15,13 +15,14 @@ Hay diferentes áreas de almacenamiento disponibles, cada una con una finalidad 
 | Área       | Uso principal                                          | Limpieza automática                   | Backup | Acceso                                                     |
 | ---------- | ------------------------------------------------------ | ------------------------------------- | ------ | ---------------------------------------------------------- |
 | `/home`    | Archivos personales, configuraciones y entornos Python | No                                    | Sí     | Nodo de inicio de sesión del clúster y entorno Jupyter     |
-| `/scratch` | Datos temporales de procesamiento                      | Después de 30 días sin modificaciones | No     | Todos los nodos del clúster                                |
+| `/scratch` | Datos temporales de procesamiento (Lustre)             | Después de 30 días sin modificaciones | No     | Todos los nodos del clúster                                |
 | `/scripts` | Scripts de envío, entornos Python y kernels            | No                                    | No     | Todos los nodos del clúster                                |
-| `/data`    | Almacenamiento de largo plazo                          | No                                    | No     | Todos los nodos del clúster (uso restringido bajo demanda) |
+| `/data`    | Datos de trabajo HPC (Lustre)                          | No                                    | No     | Todos los nodos del clúster (uso restringido bajo demanda) |
+| `/mnt/cl/prj/<sigla>` | Archivo de largo plazo del proyecto (NAS/NFS) | No                             | No     | Nodo de login, Open OnDemand y Jupyter; **no** disponible en los nodos de cómputo |
 
 
 !!! info
-    El acceso a `/data` se proporciona bajo demanda.
+    El acceso a `/data` (Lustre) y al área de proyecto en `/mnt/cl/prj/<sigla>` (NAS) se proporciona bajo demanda. Para el ciclo de copia entre NAS y scratch, consulte [Proyectos](../processamento/apollo/projetos.md).
 
 ## `/scratch`
 
@@ -48,7 +49,7 @@ cd /scratch/users/<username>
 
 Los archivos que no hayan sido modificados en los últimos 30 días se eliminarán automáticamente, por lo que esta área constituye un almacenamiento temporal.
 
-Se recomienda que los usuarios transfieran los archivos importantes de `$SCRATCH` a su `homedir`.
+Los archivos personales importantes deben transferirse de `$SCRATCH` a `$HOME`. Los datos de proyecto deben ir a `/mnt/cl/prj/<sigla>`.
 
 
 !!! warning
@@ -62,7 +63,11 @@ Se recomienda que los usuarios transfieran los archivos importantes de `$SCRATCH
 
 ## `/data`
 
-`/data` está destinado al almacenamiento de largo plazo. El acceso a esta área se proporciona bajo demanda.
+`/data` es un sistema de archivos Lustre, al igual que `/scratch`. Está destinado a **datos de trabajo del HPC** que deben ser leídos y escritos por los nodos de cómputo, con I/O de alto rendimiento.
+
+No es el área recomendada para el archivo permanente del proyecto. El almacenamiento de largo plazo de los proyectos está en el NAS, en `/mnt/cl/prj/<sigla>`.
+
+El acceso a `/data` se proporciona bajo demanda.
 
 
 
@@ -123,7 +128,15 @@ Nota: El directorio `/scripts` **no** se ve afectado por el proceso de limpieza 
 
 ## NAS (NFS)
 
-Los sistemas de almacenamiento NAS se utilizan para almacenamiento de largo plazo y no son accesibles a través de los nodos de procesamiento (HPC).
+Los sistemas de almacenamiento NAS se utilizan para almacenamiento de largo plazo y **no** son accesibles a través de los nodos de procesamiento (HPC).
+
+Para proyectos con asignación de espacio, el área compartida es:
+
+```bash
+/mnt/cl/prj/<sigla>
+```
+
+Esta área está disponible en el nodo de login, en Open OnDemand y en Jupyter. Consulte la cuota con `show_proj_quota <sigla>`. El flujo recomendado — copiar a `$SCRATCH`, procesar, devolver el resultado al NAS — está en [Proyectos](../processamento/apollo/projetos.md).
 
 Características actuales: 
 
@@ -246,7 +259,7 @@ a) ¿Cómo puedo comprobar mi cuota disponible?
 
 b) ¿Cómo puedo comprobar la cuota de un proyecto?
 
-`    show_proj_quota <projeto>`
+`    show_proj_quota <sigla>`
 
 c) ¿Cómo puedo consultar mis archivos creados hace *más* de 30 días?
 

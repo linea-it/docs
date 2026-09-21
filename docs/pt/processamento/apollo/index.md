@@ -1,9 +1,11 @@
 # HPE Apollo 2000
 
+!!! info "Projetos"
+    Se você chegou a essa página devido a um projeto com alocação de recursos (por exemplo, SINCADA), comece pelo [guia para projetos](./projetos.md).
 
 O **Cluster Apollo** possui 28 nós computacionais e oferece um total de **1072 cores** físicos. Seus nós são equipados com processadores `Intel Xeon Skylake 5120 2.2GHz` (apl01-16) e `Intel Xeon Gold 5320 2.20GHz` (apl17-28). 
 
-Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n. Atualmente, o número de cores disponíveis é de *2144*, pois o HT está ativo nos nós de computação.
+Os 28 nós computacionais do Cluster Apollo são da família de servidores HPE ProLiant, sendo 16 do modelo XL170r e 12 do modelo XL220n. Atualmente, o número de cores disponíveis é de *2144* - com o HT<sup>[1]</sup> ativo nos nós de computação.
 
 #### Características de cada servidor
 
@@ -25,20 +27,24 @@ O **Cluster Apollo** é gerenciado pelo **Slurm v24.05.5**.
 
 ### Filesystem
 
-O **Cluster Apollo** conta com um sistema de arquivos de alta performance Lustre, disponibilizado como área de _"Scratch"_. O "Home" dos usuários está acessível apenas no nó de login e é fornecido através de NFS.
+O **Cluster Apollo** conta com um sistema de arquivos de alta performance Lustre, disponível em `/scratch` e `/data` e acessível pelos nós de computação. O "Home" dos usuários e a área de longo prazo dos projetos (`/mnt/cl/prj/<sigla>`) estão acessíveis no nó de login, no Open OnDemand e no Jupyter, e são fornecidos através de NFS.
 
 Essas áreas de armazenamento devem ser utilizadas da seguinte forma:
 
-**Scratch:** Estrutura montada a partir do diretório `/scratch/<username>`. Utilizado para armazenar todos os arquivos que serão utilizados durante a execução de um job (scripts de submissão, executáveis, dados de entrada, dados de saída etc). Variável de ambiente `$SCRATCH`.
+**Scratch:** Estrutura montada a partir do diretório `/scratch/users/<username>`. Utilizado para armazenar os arquivos da execução de um job (entrada, intermediários, saída etc). Área temporária, com limpeza automática. Variável de ambiente `$SCRATCH`.
 
-**Home:** Estrutura montada a partir do diretório `/home/<username>`. Utilizado para armazenar especialmente os resultados que se queira manter durante toda a vigência do projeto. Variável de ambiente `$HOME`.
+**Data:** Estrutura montada a partir do diretório `/data`. Também é Lustre, para dados de trabalho HPC que precisam ser lidos e escritos pelos nós de computação. Acesso sob demanda. **Não** é o arquivo permanente do projeto.
 
-**Scripts:** Estrutura montada a partir do diretório `/scripts/<username>`. É uma área de armazenamento otimizada para armazenar scripts e códigos. Variável de ambiente `$SCRIPTS`.
+**Scripts:** Estrutura montada a partir do diretório `/scripts/<username>`. Área otimizada para scripts, códigos e ambientes Conda usados nos jobs. Variável de ambiente `$SCRIPTS`.
 
-[Clique aqui para mais detalhes](../../armazenamento/index.md)
+**Home:** Estrutura montada a partir do diretório `/home/<username>`. Arquivos pessoais e configurações. Variável de ambiente `$HOME`.
+
+**Projeto (NAS):** Estrutura montada a partir do diretório `/mnt/cl/prj/<sigla>`. Área de **longo prazo** do projeto, em NAS via NFS. Acessível no nó de login, no Open OnDemand e no Jupyter; **não** está nos nós de computação.
+
+[Clique aqui para mais detalhes](../../armazenamento/index.md). O ciclo de cópia entre NAS e scratch está em [Projetos](./projetos.md).
 
 !!! warning "Atenção"
-    Não esqueça de copiar os arquivos necessários (executável, bibliotecas, dados de entrada) para dentro da área de SCRATCH, pois a área de HOMEDIR não é acessível pelos nós computacionais.
+    Os nós de computação não acessam `$HOME` nem `/mnt/cl/prj/<sigla>`. Copie o necessário para `$SCRATCH` (ou `/data`, se o job usar essa área) antes de submeter.
 
 ## Slurm
 Slurm é um sistema de gerenciamento de cluster e agendamento de tarefas de código aberto, tolerante a falhas e altamente escalonável para clusters Linux grandes e pequenos. Slurm não requer modificações no kernel para sua operação e é relativamente independente. Como gerenciador de carga de trabalho de cluster, o Slurm tem três funções principais: 

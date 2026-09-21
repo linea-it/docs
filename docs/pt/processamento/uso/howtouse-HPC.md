@@ -211,12 +211,12 @@ conda create -p /scripts/$USER/.conda/envs/meu-env python=3.11
 
 #### Para um projeto compartilhado
 
-Caso não exista, solicite ao *helpdesk@linea.org.br* a criação do diretório do projeto em `/scripts/cl/prj/<projeto>`.
+Caso não exista, solicite ao *helpdesk@linea.org.br* a criação do diretório do projeto em `/scripts/cl/prj/<sigla>`.
 
 Após a criação:
 
 ```bash
-conda create -p /scripts/cl/prj/<projeto> python=3.11
+conda create -p /scripts/cl/prj/<sigla> python=3.11
 ```
 
 !!! warning "ATENÇÃO"
@@ -333,7 +333,7 @@ python meu_script.py
 | `conda create -n nome` | `~/.conda/envs/` | ✅ sim |
 | Jupyter (k8s) | `~/.conda/envs/` | ✅ sim |
 | Job no cluster | `/scripts/$USER/.conda/envs/` | ⚠️ sem backup |
-| Projeto compartilhado | `/scripts/cl/prj/<projeto>` | ⚠️ sem backup |
+| Projeto compartilhado | `/scripts/cl/prj/<sigla>` | ⚠️ sem backup |
 
 ---
 

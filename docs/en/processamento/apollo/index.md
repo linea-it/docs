@@ -1,5 +1,8 @@
 # HPE Apollo 2000
 
+!!! info "Projects"
+    If you reached Apollo through a project with allocated resources (for example, SINCADA), start with the [guide for projects](./projetos.md).
+
 The ***Apollo Cluster*** has 28 compute nodes and offers a total of **1072 physical cores**. Its nodes are equipped with `Intel Xeon Skylake 5120 2.2GHz` processors (apl01-16) and `Intel Xeon Gold 5320 2.20GHz` processors (apl17-28).
 The 28 compute nodes of the *Apollo Cluster* are from the HPE ProLiant server family, with 16 being XL170r models and 12 being XL220n models. Currently, the number of available cores is *2144*, as HT is active on the compute nodes.
 
@@ -23,20 +26,24 @@ The ***Apollo Cluster*** is managed by **Slurm v24.05.5**.
 
 ### Filesystem
 
-The ***Apollo Cluster*** features a high-performance *Lustre* filesystem, available as a "Scratch" area. User "Home" directories are only accessible on the login node and are provided via NFS.
+The ***Apollo Cluster*** has a high-performance *Lustre* filesystem, available at `/scratch` and `/data` and accessible from compute nodes. User "Home" directories and the projects' long-term area (`/mnt/cl/prj/<sigla>`) are accessible on the login node, in Open OnDemand, and in Jupyter, and are provided via NFS.
 
 These storage areas should be used as follows:
 
-**Scratch:** Mounted from `/scratch/<username>`. Used to store all files needed during job execution (submission scripts, executables, input data, output data, etc). Environment variable `$SCRATCH`.
+**Scratch:** Mounted from `/scratch/<username>`. Used to store files for job execution (input, intermediates, output, etc). Temporary area, with automatic cleanup. Environment variable `$SCRATCH`.
 
-**Home:** Mounted from `/home/<username>`. Used especially to store results that should be kept throughout the project duration. Environment variable `$HOME`.
+**Data:** Mounted from `/data`. Also Lustre, for HPC working data that must be read and written by compute nodes. Access on demand. **Not** the project's permanent archive.
 
-**Scripts:** Mounted from `/scripts/<username>`. A storage area optimized for scripts and code. Environment variable `$SCRIPTS`.
+**Scripts:** Mounted from `/scripts/<username>`. Optimized for scripts, code, and Conda environments used by jobs. Environment variable `$SCRIPTS`.
 
-[Click here for more details](../../armazenamento/index.md)
+**Home:** Mounted from `/home/<username>`. Personal files and configuration. Environment variable `$HOME`.
+
+**Project (NAS):** Mounted from `/mnt/cl/prj/<sigla>`. The project's **long-term** area, on NAS over NFS. Available on the login node, in Open OnDemand, and in Jupyter; **not** on compute nodes.
+
+[Click here for more details](../../armazenamento/index.md). The copy cycle between NAS and scratch is in [Projects](./projetos.md).
 
 !!! warning "Attention"
-    Remember to copy necessary files (executables, libraries, input data) to the SCRATCH area, as the HOMEDIR area is not accessible by compute nodes.
+    Compute nodes cannot access `$HOME` or `/mnt/cl/prj/<sigla>`. Copy what you need to `$SCRATCH` (or `/data`, if the job uses that area) before submitting.
 
 ## Slurm
 
