@@ -7,6 +7,10 @@ LIneA provides access to high-performance computing resources for **members of s
 !!! danger ""
     Failure to comply with our security policies and environment usage policies may result in your account being blocked without prior notice. The policies can be found [here](../politicas.md).
 
+!!! info "Projects"
+    If your access to the Apollo Cluster was granted as part of a project with allocated resources (for example, SINCADA), start with the [guide for projects](./apollo/projetos.md).
+
 * [HPE Apollo 2000 Cluster (LIneA)](./apollo/index.md)
+* [Projects](./apollo/projetos.md)
 * [Open OnDemand](./uso/openondemand.md)
 * [JupyterLab over HPC](./uso/openondemand.md#interactive-apps-jupyter-notebook)

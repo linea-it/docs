@@ -1,5 +1,8 @@
 # HPE Apollo 2000
 
+!!! info "Proyectos"
+    Si llegó a Apollo por un proyecto con asignación de recursos (por ejemplo, SINCADA), comience por la [guía para proyectos](./projetos.md).
+
 El ***Cluster Apollo*** posee 28 nodos computacionales y ofrece un total de **1072 núcleos** físicos. Sus nodos están equipados con procesadores `Intel Xeon Skylake 5120 2.2GHz` (apl01-16) y `Intel Xeon Gold 5320 2.20GHz` (apl17-28). 
 
 Los 28 nodos computacionales del *Cluster Apollo* pertenecen a la familia de servidores HPE ProLiant, siendo 16 del modelo XL170r y 12 del modelo XL220n. Actualmente, el número de núcleos disponibles es de *2144*, ya que el HT está activo en los nodos de computación.
@@ -24,19 +27,24 @@ El ***Cluster Apollo*** es gestionado por **Slurm v24.05.5**.
 
 ### Sistema de Archivos
 
-El ***Cluster Apollo*** cuenta con un sistema de archivos de alto rendimiento *Lustre*, disponible como área de "Scratch". El "Home" de los usuarios está accesible únicamente en el nodo de login y se provee mediante NFS.
+El ***Cluster Apollo*** cuenta con un sistema de archivos de alto rendimiento *Lustre*, disponible en `/scratch` y `/data` y accesible desde los nodos de cómputo. El "Home" de los usuarios y el área de largo plazo de los proyectos (`/mnt/cl/prj/<sigla>`) están accesibles en el nodo de login, en Open OnDemand y en Jupyter, y se proveen mediante NFS.
+
 Estas áreas de almacenamiento deben utilizarse de la siguiente forma:
 
-**Scratch:** Estructura montada desde `/scratch/<usuario>`. Utilizada para almacenar todos los archivos que serán usados durante la ejecución de un job (scripts de envío, ejecutables, datos de entrada, datos de salida, etc). Variable de entorno `$SCRATCH`.
+**Scratch:** Estructura montada desde `/scratch/<usuario>`. Utilizada para almacenar los archivos de la ejecución de un job (entrada, intermedios, salida, etc). Área temporal, con limpieza automática. Variable de entorno `$SCRATCH`.
 
-**Home:** Estructura montada desde `/home/<usuario>`. Utilizada especialmente para almacenar resultados que se desee mantener durante toda la vigencia del proyecto. Variable de entorno `$HOME`.
+**Data:** Estructura montada desde `/data`. También es Lustre, para datos de trabajo HPC que deben ser leídos y escritos por los nodos de cómputo. Acceso bajo demanda. **No** es el archivo permanente del proyecto.
 
-**Scripts:** Estructura montada desde `/scripts/<usuario>`. Es un área de almacenamiento optimizada para scripts y códigos. Variable de entorno `$SCRIPTS`.
+**Scripts:** Estructura montada desde `/scripts/<usuario>`. Área optimizada para scripts, códigos y entornos Conda usados en los jobs. Variable de entorno `$SCRIPTS`.
 
-[Haga clic aquí para más detalles](../../armazenamento/index.md)
+**Home:** Estructura montada desde `/home/<usuario>`. Archivos personales y configuraciones. Variable de entorno `$HOME`.
+
+**Proyecto (NAS):** Estructura montada desde `/mnt/cl/prj/<sigla>`. Área de **largo plazo** del proyecto, en NAS por NFS. Accesible en el nodo de login, en Open OnDemand y en Jupyter; **no** está en los nodos de cómputo.
+
+[Haga clic aquí para más detalles](../../armazenamento/index.md). El ciclo de copia entre NAS y scratch está en [Proyectos](./projetos.md).
 
 !!! warning "Atención"
-    No olvide copiar los archivos necesarios (ejecutable, bibliotecas, datos de entrada) al área de SCRATCH, pues el área de HOMEDIR no es accesible por los nodos computacionales.
+    Los nodos de cómputo no acceden a `$HOME` ni a `/mnt/cl/prj/<sigla>`. Copie lo necesario a `$SCRATCH` (o `/data`, si el job usa esa área) antes de enviar.
 
 ## Slurm
 
