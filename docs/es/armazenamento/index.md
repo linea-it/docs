@@ -80,9 +80,9 @@ El acceso a `/data` se proporciona bajo demanda.
 
 | perfil                 | bsoft  | bhard  | isoft   | ihard    | grace period |
 | ---------------------- | ------ | ------ | ------- | -------- | ------------ |
-| público general          | 5 GB   | 7 GB    | 7000    | 10000    | 7 dias       |
-| público institucional  | 25 GB  | 30 GB   | 40000   | 50000    | 7 dias       |
-| colaboración LSST       | 35 GB  | 40 GB   | 1000000 | 1200000  | 7 dias       |
+| público general        | 5 GB   | 7 GB   | 100000  | 120000   | 7 dias       |
+| público institucional  | 25 GB  | 30 GB  | 500000  | 600000   | 7 dias       |
+| colaboración LSST      | 35 GB  | 40 GB  | 1000000 | 1200000  | 7 dias       |
 
 !!! tip
     Para verificar los valores de cuota configurados, basta con utilizar el comando: `show_quota`.

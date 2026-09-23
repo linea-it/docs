@@ -74,10 +74,10 @@ O `/home` é destinado aos arquivos pessoais e configurações do usuário. Tamb
 
 **A quota padrão do homedir de cada usuário, segundo o seu perfil, é apresentada abaixo:**
 
-| perfil                 | bsoft  | bhard  | isoft   | ihard    | grace period |
-| ---------------------- | ------ | ------ | ------- | -------- | ------------ |
-| público geral          | 5 GB   | 7 GB    | 7000    | 10000    | 7 dias       |
-| público institucional  | 25 GB  | 30 GB   | 40000   | 50000    | 7 dias       |
+| perfil                 | bsoft  | bhard   | isoft   | ihard    | grace period |
+| ---------------------- | ------ | ------  | ------- | -------- | ------------ |
+| público geral          | 5 GB   | 7 GB    | 100000  | 120000   | 7 dias       |
+| público institucional  | 25 GB  | 30 GB   | 500000  | 600000   | 7 dias       |
 | colaboração LSST       | 35 GB  | 40 GB   | 1000000 | 1200000  | 7 dias       |
 
 !!! tip

@@ -78,9 +78,9 @@ Access to `/data` is provided on demand.
 
 | perfil                 | bsoft  | bhard  | isoft   | ihard    | grace period |
 | ---------------------- | ------ | ------ | ------- | -------- | ------------ |
-| general public          | 5 GB   | 7 GB    | 7000    | 10000    | 7 dias       |
-| institutional public  | 25 GB  | 30 GB   | 40000   | 50000    | 7 dias       |
-| LSST collaboration       | 35 GB  | 40 GB   | 1000000 | 1200000  | 7 dias       |
+| general public         | 5 GB   | 7 GB   | 100000  | 120000   | 7 dias       |
+| institutional public   | 25 GB  | 30 GB  | 500000  | 600000   | 7 dias       |
+| LSST collaboration     | 35 GB  | 40 GB  | 1000000 | 1200000  | 7 dias       |
 
 !!! tip
     To check the configured quota values, use the command: `show_quota`.
