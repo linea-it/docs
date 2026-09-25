@@ -95,31 +95,27 @@ Siga estos comandos:
 
 1. Vaya a su área SCRIPTS, cree y active un venv *conda* e instale _ipykernel_:
 ```bash
-
-    cd $SCRIPTS
-
-    conda create -p $SCRIPTS/kernelname
-    conda activate kernelname/
-    
-    conda install -c anaconda ipykernel
+cd $SCRIPTS
+conda create -p $SCRIPTS/kernelname
+conda activate kernelname/
+conda install -c anaconda ipykernel
 ```
 
 2. Configure JUPYTER_PATH (debe ser exactamente esta ruta):
 ```bash
-    JUPYTER_PATH=$SCRATCH/.local
-    echo $JUPYTER_PATH
-    
-    python -m ipykernel install --prefix=$JUPYTER_PATH --name 'kernelname'
+JUPYTER_PATH=$SCRATCH/.local
+echo $JUPYTER_PATH
+python -m ipykernel install --prefix=$JUPYTER_PATH --name 'kernelname'
 ```
 
 3. Abra una sesión de *Jupyter Notebook*.
 
 ???+ success "La salida del último comando debe ser:"
 
-    ````yaml
-    #[InstallIPythonKernelSpecApp] WARNING | Installing to /scratch/users/USUARIO/.local/share/jupyter/kernels, which is not in ['/scratch/users/USUARIO/kernelname/share/jupyter/kernels', '/home/USUARIO/.local/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/USUARIO/.ipython/kernels']. The kernelspec may not be found.
-    Installed kernelspec kernelname in /scratch/users/USUARIO/.local/share/jupyter/kernels/kernelname
-    ````
+```yaml
+#[InstallIPythonKernelSpecApp] WARNING | Installing to /scratch/users/USUARIO/.local/share/jupyter/kernels, which is not in ['/scratch/users/USUARIO/kernelname/share/jupyter/kernels', '/home/USUARIO/.local/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/USUARIO/.ipython/kernels']. The kernelspec may not be found.
+Installed kernelspec kernelname in /scratch/users/USUARIO/.local/share/jupyter/kernels/kernelname
+```
 
 Al finalizar estos comandos, podrá ver el botón del *kernel* de Python creado.
 
