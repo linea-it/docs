@@ -19,6 +19,7 @@ Servicios de acceso a datos con diversas herramientas para procesamiento, explor
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Ondemand](ondemand.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [User Query](user_query.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [TAP Service](user_query.md#tap-service)
+#### &nbsp;&nbsp;&nbsp;&nbsp; [Cutout Service](cutout.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Sky Viewer](sky_viewer.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [Target Viewer](target_viewer.md)
 #### &nbsp;&nbsp;&nbsp;&nbsp; [DES Science Server](sci_server.md)
@@ -59,6 +60,7 @@ El acceso a LIneA OnDemand —la plataforma utilizada para acceder al entorno de
 | **JupyterHub**                                                           |                    |:white_check_mark:  |:white_check_mark:  |          |  
 | **LIneA OnDemand**                                                       |                    |                    |                    | :lock:   |
 | **User Query**                                                           | :white_check_mark: |:white_check_mark:  |:white_check_mark:  |          | 
+| **Cutout Service**                                                       | :white_check_mark: |:white_check_mark:  |:white_check_mark:  |          | 
 | **Sky Viewer**                                                           | :white_check_mark: |:white_check_mark:  |:white_check_mark:  |          | 
 | **Target Viewer**                                                        |                    |:white_check_mark:  |:white_check_mark:  |          |  
 | **Occultation** <br> **Prediction Database**                             | :white_check_mark: |:white_check_mark:  |:white_check_mark:  |          | 
