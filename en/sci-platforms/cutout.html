@@ -1,0 +1,2066 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="LIneA team">
+      
+      
+        <link rel="canonical" href="https://docs.linea.org.br/en/sci-platforms/cutout.html">
+      
+      
+        <link rel="prev" href="user_query.html">
+      
+      
+        <link rel="next" href="sky_viewer.html">
+      
+      
+      <link rel="icon" href="../../images/linea_favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Cutout Service - User Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+
+      
+    
+<script async src="https://siteimproveanalytics.com/js/siteanalyze_6025767.js"></script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto,+Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto, Arial";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web-interface" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="User Documentation" class="md-header__button md-logo" aria-label="User Documentation" data-md-component="logo">
+      
+  <img src="../../images/linea.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            User Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cutout Service
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../sci-platforms/cutout.html" hreflang="pt" class="md-select__link">
+              Português
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="cutout.html" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../es/sci-platforms/cutout.html" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/linea-it/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linea-it/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="User Documentation" class="md-nav__button md-logo" aria-label="User Documentation" data-md-component="logo">
+      
+  <img src="../../images/linea.png" alt="logo">
+
+    </a>
+    User Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/linea-it/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    linea-it/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primeiros_passos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Registration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lsst_registration.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LSST Member Registration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scientific Platforms
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Scientific Platforms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html#linea-science-platform" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LIneA Science Platform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html#idac-br-science-platform" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IDAC-BR Science Platform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="jupyter.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JupyterHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ondemand.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ondemand
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_query.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Query
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_query.html#tap-service" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TAP Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cutout Service
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="cutout.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cutout Service
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      REST API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="REST API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-soda-subset-this-service-implements" class="md-nav__link">
+    <span class="md-ellipsis">
+      The SODA subset this service implements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-a-cutout-is-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why a cutout is slow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jupyter examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sky_viewer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sky Viewer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="target_viewer.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Target Viewer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sci_server.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DES Science Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="linea-occulation-prediction-database.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Occultation Predictions Database
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sdss_sky_server.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SDSS Sky Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pz_server.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LSST Photo-z Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="des.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DES Science Portal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="solar-system-portal.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solar System Portal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="manga.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MaNGA Portal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../processamento/index.html" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Processing (HPC)
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Processing (HPC)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../processamento/apollo/index.html" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Apollo Cluster
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Apollo Cluster
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/apollo/projetos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/howtouse-HPC.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Use
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/apptainer-uso.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/howtouse-HPC.html#eups-package-manager" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EUPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/howtouse-HPC.html#conda-in-the-hpc-environment" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/openondemand.html#jupyterlab" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JupyterLab (OnDemand)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/openondemand.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ondemand
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/apollo/index.html#slurm" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processamento/uso/templates-jobs.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job Script (examples)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../armazenamento/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cursos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Courses and Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossario.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../politicas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Policies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creditos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../suporte.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Web interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      REST API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="REST API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-soda-subset-this-service-implements" class="md-nav__link">
+    <span class="md-ellipsis">
+      The SODA subset this service implements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-a-cutout-is-slow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why a cutout is slow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupyter-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jupyter examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Cutout Service</h1>
+
+<p>The <a href="https://cutout.linea.org.br"><em>Cutout Service</em></a> returns image cutouts from the surveys hosted at LIneA. <em>DES</em> DR2 is public. Each user only reaches the other surveys they have data rights for.</p>
+<p>The web interface and the REST API are two separate ways in. The form does not appear in the code examples, and the code examples do not depend on the form.</p>
+<hr />
+<h2 id="web-interface">Web interface<a class="headerlink" href="#web-interface" title="Permanent link">&para;</a></h2>
+<p>Open <a href="https://cutout.linea.org.br">https://cutout.linea.org.br</a>. The form is on the left and the <em>HiPS</em> map (<em>Aladin Lite</em>) is on the right for <em>DES</em> DR2.</p>
+<ol>
+<li>In <strong>Survey</strong>, select <code>DES DR2</code>.</li>
+<li>Enter <strong>RA (deg)</strong> and <strong>Dec (deg)</strong> in decimal ICRS degrees, or center the map and use the search button to copy the field center.</li>
+<li><strong>Radius (arcmin)</strong> is the radius in arcminutes. The maximum is 30′.</li>
+<li>In <strong>Format</strong>, choose <code>FITS</code> or <code>PNG</code>. For PNG, <strong>RGB color composite</strong> builds the color image; on <em>DES</em> DR2 the presets are <code>gri</code>, <code>riz</code>, and <code>izY</code>. Without the composite, <strong>Band</strong> selects one filter (<code>g</code>, <code>r</code>, <code>i</code>, <code>z</code>, <code>Y</code>).</li>
+<li>Up to 5′, <strong>Download</strong> returns the file immediately. Above that, the button becomes <strong>Queue job</strong>.</li>
+<li><strong>Add region</strong> collects positions and <strong>Queue jobs</strong> submits them one at a time. <strong>Bulk Coordinates</strong> accepts pasted <code>RA Dec</code> pairs or a CSV with the header <code>ra,dec</code> and optional columns <code>band,format,radius,color,rgb_bands</code>. The <code>radius</code> in that list is also in arcminutes.</li>
+<li><strong>Queued Jobs</strong> follows the phase and downloads the files, including as a ZIP.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">The list stays in the browser where you opened the Cutout Service, and the file leaves the server after 7 days</p>
+<p><strong>Queued Jobs</strong> is stored in the browser where you opened <a href="https://cutout.linea.org.br">cutout.linea.org.br</a>. You can close that tab and return to it. The list does not appear in another browser or on another computer.
+The asynchronous job and the file are deleted from the server <strong>7 days</strong> after creation. Download before that. After the deadline the list may still show up in that same browser, but the download no longer finds the file.</p>
+</div>
+<p>After login, <strong>Survey</strong> lists the public surveys and the ones the account has data rights for.</p>
+<hr />
+<h2 id="rest-api">REST API<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h2>
+<p>The examples below call</p>
+<div class="highlight"><pre><span></span><code>https://cutout.linea.org.br
+</code></pre></div>
+<p>from Jupyter. <em>DES</em> DR2 (<code>ID=des_dr2</code>) does not require an account. Every synchronous cutout on this page uses a radius of <strong>0.5′</strong>, under 1′.</p>
+<table>
+<thead>
+<tr>
+<th>Use</th>
+<th>Method and path</th>
+<th>What comes back</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Immediate cutout</td>
+<td><code>GET</code> or <code>POST /api/sync</code></td>
+<td>The file, <code>application/fits</code> or <code>image/x-png</code></td>
+</tr>
+<tr>
+<td>Create a job</td>
+<td><code>POST /api/async</code></td>
+<td><code>303 See Other</code>, a <code>Location</code> header, and a job JSON document</td>
+</tr>
+<tr>
+<td>Inspect a job</td>
+<td><code>GET /api/async/{job_id}</code></td>
+<td>JSON with phase, parameters, tasks, and results</td>
+</tr>
+<tr>
+<td>Phase</td>
+<td><code>GET /api/async/{job_id}/phase</code></td>
+<td>Plain text: <code>QUEUED</code>, <code>EXECUTING</code>, <code>COMPLETED</code>, <code>ERROR</code>, or <code>ABORTED</code></td>
+</tr>
+<tr>
+<td>Abort</td>
+<td><code>POST /api/async/{job_id}/phase</code> with <code>PHASE=ABORT</code></td>
+<td>The new phase, as text</td>
+</tr>
+<tr>
+<td>Download</td>
+<td><code>GET</code> the result <code>download_url</code></td>
+<td>The file</td>
+</tr>
+</tbody>
+</table>
+<p><code>GET /api/async</code> lists the jobs for the account, or for the anonymous session when there is no token.</p>
+<p>On LIneA JupyterHub, <code>requests</code>, <code>astropy</code>, and <code>matplotlib</code> are already available. Elsewhere: <code>pip install requests astropy matplotlib</code>.</p>
+<h3 id="token">Token<a class="headerlink" href="#token" title="Permanent link">&para;</a></h3>
+<p>The token identifies your account to the API. With it, the service returns the surveys you have data rights for, and you can also retrieve a job from another machine. <em>DES</em> DR2 does not need one.</p>
+<ol>
+<li>Sign in at <a href="https://cutout.linea.org.br">https://cutout.linea.org.br</a>.</li>
+<li>Click your username in the upper-right corner.</li>
+<li>Select <strong>API token</strong>. The page is also <a href="https://cutout.linea.org.br/users/~token/">https://cutout.linea.org.br/users/~token/</a>.</li>
+<li>Copy the key shown on that page.</li>
+</ol>
+<p>Store the key in the <code>CUTOUT_TOKEN</code> environment variable. The value below is fake: replace it with the key from your page. <strong>Regenerate token</strong> deletes the old key and creates a new one.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">CUTOUT_TOKEN</span><span class="o">=</span><span class="s2">"0123456789abcdef0123456789abcdef01234567"</span>
+</code></pre></div>
+<p>If the notebook is already open, <code>export</code> does not reach it. In the first cell, do the same with your key:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"CUTOUT_TOKEN"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0123456789abcdef0123456789abcdef01234567"</span>
+</code></pre></div>
+<p>The request reads that variable and puts the word <code>Token</code> and a space in front of it. This call downloads an LSST DP1 image, an example of a restricted survey. The account needs data rights for it. <em>DES</em> DR2 does not use this line.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">"Authorization"</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Token </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'CUTOUT_TOKEN'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">"https://cutout.linea.org.br/api/sync"</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"lsst_dp1"</span><span class="p">,</span>
+        <span class="s2">"POS"</span><span class="p">:</span> <span class="s2">"CIRCLE 53.096 -28.024 0.008333"</span><span class="p">,</span>  <span class="c1"># 0.5 arcmin</span>
+        <span class="s2">"BAND"</span><span class="p">:</span> <span class="s2">"g"</span><span class="p">,</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="s2">"png"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Keep your key secret</p>
+<p>Anyone with the key can use your account. Do not send it in a message and do not leave the real key in a notebook you will share.</p>
+</div>
+<p>Without a token, a job created at <code>/api/async</code> is bound to the <code>sessionid</code> cookie on the response. Later calls must send that cookie again. A <code>requests.Session()</code> does this. A bare <code>requests.get</code> on the result URL returns <code>403</code>.</p>
+<h3 id="the-soda-subset-this-service-implements">The SODA subset this service implements<a class="headerlink" href="#the-soda-subset-this-service-implements" title="Permanent link">&para;</a></h3>
+<p>Requests use <a href="https://www.ivoa.net/documents/SODA/" target="_blank"><em>SODA</em></a> parameters. The asynchronous job lifecycle follows <a href="https://www.ivoa.net/documents/UWS/20161024/REC-UWS-1.1-20161024.html" target="_blank"><em>UWS</em></a>. Names are case-insensitive: <code>ID</code> and <code>id</code> are the same parameter, as are <code>POS</code>, <code>BAND</code>, and <code>PHASE</code>.</p>
+<p><code>ID</code> is the release. For <em>DES</em> DR2 the value is <code>des_dr2</code>. <code>BAND</code> is a filter of that release (<code>g</code>, <code>r</code>, <code>i</code>, <code>z</code>, <code>Y</code>).</p>
+<p><code>POS</code> describes the region, in ICRS degrees:</p>
+<table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Syntax</th>
+<th>Cutout</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CIRCLE</code></td>
+<td><code>CIRCLE ra dec radius</code></td>
+<td>A square on the sky whose side is twice the radius. The radius is an on-sky angle, in degrees.</td>
+</tr>
+<tr>
+<td><code>RANGE</code></td>
+<td><code>RANGE ra_min ra_max dec_min dec_max</code></td>
+<td>A right ascension and declination rectangle.</td>
+</tr>
+<tr>
+<td><code>POLYGON</code></td>
+<td><code>POLYGON ra1 dec1 ra2 dec2 ...</code></td>
+<td>The box that encloses the vertices. At least three vertices are required, ordered counter-clockwise.</td>
+</tr>
+</tbody>
+</table>
+<p>Each request accepts one <code>ID</code> and one <code>POS</code>. Repeating either one returns <code>422</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title"><code>RANGE</code> is rejected by the radius check</p>
+<p>A small <code>POS=RANGE</code> currently returns <code>422</code> with a message that the radius exceeds 30′. The check reads the box numbers out of order. The examples use <code>CIRCLE</code> and <code>POLYGON</code>.</p>
+</div>
+<p>Synchronous mode accepts one band. Asynchronous mode can take more than one <code>BAND</code> and creates one task per filter. At creation, <code>PHASE=RUN</code> dispatches the job. The response is <code>303</code>, with <code>Location</code> pointing at <code>/api/async/{job_id}</code>. The job document is JSON. The phase, at <code>/phase</code>, is plain text.</p>
+<p>This subset leaves out, on purpose:</p>
+<ul>
+<li>An XML job document, VOSI capabilities, and a DALI examples endpoint. The client is <code>requests</code>.</li>
+<li>Client-set <code>DESTRUCTION</code> and <code>EXECUTIONDURATION</code>. The asynchronous job and the file are deleted <strong>7 days</strong> after creation.</li>
+<li>Plain-text error codes. An error comes back as JSON <code>{"detail": "..."}</code>.</li>
+<li>Extra parameters, outside SODA: <code>format</code> (<code>fits</code> or <code>png</code>), <code>color</code>, and <code>rgb_bands</code>.</li>
+</ul>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ID</code></td>
+<td>yes</td>
+<td>Release identifier. In the public examples, <code>des_dr2</code>. A restricted release responds only when the account has data rights for it.</td>
+</tr>
+<tr>
+<td><code>POS</code></td>
+<td>yes</td>
+<td><code>CIRCLE</code> or <code>POLYGON</code>, as above.</td>
+</tr>
+<tr>
+<td><code>BAND</code></td>
+<td>yes</td>
+<td>Filter. On <em>DES</em> DR2: <code>g</code>, <code>r</code>, <code>i</code>, <code>z</code>, <code>Y</code>.</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>no</td>
+<td><code>fits</code> (default) or <code>png</code>.</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td>no</td>
+<td><code>true</code> with <code>format=png</code> builds the color PNG from <code>rgb_bands</code>.</td>
+</tr>
+<tr>
+<td><code>rgb_bands</code></td>
+<td>no</td>
+<td>Three filters, such as <code>gri</code>, <code>g,r,i</code>, or <code>g r i</code>. The default is <code>gri</code>.</td>
+</tr>
+<tr>
+<td><code>PHASE</code></td>
+<td>for async</td>
+<td><code>RUN</code> at creation. <code>ABORT</code> stops a job that is still running.</td>
+</tr>
+<tr>
+<td><code>RUNID</code></td>
+<td>no</td>
+<td>Opaque label, returned in the job field <code>run_id</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>CIRCLE</code> radius is in <strong>degrees</strong>. One arcminute is <code>1/60</code> of a degree.</p>
+<div class="highlight"><pre><span></span><code>0.5′ = 0.008333°
+1′   = 0.016667°
+5′   = 0.083333°
+</code></pre></div>
+<p>Above 5′ the <code>/api/sync</code> endpoint returns <code>422</code> and points at <code>/api/async</code>. The radius must be smaller than 30′.</p>
+<h3 id="why-a-cutout-is-slow">Why a cutout is slow<a class="headerlink" href="#why-a-cutout-is-slow" title="Permanent link">&para;</a></h3>
+<p>Four causes cover almost every slow cutout.</p>
+<ul>
+<li><strong>Area.</strong> The side grows with the radius and the pixel count grows with the square. 0.5′ is a 228-pixel square, about 0.2 MB as FITS. 5′ is past 2,000 pixels and around 20 MB.</li>
+<li><strong>Mosaic.</strong> The <em>DES</em> DR2 coadd is a tile grid. When the field lands on more than one tile, the service opens each image and combines them. Tiles that do not share the same grid are reprojected first.</li>
+<li><strong>Color.</strong> <code>color=true</code> reads three filters. If each filter crosses several tiles, that is three mosaics before the RGB composite.</li>
+<li><strong>Footprint edge.</strong> Outside the area covered by the release the response is <code>422</code> (<code>No files found for band ...</code>). On the edge the file is still returned, and a pixel with no tile arrives as zero.</li>
+</ul>
+<p>A 0.5′ field on a single tile returns in about a second. The same center at a 6′ radius, band <code>g</code>, took about 30 seconds and returned 30 MB, because the square covers several tiles.</p>
+<h3 id="jupyter-examples">Jupyter examples<a class="headerlink" href="#jupyter-examples" title="Permanent link">&para;</a></h3>
+<p>The position is RA = 41.22° and Dec = −35.56°, inside <em>DES</em> DR2. <code>display</code> shows the image in the notebook. The figures on this page are the response of these calls.</p>
+<h4 id="single-band-png">Single-band PNG<a class="headerlink" href="#single-band-png" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">"https://cutout.linea.org.br/api/sync"</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"des_dr2"</span><span class="p">,</span>
+        <span class="s2">"POS"</span><span class="p">:</span> <span class="s2">"CIRCLE 41.22 -35.56 0.008333"</span><span class="p">,</span>  <span class="c1"># 0.5 arcmin</span>
+        <span class="s2">"BAND"</span><span class="p">:</span> <span class="s2">"g"</span><span class="p">,</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="s2">"png"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+</code></pre></div>
+<p><img alt="DES DR2, g band, 0.5 arcmin radius" src="../../images/cutout-desdr2-g.png" width="320" /></p>
+<p>Band <code>i</code> of the same field changes only the filter. A single-band PNG already carries the service stretch, ready to look at.</p>
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">"https://cutout.linea.org.br/api/sync"</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"des_dr2"</span><span class="p">,</span>
+        <span class="s2">"POS"</span><span class="p">:</span> <span class="s2">"CIRCLE 41.22 -35.56 0.008333"</span><span class="p">,</span>
+        <span class="s2">"BAND"</span><span class="p">:</span> <span class="s2">"i"</span><span class="p">,</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="s2">"png"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+</code></pre></div>
+<p><img alt="DES DR2, i band, 0.5 arcmin radius" src="../../images/cutout-desdr2-i.png" width="320" /></p>
+<h4 id="color-png">Color PNG<a class="headerlink" href="#color-png" title="Permanent link">&para;</a></h4>
+<p><code>color=true</code> reads <code>g</code>, <code>r</code>, and <code>i</code> and returns an RGB image. <code>BAND</code> stays in the request.</p>
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">"https://cutout.linea.org.br/api/sync"</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"des_dr2"</span><span class="p">,</span>
+        <span class="s2">"POS"</span><span class="p">:</span> <span class="s2">"CIRCLE 41.22 -35.56 0.008333"</span><span class="p">,</span>
+        <span class="s2">"BAND"</span><span class="p">:</span> <span class="s2">"g"</span><span class="p">,</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="s2">"png"</span><span class="p">,</span>
+        <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
+        <span class="s2">"rgb_bands"</span><span class="p">:</span> <span class="s2">"gri"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+</code></pre></div>
+<p><img alt="DES DR2, gri composite, 0.5 arcmin radius" src="../../images/cutout-desdr2-gri.png" width="320" /></p>
+<p><code>riz</code> is the other usual composite. The call is the same, with <code>rgb_bands</code> changed.</p>
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">"https://cutout.linea.org.br/api/sync"</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"des_dr2"</span><span class="p">,</span>
+        <span class="s2">"POS"</span><span class="p">:</span> <span class="s2">"CIRCLE 41.22 -35.56 0.008333"</span><span class="p">,</span>
+        <span class="s2">"BAND"</span><span class="p">:</span> <span class="s2">"r"</span><span class="p">,</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="s2">"png"</span><span class="p">,</span>
+        <span class="s2">"color"</span><span class="p">:</span> <span class="s2">"true"</span><span class="p">,</span>
+        <span class="s2">"rgb_bands"</span><span class="p">:</span> <span class="s2">"riz"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+</code></pre></div>
+<p><img alt="DES DR2, riz composite, 0.5 arcmin radius" src="../../images/cutout-desdr2-riz.png" width="320" /></p>
+<h4 id="polygon">Polygon<a class="headerlink" href="#polygon" title="Permanent link">&para;</a></h4>
+<p><code>POLYGON</code> cuts the box around the vertices. The four corners below span about 0.5′ in declination, still in one synchronous call.</p>
+<div class="highlight"><pre><span></span><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">"https://cutout.linea.org.br/api/sync"</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"des_dr2"</span><span class="p">,</span>
+        <span class="s2">"POS"</span><span class="p">:</span> <span class="s2">"POLYGON 41.216 -35.564 41.224 -35.564 41.224 -35.556 41.216 -35.556"</span><span class="p">,</span>
+        <span class="s2">"BAND"</span><span class="p">:</span> <span class="s2">"r"</span><span class="p">,</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="s2">"png"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+</code></pre></div>
+<p><img alt="DES DR2, r band, polygon cutout" src="../../images/cutout-desdr2-polygon-r.png" width="280" /></p>
+<h4 id="fits-for-measurement">FITS for measurement<a class="headerlink" href="#fits-for-measurement" title="Permanent link">&para;</a></h4>
+<p>The FITS file stores counts per second, as <code>float32</code>, without the PNG stretch. To see the galaxies in the notebook, compress the scale. This file is 228×228 pixels and about 0.2 MB.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsinhStretch</span><span class="p">,</span> <span class="n">ImageNormalize</span><span class="p">,</span> <span class="n">ZScaleInterval</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s2">"https://cutout.linea.org.br/api/sync"</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"des_dr2"</span><span class="p">,</span>
+        <span class="s2">"POS"</span><span class="p">:</span> <span class="s2">"CIRCLE 41.22 -35.56 0.008333"</span><span class="p">,</span>  <span class="c1"># 0.5 arcmin</span>
+        <span class="s2">"BAND"</span><span class="p">:</span> <span class="s2">"g"</span><span class="p">,</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="s2">"fits"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">ImageNormalize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">ZScaleInterval</span><span class="p">(),</span> <span class="n">stretch</span><span class="o">=</span><span class="n">AsinhStretch</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">"lower"</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"DES DR2 g"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p><code>origin="lower"</code> puts north at the top of this FITS image. The g-band PNG above is the same sky, already stretched by the service.</p>
+<h4 id="above-5">Above 5′<a class="headerlink" href="#above-5" title="Permanent link">&para;</a></h4>
+<p>The synchronous endpoint refuses a large radius. A 6′ <code>CIRCLE</code> on <code>/api/sync</code> returns:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"detail"</span><span class="p">:</span><span class="s2">"Cutout radius 6.0 arcmin exceeds the synchronous limit of 5 arcmin. Please use POST /api/async instead. Expected processing time is 36s."</span><span class="p">}</span>
+</code></pre></div>
+<p>The asynchronous job keeps the same <code>Session</code> from the <code>POST</code> through the download. Without a token, it carries the cookie. With a token, uncomment the header and the cookie is no longer required. <code>allow_redirects=False</code> keeps <code>Location</code>. The phase is text, not JSON.</p>
+<p>Download the file within <strong>7 days</strong>. After that the server deletes the job and the result.</p>
+<p>This case is slow on purpose: several tiles and about 30 MB. The <code>imshow</code> is the same one used for the small FITS file.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.io</span><span class="w"> </span><span class="kn">import</span> <span class="n">fits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">astropy.visualization</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsinhStretch</span><span class="p">,</span> <span class="n">ImageNormalize</span><span class="p">,</span> <span class="n">ZScaleInterval</span>
+
+<span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="c1"># session.headers["Authorization"] = f"Token {os.environ['CUTOUT_TOKEN']}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s2">"https://cutout.linea.org.br/api/async"</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"ID"</span><span class="p">:</span> <span class="s2">"des_dr2"</span><span class="p">,</span>
+        <span class="s2">"POS"</span><span class="p">:</span> <span class="s2">"CIRCLE 41.22 -35.56 0.100000"</span><span class="p">,</span>  <span class="c1"># 6 arcmin</span>
+        <span class="s2">"BAND"</span><span class="p">:</span> <span class="s2">"g"</span><span class="p">,</span>
+        <span class="s2">"format"</span><span class="p">:</span> <span class="s2">"fits"</span><span class="p">,</span>
+        <span class="s2">"PHASE"</span><span class="p">:</span> <span class="s2">"RUN"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">job_url</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">"Location"</span><span class="p">]</span>
+
+<span class="n">phase</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">40</span><span class="p">):</span>
+    <span class="n">phase</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">job_url</span><span class="si">}</span><span class="s2">/phase"</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">phase</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">"COMPLETED"</span><span class="p">,</span> <span class="s2">"ERROR"</span><span class="p">,</span> <span class="s2">"ABORTED"</span><span class="p">}:</span>
+        <span class="k">break</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">TimeoutError</span><span class="p">(</span><span class="n">phase</span><span class="p">)</span>
+
+<span class="n">detail</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">job_url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">phase</span> <span class="o">!=</span> <span class="s2">"COMPLETED"</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="n">detail</span><span class="p">[</span><span class="s2">"tasks"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"error_message"</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">phase</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">fits_response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">detail</span><span class="p">[</span><span class="s2">"results"</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">"download_url"</span><span class="p">],</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">fits_response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">fits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">fits_response</span><span class="o">.</span><span class="n">content</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+
+<span class="n">norm</span> <span class="o">=</span> <span class="n">ImageNormalize</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">ZScaleInterval</span><span class="p">(),</span> <span class="n">stretch</span><span class="o">=</span><span class="n">AsinhStretch</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">"lower"</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">"gray"</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"DES DR2 g, 6 arcmin"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 28, 2026 18:48:44">October 28, 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <div>
+        <a href="https://linea.org.br/" title="LIneA" target="_blank">
+          <img alt=LIneA" src="/images/linea-dark-invert.png" height="70" width="90"
+            style="padding: 10px; height: 70px;">
+        </a>
+        <a href="https://linea.org.br/010-ciencia/3-inct-do-e-universo-2/" title="INCT do e-Universo" target="_blank">
+          <img alt="INCT do e-Universo" src="/images/inct_euniverso_logo.png" height="70" style="padding: 10px; height: 70px;">
+        </a>
+        <img alt="IDAC" src="/images/idac.png" height="70" style="height: 70px;">
+      </div>
+
+      <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linea.org.br" target="_blank" rel="noopener" title="www.linea.org.br" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.07 4.93C17.22 3 14.66 1.96 12 2c-2.66-.04-5.21 1-7.06 2.93C3 6.78 1.96 9.34 2 12c-.04 2.66 1 5.21 2.93 7.06C6.78 21 9.34 22.04 12 22c2.66.04 5.21-1 7.06-2.93C21 17.22 22.04 14.66 22 12c.04-2.66-1-5.22-2.93-7.07M17 12v6h-3.5v-5h-3v5H7v-6H5l7-7 7.5 7z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/linea-it" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/linea_org" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://instagram.com/linea_org" target="_blank" rel="noopener" title="instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://facebook.com/linea.org" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://youtube.com/@linea_org" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg>
+    </a>
+  
+</div>
+
+    </div>
+  </div>
+  <footer>
+    
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    <script>
+      var __search = {
+        transform: function (query) {
+          return query
+        }
+      }
+    </script>
+
+    <!-- Force external links to open in a new tab -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select all links inside the documentation
+        document.querySelectorAll("a[href]").forEach(function (link) {
+          // Skip internal anchors and same-origin links
+          const href = link.getAttribute("href");
+          if (
+            href.startsWith("#") ||
+            href.startsWith("/") ||
+            href.startsWith(".") ||
+            link.hostname === window.location.hostname
+          ) {
+            return;
+          }
+          // Set to open in new tab
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener noreferrer");
+        });
+      });
+    </script>
+    
+    
+      <script src="../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
