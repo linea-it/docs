@@ -10,6 +10,7 @@ nav:
       - Ondemand: pt/sci-platforms/ondemand.md
       - User Query: pt/sci-platforms/user_query.md
       - TAP Service: sci-platforms/user_query.html#tap-service # sem prefixo de idioma em links com âncora
+      - Cutout Service: pt/sci-platforms/cutout.md
 
       - Sky Viewer: pt/sci-platforms/sky_viewer.md
       - Target Viewer: pt/sci-platforms/target_viewer.md
@@ -163,6 +164,7 @@ plugins:
                   - Ondemand: en/sci-platforms/ondemand.md
                   - User Query: en/sci-platforms/user_query.md
                   - TAP Service: en/sci-platforms/user_query.html#tap-service
+                  - Cutout Service: en/sci-platforms/cutout.md
                   - Sky Viewer: en/sci-platforms/sky_viewer.md
                   - Target Viewer: en/sci-platforms/target_viewer.md
                   - DES Science Server: en/sci-platforms/sci_server.md
@@ -209,6 +211,7 @@ plugins:
                 - Ondemand: es/sci-platforms/ondemand.md
                 - User Query: es/sci-platforms/user_query.md
                 - TAP Service: es/sci-platforms/user_query.html#tap-service
+                - Cutout Service: es/sci-platforms/cutout.md
                 - Sky Viewer: es/sci-platforms/sky_viewer.md
                 - Target Viewer: es/sci-platforms/target_viewer.md
                 - DES Science Server: es/sci-platforms/sci_server.md
