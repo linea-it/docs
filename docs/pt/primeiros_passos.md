@@ -17,6 +17,10 @@ Para efetuar o registro de usuário no LIneA, você deve ficar atento às instru
 Saiba mais em: **[Acesso aos Serviços e Plataformas LIneA](https://docs.linea.org.br/sci-platforms/index.html#acesso-aos-servicos-e-plataformas-linea)**
 
 
+!!! warning "Os pedidos de registro estão temporariamente suspensos. Volte amanhã!!"
+
+
+<!--
 ### Registro para Público Geral 
 
 - Público com vínculo institucional: **graduandos**, **pós-graduandos**, **pesquisadores**, etc, vinculados a uma instituição [registre-se aqui](https://register.linea.org.br/registry/co_petitions/start/coef:155).
@@ -33,6 +37,7 @@ O processo de registro no LIneA para membros do LSST inclui etapas específicas 
 	**Para efetuar o registro no LIneA como membro do LSST, é preciso ter uma conta ativa no Rubin Science Platform (RSP). Sem essa conta, as etapas do processo não poderão ser concluídas.**
 
 - Siga as instruções [aqui](./lsst_registration.md)
+-->
 
 
 Qualquer dúvida ou problema, entre em contato com o nosso [Service Desk](./suporte.md).

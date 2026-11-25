@@ -57,11 +57,12 @@ Si usted:
         https://rsp.lsst.io/index.html
 
 ---
+!!! warning "Las solicitudes de registro están temporalmente suspendidas. ¡Vuelve mañana!"
 
+<!--
 !!! warning "Los usuarios ya registrados en LIneA como público general también deben completar todos los pasos descritos en esta página."
 
 ---
-
 ??? info "Registro en LIneA/IDAC-BR"
 
     Este procedimiento debe realizarse **únicamente después** de cumplir con los siguientes requisitos:
@@ -88,7 +89,7 @@ Si usted:
 
         Siga este procedimiento mediante el video tutorial disponible en:
         https://youtu.be/9YGwrCiO7I0
-
+-->
 ---
 
 En caso de dudas, póngase en contacto con el service desk:
