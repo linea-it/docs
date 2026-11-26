@@ -57,9 +57,7 @@ Caso você:
         https://rsp.lsst.io/index.html
 
 ---
-!!! warning "Os pedidos de registro estão temporariamente suspensos. Volte amanhã!!"
 
-<!--
 !!! warning "Usuários já registrados no LIneA como público geral também devem realizar todas as etapas descritas nesta página."
 
 ---
@@ -90,7 +88,6 @@ Caso você:
 
         Siga este procedimento por meio do vídeo tutorial disponível em:
         https://youtu.be/9YGwrCiO7I0
--->
 ---
 
 Em caso de dúvidas, entre em contato com o service desk:
